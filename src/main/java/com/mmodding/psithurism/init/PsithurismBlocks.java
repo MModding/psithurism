@@ -17,9 +17,9 @@ public class PsithurismBlocks {
 	public static final Block DARK_CHERRY_LOG = register("dark_cherry_log", RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_LOG)).registerItem();
 	public static final Block DARK_CHERRY_WOOD = register("dark_cherry_wood", RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_WOOD)).registerItem();
 	public static final BlockRelatives DARK_CHERRY = BlockRelatives.createWood(Psithurism.createId("dark_cherry"), WoodType.CHERRY);
-	public static final Block PAPER_WALL = register("paper_wall", BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL));
-	public static final Block HORIZONTAL_PAPER_WALL = register("horizontal_paper_wall", BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL));
-	public static final Block VERTICAL_PAPER_WALL = register("vertical_paper_wall", BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL));
+	public static final Block PAPER_WALL = register("paper_wall", BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
+	public static final Block HORIZONTAL_PAPER_WALL = register("horizontal_paper_wall", BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
+	public static final Block VERTICAL_PAPER_WALL = register("vertical_paper_wall", BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
 
 	private static Block register(String path, BlockBehaviour.Properties properties) {
 		return register(path, Block::new, properties);
