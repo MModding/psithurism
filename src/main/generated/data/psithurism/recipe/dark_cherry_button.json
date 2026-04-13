@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "psithurism:dark_cherry_planks"
+  ],
+  "result": {
+    "id": "psithurism:dark_cherry_button"
+  }
+}

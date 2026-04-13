@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "psithurism:block/dark_cherry_planks"
+  }
+}

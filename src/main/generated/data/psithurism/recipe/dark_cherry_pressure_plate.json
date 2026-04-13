@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": "psithurism:dark_cherry_planks"
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "id": "psithurism:dark_cherry_pressure_plate"
+  }
+}
