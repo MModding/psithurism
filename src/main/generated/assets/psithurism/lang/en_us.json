@@ -13,7 +13,12 @@
   "block.psithurism.dark_cherry_wall_sign": "Dark Cherry Wall Sign",
   "block.psithurism.dark_cherry_wood": "Dark Cherry Wood",
   "block.psithurism.horizontal_paper_wall": "Horizontal Paper Wall",
+  "block.psithurism.horizontal_paper_wall_block": "Horizontal Paper Wall Block",
+  "block.psithurism.large_paper_wall": "Large Paper Wall",
+  "block.psithurism.large_paper_wall_block": "Large Paper Wall Block",
   "block.psithurism.paper_wall": "Paper Wall",
+  "block.psithurism.paper_wall_block": "Paper Wall Block",
   "block.psithurism.vertical_paper_wall": "Vertical Paper Wall",
+  "block.psithurism.vertical_paper_wall_block": "Vertical Paper Wall Block",
   "itemGroup.psithurism.tab": "Psithurism"
 }

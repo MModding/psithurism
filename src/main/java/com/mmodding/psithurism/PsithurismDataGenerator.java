@@ -16,6 +16,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 
 import java.util.concurrent.CompletableFuture;
@@ -25,6 +26,7 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 	@Override
 	public void setupManager(DataManager manager) {
 		manager.chain(PsithurismBlocks.class, Block.class, DefaultContentTypes.BLOCK_MODELS, block -> block instanceof RotatedPillarBlock, PsithurismDataProcessors::createRotatedPillar)
+			.chain(block -> block instanceof IronBarsBlock, PsithurismDataProcessors::createPaperWall)
 			.chain(BlockModelGenerators::createTrivialCube);
 		manager.task(PsithurismBlocks.class, BlockFamily.class, DefaultContentTypes.BLOCK_FAMILIES, new BlockFamilyProcessor());
 		manager.task(PsithurismBlocks.class, Block.class, DefaultContentTypes.getTranslationHandler(Registries.BLOCK), DefaultLangProcessors.getClassic());

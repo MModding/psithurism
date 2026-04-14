@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "psithurism:block/horizontal_paper_wall"
+    "model": "psithurism:item/horizontal_paper_wall"
   }
 }

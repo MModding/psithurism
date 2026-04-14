@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "psithurism:block/paper_wall"
+    "all": "psithurism:block/large_paper_wall_block"
   }
 }
