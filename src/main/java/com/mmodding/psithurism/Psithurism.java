@@ -1,5 +1,6 @@
 package com.mmodding.psithurism;
 
+import com.mmodding.library.core.api.registry.IdentifierUtil;
 import com.mmodding.psithurism.init.PsithurismBlockEntities;
 import com.mmodding.psithurism.init.PsithurismBlocks;
 import com.mmodding.psithurism.init.PsithurismItems;
@@ -34,6 +35,10 @@ public class Psithurism implements ExtendedModInitializer {
 	public void onInitialize(AdvancedContainer mod) {
 		mod.logger().info("Shaping the world with a Delicate Sip of your imagination!");
 		mod.register(BuiltInRegistries.CREATIVE_MODE_TAB, "tab", Psithurism.TAB);
+	}
+
+	public static Identifier createTexture(String path) {
+		return IdentifierUtil.texture(Psithurism.namespace(), path);
 	}
 
 	public static Identifier createId(String path) {

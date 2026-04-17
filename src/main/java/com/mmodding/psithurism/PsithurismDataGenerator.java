@@ -9,12 +9,15 @@ import com.mmodding.library.datagen.api.management.DefaultContentTypes;
 import com.mmodding.library.datagen.api.provider.MModdingLanguageProvider;
 import com.mmodding.psithurism.data.PsithurismDataProcessors;
 import com.mmodding.psithurism.init.PsithurismBlocks;
+import com.mmodding.psithurism.init.PsithurismItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
+import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.BlockFamily;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
@@ -30,6 +33,8 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 			.chain(BlockModelGenerators::createTrivialCube);
 		manager.task(PsithurismBlocks.class, BlockFamily.class, DefaultContentTypes.BLOCK_FAMILIES, new BlockFamilyProcessor());
 		manager.task(PsithurismBlocks.class, Block.class, DefaultContentTypes.getTranslationHandler(Registries.BLOCK), DefaultLangProcessors.getClassic());
+		manager.task(PsithurismItems.class, Item.class, DefaultContentTypes.ITEM_MODELS, (generator, item) -> generator.generateFlatItem(item, ModelTemplates.FLAT_ITEM));
+		manager.task(PsithurismItems.class, Item.class, DefaultContentTypes.getTranslationHandler(Registries.ITEM), DefaultLangProcessors.getClassic());
 	}
 
 	@Override
