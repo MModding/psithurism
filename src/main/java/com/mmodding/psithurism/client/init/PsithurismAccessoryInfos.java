@@ -2,6 +2,7 @@ package com.mmodding.psithurism.client.init;
 
 import com.mmodding.library.rendering.api.AccessoryInfo;
 import com.mmodding.psithurism.Psithurism;
+import com.mmodding.psithurism.client.model.FoxEarsModel;
 import com.mmodding.psithurism.client.model.KitsuneMaskModel;
 import com.mmodding.psithurism.client.model.OniMaskModel;
 
@@ -12,4 +13,6 @@ public class PsithurismAccessoryInfos {
 
 	public static final AccessoryInfo ONI = AccessoryInfo.create(OniMaskModel::normal, Psithurism.createTexture("mask/oni"));
 	public static final AccessoryInfo WORN_ONI = AccessoryInfo.create(OniMaskModel::worn, Psithurism.createTexture("mask/oni"));
+
+	public static final AccessoryInfo FOX_EARS = AccessoryInfo.create(FoxEarsModel::new, Psithurism.createTexture("ears/fox"));
 }

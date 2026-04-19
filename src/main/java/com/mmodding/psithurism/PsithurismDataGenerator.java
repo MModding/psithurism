@@ -7,6 +7,7 @@ import com.mmodding.library.datagen.api.management.DataManager;
 import com.mmodding.library.datagen.api.management.DefaultDataHandlers;
 import com.mmodding.library.datagen.api.model.block.DefaultBlockModelProcessing;
 import com.mmodding.library.datagen.api.provider.MModdingLanguageProvider;
+import com.mmodding.psithurism.block.StoneLanternBlock;
 import com.mmodding.psithurism.data.PsithurismDataProcessors;
 import com.mmodding.psithurism.init.PsithurismBlocks;
 import com.mmodding.psithurism.init.PsithurismItems;
@@ -29,6 +30,7 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 		manager.chain(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_MODELS)
 			.chain(block -> block instanceof IronBarsBlock, PsithurismDataProcessors::createPaperWall)
 			.chain(block -> block instanceof ChainBlock, DefaultBlockModelProcessing::createChain)
+			.chain(block -> block instanceof StoneLanternBlock, PsithurismDataProcessors::createStoneLantern)
 			.chain(BlockModelGenerators::createTrivialCube);
 		manager.task(PsithurismWoodSets.class, DefaultDataHandlers.WOOD_SETS);
 		manager.task(PsithurismBlocks.class, DefaultDataHandlers.getTranslationHandler(Registries.BLOCK, Block.class), DefaultLangProcessors.CLASSIC);

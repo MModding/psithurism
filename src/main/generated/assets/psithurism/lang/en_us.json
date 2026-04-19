@@ -21,6 +21,7 @@
   "block.psithurism.large_paper_wall_block": "Large Paper Wall Block",
   "block.psithurism.paper_wall": "Paper Wall",
   "block.psithurism.paper_wall_block": "Paper Wall Block",
+  "block.psithurism.stone_lantern": "Stone Lantern",
   "block.psithurism.stripped_dark_cherry_log": "Stripped Dark Cherry Log",
   "block.psithurism.stripped_dark_cherry_wood": "Stripped Dark Cherry Wood",
   "block.psithurism.vertical_paper_wall": "Vertical Paper Wall",
@@ -30,6 +31,7 @@
   "item.psithurism.dark_cherry_boat": "Dark Cherry Boat",
   "item.psithurism.dark_cherry_chest_boat": "Dark Cherry Boat with Chest",
   "item.psithurism.dark_cherry_sign": "Dark Cherry Sign",
+  "item.psithurism.fox_ears": "Fox Ears",
   "item.psithurism.kitsune_mask": "Kitsune Mask",
   "item.psithurism.oni_mask": "Oni Mask",
   "itemGroup.psithurism.tab": "Psithurism"

@@ -5,6 +5,7 @@ import com.mmodding.library.rendering.api.renderer.CapModelRenderer;
 import com.mmodding.library.rendering.api.sprite.TextureAliases;
 import com.mmodding.psithurism.Psithurism;
 import com.mmodding.psithurism.client.init.PsithurismAccessoryInfos;
+import com.mmodding.psithurism.client.model.FoxEarsModel;
 import com.mmodding.psithurism.client.model.KitsuneMaskModel;
 import com.mmodding.psithurism.client.model.OniMaskModel;
 import com.mmodding.psithurism.init.PsithurismDataComponents;
@@ -33,6 +34,8 @@ public class PsithurismClient implements ClientModInitializer {
 	public static final ModelLayerLocation ONI_MASK = createModelLayer("oni_mask");
 	public static final ModelLayerLocation WORN_ONI_MASK = createWornModelLayer("oni_mask");
 
+	public static final ModelLayerLocation FOX_EARS = createModelLayer("fox_ears");
+
 	public static final ModelLayerLocation DARK_CHERRY_BOAT = createModelLayer("boat/dark_cherry");
 	public static final ModelLayerLocation DARK_CHERRY_CHEST_BOAT = createModelLayer("chest_boat/dark_cherry");
 
@@ -51,6 +54,7 @@ public class PsithurismClient implements ClientModInitializer {
 		ModelLayerRegistry.registerModelLayer(WORN_KITSUNE_MASK, KitsuneMaskModel::createWornMaskLayer);
 		ModelLayerRegistry.registerModelLayer(ONI_MASK, OniMaskModel::createMaskLayer);
 		ModelLayerRegistry.registerModelLayer(WORN_ONI_MASK, OniMaskModel::createWornMaskLayer);
+		ModelLayerRegistry.registerModelLayer(FOX_EARS, FoxEarsModel::createEarsLayer);
 		ModelLayerRegistry.registerModelLayer(DARK_CHERRY_BOAT, BoatModel::createBoatModel);
 		ModelLayerRegistry.registerModelLayer(DARK_CHERRY_CHEST_BOAT, BoatModel::createChestBoatModel);
 		ArmorRenderer.register(context -> new CapModelRenderer(
@@ -69,6 +73,7 @@ public class PsithurismClient implements ClientModInitializer {
 				PsithurismAccessoryInfos.WORN_ONI
 			), context
 		), PsithurismItems.ONI_MASK);
+		ArmorRenderer.register(context -> new CapModelRenderer(PsithurismAccessoryInfos.FOX_EARS, context), PsithurismItems.FOX_EARS);
 		EntityRenderers.register(PsithurismWoodSets.DARK_CHERRY.getBoatEntityType(), context -> new BoatRenderer(context, DARK_CHERRY_BOAT));
 		EntityRenderers.register(PsithurismWoodSets.DARK_CHERRY.getChestBoatEntityType(), context -> new BoatRenderer(context, DARK_CHERRY_CHEST_BOAT));
 		ParticleProviderRegistry.getInstance().register(PsithurismParticleTypes.DARK_CHERRY_LEAVES, FallingLeavesParticle.CherryProvider::new);

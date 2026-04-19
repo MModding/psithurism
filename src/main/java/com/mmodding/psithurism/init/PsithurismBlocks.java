@@ -3,16 +3,15 @@ package com.mmodding.psithurism.init;
 import com.mmodding.library.block.api.util.BlockFactory;
 import com.mmodding.library.core.api.AdvancedContainer;
 import com.mmodding.psithurism.Psithurism;
+import com.mmodding.psithurism.block.StoneLanternBlock;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.ChainBlock;
-import net.minecraft.world.level.block.IronBarsBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.WoodType;
 
 public class PsithurismBlocks {
@@ -30,6 +29,8 @@ public class PsithurismBlocks {
 	public static final Block LARGE_PAPER_WALL = register("large_paper_wall", IronBarsBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
 	public static final Block HORIZONTAL_PAPER_WALL = register("horizontal_paper_wall", IronBarsBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
 	public static final Block VERTICAL_PAPER_WALL = register("vertical_paper_wall", IronBarsBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
+
+	public static final Block STONE_LANTERN = register("stone_lantern", StoneLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).sound(SoundType.STONE).lightLevel(state -> state.getValue(BlockStateProperties.LIT) ? 15 : 0)).registerItem();
 
 	private static Block register(String path, BlockBehaviour.Properties properties) {
 		return register(path, Block::new, properties);
