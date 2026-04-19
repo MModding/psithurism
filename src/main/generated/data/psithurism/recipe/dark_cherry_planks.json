@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    "#psithurism:dark_cherry_logs"
+  ],
+  "result": {
+    "count": 4,
+    "id": "psithurism:dark_cherry_planks"
+  }
+}

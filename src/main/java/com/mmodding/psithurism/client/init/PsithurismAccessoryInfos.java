@@ -7,6 +7,9 @@ import com.mmodding.psithurism.client.model.OniMaskModel;
 
 public class PsithurismAccessoryInfos {
 
-	public static final AccessoryInfo KITSUNE = AccessoryInfo.create(KitsuneMaskModel::new, Psithurism.createTexture("mask/kitsune"));
-	public static final AccessoryInfo ONI = AccessoryInfo.create(OniMaskModel::new, Psithurism.createTexture("mask/oni"));
+	public static final AccessoryInfo KITSUNE = AccessoryInfo.create(KitsuneMaskModel::normal, Psithurism.createTexture("mask/kitsune"));
+	public static final AccessoryInfo WORN_KITSUNE = AccessoryInfo.create(KitsuneMaskModel::worn, Psithurism.createTexture("mask/kitsune"));
+
+	public static final AccessoryInfo ONI = AccessoryInfo.create(OniMaskModel::normal, Psithurism.createTexture("mask/oni"));
+	public static final AccessoryInfo WORN_ONI = AccessoryInfo.create(OniMaskModel::worn, Psithurism.createTexture("mask/oni"));
 }

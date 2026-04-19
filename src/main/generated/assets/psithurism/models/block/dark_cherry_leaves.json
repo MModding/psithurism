@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "psithurism:block/dark_cherry_leaves"
+  }
+}

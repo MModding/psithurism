@@ -1,14 +1,14 @@
 package com.mmodding.psithurism;
 
 import com.mmodding.library.core.api.registry.IdentifierUtil;
-import com.mmodding.psithurism.init.PsithurismBlockEntities;
-import com.mmodding.psithurism.init.PsithurismBlocks;
-import com.mmodding.psithurism.init.PsithurismItems;
+import com.mmodding.psithurism.init.*;
 import com.mmodding.library.core.api.AdvancedContainer;
 import com.mmodding.library.core.api.ExtendedModInitializer;
 import com.mmodding.library.core.api.management.ElementsManager;
+import com.mmodding.psithurism.resource.PsithurismFeaturePacks;
 import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.CreativeModeTab;
@@ -18,7 +18,7 @@ public class Psithurism implements ExtendedModInitializer {
 	@SuppressWarnings("deprecation")
 	public static final CreativeModeTab TAB = FabricCreativeModeTab.builder()
 		.title(Component.translatable("itemGroup.psithurism.tab"))
-		.icon(() -> PsithurismBlocks.DARK_CHERRY_LOG.asItem().getDefaultInstance())
+		.icon(() -> PsithurismWoodSets.DARK_CHERRY.getLog().asItem().getDefaultInstance())
 		.displayItems((parameters, output) -> BuiltInRegistries.ITEM.stream()
 			.filter(item -> item.builtInRegistryHolder().key().identifier().getNamespace().equals(Psithurism.namespace()))
 			.forEach(output::accept))
@@ -26,14 +26,17 @@ public class Psithurism implements ExtendedModInitializer {
 
 	@Override
 	public void setupManager(ElementsManager manager) {
+		manager.content(PsithurismDataComponents::register);
+		manager.content(PsithurismParticleTypes::register);
+		manager.content(PsithurismWoodSets::register);
 		manager.content(PsithurismBlocks::register);
 		manager.content(PsithurismItems::register);
-		manager.content(PsithurismBlockEntities::register);
+		manager.resource(PsithurismFeaturePacks::register);
 	}
 
 	@Override
 	public void onInitialize(AdvancedContainer mod) {
-		mod.logger().info("Shaping the world with a Delicate Sip of your imagination!");
+		mod.logger().info("Minecraft, Japan. 💐");
 		mod.register(BuiltInRegistries.CREATIVE_MODE_TAB, "tab", Psithurism.TAB);
 	}
 

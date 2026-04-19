@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "chest_boat",
+  "ingredients": [
+    "minecraft:chest",
+    "psithurism:dark_cherry_planks"
+  ],
+  "result": {
+    "id": "psithurism:dark_cherry_chest_boat"
+  }
+}

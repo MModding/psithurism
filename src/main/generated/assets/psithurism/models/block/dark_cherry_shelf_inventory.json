@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_shelf_inventory",
+  "textures": {
+    "all": "psithurism:block/dark_cherry_shelf",
+    "particle": "psithurism:block/stripped_dark_cherry_log"
+  }
+}

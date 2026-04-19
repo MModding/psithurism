@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "psithurism:block/dark_cherry_sapling"
+  }
+}

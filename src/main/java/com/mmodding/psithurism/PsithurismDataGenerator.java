@@ -2,25 +2,23 @@ package com.mmodding.psithurism;
 
 import com.mmodding.library.core.api.AdvancedContainer;
 import com.mmodding.library.datagen.api.ExtendedDataGeneratorEntrypoint;
-import com.mmodding.library.datagen.api.family.BlockFamilyProcessor;
 import com.mmodding.library.datagen.api.lang.DefaultLangProcessors;
 import com.mmodding.library.datagen.api.management.DataManager;
-import com.mmodding.library.datagen.api.management.DefaultContentTypes;
+import com.mmodding.library.datagen.api.management.DefaultDataHandlers;
+import com.mmodding.library.datagen.api.model.block.DefaultBlockModelProcessing;
 import com.mmodding.library.datagen.api.provider.MModdingLanguageProvider;
 import com.mmodding.psithurism.data.PsithurismDataProcessors;
 import com.mmodding.psithurism.init.PsithurismBlocks;
 import com.mmodding.psithurism.init.PsithurismItems;
+import com.mmodding.psithurism.init.PsithurismWoodSets;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.BlockFamily;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.IronBarsBlock;
-import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.*;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -28,13 +26,14 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 
 	@Override
 	public void setupManager(DataManager manager) {
-		manager.chain(PsithurismBlocks.class, Block.class, DefaultContentTypes.BLOCK_MODELS, block -> block instanceof RotatedPillarBlock, PsithurismDataProcessors::createRotatedPillar)
+		manager.chain(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_MODELS)
 			.chain(block -> block instanceof IronBarsBlock, PsithurismDataProcessors::createPaperWall)
+			.chain(block -> block instanceof ChainBlock, DefaultBlockModelProcessing::createChain)
 			.chain(BlockModelGenerators::createTrivialCube);
-		manager.task(PsithurismBlocks.class, BlockFamily.class, DefaultContentTypes.BLOCK_FAMILIES, new BlockFamilyProcessor());
-		manager.task(PsithurismBlocks.class, Block.class, DefaultContentTypes.getTranslationHandler(Registries.BLOCK), DefaultLangProcessors.getClassic());
-		manager.task(PsithurismItems.class, Item.class, DefaultContentTypes.ITEM_MODELS, (generator, item) -> generator.generateFlatItem(item, ModelTemplates.FLAT_ITEM));
-		manager.task(PsithurismItems.class, Item.class, DefaultContentTypes.getTranslationHandler(Registries.ITEM), DefaultLangProcessors.getClassic());
+		manager.task(PsithurismWoodSets.class, DefaultDataHandlers.WOOD_SETS);
+		manager.task(PsithurismBlocks.class, DefaultDataHandlers.getTranslationHandler(Registries.BLOCK, Block.class), DefaultLangProcessors.CLASSIC);
+		manager.task(PsithurismItems.class, DefaultDataHandlers.ITEM_MODELS, (generator, item) -> generator.generateFlatItem(item, ModelTemplates.FLAT_ITEM));
+		manager.task(PsithurismItems.class, DefaultDataHandlers.getTranslationHandler(Registries.ITEM, Item.class), DefaultLangProcessors.CLASSIC);
 	}
 
 	@Override
