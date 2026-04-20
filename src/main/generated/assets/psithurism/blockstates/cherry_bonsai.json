@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "psithurism:block/cherry_bonsai",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "psithurism:block/cherry_bonsai"
+    },
+    "facing=south": {
+      "model": "psithurism:block/cherry_bonsai",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "psithurism:block/cherry_bonsai",
+      "y": 270
+    }
+  }
+}

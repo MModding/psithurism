@@ -1,23 +1,24 @@
 package com.mmodding.psithurism.init;
 
+import com.mmodding.library.block.api.catalog.SimpleHorizontalFacingBlock;
 import com.mmodding.library.block.api.util.BlockFactory;
 import com.mmodding.library.core.api.AdvancedContainer;
 import com.mmodding.psithurism.Psithurism;
+import com.mmodding.psithurism.block.RiceCrop;
 import com.mmodding.psithurism.block.StoneLanternBlock;
-import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
-import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.material.PushReaction;
 
 public class PsithurismBlocks {
 
-	public static final BlockSetType DARK_CHERRY_SET = BlockSetTypeBuilder.copyOf(BlockSetType.CHERRY).register(Psithurism.createId("dark_cherry"));
-	public static final WoodType DARK_CHERRY_TYPE = WoodTypeBuilder.copyOf(WoodType.CHERRY).register(Psithurism.createId("dark_cherry"), DARK_CHERRY_SET);
+	public static final Block WHITE_PETALS = register("white_petals", FlowerBedBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.PINK_PETALS)).registerItem();
+
+	public static final Block CHERRY_BONSAI = register("cherry_bonsai", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_WOOD).noOcclusion()).registerItem();
+	public static final Block DARK_CHERRY_BONSAI = register("dark_cherry_bonsai", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(PsithurismWoodSets.DARK_CHERRY.getWood()).noOcclusion()).registerItem();
 
 	public static final Block GOLDEN_CHAIN = register("golden_chain", ChainBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_CHAIN)).registerItem();
 
@@ -31,6 +32,8 @@ public class PsithurismBlocks {
 	public static final Block VERTICAL_PAPER_WALL = register("vertical_paper_wall", IronBarsBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
 
 	public static final Block STONE_LANTERN = register("stone_lantern", StoneLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).sound(SoundType.STONE).lightLevel(state -> state.getValue(BlockStateProperties.LIT) ? 15 : 0)).registerItem();
+
+	public static final Block RICE = register("rice", RiceCrop::new, BlockBehaviour.Properties.of().noCollision().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY));
 
 	private static Block register(String path, BlockBehaviour.Properties properties) {
 		return register(path, Block::new, properties);

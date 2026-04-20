@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "psithurism:dark_cherry_planks",
+  "result": {
+    "id": "psithurism:dark_cherry_stairs"
+  }
+}

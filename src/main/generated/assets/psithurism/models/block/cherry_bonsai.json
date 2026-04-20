@@ -1,0 +1,7 @@
+{
+  "parent": "psithurism:block/template_cherry_bonsai",
+  "textures": {
+    "particle": "minecraft:block/cherry_leaves",
+    "texture": "psithurism:block/cherry_bonsai"
+  }
+}

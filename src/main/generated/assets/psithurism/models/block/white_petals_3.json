@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/flowerbed_3",
+  "textures": {
+    "flowerbed": "psithurism:block/white_petals",
+    "stem": "psithurism:block/white_petals_stem"
+  }
+}

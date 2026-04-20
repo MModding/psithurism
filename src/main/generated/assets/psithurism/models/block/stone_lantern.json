@@ -1,7 +1,7 @@
 {
   "parent": "psithurism:block/template_stone_lantern",
   "textures": {
-    "all": "psithurism:block/stone_lantern",
-    "particle": "minecraft:block/stone_bricks"
+    "particle": "minecraft:block/stone_bricks",
+    "texture": "psithurism:block/stone_lantern"
   }
 }

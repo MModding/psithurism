@@ -18,9 +18,12 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.data.loot.BlockLootSubProvider;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 
+import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint {
@@ -28,13 +31,20 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 	@Override
 	public void setupManager(DataManager manager) {
 		manager.chain(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_MODELS)
+			.chain(block -> block instanceof FlowerBedBlock, BlockModelGenerators::createFlowerBed)
 			.chain(block -> block instanceof IronBarsBlock, PsithurismDataProcessors::createPaperWall)
 			.chain(block -> block instanceof ChainBlock, DefaultBlockModelProcessing::createChain)
 			.chain(block -> block instanceof StoneLanternBlock, PsithurismDataProcessors::createStoneLantern)
+			.chain(Set.of(PsithurismBlocks.RICE), PsithurismDataProcessors::createRiceCrop)
+			.chain(Set.of(PsithurismBlocks.CHERRY_BONSAI), PsithurismDataProcessors::createCherryBonsai)
+			.chain(Set.of(PsithurismBlocks.DARK_CHERRY_BONSAI), PsithurismDataProcessors::createDarkCherryBonsai)
 			.chain(BlockModelGenerators::createTrivialCube);
+		manager.chain(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_LOOTS)
+			.chain(BlockLootSubProvider::dropSelf);
+		manager.task(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_TAGS, Set.of(PsithurismBlocks.RICE), (getter, block) -> getter.apply(BlockTags.MAINTAINS_FARMLAND).add(block));
 		manager.task(PsithurismWoodSets.class, DefaultDataHandlers.WOOD_SETS);
 		manager.task(PsithurismBlocks.class, DefaultDataHandlers.getTranslationHandler(Registries.BLOCK, Block.class), DefaultLangProcessors.CLASSIC);
-		manager.task(PsithurismItems.class, DefaultDataHandlers.ITEM_MODELS, (generator, item) -> generator.generateFlatItem(item, ModelTemplates.FLAT_ITEM));
+		manager.task(PsithurismItems.class, DefaultDataHandlers.ITEM_MODELS, item -> !item.equals(PsithurismItems.RICE_PLANT), (generator, item) -> generator.generateFlatItem(item, ModelTemplates.FLAT_ITEM));
 		manager.task(PsithurismItems.class, DefaultDataHandlers.getTranslationHandler(Registries.ITEM, Item.class), DefaultLangProcessors.CLASSIC);
 	}
 

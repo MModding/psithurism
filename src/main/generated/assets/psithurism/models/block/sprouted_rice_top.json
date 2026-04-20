@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "psithurism:block/sprouted_rice_top"
+  }
+}

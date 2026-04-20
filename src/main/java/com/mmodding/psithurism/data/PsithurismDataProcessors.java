@@ -2,13 +2,13 @@ package com.mmodding.psithurism.data;
 
 import com.mmodding.library.datagen.api.model.block.DefaultBlockModelProcessing;
 import com.mmodding.library.java.api.function.AutoMapper;
+import com.mmodding.psithurism.Psithurism;
+import com.mmodding.psithurism.block.RiceCrop;
 import com.mmodding.psithurism.init.PsithurismBlocks;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
-import net.minecraft.client.data.models.model.ModelLocationUtils;
-import net.minecraft.client.data.models.model.TextureMapping;
-import net.minecraft.client.data.models.model.TextureSlot;
+import net.minecraft.client.data.models.model.*;
 import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
@@ -23,6 +23,38 @@ public class PsithurismDataProcessors {
 		AutoMapper<String> wallToWallBlock = paperWall -> paperWall + "_block";
 		Material paneTopMaterial = TextureMapping.getBlockTexture(PsithurismBlocks.PAPER_WALL, "_top");
 		DefaultBlockModelProcessing.createPaneLike(generator, block, wallToWallBlock, paneTopMaterial);
+	}
+
+	public static void createCherryBonsai(BlockModelGenerators generator, Block block) {
+		PsithurismDataProcessors.createBonsai(generator, block, PsithurismTextureModels.CHERRY_BONSAI);
+	}
+
+	public static void createDarkCherryBonsai(BlockModelGenerators generator, Block block) {
+		PsithurismDataProcessors.createBonsai(generator, block, PsithurismTextureModels.DARK_CHERRY_BONSAI);
+	}
+
+	public static void createBonsai(BlockModelGenerators generator, Block block, TexturedModel.Provider bonsaiProvider) {
+		generator.registerSimpleFlatItemModel(block.asItem());
+		generator.createHorizontallyRotatedBlock(block, bonsaiProvider);
+	}
+
+	public static void createRiceCrop(BlockModelGenerators generator, Block block) {
+		generator.registerSimpleFlatItemModel(block.asItem());
+		generator.blockStateOutput.accept(
+			MultiVariantGenerator.dispatch(block).with(
+				PropertyDispatch.initial(((RiceCrop) block).getAgeProperty(), BlockStateProperties.DOUBLE_BLOCK_HALF)
+					.generate((age, shape) -> {
+						String prefix = age == 1 ? "sprouted_" : "";
+						String suffix = switch (shape) {
+							case UPPER -> "top";
+							case LOWER -> "bottom";
+						};
+						Identifier model = Psithurism.createId("block/" + prefix + "rice_" + suffix);
+						ModelTemplates.CROP.create(model, TextureMapping.crop(new Material(model)), generator.modelOutput);
+						return plainVariant(model);
+					})
+			)
+		);
 	}
 
 	public static void createStoneLantern(BlockModelGenerators generator, Block block) {

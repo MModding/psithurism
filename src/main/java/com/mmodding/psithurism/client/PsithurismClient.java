@@ -8,22 +8,23 @@ import com.mmodding.psithurism.client.init.PsithurismAccessoryInfos;
 import com.mmodding.psithurism.client.model.FoxEarsModel;
 import com.mmodding.psithurism.client.model.KitsuneMaskModel;
 import com.mmodding.psithurism.client.model.OniMaskModel;
-import com.mmodding.psithurism.init.PsithurismDataComponents;
-import com.mmodding.psithurism.init.PsithurismItems;
-import com.mmodding.psithurism.init.PsithurismParticleTypes;
-import com.mmodding.psithurism.init.PsithurismWoodSets;
+import com.mmodding.psithurism.init.*;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ArmorRenderer;
+import net.fabricmc.fabric.api.client.rendering.v1.BlockColorRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ModelLayerRegistry;
+import net.minecraft.client.color.block.BlockTintSources;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.object.boat.BoatModel;
 import net.minecraft.client.particle.FallingLeavesParticle;
 import net.minecraft.client.renderer.entity.BoatRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.Identifier;
+
+import java.util.List;
 
 @Environment(EnvType.CLIENT)
 public class PsithurismClient implements ClientModInitializer {
@@ -50,6 +51,8 @@ public class PsithurismClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 		TextureAliases.create(Psithurism.createId("block/dark_cherry_log"), Identifier.withDefaultNamespace("block/cherry_log"));
+		TextureAliases.create(Psithurism.createId("block/white_petals_stem"), Identifier.withDefaultNamespace("block/pink_petals_stem"));
+		BlockColorRegistry.register(List.of(BlockTintSources.constant(-1), BlockTintSources.grass()), PsithurismBlocks.WHITE_PETALS);
 		ModelLayerRegistry.registerModelLayer(KITSUNE_MASK, KitsuneMaskModel::createMaskLayer);
 		ModelLayerRegistry.registerModelLayer(WORN_KITSUNE_MASK, KitsuneMaskModel::createWornMaskLayer);
 		ModelLayerRegistry.registerModelLayer(ONI_MASK, OniMaskModel::createMaskLayer);
