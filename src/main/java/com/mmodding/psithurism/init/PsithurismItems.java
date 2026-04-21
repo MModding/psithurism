@@ -9,11 +9,15 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.equipment.*;
 
 import java.util.function.Function;
 
 public class PsithurismItems {
+
+	public static final Item FAN_POTTERY_SHERD = register("fan_pottery_sherd", new Item.Properties().rarity(Rarity.UNCOMMON).decoratedPotPattern(PsithurismDecoratedPotPatterns.FAN));
+	public static final Item TORII_POTTERY_SHERD = register("torii_pottery_sherd", new Item.Properties().rarity(Rarity.UNCOMMON).decoratedPotPattern(PsithurismDecoratedPotPatterns.TORII));
 
 	public static final Item KITSUNE_MASK = register("kitsune_mask", MaskItem::new, new Item.Properties().stacksTo(1).equippable(EquipmentSlot.HEAD).component(PsithurismDataComponents.WORN_MASK, false));
 	public static final Item ONI_MASK = register("oni_mask", MaskItem::new, new Item.Properties().stacksTo(1).equippable(EquipmentSlot.HEAD).component(PsithurismDataComponents.WORN_MASK, false));

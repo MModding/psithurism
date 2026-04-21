@@ -25,6 +25,7 @@ public class Psithurism implements ExtendedModInitializer {
 
 	@Override
 	public void setupManager(ElementsManager manager) {
+		manager.content(PsithurismDecoratedPotPatterns::register);
 		manager.content(PsithurismDataComponents::register);
 		manager.content(PsithurismParticleTypes::register);
 		manager.content(PsithurismWoodSets::register);

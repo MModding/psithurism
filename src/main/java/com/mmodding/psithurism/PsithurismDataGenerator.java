@@ -7,6 +7,8 @@ import com.mmodding.library.datagen.api.management.DataManager;
 import com.mmodding.library.datagen.api.management.DefaultDataHandlers;
 import com.mmodding.library.datagen.api.model.block.DefaultBlockModelProcessing;
 import com.mmodding.library.datagen.api.provider.MModdingLanguageProvider;
+import com.mmodding.library.datagen.api.provider.MModdingRecipeProvider;
+import com.mmodding.library.datagen.api.recipe.RecipeGenerator;
 import com.mmodding.psithurism.block.StoneLanternBlock;
 import com.mmodding.psithurism.data.PsithurismDataProcessors;
 import com.mmodding.psithurism.init.PsithurismBlocks;
@@ -19,7 +21,9 @@ import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
+import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 
@@ -45,23 +49,43 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 		manager.task(PsithurismWoodSets.class, DefaultDataHandlers.WOOD_SETS);
 		manager.task(PsithurismBlocks.class, DefaultDataHandlers.getTranslationHandler(Registries.BLOCK, Block.class), DefaultLangProcessors.CLASSIC);
 		manager.task(PsithurismItems.class, DefaultDataHandlers.ITEM_MODELS, item -> !item.equals(PsithurismItems.RICE_PLANT), (generator, item) -> generator.generateFlatItem(item, ModelTemplates.FLAT_ITEM));
+		manager.task(PsithurismItems.class, DefaultDataHandlers.ITEM_TAGS, Set.of(PsithurismItems.FAN_POTTERY_SHERD, PsithurismItems.TORII_POTTERY_SHERD), (getter, item) -> getter.apply(ItemTags.DECORATED_POT_SHERDS).add(item));
 		manager.task(PsithurismItems.class, DefaultDataHandlers.getTranslationHandler(Registries.ITEM, Item.class), DefaultLangProcessors.CLASSIC);
 	}
 
 	@Override
 	public void onInitializeDataGenerator(AdvancedContainer advancedContainer, FabricDataGenerator generator, FabricDataGenerator.Pack pack) {
-		pack.addProvider(DelicateSipLanguageProvider::new);
+		pack.addProvider(PsithurismLanguageProvider::new);
+		pack.addProvider(PsithurismRecipes::new);
 	}
 
-	private static class DelicateSipLanguageProvider extends MModdingLanguageProvider {
+	private static class PsithurismLanguageProvider extends MModdingLanguageProvider {
 
-		protected DelicateSipLanguageProvider(FabricPackOutput dataOutput, CompletableFuture<HolderLookup.Provider> future) {
+		protected PsithurismLanguageProvider(FabricPackOutput dataOutput, CompletableFuture<HolderLookup.Provider> future) {
 			super(dataOutput, future);
 		}
 
 		@Override
 		public void generateTranslations(HolderLookup.Provider registryLookup, TranslationBuilder translationBuilder) {
 			translationBuilder.add("itemGroup.psithurism.tab", "Psithurism");
+		}
+	}
+
+	private static class PsithurismRecipes extends MModdingRecipeProvider {
+
+		public PsithurismRecipes(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> future) {
+			super(output, future);
+		}
+
+		@Override
+		public void createRecipes(RecipeGenerator generator) {
+			generator.forItem(PsithurismItems.MISO_PASTE)
+				.smoking(PsithurismItems.SOJA_SEED, RecipeCategory.FOOD, 2, 20);
+		}
+
+		@Override
+		public String getName() {
+			return "Psithurism Recipes";
 		}
 	}
 }
