@@ -9,7 +9,7 @@ All rights reserved.
 ### Are Considered As Assets:
 ```
 - All Files inside the ./src/main/resources/assets Directory
-- All Files inside the ./src/main/java/com/mmodding/psithurism/client/model Directory
+- File: src/main/java/com/mmodding/psithurism/client/init/PsithurismModels
 ```
 
 ### License for Code:
