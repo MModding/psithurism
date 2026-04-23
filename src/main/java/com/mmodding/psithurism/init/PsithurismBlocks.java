@@ -2,7 +2,9 @@ package com.mmodding.psithurism.init;
 
 import com.mmodding.library.block.api.catalog.SimpleHorizontalFacingBlock;
 import com.mmodding.library.block.api.util.BlockFactory;
+import com.mmodding.library.block.api.wrapper.BlockRelatives;
 import com.mmodding.library.core.api.AdvancedContainer;
+import com.mmodding.library.java.api.function.AutoMapper;
 import com.mmodding.psithurism.Psithurism;
 import com.mmodding.psithurism.block.RiceCrop;
 import com.mmodding.psithurism.block.StoneLanternBlock;
@@ -32,6 +34,10 @@ public class PsithurismBlocks {
 	public static final Block VERTICAL_PAPER_WALL = register("vertical_paper_wall", IronBarsBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
 
 	public static final Block STONE_LANTERN = register("stone_lantern", StoneLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).sound(SoundType.STONE).lightLevel(state -> state.getValue(BlockStateProperties.LIT) ? 15 : 0)).registerItem();
+
+	public static final BlockRelatives ASHINO_STONE = BlockRelatives.registerStone(Psithurism.createId("ashino_stone"), AutoMapper.identity(), false, false);
+	public static final BlockRelatives ASHINO_BRICKS = BlockRelatives.registerStone(Psithurism.createId("ashino_brick"), true, AutoMapper.identity(), false, false);
+	public static final BlockRelatives MOSSY_ASHINO_BRICKS = BlockRelatives.registerStone(Psithurism.createId("mossy_ashino_brick"), true, AutoMapper.identity(), false, false);
 
 	public static final Block RICE = register("rice", RiceCrop::new, BlockBehaviour.Properties.of().noCollision().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY));
 

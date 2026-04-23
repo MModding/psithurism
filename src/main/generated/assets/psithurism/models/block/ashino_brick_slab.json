@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "psithurism:block/ashino_bricks",
+    "side": "psithurism:block/ashino_bricks",
+    "top": "psithurism:block/ashino_bricks"
+  }
+}

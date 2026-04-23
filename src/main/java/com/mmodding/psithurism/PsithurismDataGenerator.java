@@ -16,6 +16,7 @@ import com.mmodding.psithurism.init.PsithurismItems;
 import com.mmodding.psithurism.init.PsithurismWoodSets;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.core.HolderLookup;
@@ -48,6 +49,7 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 		manager.task(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_TAGS, Set.of(PsithurismBlocks.RICE), (getter, block) -> getter.apply(BlockTags.MAINTAINS_FARMLAND).add(block));
 		manager.task(PsithurismWoodSets.class, DefaultDataHandlers.WOOD_SETS);
 		manager.task(PsithurismBlocks.class, DefaultDataHandlers.getTranslationHandler(Registries.BLOCK, Block.class), DefaultLangProcessors.CLASSIC);
+		manager.task(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_RELATIVES);
 		manager.task(PsithurismItems.class, DefaultDataHandlers.ITEM_MODELS, item -> !item.equals(PsithurismItems.RICE_PLANT), (generator, item) -> generator.generateFlatItem(item, ModelTemplates.FLAT_ITEM));
 		manager.task(PsithurismItems.class, DefaultDataHandlers.ITEM_TAGS, Set.of(PsithurismItems.FAN_POTTERY_SHERD, PsithurismItems.TORII_POTTERY_SHERD), (getter, item) -> getter.apply(ItemTags.DECORATED_POT_SHERDS).add(item));
 		manager.task(PsithurismItems.class, DefaultDataHandlers.getTranslationHandler(Registries.ITEM, Item.class), DefaultLangProcessors.CLASSIC);
@@ -57,6 +59,7 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 	public void onInitializeDataGenerator(AdvancedContainer advancedContainer, FabricDataGenerator generator, FabricDataGenerator.Pack pack) {
 		pack.addProvider(PsithurismLanguageProvider::new);
 		pack.addProvider(PsithurismRecipes::new);
+		pack.addProvider(PsithurismBlockTags::new);
 	}
 
 	private static class PsithurismLanguageProvider extends MModdingLanguageProvider {
@@ -79,6 +82,21 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 
 		@Override
 		public void createRecipes(RecipeGenerator generator) {
+			generator.forItem(PsithurismBlocks.ASHINO_STONE.getMain())
+				.shaped(
+					RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("AB", "BA")
+						.key('A', Blocks.ANDESITE)
+						.key('B', Blocks.SMOOTH_BASALT)
+				)
+				.provide((provider, target) -> provider.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, target, Blocks.STONE));
+			generator.forItem(PsithurismBlocks.ASHINO_BRICKS.getMain())
+				.shaped(
+					RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("##", "##")
+						.key('#', PsithurismBlocks.ASHINO_STONE.getMain())
+				)
+				.provide((provider, target) -> provider.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, target, PsithurismBlocks.ASHINO_STONE.getMain()));
 			generator.forItem(PsithurismItems.MISO_PASTE)
 				.smoking(PsithurismItems.SOJA_SEED, RecipeCategory.FOOD, 2, 20);
 		}
@@ -86,6 +104,21 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 		@Override
 		public String getName() {
 			return "Psithurism Recipes";
+		}
+	}
+
+	private static class PsithurismBlockTags extends FabricTagsProvider.BlockTagsProvider {
+
+		public PsithurismBlockTags(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> future) {
+			super(output, future);
+		}
+
+		@Override
+		protected void addTags(HolderLookup.Provider registries) {
+			this.valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
+				.forceAddTag(PsithurismBlocks.ASHINO_STONE.getBlockTagKey())
+				.forceAddTag(PsithurismBlocks.ASHINO_BRICKS.getBlockTagKey())
+				.forceAddTag(PsithurismBlocks.MOSSY_ASHINO_BRICKS.getBlockTagKey());
 		}
 	}
 }

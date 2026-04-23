@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "psithurism:ashino_stone",
+  "result": {
+    "id": "psithurism:ashino_bricks"
+  }
+}

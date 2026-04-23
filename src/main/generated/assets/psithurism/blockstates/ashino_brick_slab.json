@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "psithurism:block/ashino_brick_slab"
+    },
+    "type=double": {
+      "model": "psithurism:block/ashino_bricks"
+    },
+    "type=top": {
+      "model": "psithurism:block/ashino_brick_slab_top"
+    }
+  }
+}

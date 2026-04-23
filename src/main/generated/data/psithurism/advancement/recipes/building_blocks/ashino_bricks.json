@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ashino_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "psithurism:ashino_bricks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "psithurism:ashino_bricks"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ashino_bricks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "psithurism:ashino_bricks"
+    ]
+  }
+}

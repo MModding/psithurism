@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "psithurism:block/ashino_stone",
+    "side": "psithurism:block/ashino_stone",
+    "top": "psithurism:block/ashino_stone"
+  }
+}

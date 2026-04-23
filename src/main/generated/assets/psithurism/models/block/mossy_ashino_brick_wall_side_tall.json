@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_wall_side_tall",
+  "textures": {
+    "wall": "psithurism:block/mossy_ashino_bricks"
+  }
+}
