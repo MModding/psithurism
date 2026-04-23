@@ -4,7 +4,7 @@
   "group": "hanging_sign",
   "key": {
     "#": "psithurism:stripped_dark_cherry_log",
-    "X": "minecraft:iron_chain"
+    "X": "psithurism:golden_chain"
   },
   "pattern": [
     "X X",
