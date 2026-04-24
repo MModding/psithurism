@@ -3,6 +3,7 @@ package com.mmodding.psithurism.client.init;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 
+// Blockbench Generated Models
 public class PsithurismModels {
 
 	public static LayerDefinition createKitsune() {
@@ -95,5 +96,24 @@ public class PsithurismModels {
 			.texOffs(0, 5).addBox(0.0F, -3.0F, -1.01F, 3.0F, 3.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(2.0F, -10.0F, -3.0F, 0.0F, 0.0F, 0.7854F));
 
 		return LayerDefinition.create(meshdefinition, 32, 32);
+	}
+
+	public static LayerDefinition createFoxTail() {
+		MeshDefinition meshdefinition = new MeshDefinition();
+		PartDefinition partdefinition = meshdefinition.getRoot();
+
+		PartDefinition junction = partdefinition.addOrReplaceChild("junction", CubeListBuilder.create().texOffs(0, 25).addBox(-1.0F, -1.0F, 2.0F, 2.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 13.0F, 0.0F));
+
+		PartDefinition cube_r1 = junction.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(24, 13).addBox(-2.0F, -2.0F, -1.0F, 4.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 4.0F, -0.4363F, 0.0F, 0.0F));
+
+		PartDefinition cube_r2 = junction.addOrReplaceChild("cube_r2", CubeListBuilder.create().texOffs(12, 25).addBox(-3.7014F, -2.3326F, 3.2327F, 0.0F, 5.0F, 2.0F, new CubeDeformation(0.0F))
+			.texOffs(8, 25).addBox(1.2986F, -2.3326F, 3.2327F, 0.0F, 5.0F, 2.0F, new CubeDeformation(0.0F))
+			.texOffs(24, 23).addBox(-3.7014F, 2.6674F, 3.2327F, 5.0F, 0.0F, 2.0F, new CubeDeformation(0.0F))
+			.texOffs(24, 21).addBox(-3.7014F, -2.3326F, 3.2327F, 5.0F, 0.0F, 2.0F, new CubeDeformation(0.0F))
+			.texOffs(0, 13).addBox(-3.7014F, -2.3326F, -3.7673F, 5.0F, 5.0F, 7.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.7014F, 5.8326F, 11.7673F, -0.2233F, 0.2129F, -0.0479F));
+
+		PartDefinition cube_r3 = junction.addOrReplaceChild("cube_r3", CubeListBuilder.create().texOffs(0, 0).addBox(-2.5F, -3.1905F, -2.6252F, 6.0F, 6.0F, 7.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-1.0F, 2.6905F, 7.6252F, -0.7974F, -0.1536F, 0.1555F));
+
+		return LayerDefinition.create(meshdefinition, 64, 64);
 	}
 }

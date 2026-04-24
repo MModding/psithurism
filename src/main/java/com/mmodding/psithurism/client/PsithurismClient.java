@@ -1,21 +1,17 @@
 package com.mmodding.psithurism.client;
 
-import com.mmodding.library.rendering.api.cosmetic.renderer.CapCosmeticRenderer;
 import com.mmodding.library.rendering.api.sprite.TextureAliases;
 import com.mmodding.psithurism.Psithurism;
-import com.mmodding.psithurism.client.init.PsithurismCosmetics;
 import com.mmodding.psithurism.client.init.PsithurismModelLayers;
+import com.mmodding.psithurism.client.init.PsithurismRenderers;
 import com.mmodding.psithurism.init.*;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleProviderRegistry;
-import net.fabricmc.fabric.api.client.rendering.v1.ArmorRenderer;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockColorRegistry;
 import net.minecraft.client.color.block.BlockTintSources;
 import net.minecraft.client.particle.FallingLeavesParticle;
-import net.minecraft.client.renderer.entity.BoatRenderer;
-import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.Identifier;
 
 import java.util.List;
@@ -26,14 +22,10 @@ public class PsithurismClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 		PsithurismModelLayers.register();
+		PsithurismRenderers.register();
 		TextureAliases.create(Psithurism.createId("block/dark_cherry_log"), Identifier.withDefaultNamespace("block/cherry_log"));
 		TextureAliases.create(Psithurism.createId("block/white_petals_stem"), Identifier.withDefaultNamespace("block/pink_petals_stem"));
 		BlockColorRegistry.register(List.of(BlockTintSources.constant(-1), BlockTintSources.grass()), PsithurismBlocks.WHITE_PETALS);
-		ArmorRenderer.register(context -> new CapCosmeticRenderer(PsithurismCosmetics.KITSUNE_MASK, CapCosmeticRenderer.Anchor.HEAD_CENTER, context), PsithurismItems.KITSUNE_MASK);
-		ArmorRenderer.register(context -> new CapCosmeticRenderer(PsithurismCosmetics.ONI_MASK, CapCosmeticRenderer.Anchor.HEAD_CENTER, context), PsithurismItems.ONI_MASK);
-		ArmorRenderer.register(context -> new CapCosmeticRenderer(PsithurismCosmetics.FOX_EARS, CapCosmeticRenderer.Anchor.HEAD_CENTER, context), PsithurismItems.FOX_EARS);
-		EntityRenderers.register(PsithurismWoodSets.DARK_CHERRY.getBoatEntityType(), context -> new BoatRenderer(context, PsithurismModelLayers.DARK_CHERRY_BOAT));
-		EntityRenderers.register(PsithurismWoodSets.DARK_CHERRY.getChestBoatEntityType(), context -> new BoatRenderer(context, PsithurismModelLayers.DARK_CHERRY_CHEST_BOAT));
 		ParticleProviderRegistry.getInstance().register(PsithurismParticleTypes.DARK_CHERRY_LEAVES, FallingLeavesParticle.CherryProvider::new);
 	}
 }
