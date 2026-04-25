@@ -8,6 +8,7 @@ import com.mmodding.library.core.api.management.ElementsManager;
 import com.mmodding.psithurism.resource.PsithurismFeaturePacks;
 import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.CreativeModeTab;
@@ -31,7 +32,9 @@ public class Psithurism implements ExtendedModInitializer {
 		manager.content(PsithurismWoodSets::register);
 		manager.content(PsithurismBlocks::register);
 		manager.content(PsithurismItems::register);
-		manager.resource(PsithurismFeaturePacks::register);
+		manager.content(PsithurismPlacedFeatures::register);
+		manager.resource(Registries.CONFIGURED_FEATURE, PsithurismFeaturePacks::registerConfigs);
+		manager.resource(Registries.PLACED_FEATURE, PsithurismFeaturePacks::registerPlacements);
 	}
 
 	@Override

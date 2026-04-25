@@ -9,6 +9,7 @@ public class PsithurismConfiguredFeatures {
 
 	public static final ResourceKey<ConfiguredFeature<?, ?>> DARK_CHERRY = create("dark_cherry");
 	public static final ResourceKey<ConfiguredFeature<?, ?>> DARK_CHERRY_BEES_005 = create("dark_cherry_bees_005");
+	public static final ResourceKey<ConfiguredFeature<?, ?>> FLOWER_DARK_CHERRY = create("flower_dark_cherry");
 
 	private static ResourceKey<ConfiguredFeature<?, ?>> create(String path) {
 		return ResourceKey.create(Registries.CONFIGURED_FEATURE, Psithurism.createId(path));

@@ -31,7 +31,6 @@ dependencies {
 
 	implementation libs.mmodding
 	implementation libs.fabric.api
-	compileOnly "dev.yumi.commons:yumi-commons:2.0.0"
 }
 
 fabricApi {
