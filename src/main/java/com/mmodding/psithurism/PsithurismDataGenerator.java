@@ -40,6 +40,7 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 			.chain(block -> block instanceof IronBarsBlock, PsithurismDataProcessors::createPaperWall)
 			.chain(block -> block instanceof ChainBlock, DefaultBlockModelProcessing::createChain)
 			.chain(block -> block instanceof StoneLanternBlock, PsithurismDataProcessors::createStoneLantern)
+			.chain(block -> block.builtInRegistryHolder().key().identifier().getPath().contains("waxed"), DefaultBlockModelProcessing::createWaxedTrapdoor)
 			.chain(block -> block instanceof TrapDoorBlock, BlockModelGenerators::createTrapdoor)
 			.chain(block -> block instanceof SlabBlock, DefaultBlockModelProcessing::createStandaloneSlab)
 			.chain(Set.of(PsithurismBlocks.RICE), PsithurismDataProcessors::createRiceCrop)
