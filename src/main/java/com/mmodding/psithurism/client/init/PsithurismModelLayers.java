@@ -13,6 +13,8 @@ public class PsithurismModelLayers {
 	public static final ModelLayerLocation ONI_MASK = createModelLayer("oni_mask");
 	public static final ModelLayerLocation WORN_ONI_MASK = createWornModelLayer("oni_mask");
 
+	public static final ModelLayerLocation STRAW_HAT = createModelLayer("straw_hat");
+
 	public static final ModelLayerLocation FOX_EARS = createModelLayer("fox_ears");
 
 	public static final ModelLayerLocation FOX_TAIL = createModelLayer("fox_tail");
@@ -33,6 +35,7 @@ public class PsithurismModelLayers {
 		ModelLayerRegistry.registerModelLayer(WORN_KITSUNE_MASK, PsithurismModels::createWornKitsune);
 		ModelLayerRegistry.registerModelLayer(ONI_MASK, PsithurismModels::createOni);
 		ModelLayerRegistry.registerModelLayer(WORN_ONI_MASK, PsithurismModels::createWornOni);
+		ModelLayerRegistry.registerModelLayer(STRAW_HAT, PsithurismModels::createStrawHat);
 		ModelLayerRegistry.registerModelLayer(FOX_EARS, PsithurismModels::createFoxEars);
 		ModelLayerRegistry.registerModelLayer(FOX_TAIL, PsithurismModels::createFoxTail);
 		ModelLayerRegistry.registerModelLayer(DARK_CHERRY_BOAT, BoatModel::createBoatModel);

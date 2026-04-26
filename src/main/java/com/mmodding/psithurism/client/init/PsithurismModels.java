@@ -83,6 +83,22 @@ public class PsithurismModels {
 		return LayerDefinition.create(meshdefinition, 64, 64);
 	}
 
+	public static LayerDefinition createStrawHat() {
+		MeshDefinition meshdefinition = new MeshDefinition();
+		PartDefinition partdefinition = meshdefinition.getRoot();
+
+		PartDefinition group = partdefinition.addOrReplaceChild("group", CubeListBuilder.create(), PartPose.offset(4.0F, 22.0F, 4.0F));
+
+		PartDefinition cube_r1 = group.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(0, 16).addBox(-4.01F, -3.01F, -4.0F, 8.02F, 3.0F, 8.0F, new CubeDeformation(0.0F))
+			.texOffs(0, 0).addBox(-8.0F, 0.0F, -8.0F, 16.0F, 0.0F, 16.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-4.0F, -7.0F, -3.0F, -0.4363F, 0.0F, 0.0F));
+
+		PartDefinition bb_main = partdefinition.addOrReplaceChild("bb_main", CubeListBuilder.create().texOffs(32, 16).addBox(-4.0F, -10.0F, -4.0F, 0.0F, 8.0F, 8.0F, new CubeDeformation(0.0F))
+			.texOffs(32, 32).addBox(4.0F, -10.0F, -4.0F, 0.0F, 8.0F, 8.0F, new CubeDeformation(0.0F))
+			.texOffs(0, 27).addBox(-4.0F, -2.0F, -4.0F, 8.0F, 0.0F, 8.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 24.0F, 0.0F));
+
+		return LayerDefinition.create(meshdefinition, 64, 64);
+	}
+
 	public static LayerDefinition createFoxEars() {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
