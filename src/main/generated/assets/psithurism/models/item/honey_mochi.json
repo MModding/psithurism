@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "psithurism:item/cherry_flower_crown"
+    "layer0": "psithurism:item/honey_mochi"
   }
 }

@@ -2,12 +2,12 @@
   "layers": {
     "humanoid": [
       {
-        "texture": "psithurism:cherry_flower_crown"
+        "texture": "psithurism:pink_petal_crown"
       }
     ],
     "humanoid_baby": [
       {
-        "texture": "psithurism:cherry_flower_crown"
+        "texture": "psithurism:pink_petal_crown"
       }
     ]
   }

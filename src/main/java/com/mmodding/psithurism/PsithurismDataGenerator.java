@@ -89,14 +89,14 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 						.key('A', Blocks.ANDESITE)
 						.key('B', Blocks.SMOOTH_BASALT)
 				)
-				.provide((provider, target) -> provider.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, target, Blocks.STONE));
+				.cutting(Blocks.STONE, RecipeCategory.BUILDING_BLOCKS, 1);
 			generator.forItem(PsithurismBlocks.ASHINO_BRICKS.getMain())
 				.shaped(
 					RecipeCategory.BUILDING_BLOCKS,
 					recipe -> recipe.pattern("##", "##")
 						.key('#', PsithurismBlocks.ASHINO_STONE.getMain())
 				)
-				.provide((provider, target) -> provider.stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, target, PsithurismBlocks.ASHINO_STONE.getMain()));
+				.cutting(PsithurismBlocks.ASHINO_STONE.getMain(), RecipeCategory.BUILDING_BLOCKS, 1);
 			generator.forItem(PsithurismItems.MISO_PASTE)
 				.smoking(PsithurismItems.SOJA_SEED, RecipeCategory.FOOD, 2, 20);
 		}

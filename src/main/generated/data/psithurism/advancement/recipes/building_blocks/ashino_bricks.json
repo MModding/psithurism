@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_ashino_bricks": {
+    "has_ashino_stone": {
       "conditions": {
         "items": [
           {
-            "items": "psithurism:ashino_bricks"
+            "items": "psithurism:ashino_stone"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_ashino_bricks"
+      "has_ashino_stone"
     ]
   ],
   "rewards": {

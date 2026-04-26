@@ -27,12 +27,22 @@ public class PsithurismItems {
 	public static final Item KITSUNE_TAIL = register("kitsune_tail", new Item.Properties().stacksTo(1).equippable(EquipmentSlot.LEGS).trinketSlots(List.of("legs/belt")));
 	public static final Item FOX_TAIL = register("fox_tail", new Item.Properties().stacksTo(1).equippable(EquipmentSlot.LEGS).trinketSlots(List.of("legs/belt")));
 
-	public static final Item FLOWER_CROWN = register(
-		"cherry_flower_crown",
+	public static final Item PINK_PETAL_CROWN = register(
+		"pink_petal_crown",
 		new Item.Properties().component(
 			DataComponents.EQUIPPABLE,
 			Equippable.builder(EquipmentSlot.HEAD)
-				.setAsset(ResourceKey.create(EquipmentAssets.ROOT_ID, Psithurism.createId("cherry_flower_crown")))
+				.setAsset(ResourceKey.create(EquipmentAssets.ROOT_ID, Psithurism.createId("pink_petal_crown")))
+				.build()
+		)
+	);
+
+	public static final Item WHITE_PETAL_CROWN = register(
+		"white_petal_crown",
+		new Item.Properties().component(
+			DataComponents.EQUIPPABLE,
+			Equippable.builder(EquipmentSlot.HEAD)
+				.setAsset(ResourceKey.create(EquipmentAssets.ROOT_ID, Psithurism.createId("white_petal_crown")))
 				.build()
 		)
 	);
@@ -50,6 +60,12 @@ public class PsithurismItems {
 	public static final Item TOFU = register("tofu", new Item.Properties());
 	public static final Item MISO_PASTE = register("miso_paste", new Item.Properties());
 	public static final Item MISO_SOUP = register("miso_soup", new Item.Properties());
+	public static final Item FUGU = register("fugu", new Item.Properties());
+	public static final Item TAKOYAKI = register("takoyaki", new Item.Properties());
+	public static final Item MOCHI = register("mochi", new Item.Properties());
+	public static final Item CHOCOLATE_MOCHI = register("chocolate_mochi", new Item.Properties());
+	public static final Item HONEY_MOCHI = register("honey_mochi", new Item.Properties());
+	public static final Item SWEET_BERRY_MOCHI = register("sweet_berry_mochi", new Item.Properties());
 
 	private static Item register(String path, Item.Properties properties) {
 		return register(path, Item::new, properties);

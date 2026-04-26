@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_miso_paste": {
+    "has_soja_seeds": {
       "conditions": {
         "items": [
           {
-            "items": "psithurism:miso_paste"
+            "items": "psithurism:soja_seeds"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_miso_paste"
+      "has_soja_seeds"
     ]
   ],
   "rewards": {

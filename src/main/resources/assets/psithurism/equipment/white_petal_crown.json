@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "psithurism:white_petal_crown"
+      }
+    ],
+    "humanoid_baby": [
+      {
+        "texture": "psithurism:white_petal_crown"
+      }
+    ]
+  }
+}

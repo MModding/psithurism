@@ -1,11 +1,21 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_ashino_stone": {
+    "has_andesite": {
       "conditions": {
         "items": [
           {
-            "items": "psithurism:ashino_stone"
+            "items": "minecraft:andesite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_smooth_basalt": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:smooth_basalt"
           }
         ]
       },
@@ -21,7 +31,8 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_ashino_stone"
+      "has_andesite",
+      "has_smooth_basalt"
     ]
   ],
   "rewards": {
