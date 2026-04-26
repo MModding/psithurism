@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "psithurism:block/orange_zabuton",
+    "side": "psithurism:block/orange_zabuton",
+    "top": "psithurism:block/orange_zabuton"
+  }
+}

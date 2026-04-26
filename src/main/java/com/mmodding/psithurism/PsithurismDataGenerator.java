@@ -40,6 +40,8 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 			.chain(block -> block instanceof IronBarsBlock, PsithurismDataProcessors::createPaperWall)
 			.chain(block -> block instanceof ChainBlock, DefaultBlockModelProcessing::createChain)
 			.chain(block -> block instanceof StoneLanternBlock, PsithurismDataProcessors::createStoneLantern)
+			.chain(block -> block instanceof TrapDoorBlock, BlockModelGenerators::createTrapdoor)
+			.chain(block -> block instanceof SlabBlock, DefaultBlockModelProcessing::createStandaloneSlab)
 			.chain(Set.of(PsithurismBlocks.RICE), PsithurismDataProcessors::createRiceCrop)
 			.chain(Set.of(PsithurismBlocks.CHERRY_BONSAI), PsithurismDataProcessors::createCherryBonsai)
 			.chain(Set.of(PsithurismBlocks.DARK_CHERRY_BONSAI), PsithurismDataProcessors::createDarkCherryBonsai)
@@ -47,9 +49,9 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 		manager.chain(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_LOOTS)
 			.chain(BlockLootSubProvider::dropSelf);
 		manager.task(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_TAGS, Set.of(PsithurismBlocks.RICE), (getter, block) -> getter.apply(BlockTags.MAINTAINS_FARMLAND).add(block));
-		manager.task(PsithurismWoodSets.class, DefaultDataHandlers.WOOD_SETS);
 		manager.task(PsithurismBlocks.class, DefaultDataHandlers.getTranslationHandler(Registries.BLOCK, Block.class), DefaultLangProcessors.CLASSIC);
 		manager.task(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_RELATIVES);
+		manager.task(PsithurismWoodSets.class, DefaultDataHandlers.WOOD_SETS);
 		manager.task(PsithurismItems.class, DefaultDataHandlers.ITEM_MODELS, item -> !item.equals(PsithurismItems.RICE_PLANT), (generator, item) -> generator.generateFlatItem(item, ModelTemplates.FLAT_ITEM));
 		manager.task(PsithurismItems.class, DefaultDataHandlers.ITEM_TAGS, Set.of(PsithurismItems.FAN_POTTERY_SHERD, PsithurismItems.TORII_POTTERY_SHERD), (getter, item) -> getter.apply(ItemTags.DECORATED_POT_SHERDS).add(item));
 		manager.task(PsithurismItems.class, DefaultDataHandlers.getTranslationHandler(Registries.ITEM, Item.class), DefaultLangProcessors.CLASSIC);

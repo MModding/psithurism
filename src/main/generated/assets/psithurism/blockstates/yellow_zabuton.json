@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "psithurism:block/yellow_zabuton"
+    },
+    "type=double": {
+      "model": "psithurism:block/yellow_zabuton_full"
+    },
+    "type=top": {
+      "model": "psithurism:block/yellow_zabuton_top"
+    }
+  }
+}

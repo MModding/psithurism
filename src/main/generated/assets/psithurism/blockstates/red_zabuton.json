@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "psithurism:block/red_zabuton"
+    },
+    "type=double": {
+      "model": "psithurism:block/red_zabuton_full"
+    },
+    "type=top": {
+      "model": "psithurism:block/red_zabuton_top"
+    }
+  }
+}
