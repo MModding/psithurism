@@ -12,6 +12,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.equipment.*;
 
+import java.util.List;
 import java.util.function.Function;
 
 public class PsithurismItems {
@@ -19,11 +20,11 @@ public class PsithurismItems {
 	public static final Item FAN_POTTERY_SHERD = register("fan_pottery_sherd", new Item.Properties().rarity(Rarity.UNCOMMON).decoratedPotPattern(PsithurismDecoratedPotPatterns.FAN));
 	public static final Item TORII_POTTERY_SHERD = register("torii_pottery_sherd", new Item.Properties().rarity(Rarity.UNCOMMON).decoratedPotPattern(PsithurismDecoratedPotPatterns.TORII));
 
-	public static final Item KITSUNE_MASK = register("kitsune_mask", MaskItem::new, new Item.Properties().stacksTo(1).equippable(EquipmentSlot.HEAD).component(PsithurismDataComponents.WORN_MASK, false));
-	public static final Item ONI_MASK = register("oni_mask", MaskItem::new, new Item.Properties().stacksTo(1).equippable(EquipmentSlot.HEAD).component(PsithurismDataComponents.WORN_MASK, false));
-	public static final Item FOX_EARS = register("fox_ears", new Item.Properties().stacksTo(1).equippable(EquipmentSlot.HEAD));
-	public static final Item KITSUNE_TAIL = register("kitsune_tail", new Item.Properties().stacksTo(1).equippable(EquipmentSlot.LEGS));
-	public static final Item FOX_TAIL = register("fox_tail", new Item.Properties().stacksTo(1).equippable(EquipmentSlot.LEGS));
+	public static final Item KITSUNE_MASK = register("kitsune_mask", MaskItem::new, new Item.Properties().stacksTo(1).equippable(EquipmentSlot.HEAD).component(PsithurismDataComponents.WORN_MASK, false).trinketSlots(List.of("head/face")));
+	public static final Item ONI_MASK = register("oni_mask", MaskItem::new, new Item.Properties().stacksTo(1).equippable(EquipmentSlot.HEAD).component(PsithurismDataComponents.WORN_MASK, false).trinketSlots(List.of("head/face")));
+	public static final Item FOX_EARS = register("fox_ears", new Item.Properties().stacksTo(1).equippable(EquipmentSlot.HEAD).trinketSlots(List.of("head/cap")));
+	public static final Item KITSUNE_TAIL = register("kitsune_tail", new Item.Properties().stacksTo(1).equippable(EquipmentSlot.LEGS).trinketSlots(List.of("legs/belt")));
+	public static final Item FOX_TAIL = register("fox_tail", new Item.Properties().stacksTo(1).equippable(EquipmentSlot.LEGS).trinketSlots(List.of("legs/belt")));
 
 	public static final Item FLOWER_CROWN = register(
 		"cherry_flower_crown",
