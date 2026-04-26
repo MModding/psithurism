@@ -53,6 +53,7 @@ mmodding {
 		namespace = "psithurism"
 		group = "com.mmodding"
 		icon = "assets/psithurism/icon.png"
+		license = "Code: PolyForm-Shield-1.0.0\\nAssets: All Rights Reserved"
 		addAuthor("MModding Team")
 		addContributor("Aethyus (Art Director, Project Manager)")
 		addContributor("Aeramisu (Art Director, Project Manager)")
