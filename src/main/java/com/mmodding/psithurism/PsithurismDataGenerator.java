@@ -37,7 +37,8 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 	public void setupManager(DataManager manager) {
 		manager.chain(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_MODELS)
 			.chain(block -> block instanceof FlowerBedBlock, BlockModelGenerators::createFlowerBed)
-			.chain(block -> block instanceof IronBarsBlock, PsithurismDataProcessors::createPaperWall)
+			.chain(block -> block instanceof IronBarsBlock && block.builtInRegistryHolder().key().identifier().getPath().contains("wall"), PsithurismDataProcessors::createPaperWall)
+			.chain(block -> block instanceof IronBarsBlock, PsithurismDataProcessors::createDarkCherryGlassPane)
 			.chain(block -> block instanceof ChainBlock, DefaultBlockModelProcessing::createChain)
 			.chain(block -> block instanceof StoneLanternBlock, PsithurismDataProcessors::createStoneLantern)
 			.chain(block -> block.builtInRegistryHolder().key().identifier().getPath().contains("waxed"), DefaultBlockModelProcessing::createWaxedTrapdoor)

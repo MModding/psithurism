@@ -66,6 +66,8 @@ public class PsithurismItems {
 	public static final Item CHOCOLATE_MOCHI = register("chocolate_mochi", new Item.Properties());
 	public static final Item HONEY_MOCHI = register("honey_mochi", new Item.Properties());
 	public static final Item SWEET_BERRY_MOCHI = register("sweet_berry_mochi", new Item.Properties());
+	public static final Item CUP = register("cup", new Item.Properties());
+	public static final Item MATCHA_CUP = register("matcha_cup", new Item.Properties());
 
 	private static Item register(String path, Item.Properties properties) {
 		return register(path, Item::new, properties);

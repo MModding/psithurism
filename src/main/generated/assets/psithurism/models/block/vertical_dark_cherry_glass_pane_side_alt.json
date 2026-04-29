@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/template_glass_pane_side_alt",
+  "textures": {
+    "edge": {
+      "force_translucent": true,
+      "sprite": "psithurism:block/dark_cherry_glass_pane_top"
+    },
+    "pane": "psithurism:block/vertical_dark_cherry_glass"
+  }
+}

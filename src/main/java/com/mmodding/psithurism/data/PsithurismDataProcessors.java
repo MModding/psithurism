@@ -38,6 +38,10 @@ public class PsithurismDataProcessors {
 		generator.createHorizontallyRotatedBlock(block, bonsaiProvider);
 	}
 
+	public static void createDarkCherryGlassPane(BlockModelGenerators generator, Block block) {
+		DefaultBlockModelProcessing.createPaneLike(generator, block, new Material(Psithurism.createId("block/dark_cherry_glass_pane_top")));
+	}
+
 	public static void createRiceCrop(BlockModelGenerators generator, Block block) {
 		generator.registerSimpleFlatItemModel(block.asItem());
 		generator.blockStateOutput.accept(
