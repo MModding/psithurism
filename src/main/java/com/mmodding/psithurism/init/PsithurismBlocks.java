@@ -8,8 +8,7 @@ import com.mmodding.library.block.api.wrapper.BlockRelatives;
 import com.mmodding.library.core.api.AdvancedContainer;
 import com.mmodding.library.java.api.function.AutoMapper;
 import com.mmodding.psithurism.Psithurism;
-import com.mmodding.psithurism.block.RiceCrop;
-import com.mmodding.psithurism.block.StoneLanternBlock;
+import com.mmodding.psithurism.block.*;
 import net.fabricmc.fabric.api.registry.OxidizableBlocksRegistry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -20,6 +19,8 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.PushReaction;
 
 public class PsithurismBlocks {
+
+	public static final Block ONSEN_WATER = register("onsen_water", properties -> new LiquidBlock(PsithurismFluids.FLOWING_ONSEN_WATER, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER));
 
 	public static final Block WHITE_PETALS = register("white_petals", FlowerBedBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.PINK_PETALS)).registerItem();
 
@@ -49,12 +50,27 @@ public class PsithurismBlocks {
 	public static final Block VERTICAL_DARK_CHERRY_GLASS_PANE = register("vertical_dark_cherry_glass_pane", IronBarsBlock::new, BlockBehaviour.Properties.ofFullCopy(PsithurismWoodSets.DARK_CHERRY.getWood()).noOcclusion()).registerItem();
 	public static final Block TILED_DARK_CHERRY_GLASS_PANE = register("tiled_dark_cherry_glass_pane", IronBarsBlock::new, BlockBehaviour.Properties.ofFullCopy(PsithurismWoodSets.DARK_CHERRY.getWood()).noOcclusion()).registerItem();
 
+	public static final Block SMALL_TATAMI = register("small_tatami", BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET)).registerItem();
+	public static final Block MEDIUM_TATAMI = register("medium_tatami", MediumTatamiBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET)).registerItem();
+	public static final Block LARGE_TATAMI = register("large_tatami", LargeTatamiBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET)).registerItem();
+	public static final Block SMALL_TATAMI_MAT = register("small_tatami_mat", CarpetBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET)).registerItem();
+	public static final Block MEDIUM_TATAMI_MAT = register("medium_tatami_mat", MediumTatamiMatBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET)).registerItem();
+	public static final Block LARGE_TATAMI_MAT = register("large_tatami_mat", LargeTatamiMatBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET)).registerItem();
+
 	public static final Block STONE_LANTERN = register("stone_lantern", StoneLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).sound(SoundType.STONE).lightLevel(state -> state.getValue(BlockStateProperties.LIT) ? 15 : 0)).registerItem();
 	public static final Block NAMAKO_KABE = register("namako_kabe", BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
+	public static final Block THREAD = register("thread", ChainBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
 
 	public static final BlockRelatives ASHINO_STONE = BlockRelatives.registerStone(Psithurism.createId("ashino_stone"), AutoMapper.identity(), false, false);
 	public static final BlockRelatives ASHINO_BRICKS = BlockRelatives.registerStone(Psithurism.createId("ashino_brick"), true, AutoMapper.identity(), false, false);
 	public static final BlockRelatives MOSSY_ASHINO_BRICKS = BlockRelatives.registerStone(Psithurism.createId("mossy_ashino_brick"), true, AutoMapper.identity(), false, false);
+	public static final BlockRelatives CRACKED_ASHINO_STONE_BRICKS = BlockRelatives.registerStone(Psithurism.createId("cracked_ashino_stone_brick"), true, AutoMapper.identity(), false, false);
+	public static final Block CHISELED_ASHINO_STONE_BRICKS = register("chiseled_ashino_stone_bricks", BlockBehaviour.Properties.ofFullCopy(Blocks.CHISELED_STONE_BRICKS)).registerItem();
+
+	public static final BlockRelatives STONE_KAWARA_TILES = BlockRelatives.registerStone(Psithurism.createId("stone_kawara_tile"), true, AutoMapper.identity(), false, false);
+	public static final BlockRelatives DEEPSLATE_KAWARA_TILES = BlockRelatives.registerStone(Psithurism.createId("deepslate_kawara_tile"), true, AutoMapper.identity(), false, false);
+	public static final BlockRelatives BLACKSTONE_KAWARA_TILES = BlockRelatives.registerStone(Psithurism.createId("blackstone_kawara_tile"), true, AutoMapper.identity(), false, false);
+	public static final BlockRelatives ASHINO_KAWARA_TILES = BlockRelatives.registerStone(Psithurism.createId("ashino_kawara_tile"), true, AutoMapper.identity(), false, false);
 
 	public static final Block RICE = register("rice", RiceCrop::new, BlockBehaviour.Properties.of().noCollision().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY));
 
@@ -74,7 +90,7 @@ public class PsithurismBlocks {
 		return register(path, Block::new, properties);
 	}
 
-	private static <T extends Block>Block register(String path, BlockFactory<T> factory, BlockBehaviour.Properties properties) {
+	private static <T extends Block> Block register(String path, BlockFactory<T> factory, BlockBehaviour.Properties properties) {
 		return Blocks.register(ResourceKey.create(Registries.BLOCK, Psithurism.createId(path)), factory::make, properties);
 	}
 

@@ -9,9 +9,10 @@ import com.mmodding.library.datagen.api.model.block.DefaultBlockModelProcessing;
 import com.mmodding.library.datagen.api.provider.MModdingLanguageProvider;
 import com.mmodding.library.datagen.api.provider.MModdingRecipeProvider;
 import com.mmodding.library.datagen.api.recipe.RecipeGenerator;
-import com.mmodding.psithurism.block.StoneLanternBlock;
+import com.mmodding.psithurism.block.*;
 import com.mmodding.psithurism.data.PsithurismDataProcessors;
 import com.mmodding.psithurism.init.PsithurismBlocks;
+import com.mmodding.psithurism.init.PsithurismFluids;
 import com.mmodding.psithurism.init.PsithurismItems;
 import com.mmodding.psithurism.init.PsithurismWoodSets;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
@@ -19,11 +20,14 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.data.models.model.TextureMapping;
+import net.minecraft.client.data.models.model.TexturedModel;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -44,12 +48,17 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 			.chain(block -> block.builtInRegistryHolder().key().identifier().getPath().contains("waxed"), DefaultBlockModelProcessing::createWaxedTrapdoor)
 			.chain(block -> block instanceof TrapDoorBlock, BlockModelGenerators::createTrapdoor)
 			.chain(block -> block instanceof SlabBlock, DefaultBlockModelProcessing::createStandaloneSlab)
+			.chain(block -> block instanceof CarpetBlock, DefaultBlockModelProcessing.createWithProvider(TexturedModel.CARPET))
+			.chain(block -> block instanceof MediumTatamiMatBlock, PsithurismDataProcessors::createMediumTatamiMat)
+			.chain(block -> block instanceof MediumTatamiBlock, PsithurismDataProcessors::createMediumTatami)
+			.chain(block -> block instanceof LargeTatamiMatBlock, PsithurismDataProcessors.createLargeTatami(ModelTemplates.CARPET, TextureMapping::wool))
+			.chain(block -> block instanceof LargeTatamiBlock, PsithurismDataProcessors.createLargeTatami(ModelTemplates.CUBE_ALL, TextureMapping::cube))
 			.chain(Set.of(PsithurismBlocks.RICE), PsithurismDataProcessors::createRiceCrop)
 			.chain(Set.of(PsithurismBlocks.CHERRY_BONSAI), PsithurismDataProcessors::createCherryBonsai)
 			.chain(Set.of(PsithurismBlocks.DARK_CHERRY_BONSAI), PsithurismDataProcessors::createDarkCherryBonsai)
-			.chain(BlockModelGenerators::createTrivialCube);
+			.chain(block -> !(block instanceof LiquidBlock), BlockModelGenerators::createTrivialCube);
 		manager.chain(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_LOOTS)
-			.chain(BlockLootSubProvider::dropSelf);
+			.chain(block -> !(block instanceof LiquidBlock), BlockLootSubProvider::dropSelf);
 		manager.task(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_TAGS, Set.of(PsithurismBlocks.RICE), (getter, block) -> getter.apply(BlockTags.MAINTAINS_FARMLAND).add(block));
 		manager.task(PsithurismBlocks.class, DefaultDataHandlers.getTranslationHandler(Registries.BLOCK, Block.class), DefaultLangProcessors.CLASSIC);
 		manager.task(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_RELATIVES);
@@ -64,6 +73,7 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 		pack.addProvider(PsithurismLanguageProvider::new);
 		pack.addProvider(PsithurismRecipes::new);
 		pack.addProvider(PsithurismBlockTags::new);
+		pack.addProvider(PsithurismFluidTags::new);
 	}
 
 	private static class PsithurismLanguageProvider extends MModdingLanguageProvider {
@@ -122,7 +132,26 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 			this.valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
 				.forceAddTag(PsithurismBlocks.ASHINO_STONE.getBlockTagKey())
 				.forceAddTag(PsithurismBlocks.ASHINO_BRICKS.getBlockTagKey())
-				.forceAddTag(PsithurismBlocks.MOSSY_ASHINO_BRICKS.getBlockTagKey());
+				.forceAddTag(PsithurismBlocks.MOSSY_ASHINO_BRICKS.getBlockTagKey())
+				.forceAddTag(PsithurismBlocks.CRACKED_ASHINO_STONE_BRICKS.getBlockTagKey())
+				.forceAddTag(PsithurismBlocks.STONE_KAWARA_TILES.getBlockTagKey())
+				.forceAddTag(PsithurismBlocks.DEEPSLATE_KAWARA_TILES.getBlockTagKey())
+				.forceAddTag(PsithurismBlocks.BLACKSTONE_KAWARA_TILES.getBlockTagKey())
+				.forceAddTag(PsithurismBlocks.ASHINO_KAWARA_TILES.getBlockTagKey());
+		}
+	}
+
+	private static class PsithurismFluidTags extends FabricTagsProvider.FluidTagsProvider {
+
+		public PsithurismFluidTags(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> future) {
+			super(output, future);
+		}
+
+		@Override
+		protected void addTags(HolderLookup.Provider registries) {
+			this.valueLookupBuilder(FluidTags.WATER)
+				.add(PsithurismFluids.FLOWING_ONSEN_WATER)
+				.add(PsithurismFluids.ONSEN_WATER);
 		}
 	}
 }

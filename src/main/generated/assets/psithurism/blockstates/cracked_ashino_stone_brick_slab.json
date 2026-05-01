@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "psithurism:block/cracked_ashino_stone_brick_slab"
+    },
+    "type=double": {
+      "model": "psithurism:block/cracked_ashino_stone_bricks"
+    },
+    "type=top": {
+      "model": "psithurism:block/cracked_ashino_stone_brick_slab_top"
+    }
+  }
+}

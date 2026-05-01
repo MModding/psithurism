@@ -1,0 +1,7 @@
+{
+  "parent": "mmodding:block/cube_roll",
+  "textures": {
+    "end": "psithurism:block/small_tatami",
+    "side": "psithurism:block/medium_tatami_right_side"
+  }
+}

@@ -2,6 +2,11 @@
   "values": [
     "#psithurism:ashino_stone",
     "#psithurism:ashino_bricks",
-    "#psithurism:mossy_ashino_bricks"
+    "#psithurism:mossy_ashino_bricks",
+    "#psithurism:cracked_ashino_stone_bricks",
+    "#psithurism:stone_kawara_tiles",
+    "#psithurism:deepslate_kawara_tiles",
+    "#psithurism:blackstone_kawara_tiles",
+    "#psithurism:ashino_kawara_tiles"
   ]
 }

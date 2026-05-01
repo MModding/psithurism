@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "psithurism:block/stone_kawara_tiles"
+  }
+}

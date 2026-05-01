@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "psithurism:stone_kawara_tiles",
+  "result": {
+    "id": "psithurism:stone_kawara_tile_stairs"
+  }
+}

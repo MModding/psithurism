@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_wall_side",
+  "textures": {
+    "wall": "psithurism:block/blackstone_kawara_tiles"
+  }
+}

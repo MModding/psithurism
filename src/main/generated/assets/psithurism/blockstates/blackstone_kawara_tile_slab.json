@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "psithurism:block/blackstone_kawara_tile_slab"
+    },
+    "type=double": {
+      "model": "psithurism:block/blackstone_kawara_tiles"
+    },
+    "type=top": {
+      "model": "psithurism:block/blackstone_kawara_tile_slab_top"
+    }
+  }
+}

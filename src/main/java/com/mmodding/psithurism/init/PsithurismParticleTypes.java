@@ -8,8 +8,12 @@ import net.minecraft.core.registries.BuiltInRegistries;
 public class PsithurismParticleTypes {
 
 	public static final SimpleParticleType DARK_CHERRY_LEAVES = FabricParticleTypes.simple();
+	public static final SimpleParticleType ONSEN_STEAM = FabricParticleTypes.simple();
 
 	public static void register(AdvancedContainer mod) {
-		mod.register(BuiltInRegistries.PARTICLE_TYPE, "dark_cherry_leaves", DARK_CHERRY_LEAVES);
+		mod.register(BuiltInRegistries.PARTICLE_TYPE, factory -> {
+			factory.register("dark_cherry_leaves", DARK_CHERRY_LEAVES);
+			factory.register("onsen_steam", ONSEN_STEAM);
+		});
 	}
 }

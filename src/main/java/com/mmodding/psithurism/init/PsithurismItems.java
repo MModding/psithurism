@@ -7,6 +7,7 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
@@ -46,6 +47,8 @@ public class PsithurismItems {
 				.build()
 		)
 	);
+
+	public static final Item ONSEN_WATER_BUCKET = register("onsen_water_bucket", properties -> new BucketItem(PsithurismFluids.ONSEN_WATER, properties), new Item.Properties().stacksTo(1));
 
 	public static final Item RICE_PLANT = register("rice_plant", Items.createBlockItemWithCustomItemName(PsithurismBlocks.RICE), new Item.Properties());
 	public static final Item RICE = register("rice", new Item.Properties());

@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,x=0": {
+      "model": "psithurism:block/medium_tatami_mat_left_side",
+      "y": 90
+    },
+    "facing=east,x=1": {
+      "model": "psithurism:block/medium_tatami_mat_right_side",
+      "y": 90
+    },
+    "facing=north,x=0": {
+      "model": "psithurism:block/medium_tatami_mat_left_side"
+    },
+    "facing=north,x=1": {
+      "model": "psithurism:block/medium_tatami_mat_right_side"
+    },
+    "facing=south,x=0": {
+      "model": "psithurism:block/medium_tatami_mat_left_side",
+      "y": 180
+    },
+    "facing=south,x=1": {
+      "model": "psithurism:block/medium_tatami_mat_right_side",
+      "y": 180
+    },
+    "facing=west,x=0": {
+      "model": "psithurism:block/medium_tatami_mat_left_side",
+      "y": 270
+    },
+    "facing=west,x=1": {
+      "model": "psithurism:block/medium_tatami_mat_right_side",
+      "y": 270
+    }
+  }
+}
