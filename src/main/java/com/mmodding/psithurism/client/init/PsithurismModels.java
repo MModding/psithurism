@@ -133,6 +133,33 @@ public class PsithurismModels {
 		return LayerDefinition.create(meshdefinition, 64, 64);
 	}
 
+	public static LayerDefinition createSchoolBag() {
+		MeshDefinition meshdefinition = new MeshDefinition();
+		PartDefinition partdefinition = meshdefinition.getRoot();
+
+		PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, -4.0F, 2.0F, 8.0F, 9.0F, 4.0F, new CubeDeformation(0.0F))
+			.texOffs(0, 14).addBox(-4.2F, -4.0F, 2.0F, 0.0F, 1.0F, 4.0F, new CubeDeformation(0.0F))
+			.texOffs(0, 14).addBox(4.2F, -4.0F, 2.0F, 0.0F, 1.0F, 4.0F, new CubeDeformation(0.0F))
+			.texOffs(0, 13).addBox(-4.0F, -4.0F, 6.2F, 8.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
+			.texOffs(0, 14).addBox(4.2F, 2.0F, 2.0F, 0.0F, 1.0F, 4.0F, new CubeDeformation(0.0F))
+			.texOffs(0, 14).addBox(-4.2F, 2.0F, 2.0F, 0.0F, 1.0F, 4.0F, new CubeDeformation(0.0F))
+			.texOffs(0, 13).addBox(-4.0F, 2.0F, 6.2F, 8.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
+			.texOffs(0, 14).addBox(-4.01F, -1.0F, -2.0F, 0.0F, 1.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 15.0F, 0.0F));
+
+		PartDefinition cube_r1 = body.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(8, 15).addBox(-4.0F, -4.0F, -1.99F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
+			.texOffs(8, 14).addBox(-4.0F, -4.0F, -6.01F, 5.0F, 1.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -1.0F, 4.0F, 0.0F, 0.0F, 1.5708F));
+
+		PartDefinition cube_r2 = body.addOrReplaceChild("cube_r2", CubeListBuilder.create().texOffs(8, 15).addBox(-4.0F, -4.0F, -1.99F, 1.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
+			.texOffs(8, 14).addBox(-4.0F, -4.0F, -6.01F, 5.0F, 1.0F, 0.0F, new CubeDeformation(0.0F))
+			.texOffs(0, 14).addBox(-4.01F, -4.0F, -6.0F, 0.0F, 1.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-7.0F, -1.0F, 4.0F, 0.0F, 0.0F, 1.5708F));
+
+		PartDefinition cube_r3 = body.addOrReplaceChild("cube_r3", CubeListBuilder.create().texOffs(0, 14).addBox(-4.01F, -4.0F, -2.0F, 0.0F, 1.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -4.0F, 0.0F, 0.0F, 0.0F, -3.1416F));
+
+		PartDefinition cube_r4 = body.addOrReplaceChild("cube_r4", CubeListBuilder.create().texOffs(0, 14).addBox(-4.01F, -5.0F, -2.0F, 0.0F, 1.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-1.0F, -1.0F, 0.0F, 0.0F, 0.0F, 1.5708F));
+
+		return LayerDefinition.create(meshdefinition, 32, 32);
+	}
+
 	public static LayerDefinition createKoi() {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();

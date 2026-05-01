@@ -20,6 +20,8 @@ public class PsithurismModelLayers {
 
 	public static final ModelLayerLocation FOX_TAIL = createModelLayer("fox_tail");
 
+	public static final ModelLayerLocation SCHOOL_BAG = createModelLayer("school_bag");
+
 	public static final ModelLayerLocation KOI = createModelLayer("koi");
 	public static final ModelLayerLocation KOI_LARGE = createModelLayer("koi_large");
 	public static final ModelLayerLocation KOI_SMALL = createModelLayer("koi_small");
@@ -43,6 +45,7 @@ public class PsithurismModelLayers {
 		ModelLayerRegistry.registerModelLayer(STRAW_HAT, PsithurismModels::createStrawHat);
 		ModelLayerRegistry.registerModelLayer(FOX_EARS, PsithurismModels::createFoxEars);
 		ModelLayerRegistry.registerModelLayer(FOX_TAIL, PsithurismModels::createFoxTail);
+		ModelLayerRegistry.registerModelLayer(SCHOOL_BAG, PsithurismModels::createSchoolBag);
 		ModelLayerRegistry.registerModelLayer(KOI, PsithurismModels::createKoi);
 		ModelLayerRegistry.registerModelLayer(KOI_LARGE, () -> PsithurismModels.createKoi().apply(SalmonModel.LARGE_TRANSFORMER));
 		ModelLayerRegistry.registerModelLayer(KOI_SMALL, () -> PsithurismModels.createKoi().apply(SalmonModel.SMALL_TRANSFORMER));

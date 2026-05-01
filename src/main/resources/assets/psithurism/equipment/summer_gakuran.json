@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "psithurism:summer_gakuran"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "psithurism:summer_gakuran"
+      }
+    ]
+  }
+}

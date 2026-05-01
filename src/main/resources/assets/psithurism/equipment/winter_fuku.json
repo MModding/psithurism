@@ -1,0 +1,15 @@
+
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "psithurism:winter_fuku"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "psithurism:winter_fuku"
+      }
+    ]
+  }
+}

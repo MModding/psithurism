@@ -3,6 +3,7 @@ package com.mmodding.psithurism.client.init;
 import com.mmodding.library.rendering.api.cosmetic.Cosmetic;
 import com.mmodding.library.rendering.api.cosmetic.SimpleCosmetic;
 import com.mmodding.psithurism.Psithurism;
+import com.mmodding.psithurism.client.cosmetic.BagCosmetic;
 import com.mmodding.psithurism.client.cosmetic.EarsCosmetic;
 import com.mmodding.psithurism.client.cosmetic.MaskCosmetic;
 import com.mmodding.psithurism.client.cosmetic.TailCosmetic;
@@ -15,4 +16,6 @@ public class PsithurismCosmetics {
 	public static final Cosmetic STRAW_HAT = new SimpleCosmetic(PsithurismModelLayers.STRAW_HAT, Psithurism.createTexture("hat/straw"));
 	public static final Cosmetic KITSUNE_TAIL = new TailCosmetic("kitsune", PsithurismModelLayers.FOX_TAIL);
 	public static final Cosmetic FOX_TAIL = new TailCosmetic("fox", PsithurismModelLayers.FOX_TAIL);
+	public static final Cosmetic WINTER_SCHOOL_BAG = new BagCosmetic("school_winter", PsithurismModelLayers.SCHOOL_BAG);
+	public static final Cosmetic SUMMER_SCHOOL_BAG = new BagCosmetic("school_summer", PsithurismModelLayers.SCHOOL_BAG);
 }

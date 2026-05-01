@@ -18,6 +18,8 @@ public class PsithurismRenderers {
 		CosmeticRendererRegistry.registerCapRenderer(PsithurismCosmetics.STRAW_HAT, HeadAnchor.HEAD_CENTER, PsithurismItems.STRAW_HAT);
 		CosmeticRendererRegistry.registerPantsRenderer(PsithurismCosmetics.KITSUNE_TAIL, PsithurismItems.KITSUNE_TAIL);
 		CosmeticRendererRegistry.registerPantsRenderer(PsithurismCosmetics.FOX_TAIL, PsithurismItems.FOX_TAIL);
+		CosmeticRendererRegistry.registerSuitRenderer(PsithurismCosmetics.WINTER_SCHOOL_BAG, PsithurismItems.WINTER_SCHOOL_BAG);
+		CosmeticRendererRegistry.registerSuitRenderer(PsithurismCosmetics.SUMMER_SCHOOL_BAG, PsithurismItems.SUMMER_SCHOOL_BAG);
 		EntityRenderers.register(PsithurismEntityTypes.KOI, KoiRenderer::new);
 		EntityRenderers.register(PsithurismWoodSets.DARK_CHERRY.getBoatEntityType(), context -> new BoatRenderer(context, PsithurismModelLayers.DARK_CHERRY_BOAT));
 		EntityRenderers.register(PsithurismWoodSets.DARK_CHERRY.getChestBoatEntityType(), context -> new BoatRenderer(context, PsithurismModelLayers.DARK_CHERRY_CHEST_BOAT));
