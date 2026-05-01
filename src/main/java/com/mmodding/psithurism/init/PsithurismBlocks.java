@@ -67,6 +67,8 @@ public class PsithurismBlocks {
 	public static final BlockRelatives CRACKED_ASHINO_STONE_BRICKS = BlockRelatives.registerStone(Psithurism.createId("cracked_ashino_stone_brick"), true, AutoMapper.identity(), false, false);
 	public static final Block CHISELED_ASHINO_STONE_BRICKS = register("chiseled_ashino_stone_bricks", BlockBehaviour.Properties.ofFullCopy(Blocks.CHISELED_STONE_BRICKS)).registerItem();
 
+	public static final Block ASHINO_STONE_PEDESTAL = register("ashino_stone_pedestal", AshinoStonePedestalBlock::new, BlockBehaviour.Properties.ofFullCopy(ASHINO_STONE.getMain())).registerItem();
+
 	public static final BlockRelatives STONE_KAWARA_TILES = BlockRelatives.registerStone(Psithurism.createId("stone_kawara_tile"), true, AutoMapper.identity(), false, false);
 	public static final BlockRelatives DEEPSLATE_KAWARA_TILES = BlockRelatives.registerStone(Psithurism.createId("deepslate_kawara_tile"), true, AutoMapper.identity(), false, false);
 	public static final BlockRelatives BLACKSTONE_KAWARA_TILES = BlockRelatives.registerStone(Psithurism.createId("blackstone_kawara_tile"), true, AutoMapper.identity(), false, false);

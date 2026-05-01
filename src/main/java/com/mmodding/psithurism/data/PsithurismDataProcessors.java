@@ -13,6 +13,7 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.*;
+import net.minecraft.client.renderer.block.dispatch.Variant;
 import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
@@ -43,6 +44,10 @@ public class PsithurismDataProcessors {
 	public static void createBonsai(BlockModelGenerators generator, Block block, TexturedModel.Provider bonsaiProvider) {
 		generator.registerSimpleFlatItemModel(block.asItem());
 		generator.createHorizontallyRotatedBlock(block, bonsaiProvider);
+	}
+
+	public static void createAshinoStonePedestal(BlockModelGenerators generator, Block block) {
+		generator.blockStateOutput.accept(MultiVariantGenerator.dispatch(block, createRotatedVariants(new Variant(ModelLocationUtils.getModelLocation(block)))));
 	}
 
 	public static void createDarkCherryGlassPane(BlockModelGenerators generator, Block block) {

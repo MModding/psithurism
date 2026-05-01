@@ -1,0 +1,23 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"texture": "psithurism:block/ashino_stone_pedestal",
+		"particle": "psithurism:block/ashino_bricks"
+	},
+	"elements": [
+		{
+			"from": [5, 0, 5],
+			"to": [11, 16, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 3, 8], "texture": "#texture"},
+				"east": {"uv": [3, 0, 6, 8], "texture": "#texture"},
+				"south": {"uv": [6, 0, 9, 8], "texture": "#texture"},
+				"west": {"uv": [0, 8, 3, 16], "texture": "#texture"},
+				"up": {"uv": [6, 11, 3, 8], "texture": "#texture"},
+				"down": {"uv": [9, 8, 6, 11], "texture": "#texture"}
+			}
+		}
+	]
+}

@@ -53,10 +53,12 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 			.chain(block -> block instanceof MediumTatamiBlock, PsithurismDataProcessors::createMediumTatami)
 			.chain(block -> block instanceof LargeTatamiMatBlock, PsithurismDataProcessors.createLargeTatami(ModelTemplates.CARPET, TextureMapping::wool))
 			.chain(block -> block instanceof LargeTatamiBlock, PsithurismDataProcessors.createLargeTatami(ModelTemplates.CUBE_ALL, TextureMapping::cube))
+			.chain(block -> block instanceof LiquidBlock, BlockModelGenerators::createNonTemplateModelBlock)
+			.chain(Set.of(PsithurismBlocks.ASHINO_STONE_PEDESTAL), PsithurismDataProcessors::createAshinoStonePedestal)
 			.chain(Set.of(PsithurismBlocks.RICE), PsithurismDataProcessors::createRiceCrop)
 			.chain(Set.of(PsithurismBlocks.CHERRY_BONSAI), PsithurismDataProcessors::createCherryBonsai)
 			.chain(Set.of(PsithurismBlocks.DARK_CHERRY_BONSAI), PsithurismDataProcessors::createDarkCherryBonsai)
-			.chain(block -> !(block instanceof LiquidBlock), BlockModelGenerators::createTrivialCube);
+			.chain(BlockModelGenerators::createTrivialCube);
 		manager.chain(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_LOOTS)
 			.chain(block -> !(block instanceof LiquidBlock), BlockLootSubProvider::dropSelf);
 		manager.task(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_TAGS, Set.of(PsithurismBlocks.RICE), (getter, block) -> getter.apply(BlockTags.MAINTAINS_FARMLAND).add(block));

@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "psithurism:block/ashino_stone_pedestal"
+      },
+      {
+        "model": "psithurism:block/ashino_stone_pedestal",
+        "y": 90
+      },
+      {
+        "model": "psithurism:block/ashino_stone_pedestal",
+        "y": 180
+      },
+      {
+        "model": "psithurism:block/ashino_stone_pedestal",
+        "y": 270
+      }
+    ]
+  }
+}
