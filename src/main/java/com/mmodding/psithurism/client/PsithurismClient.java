@@ -40,7 +40,7 @@ public class PsithurismClient implements ClientModInitializer {
 				new Material(Identifier.withDefaultNamespace("block/water_still")),
 				new Material(Identifier.withDefaultNamespace("block/water_flow")),
 				new Material(Identifier.withDefaultNamespace("block/water_overlay")),
-				BlockTintSources.constant(Color.rgb(182, 202, 203).toDecimal())
+				BlockTintSources.constant(Color.rgb(147, 218, 230).toDecimal())
 			)
 		);
 	}

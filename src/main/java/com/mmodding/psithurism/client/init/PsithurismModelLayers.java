@@ -2,6 +2,7 @@ package com.mmodding.psithurism.client.init;
 
 import com.mmodding.psithurism.Psithurism;
 import net.fabricmc.fabric.api.client.rendering.v1.ModelLayerRegistry;
+import net.minecraft.client.model.animal.fish.SalmonModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.object.boat.BoatModel;
 
@@ -18,6 +19,10 @@ public class PsithurismModelLayers {
 	public static final ModelLayerLocation FOX_EARS = createModelLayer("fox_ears");
 
 	public static final ModelLayerLocation FOX_TAIL = createModelLayer("fox_tail");
+
+	public static final ModelLayerLocation KOI = createModelLayer("koi");
+	public static final ModelLayerLocation KOI_LARGE = createModelLayer("koi_large");
+	public static final ModelLayerLocation KOI_SMALL = createModelLayer("koi_small");
 
 	public static final ModelLayerLocation DARK_CHERRY_BOAT = createModelLayer("boat/dark_cherry");
 	public static final ModelLayerLocation DARK_CHERRY_CHEST_BOAT = createModelLayer("chest_boat/dark_cherry");
@@ -38,6 +43,9 @@ public class PsithurismModelLayers {
 		ModelLayerRegistry.registerModelLayer(STRAW_HAT, PsithurismModels::createStrawHat);
 		ModelLayerRegistry.registerModelLayer(FOX_EARS, PsithurismModels::createFoxEars);
 		ModelLayerRegistry.registerModelLayer(FOX_TAIL, PsithurismModels::createFoxTail);
+		ModelLayerRegistry.registerModelLayer(KOI, PsithurismModels::createKoi);
+		ModelLayerRegistry.registerModelLayer(KOI_LARGE, () -> PsithurismModels.createKoi().apply(SalmonModel.LARGE_TRANSFORMER));
+		ModelLayerRegistry.registerModelLayer(KOI_SMALL, () -> PsithurismModels.createKoi().apply(SalmonModel.SMALL_TRANSFORMER));
 		ModelLayerRegistry.registerModelLayer(DARK_CHERRY_BOAT, BoatModel::createBoatModel);
 		ModelLayerRegistry.registerModelLayer(DARK_CHERRY_CHEST_BOAT, BoatModel::createChestBoatModel);
 	}
