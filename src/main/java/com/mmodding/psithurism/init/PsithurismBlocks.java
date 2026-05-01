@@ -1,5 +1,6 @@
 package com.mmodding.psithurism.init;
 
+import com.mmodding.library.block.api.catalog.HorizontalFacingCarpetBlock;
 import com.mmodding.library.block.api.catalog.SimpleHorizontalFacingBlock;
 import com.mmodding.library.block.api.util.BlockFactory;
 import com.mmodding.library.block.api.util.BlockHeapUtil;
@@ -50,12 +51,19 @@ public class PsithurismBlocks {
 	public static final Block VERTICAL_DARK_CHERRY_GLASS_PANE = register("vertical_dark_cherry_glass_pane", IronBarsBlock::new, BlockBehaviour.Properties.ofFullCopy(PsithurismWoodSets.DARK_CHERRY.getWood()).noOcclusion()).registerItem();
 	public static final Block TILED_DARK_CHERRY_GLASS_PANE = register("tiled_dark_cherry_glass_pane", IronBarsBlock::new, BlockBehaviour.Properties.ofFullCopy(PsithurismWoodSets.DARK_CHERRY.getWood()).noOcclusion()).registerItem();
 
-	public static final Block SMALL_TATAMI = register("small_tatami", BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET)).registerItem();
+	public static final Block SMALL_TATAMI = register("small_tatami", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET)).registerItem();
 	public static final Block MEDIUM_TATAMI = register("medium_tatami", MediumTatamiBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET)).registerItem();
 	public static final Block LARGE_TATAMI = register("large_tatami", LargeTatamiBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET)).registerItem();
-	public static final Block SMALL_TATAMI_MAT = register("small_tatami_mat", CarpetBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET)).registerItem();
+	public static final Block SMALL_TATAMI_MAT = register("small_tatami_mat", HorizontalFacingCarpetBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET)).registerItem();
 	public static final Block MEDIUM_TATAMI_MAT = register("medium_tatami_mat", MediumTatamiMatBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET)).registerItem();
 	public static final Block LARGE_TATAMI_MAT = register("large_tatami_mat", LargeTatamiMatBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET)).registerItem();
+
+	public static final Block SMALL_PLAITED_TATAMI = register("small_plaited_tatami", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET)).registerItem();
+	public static final Block MEDIUM_PLAITED_TATAMI = register("medium_plaited_tatami", MediumTatamiBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET)).registerItem();
+	public static final Block LARGE_PLAITED_TATAMI = register("large_plaited_tatami", LargeTatamiBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET)).registerItem();
+	public static final Block SMALL_PLAITED_TATAMI_MAT = register("small_plaited_tatami_mat", HorizontalFacingCarpetBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET)).registerItem();
+	public static final Block MEDIUM_PLAITED_TATAMI_MAT = register("medium_plaited_tatami_mat", MediumTatamiMatBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET)).registerItem();
+	public static final Block LARGE_PLAITED_TATAMI_MAT = register("large_plaited_tatami_mat", LargeTatamiMatBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET)).registerItem();
 
 	public static final Block STONE_LANTERN = register("stone_lantern", StoneLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).sound(SoundType.STONE).lightLevel(state -> state.getValue(BlockStateProperties.LIT) ? 15 : 0)).registerItem();
 	public static final Block NAMAKO_KABE = register("namako_kabe", BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "psithurism:block/medium_tatami"
+    "layer0": "psithurism:item/medium_tatami"
   }
 }

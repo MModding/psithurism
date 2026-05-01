@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "psithurism:block/small_plaited_tatami",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "psithurism:block/small_plaited_tatami"
+    },
+    "facing=south": {
+      "model": "psithurism:block/small_plaited_tatami",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "psithurism:block/small_plaited_tatami",
+      "y": 270
+    }
+  }
+}

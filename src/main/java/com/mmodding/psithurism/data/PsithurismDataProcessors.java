@@ -73,8 +73,21 @@ public class PsithurismDataProcessors {
 		);
 	}
 
+	public static void createSmallTatamiMat(BlockModelGenerators generator, Block block) {
+		generator.registerSimpleFlatItemModel(block.asItem());
+		String tatamiPath = block.builtInRegistryHolder().key().identifier().getPath().replace("_mat", "");
+		Identifier model = ModelTemplates.CARPET.create(ModelLocationUtils.getModelLocation(block), new TextureMapping().put(TextureSlot.WOOL, new Material(Psithurism.createId("block/" + tatamiPath))), generator.modelOutput);
+		generator.blockStateOutput.accept(MultiVariantGenerator.dispatch(block, plainVariant(model)).with(ROTATION_HORIZONTAL_FACING));
+	}
+
+	public static void createSmallTatami(BlockModelGenerators generator, Block block) {
+		generator.registerSimpleFlatItemModel(block.asItem());
+		Identifier model = TexturedModel.CUBE.create(block, generator.modelOutput);
+		generator.blockStateOutput.accept(MultiVariantGenerator.dispatch(block, plainVariant(model)).with(ROTATION_HORIZONTAL_FACING));
+	}
+
 	public static void createMediumTatamiMat(BlockModelGenerators generator, Block block) {
-		generator.registerSimpleFlatItemModel(block);
+		generator.registerSimpleFlatItemModel(block.asItem());
 		String tatamiPath = block.builtInRegistryHolder().key().identifier().getPath().replace("_mat", "");
 		Material left = new Material(Psithurism.createId("block/" + tatamiPath + "_left_side"));
 		Material right = new Material(Psithurism.createId("block/" + tatamiPath + "_right_side"));
@@ -96,7 +109,7 @@ public class PsithurismDataProcessors {
 	}
 
 	public static void createMediumTatami(BlockModelGenerators generator, Block block) {
-		generator.registerSimpleFlatItemModel(block);
+		generator.registerSimpleFlatItemModel(block.asItem());
 		String tatamiPath = block.builtInRegistryHolder().key().identifier().getPath();
 		Material single = new Material(Psithurism.createId("block/" + tatamiPath.replace("medium_", "small_")));
 		Material left = new Material(Psithurism.createId("block/" + tatamiPath + "_left_side"));
@@ -117,6 +130,38 @@ public class PsithurismDataProcessors {
 					PropertyDispatch.initial(MediumTatamiBlock.X)
 						.select(0, plainVariant(leftSide))
 						.select(1, plainVariant(rightSide))
+				)
+				.with(ROTATION_HORIZONTAL_FACING)
+		);
+	}
+
+	public static void createLargeTatamiMat(BlockModelGenerators generator, Block block) {
+		generator.registerSimpleFlatItemModel(block.asItem());
+		String tatamiPath = block.builtInRegistryHolder().key().identifier().getPath().replace("_mat", "");
+		Material topLeft = new Material(Psithurism.createId("block/" + tatamiPath + "_top_left_corner"));
+		Material bottomLeft = new Material(Psithurism.createId("block/" + tatamiPath + "_bottom_left_corner"));
+		Material topRight = new Material(Psithurism.createId("block/" + tatamiPath + "_top_right_corner"));
+		Material bottomRight = new Material(Psithurism.createId("block/" + tatamiPath + "_bottom_right_corner"));
+		Identifier topLeftCorner = ModelTemplates.CARPET.createWithSuffix(
+			block, "_top_left_corner", new TextureMapping().put(TextureSlot.WOOL, topLeft), generator.modelOutput
+		);
+		Identifier bottomLeftCorner = ModelTemplates.CARPET.createWithSuffix(
+			block, "_bottom_left_corner", new TextureMapping().put(TextureSlot.WOOL, bottomLeft), generator.modelOutput
+		);
+		Identifier topRightCorner = ModelTemplates.CARPET.createWithSuffix(
+			block, "_top_right_corner", new TextureMapping().put(TextureSlot.WOOL, topRight), generator.modelOutput
+		);
+		Identifier bottomRightCorner = ModelTemplates.CARPET.createWithSuffix(
+			block, "_bottom_right_corner", new TextureMapping().put(TextureSlot.WOOL, bottomRight), generator.modelOutput
+		);
+		generator.blockStateOutput.accept(
+			MultiVariantGenerator.dispatch(block)
+				.with(
+					PropertyDispatch.initial(LargeTatamiBlock.X, LargeTatamiBlock.Z)
+						.select(0, 0, plainVariant(topLeftCorner))
+						.select(0, 1, plainVariant(bottomLeftCorner))
+						.select(1, 0, plainVariant(topRightCorner))
+						.select(1, 1, plainVariant(bottomRightCorner))
 				)
 				.with(ROTATION_HORIZONTAL_FACING)
 		);

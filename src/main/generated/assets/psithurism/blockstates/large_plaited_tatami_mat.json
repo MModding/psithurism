@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=east,x=0,z=0": {
+      "model": "psithurism:block/large_plaited_tatami_mat_top_left_corner",
+      "y": 90
+    },
+    "facing=east,x=0,z=1": {
+      "model": "psithurism:block/large_plaited_tatami_mat_bottom_left_corner",
+      "y": 90
+    },
+    "facing=east,x=1,z=0": {
+      "model": "psithurism:block/large_plaited_tatami_mat_top_right_corner",
+      "y": 90
+    },
+    "facing=east,x=1,z=1": {
+      "model": "psithurism:block/large_plaited_tatami_mat_bottom_right_corner",
+      "y": 90
+    },
+    "facing=north,x=0,z=0": {
+      "model": "psithurism:block/large_plaited_tatami_mat_top_left_corner"
+    },
+    "facing=north,x=0,z=1": {
+      "model": "psithurism:block/large_plaited_tatami_mat_bottom_left_corner"
+    },
+    "facing=north,x=1,z=0": {
+      "model": "psithurism:block/large_plaited_tatami_mat_top_right_corner"
+    },
+    "facing=north,x=1,z=1": {
+      "model": "psithurism:block/large_plaited_tatami_mat_bottom_right_corner"
+    },
+    "facing=south,x=0,z=0": {
+      "model": "psithurism:block/large_plaited_tatami_mat_top_left_corner",
+      "y": 180
+    },
+    "facing=south,x=0,z=1": {
+      "model": "psithurism:block/large_plaited_tatami_mat_bottom_left_corner",
+      "y": 180
+    },
+    "facing=south,x=1,z=0": {
+      "model": "psithurism:block/large_plaited_tatami_mat_top_right_corner",
+      "y": 180
+    },
+    "facing=south,x=1,z=1": {
+      "model": "psithurism:block/large_plaited_tatami_mat_bottom_right_corner",
+      "y": 180
+    },
+    "facing=west,x=0,z=0": {
+      "model": "psithurism:block/large_plaited_tatami_mat_top_left_corner",
+      "y": 270
+    },
+    "facing=west,x=0,z=1": {
+      "model": "psithurism:block/large_plaited_tatami_mat_bottom_left_corner",
+      "y": 270
+    },
+    "facing=west,x=1,z=0": {
+      "model": "psithurism:block/large_plaited_tatami_mat_top_right_corner",
+      "y": 270
+    },
+    "facing=west,x=1,z=1": {
+      "model": "psithurism:block/large_plaited_tatami_mat_bottom_right_corner",
+      "y": 270
+    }
+  }
+}

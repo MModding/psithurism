@@ -2,7 +2,7 @@
   "values": [
     "psithurism:deepslate_kawara_tiles",
     "psithurism:deepslate_kawara_tile_stairs",
-    "psithurism:deepslate_kawara_tile_wall",
-    "psithurism:deepslate_kawara_tile_slab"
+    "psithurism:deepslate_kawara_tile_slab",
+    "psithurism:deepslate_kawara_tile_wall"
   ]
 }

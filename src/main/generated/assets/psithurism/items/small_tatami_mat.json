@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "psithurism:block/small_tatami_mat"
+    "model": "psithurism:item/small_tatami_mat"
   }
 }

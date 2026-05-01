@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/carpet",
+  "textures": {
+    "wool": "psithurism:block/medium_plaited_tatami_left_side"
+  }
+}

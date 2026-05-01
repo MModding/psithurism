@@ -21,7 +21,6 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.data.models.model.TextureMapping;
-import net.minecraft.client.data.models.model.TexturedModel;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
@@ -48,10 +47,11 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 			.chain(block -> block.builtInRegistryHolder().key().identifier().getPath().contains("waxed"), DefaultBlockModelProcessing::createWaxedTrapdoor)
 			.chain(block -> block instanceof TrapDoorBlock, BlockModelGenerators::createTrapdoor)
 			.chain(block -> block instanceof SlabBlock, DefaultBlockModelProcessing::createStandaloneSlab)
-			.chain(block -> block instanceof CarpetBlock, DefaultBlockModelProcessing.createWithProvider(TexturedModel.CARPET))
+			.chain(Set.of(PsithurismBlocks.SMALL_TATAMI, PsithurismBlocks.SMALL_PLAITED_TATAMI), PsithurismDataProcessors::createSmallTatami)
+			.chain(block -> block instanceof CarpetBlock, PsithurismDataProcessors::createSmallTatamiMat)
 			.chain(block -> block instanceof MediumTatamiMatBlock, PsithurismDataProcessors::createMediumTatamiMat)
 			.chain(block -> block instanceof MediumTatamiBlock, PsithurismDataProcessors::createMediumTatami)
-			.chain(block -> block instanceof LargeTatamiMatBlock, PsithurismDataProcessors.createLargeTatami(ModelTemplates.CARPET, TextureMapping::wool))
+			.chain(block -> block instanceof LargeTatamiMatBlock, PsithurismDataProcessors::createLargeTatamiMat)
 			.chain(block -> block instanceof LargeTatamiBlock, PsithurismDataProcessors.createLargeTatami(ModelTemplates.CUBE_ALL, TextureMapping::cube))
 			.chain(block -> block instanceof LiquidBlock, BlockModelGenerators::createNonTemplateModelBlock)
 			.chain(Set.of(PsithurismBlocks.ASHINO_STONE_PEDESTAL), PsithurismDataProcessors::createAshinoStonePedestal)
