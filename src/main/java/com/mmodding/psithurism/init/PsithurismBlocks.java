@@ -68,6 +68,7 @@ public class PsithurismBlocks {
 	public static final Block STONE_LANTERN = register("stone_lantern", StoneLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).sound(SoundType.STONE).lightLevel(state -> state.getValue(BlockStateProperties.LIT) ? 15 : 0)).registerItem();
 	public static final Block NAMAKO_KABE = register("namako_kabe", BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
 	public static final Block THREAD = register("thread", ChainBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
+	public static final Block MANEKI_NEKO = register("maneki_neko", ManekiNekoBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
 
 	public static final BlockRelatives ASHINO_STONE = BlockRelatives.registerStone(Psithurism.createId("ashino_stone"), AutoMapper.identity(), false, false);
 	public static final BlockRelatives ASHINO_BRICKS = BlockRelatives.registerStone(Psithurism.createId("ashino_brick"), true, AutoMapper.identity(), false, false);

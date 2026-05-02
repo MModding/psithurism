@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "psithurism:block/ashino_stone_pedestal"
+    "model": "psithurism:item/ashino_stone_pedestal"
   }
 }

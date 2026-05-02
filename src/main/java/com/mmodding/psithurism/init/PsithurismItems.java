@@ -69,7 +69,6 @@ public class PsithurismItems {
 	public static final Item CUP = register("cup", new Item.Properties());
 	public static final Item MATCHA_CUP = register("matcha_cup", new Item.Properties());
 
-
 	private static Item registerEquippableItem(String path, EquipmentSlot slot, Item.Properties properties) {
 		return registerEquippableItem(path, path, slot, properties);
 	}

@@ -14,8 +14,8 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 public class AshinoStonePedestalBlock extends RotatedPillarBlock {
 
 	private static final VoxelShape SHAPE_Y_AXIS = Block.column(6.0, 0.0, 16.0);
-	private static final VoxelShape SHAPE_X_AXIS = Shapes.rotate(SHAPE_Y_AXIS, OctahedralGroup.BLOCK_ROT_Z_180);
-	private static final VoxelShape SHAPE_Z_AXIS = Shapes.rotate(SHAPE_Y_AXIS, OctahedralGroup.BLOCK_ROT_X_180);
+	private static final VoxelShape SHAPE_X_AXIS = Shapes.rotate(SHAPE_Y_AXIS, OctahedralGroup.BLOCK_ROT_Z_90);
+	private static final VoxelShape SHAPE_Z_AXIS = Shapes.rotate(SHAPE_Y_AXIS, OctahedralGroup.BLOCK_ROT_X_90);
 
 	public AshinoStonePedestalBlock(Properties properties) {
 		super(properties);

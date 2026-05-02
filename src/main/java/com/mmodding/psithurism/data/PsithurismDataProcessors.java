@@ -47,7 +47,11 @@ public class PsithurismDataProcessors {
 	}
 
 	public static void createAshinoStonePedestal(BlockModelGenerators generator, Block block) {
-		generator.blockStateOutput.accept(MultiVariantGenerator.dispatch(block, createRotatedVariants(new Variant(ModelLocationUtils.getModelLocation(block)))));
+		generator.registerSimpleFlatItemModel(block.asItem());
+		generator.blockStateOutput.accept(
+			MultiVariantGenerator.dispatch(block, plainVariant(ModelLocationUtils.getModelLocation(block)))
+				.with(createRotatedPillar())
+		);
 	}
 
 	public static void createDarkCherryGlassPane(BlockModelGenerators generator, Block block) {
