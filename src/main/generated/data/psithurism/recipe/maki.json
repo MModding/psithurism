@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "psithurism:nori_algae",
+    "R": "psithurism:rice",
+    "S": "minecraft:salmon"
+  },
+  "pattern": [
+    "RS",
+    "RA"
+  ],
+  "result": {
+    "count": 2,
+    "id": "psithurism:maki"
+  }
+}

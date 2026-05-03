@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "psithurism:nori_algae",
+    "B": "minecraft:bowl",
+    "P": "psithurism:miso_paste",
+    "T": "psithurism:tofu"
+  },
+  "pattern": [
+    "TP",
+    "AB"
+  ],
+  "result": {
+    "id": "psithurism:miso_soup"
+  }
+}

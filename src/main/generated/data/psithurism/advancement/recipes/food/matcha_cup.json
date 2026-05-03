@@ -1,0 +1,65 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bamboo": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:bamboo"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cup": {
+      "conditions": {
+        "items": [
+          {
+            "items": "psithurism:cup"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_kelp": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:kelp"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_mangrove_propagule": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:mangrove_propagule"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "psithurism:matcha_cup"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_bamboo",
+      "has_mangrove_propagule",
+      "has_cup",
+      "has_kelp"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "psithurism:matcha_cup"
+    ]
+  }
+}

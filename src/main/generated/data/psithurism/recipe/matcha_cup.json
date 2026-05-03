@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "minecraft:bamboo",
+    "C": "psithurism:cup",
+    "K": "minecraft:kelp",
+    "M": "minecraft:mangrove_propagule"
+  },
+  "pattern": [
+    "BM",
+    "CK"
+  ],
+  "result": {
+    "id": "psithurism:matcha_cup"
+  }
+}

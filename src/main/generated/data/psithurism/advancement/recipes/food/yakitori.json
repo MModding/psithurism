@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cooked_beef": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:cooked_beef"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_milk_bucket": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:milk_bucket"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_stick": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:stick"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "psithurism:yakitori"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cooked_beef",
+      "has_stick",
+      "has_milk_bucket"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "psithurism:yakitori"
+    ]
+  }
+}

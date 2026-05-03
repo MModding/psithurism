@@ -1,0 +1,65 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bowl": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:bowl"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_miso_paste": {
+      "conditions": {
+        "items": [
+          {
+            "items": "psithurism:miso_paste"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_nori_algae": {
+      "conditions": {
+        "items": [
+          {
+            "items": "psithurism:nori_algae"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "psithurism:miso_soup"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tofu": {
+      "conditions": {
+        "items": [
+          {
+            "items": "psithurism:tofu"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_tofu",
+      "has_miso_paste",
+      "has_nori_algae",
+      "has_bowl"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "psithurism:miso_soup"
+    ]
+  }
+}

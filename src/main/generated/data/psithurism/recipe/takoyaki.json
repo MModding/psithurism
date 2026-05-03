@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "minecraft:water_bucket",
+    "C": "minecraft:cod",
+    "W": "minecraft:wheat"
+  },
+  "pattern": [
+    "CB",
+    "WW"
+  ],
+  "result": {
+    "id": "psithurism:takoyaki"
+  }
+}

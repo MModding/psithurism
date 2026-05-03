@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "R": "psithurism:rice"
+  },
+  "pattern": [
+    "RR",
+    "RR"
+  ],
+  "result": {
+    "id": "psithurism:rice_flour"
+  }
+}

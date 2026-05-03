@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "psithurism:mochi",
+    "minecraft:cocoa_beans"
+  ],
+  "result": {
+    "id": "psithurism:chocolate_mochi"
+  }
+}

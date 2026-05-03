@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "R": "psithurism:rice",
+    "S": "minecraft:salmon"
+  },
+  "pattern": [
+    "S  ",
+    "RRR"
+  ],
+  "result": {
+    "id": "psithurism:nigiri"
+  }
+}

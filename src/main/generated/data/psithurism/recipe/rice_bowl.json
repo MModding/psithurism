@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "psithurism:rice",
+    "psithurism:rice",
+    "psithurism:rice",
+    "psithurism:rice",
+    "psithurism:rice",
+    "psithurism:rice",
+    "psithurism:rice",
+    "psithurism:rice",
+    "minecraft:bowl"
+  ],
+  "result": {
+    "id": "psithurism:rice_bowl"
+  }
+}

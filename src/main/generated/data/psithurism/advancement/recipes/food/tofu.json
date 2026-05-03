@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_brown_mushroom": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:brown_mushroom"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_miso_paste": {
+      "conditions": {
+        "items": [
+          {
+            "items": "psithurism:miso_paste"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "psithurism:tofu"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_brown_mushroom",
+      "has_miso_paste"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "psithurism:tofu"
+    ]
+  }
+}

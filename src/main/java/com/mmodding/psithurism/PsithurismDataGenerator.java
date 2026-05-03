@@ -649,8 +649,127 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 						.key('B', Blocks.BLUE_WOOL)
 						.key('G', Items.GOLD_NUGGET)
 				);
+			generator.forItem(PsithurismItems.RICE_FLOUR)
+				.shaped(
+					RecipeCategory.FOOD,
+					recipe -> recipe.pattern("RR", "RR")
+						.key('R', PsithurismItems.RICE)
+				);
+			generator.forItem(PsithurismItems.RICE_BOWL)
+				.shapeless(
+					RecipeCategory.FOOD,
+					recipe -> recipe.with(
+						PsithurismItems.RICE, PsithurismItems.RICE, PsithurismItems.RICE,
+						PsithurismItems.RICE, PsithurismItems.RICE, PsithurismItems.RICE,
+						PsithurismItems.RICE, PsithurismItems.RICE, Items.BOWL)
+				);
+			generator.forItem(PsithurismItems.NIGIRI)
+				.shaped(
+					RecipeCategory.FOOD,
+					recipe -> recipe.pattern(" S ", "RRR")
+						.key('S', Items.SALMON)
+						.key('R', PsithurismItems.RICE)
+				)
+				.shaped(
+					"_from_left", RecipeCategory.FOOD,
+					recipe -> recipe.pattern("S  ", "RRR")
+						.key('S', Items.SALMON)
+						.key('R', PsithurismItems.RICE)
+				)
+				.shaped(
+					"_from_right", RecipeCategory.FOOD,
+					recipe -> recipe.pattern("  S", "RRR")
+						.key('S', Items.SALMON)
+						.key('R', PsithurismItems.RICE)
+				);
+			generator.forItem(PsithurismItems.MAKI)
+				.shaped(
+					2, RecipeCategory.FOOD,
+					recipe -> recipe.pattern("RS", "RA")
+						.key('R', PsithurismItems.RICE)
+						.key('S', Items.SALMON)
+						.key('A', PsithurismItems.NORI_ALGAE)
+				);
+			generator.forItem(PsithurismItems.NORI_ALGAE)
+				.shaped(
+					2, RecipeCategory.FOOD,
+					recipe -> recipe.pattern("###", "###")
+						.key('#', Items.DRIED_KELP)
+				);
+			generator.forItem(PsithurismItems.YAKITORI)
+				.shaped(
+					2, RecipeCategory.FOOD,
+					recipe -> recipe.pattern("BB", "SM")
+						.key('B', Items.COOKED_BEEF)
+						.key('S', Items.STICK)
+						.key('M', Items.MILK_BUCKET)
+				);
 			generator.forItem(PsithurismItems.MISO_PASTE)
 				.smoking(PsithurismItems.SOYBEANS, RecipeCategory.FOOD, 2, 20);
+			generator.forItem(PsithurismItems.TOFU)
+				.shaped(
+					3, RecipeCategory.FOOD,
+					recipe -> recipe.pattern("M", "P")
+						.key('M', Items.BROWN_MUSHROOM)
+						.key('P', PsithurismItems.MISO_PASTE)
+				);
+			generator.forItem(PsithurismItems.MISO_SOUP)
+				.shaped(
+					RecipeCategory.FOOD,
+					recipe -> recipe.pattern("TP", "AB")
+						.key('T', PsithurismItems.TOFU)
+						.key('P', PsithurismItems.MISO_PASTE)
+						.key('A', PsithurismItems.NORI_ALGAE)
+						.key('B', Items.BOWL)
+				);
+			generator.forItem(PsithurismItems.FUGU)
+				.smoking(Items.PUFFERFISH, RecipeCategory.FOOD, 2, 20);
+			generator.forItem(PsithurismItems.TAKOYAKI)
+				.shaped(
+					RecipeCategory.FOOD,
+					recipe -> recipe.pattern("CB", "WW")
+						.key('C', Items.COD)
+						.key('B', Items.WATER_BUCKET)
+						.key('W', Items.WHEAT)
+				);
+			generator.forItem(PsithurismItems.MOCHI)
+				.shaped(
+					2, RecipeCategory.FOOD,
+					recipe -> recipe.pattern("SF", "FF")
+						.key('S', Items.SUGAR)
+						.key('F', PsithurismItems.RICE_FLOUR)
+				);
+			generator.forItem(PsithurismItems.CHOCOLATE_MOCHI)
+				.shapeless(
+					RecipeCategory.FOOD,
+					recipe -> recipe.with(PsithurismItems.MOCHI, Items.COCOA_BEANS)
+				);
+			generator.forItem(PsithurismItems.HONEY_MOCHI)
+				.shapeless(
+					RecipeCategory.FOOD,
+					recipe -> recipe.with(PsithurismItems.MOCHI, Items.HONEY_BOTTLE)
+				);
+			generator.forItem(PsithurismItems.SWEET_BERRY_MOCHI)
+				.shapeless(
+					RecipeCategory.FOOD,
+					recipe -> recipe.with(PsithurismItems.MOCHI, Items.SWEET_BERRIES)
+				);
+			generator.forItem(PsithurismItems.CUP)
+				.shaped(
+					RecipeCategory.FOOD,
+					recipe -> recipe.pattern(" S", "BS")
+						.key('S', Items.STICK)
+						.key('B', Items.BOWL)
+				);
+			generator.forItem(PsithurismItems.MATCHA_CUP)
+				.shaped(
+					RecipeCategory.FOOD,
+					recipe -> recipe.pattern("BM", "CK")
+						.key('B', Items.BAMBOO)
+						.key('M', Items.MANGROVE_PROPAGULE)
+						.key('C', PsithurismItems.CUP)
+						.key('K', Items.KELP)
+				);
 		}
 
 		@Override

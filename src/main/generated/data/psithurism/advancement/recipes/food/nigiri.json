@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_rice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "psithurism:rice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_salmon": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:salmon"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "psithurism:nigiri"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_salmon",
+      "has_rice"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "psithurism:nigiri"
+    ]
+  }
+}

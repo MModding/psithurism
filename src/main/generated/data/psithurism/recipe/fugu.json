@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 20,
+  "experience": 2.0,
+  "ingredient": "minecraft:pufferfish",
+  "result": {
+    "id": "psithurism:fugu"
+  }
+}

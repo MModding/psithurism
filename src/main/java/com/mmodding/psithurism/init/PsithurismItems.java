@@ -60,7 +60,7 @@ public class PsithurismItems {
 	public static final Item SOYA_GROWTHS = register("soya_growths", new Item.Properties().food(PsithurismFoods.SOYA_GROWTHS));
 	public static final Item TOFU = register("tofu", new Item.Properties().food(PsithurismFoods.TOFU));
 	public static final Item MISO_PASTE = register("miso_paste", new Item.Properties());
-	public static final Item MISO_SOUP = register("miso_soup", new Item.Properties().food(PsithurismFoods.MISO_SOUP));
+	public static final Item MISO_SOUP = register("miso_soup", new Item.Properties().food(PsithurismFoods.MISO_SOUP).usingConvertsTo(Items.BOWL));
 	public static final Item FUGU = register("fugu", new Item.Properties().food(PsithurismFoods.FUGU, PsithurismConsumables.FUGU));
 	public static final Item TAKOYAKI = register("takoyaki", new Item.Properties().food(PsithurismFoods.TAKOYAKI));
 	public static final Item MOCHI = register("mochi", new Item.Properties().food(PsithurismFoods.MOCHI, PsithurismConsumables.MOCHI));

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "minecraft:cooked_beef",
+    "M": "minecraft:milk_bucket",
+    "S": "minecraft:stick"
+  },
+  "pattern": [
+    "BB",
+    "SM"
+  ],
+  "result": {
+    "count": 2,
+    "id": "psithurism:yakitori"
+  }
+}
