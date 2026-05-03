@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_soja_seeds": {
+    "has_soybeans": {
       "conditions": {
         "items": [
           {
-            "items": "psithurism:soja_seeds"
+            "items": "psithurism:soybeans"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_soja_seeds"
+      "has_soybeans"
     ]
   ],
   "rewards": {

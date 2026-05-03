@@ -49,26 +49,26 @@ public class PsithurismItems {
 	public static final Item KOI_WATER_BUCKET = register("koi_water_bucket", properties -> new MobBucketItem(PsithurismEntityTypes.KOI, PsithurismFluids.ONSEN_WATER, SoundEvents.BUCKET_EMPTY_FISH, properties), new Item.Properties().stacksTo(1));
 
 	public static final Item RICE_PLANT = register("rice_plant", Items.createBlockItemWithCustomItemName(PsithurismBlocks.RICE), new Item.Properties());
-	public static final Item RICE = register("rice", new Item.Properties());
+	public static final Item RICE = register("rice", new Item.Properties().food(PsithurismFoods.RICE, PsithurismConsumables.RICE));
 	public static final Item RICE_FLOUR = register("rice_flour", new Item.Properties());
-	public static final Item RICE_BOWL = register("rice_bowl", new Item.Properties());
-	public static final Item NIGIRI = register("nigiri", new Item.Properties());
+	public static final Item RICE_BOWL = register("rice_bowl", new Item.Properties().food(PsithurismFoods.RICE_BOWL).usingConvertsTo(Items.BOWL));
+	public static final Item NIGIRI = register("nigiri", new Item.Properties().food(PsithurismFoods.NIGIRI));
 	public static final Item NORI_ALGAE = register("nori_algae", new Item.Properties());
-	public static final Item MAKI = register("maki", new Item.Properties());
-	public static final Item YAKITORI = register("yakitori", new Item.Properties());
-	public static final Item SOJA_SEED = register("soja_seeds", new Item.Properties());
-	public static final Item SOJA_GROWTHS = register("soja_growths", new Item.Properties());
-	public static final Item TOFU = register("tofu", new Item.Properties());
+	public static final Item MAKI = register("maki", new Item.Properties().food(PsithurismFoods.MAKI, PsithurismConsumables.MAKI));
+	public static final Item YAKITORI = register("yakitori", new Item.Properties().food(PsithurismFoods.YAKITORI));
+	public static final Item SOYBEANS = register("soybeans", new Item.Properties().food(PsithurismFoods.SOYBEANS, PsithurismConsumables.SOYBEANS));
+	public static final Item SOYA_GROWTHS = register("soya_growths", new Item.Properties().food(PsithurismFoods.SOYA_GROWTHS));
+	public static final Item TOFU = register("tofu", new Item.Properties().food(PsithurismFoods.TOFU));
 	public static final Item MISO_PASTE = register("miso_paste", new Item.Properties());
-	public static final Item MISO_SOUP = register("miso_soup", new Item.Properties());
-	public static final Item FUGU = register("fugu", new Item.Properties());
-	public static final Item TAKOYAKI = register("takoyaki", new Item.Properties());
-	public static final Item MOCHI = register("mochi", new Item.Properties());
-	public static final Item CHOCOLATE_MOCHI = register("chocolate_mochi", new Item.Properties());
-	public static final Item HONEY_MOCHI = register("honey_mochi", new Item.Properties());
-	public static final Item SWEET_BERRY_MOCHI = register("sweet_berry_mochi", new Item.Properties());
+	public static final Item MISO_SOUP = register("miso_soup", new Item.Properties().food(PsithurismFoods.MISO_SOUP));
+	public static final Item FUGU = register("fugu", new Item.Properties().food(PsithurismFoods.FUGU, PsithurismConsumables.FUGU));
+	public static final Item TAKOYAKI = register("takoyaki", new Item.Properties().food(PsithurismFoods.TAKOYAKI));
+	public static final Item MOCHI = register("mochi", new Item.Properties().food(PsithurismFoods.MOCHI, PsithurismConsumables.MOCHI));
+	public static final Item CHOCOLATE_MOCHI = register("chocolate_mochi", new Item.Properties().food(PsithurismFoods.CHOCOLATE_MOCHI, PsithurismConsumables.CHOCOLATE_MOCHI));
+	public static final Item HONEY_MOCHI = register("honey_mochi", new Item.Properties().food(PsithurismFoods.HONEY_MOCHI, PsithurismConsumables.HONEY_MOCHI));
+	public static final Item SWEET_BERRY_MOCHI = register("sweet_berry_mochi", new Item.Properties().food(PsithurismFoods.SWEET_BERRY_MOCHI, PsithurismConsumables.SWEET_BERRY_MOCHI));
 	public static final Item CUP = register("cup", new Item.Properties());
-	public static final Item MATCHA_CUP = register("matcha_cup", new Item.Properties());
+	public static final Item MATCHA_CUP = register("matcha_cup", new Item.Properties().food(PsithurismFoods.MATCHA_CUP, PsithurismConsumables.MATCHA_CUP).usingConvertsTo(CUP));
 
 	private static Item registerEquippableItem(String path, EquipmentSlot slot, Item.Properties properties) {
 		return registerEquippableItem(path, path, slot, properties);

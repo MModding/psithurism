@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "psithurism:item/soja_growths"
+    "layer0": "psithurism:item/soybeans"
   }
 }

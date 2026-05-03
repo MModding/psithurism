@@ -22,7 +22,6 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
-import net.minecraft.client.data.models.model.TextureMapping;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
@@ -128,7 +127,7 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 				)
 				.cutting(PsithurismBlocks.ASHINO_STONE.getMain(), RecipeCategory.BUILDING_BLOCKS, 1);
 			generator.forItem(PsithurismItems.MISO_PASTE)
-				.smoking(PsithurismItems.SOJA_SEED, RecipeCategory.FOOD, 2, 20);
+				.smoking(PsithurismItems.SOYBEANS, RecipeCategory.FOOD, 2, 20);
 		}
 
 		@Override

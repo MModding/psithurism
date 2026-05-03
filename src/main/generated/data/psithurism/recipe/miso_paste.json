@@ -3,7 +3,7 @@
   "category": "food",
   "cookingtime": 20,
   "experience": 2.0,
-  "ingredient": "psithurism:soja_seeds",
+  "ingredient": "psithurism:soybeans",
   "result": {
     "id": "psithurism:miso_paste"
   }
