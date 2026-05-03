@@ -1,5 +1,6 @@
 package com.mmodding.psithurism;
 
+import com.mmodding.library.block.api.catalog.SimpleBedBlock;
 import com.mmodding.library.core.api.AdvancedContainer;
 import com.mmodding.library.datagen.api.ExtendedDataGeneratorEntrypoint;
 import com.mmodding.library.datagen.api.lang.DefaultLangProcessors;
@@ -30,6 +31,7 @@ import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.properties.BedPart;
 
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
@@ -46,6 +48,7 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 			.chain(block -> block instanceof StoneLanternBlock, PsithurismDataProcessors::createStoneLantern)
 			.chain(block -> block.builtInRegistryHolder().key().identifier().getPath().contains("waxed"), DefaultBlockModelProcessing::createWaxedTrapdoor)
 			.chain(block -> block instanceof TrapDoorBlock, BlockModelGenerators::createTrapdoor)
+			.chain(block -> block instanceof SimpleBedBlock, PsithurismDataProcessors::createFuton)
 			.chain(block -> block instanceof SlabBlock, DefaultBlockModelProcessing::createStandaloneSlab)
 			.chain(Set.of(PsithurismBlocks.SMALL_TATAMI, PsithurismBlocks.SMALL_PLAITED_TATAMI), PsithurismDataProcessors::createSmallTatami)
 			.chain(block -> block instanceof CarpetBlock, PsithurismDataProcessors::createSmallTatamiMat)
@@ -58,12 +61,16 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 			.chain(Set.of(PsithurismBlocks.RICE), PsithurismDataProcessors::createRiceCrop)
 			.chain(Set.of(PsithurismBlocks.CHERRY_BONSAI), PsithurismDataProcessors::createCherryBonsai)
 			.chain(Set.of(PsithurismBlocks.DARK_CHERRY_BONSAI), PsithurismDataProcessors::createDarkCherryBonsai)
+			.chain(Set.of(PsithurismBlocks.TERU_TERU_BOZU), PsithurismDataProcessors::createTeruTeruBozu)
 			.chain(Set.of(PsithurismBlocks.MANEKI_NEKO), DefaultBlockModelProcessing::createDefinedModelHorizontalVariants)
 			.chain(BlockModelGenerators::createTrivialCube);
 		manager.chain(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_LOOTS)
-			.chain(block -> !(block instanceof LiquidBlock), BlockLootSubProvider::dropSelf);
+			.chain(block -> block instanceof BedBlock, (provider, block) -> provider.add(block, provider.createSinglePropConditionTable(block, BedBlock.PART, BedPart.HEAD)))
+			.chain(block -> !(block instanceof LiquidBlock) && !block.equals(PsithurismBlocks.TERU_TERU_BOZU), BlockLootSubProvider::dropSelf);
 		manager.task(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_TAGS, Set.of(PsithurismBlocks.RICE), (getter, block) -> getter.apply(BlockTags.MAINTAINS_FARMLAND).add(block));
-		manager.task(PsithurismBlocks.class, DefaultDataHandlers.getTranslationHandler(Registries.BLOCK, Block.class), DefaultLangProcessors.CLASSIC);
+		manager.chain(PsithurismBlocks.class, DefaultDataHandlers.getTranslationHandler(Registries.BLOCK, Block.class))
+			.chain(Set.of(PsithurismBlocks.TERU_TERU_BOZU), _ -> "Teru Teru Bozū")
+			.chain(DefaultLangProcessors.CLASSIC);
 		manager.task(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_RELATIVES);
 		manager.task(PsithurismWoodSets.class, DefaultDataHandlers.WOOD_SETS);
 		manager.task(PsithurismItems.class, DefaultDataHandlers.ITEM_MODELS, item -> !item.equals(PsithurismItems.RICE_PLANT), (generator, item) -> generator.generateFlatItem(item, ModelTemplates.FLAT_ITEM));
@@ -86,8 +93,10 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 		}
 
 		@Override
-		public void generateTranslations(HolderLookup.Provider registryLookup, TranslationBuilder translationBuilder) {
-			translationBuilder.add("itemGroup.psithurism.tab", "Psithurism");
+		public void generateTranslations(HolderLookup.Provider registryLookup, TranslationBuilder translations) {
+			translations.add("block.psithurism.teru_teru_bozu.insufficient_will_power", "Insufficient Will Power!");
+			translations.add("block.psithurism.teru_teru_bozu.nothing_to_do", "I have nothing to do!");
+			translations.add("itemGroup.psithurism.tab", "Psithurism");
 		}
 	}
 
@@ -134,6 +143,7 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 		protected void addTags(HolderLookup.Provider registries) {
 			this.valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
 				.forceAddTag(PsithurismBlocks.ASHINO_STONE.getBlockTagKey())
+				.forceAddTag(PsithurismBlocks.POLISHED_ASHINO_STONE.getBlockTagKey())
 				.forceAddTag(PsithurismBlocks.ASHINO_BRICKS.getBlockTagKey())
 				.forceAddTag(PsithurismBlocks.MOSSY_ASHINO_BRICKS.getBlockTagKey())
 				.forceAddTag(PsithurismBlocks.CRACKED_ASHINO_STONE_BRICKS.getBlockTagKey())

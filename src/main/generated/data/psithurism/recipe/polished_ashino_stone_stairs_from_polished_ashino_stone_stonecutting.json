@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "psithurism:polished_ashino_stone",
+  "result": {
+    "id": "psithurism:polished_ashino_stone_stairs"
+  }
+}

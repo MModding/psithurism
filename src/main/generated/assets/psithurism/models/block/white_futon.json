@@ -1,0 +1,7 @@
+{
+  "parent": "psithurism:block/template_futon",
+  "textures": {
+    "particle": "minecraft:block/white_wool",
+    "texture": "psithurism:block/white_futon"
+  }
+}

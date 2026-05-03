@@ -1,0 +1,79 @@
+{
+  "variants": {
+    "facing=east,necklace=0": {
+      "model": "psithurism:block/teru_teru_bozu_necklace_blue",
+      "y": 90
+    },
+    "facing=east,necklace=1": {
+      "model": "psithurism:block/teru_teru_bozu_necklace_indigo",
+      "y": 90
+    },
+    "facing=east,necklace=2": {
+      "model": "psithurism:block/teru_teru_bozu_necklace_purple",
+      "y": 90
+    },
+    "facing=east,necklace=3": {
+      "model": "psithurism:block/teru_teru_bozu_necklace_fuchsia",
+      "y": 90
+    },
+    "facing=east,necklace=4": {
+      "model": "psithurism:block/teru_teru_bozu_necklace_red",
+      "y": 90
+    },
+    "facing=north,necklace=0": {
+      "model": "psithurism:block/teru_teru_bozu_necklace_blue"
+    },
+    "facing=north,necklace=1": {
+      "model": "psithurism:block/teru_teru_bozu_necklace_indigo"
+    },
+    "facing=north,necklace=2": {
+      "model": "psithurism:block/teru_teru_bozu_necklace_purple"
+    },
+    "facing=north,necklace=3": {
+      "model": "psithurism:block/teru_teru_bozu_necklace_fuchsia"
+    },
+    "facing=north,necklace=4": {
+      "model": "psithurism:block/teru_teru_bozu_necklace_red"
+    },
+    "facing=south,necklace=0": {
+      "model": "psithurism:block/teru_teru_bozu_necklace_blue",
+      "y": 180
+    },
+    "facing=south,necklace=1": {
+      "model": "psithurism:block/teru_teru_bozu_necklace_indigo",
+      "y": 180
+    },
+    "facing=south,necklace=2": {
+      "model": "psithurism:block/teru_teru_bozu_necklace_purple",
+      "y": 180
+    },
+    "facing=south,necklace=3": {
+      "model": "psithurism:block/teru_teru_bozu_necklace_fuchsia",
+      "y": 180
+    },
+    "facing=south,necklace=4": {
+      "model": "psithurism:block/teru_teru_bozu_necklace_red",
+      "y": 180
+    },
+    "facing=west,necklace=0": {
+      "model": "psithurism:block/teru_teru_bozu_necklace_blue",
+      "y": 270
+    },
+    "facing=west,necklace=1": {
+      "model": "psithurism:block/teru_teru_bozu_necklace_indigo",
+      "y": 270
+    },
+    "facing=west,necklace=2": {
+      "model": "psithurism:block/teru_teru_bozu_necklace_purple",
+      "y": 270
+    },
+    "facing=west,necklace=3": {
+      "model": "psithurism:block/teru_teru_bozu_necklace_fuchsia",
+      "y": 270
+    },
+    "facing=west,necklace=4": {
+      "model": "psithurism:block/teru_teru_bozu_necklace_red",
+      "y": 270
+    }
+  }
+}

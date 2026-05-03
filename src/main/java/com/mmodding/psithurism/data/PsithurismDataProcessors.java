@@ -1,26 +1,33 @@
 package com.mmodding.psithurism.data;
 
+import com.mmodding.library.block.api.catalog.SimpleBedBlock;
 import com.mmodding.library.datagen.api.model.block.BlockModelProcessor;
 import com.mmodding.library.datagen.api.model.block.DefaultBlockModelProcessing;
 import com.mmodding.library.datagen.api.model.block.MModdingModelTemplates;
+import com.mmodding.library.datagen.api.model.block.MModdingTextureMappings;
 import com.mmodding.library.java.api.function.AutoMapper;
 import com.mmodding.psithurism.Psithurism;
 import com.mmodding.psithurism.block.LargeTatamiBlock;
 import com.mmodding.psithurism.block.MediumTatamiBlock;
 import com.mmodding.psithurism.block.RiceCrop;
+import com.mmodding.psithurism.block.TeruTeruBozuBlock;
 import com.mmodding.psithurism.init.PsithurismBlocks;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.*;
-import net.minecraft.client.renderer.block.dispatch.Variant;
+import net.minecraft.client.renderer.item.ItemModel;
 import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.properties.BedPart;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
+import java.util.Map;
 import java.util.function.Function;
 
 import static net.minecraft.client.data.models.BlockModelGenerators.*;
@@ -34,11 +41,11 @@ public class PsithurismDataProcessors {
 	}
 
 	public static void createCherryBonsai(BlockModelGenerators generator, Block block) {
-		PsithurismDataProcessors.createBonsai(generator, block, PsithurismTextureModels.CHERRY_BONSAI);
+		PsithurismDataProcessors.createBonsai(generator, block, PsithurismTexturedModels.CHERRY_BONSAI);
 	}
 
 	public static void createDarkCherryBonsai(BlockModelGenerators generator, Block block) {
-		PsithurismDataProcessors.createBonsai(generator, block, PsithurismTextureModels.DARK_CHERRY_BONSAI);
+		PsithurismDataProcessors.createBonsai(generator, block, PsithurismTexturedModels.DARK_CHERRY_BONSAI);
 	}
 
 	public static void createBonsai(BlockModelGenerators generator, Block block, TexturedModel.Provider bonsaiProvider) {
@@ -56,6 +63,21 @@ public class PsithurismDataProcessors {
 
 	public static void createDarkCherryGlassPane(BlockModelGenerators generator, Block block) {
 		DefaultBlockModelProcessing.createPaneLike(generator, block, new Material(Psithurism.createId("block/dark_cherry_glass_pane_top")));
+	}
+
+	public static void createFuton(BlockModelGenerators generator, Block block) {
+		Block wool = BuiltInRegistries.BLOCK.getValueOrThrow(ResourceKey.create(Registries.BLOCK, Identifier.withDefaultNamespace(block.builtInRegistryHolder().key().identifier().getPath().replace("_futon", "_wool"))));
+		Identifier model = PsithurismModelTemplates.FUTON.create(block, MModdingTextureMappings.specificParticle(block, wool), generator.modelOutput);
+		Identifier empty = ModelTemplates.PARTICLE_ONLY.create(ModelLocationUtils.getModelLocation(block, "_empty"), TextureMapping.particle(wool), generator.modelOutput);
+		generator.blockStateOutput.accept(
+			MultiVariantGenerator.dispatch(block)
+				.with(
+					PropertyDispatch.initial(SimpleBedBlock.PART)
+						.select(BedPart.HEAD, plainVariant(model))
+						.select(BedPart.FOOT, plainVariant(empty))
+				)
+				.with(ROTATION_HORIZONTAL_FACING)
+		);
 	}
 
 	public static void createRiceCrop(BlockModelGenerators generator, Block block) {
@@ -191,6 +213,35 @@ public class PsithurismDataProcessors {
 					.with(ROTATION_HORIZONTAL_FACING)
 			);
 		};
+	}
+
+	public static void createTeruTeruBozu(BlockModelGenerators generator, Block block) {
+		ItemModel.Unbaked itemDefault = ItemModelUtils.plainModel(ModelLocationUtils.getModelLocation(block, "_necklace_red"));
+		ItemModel.Unbaked itemUnbaked = ItemModelUtils.selectBlockItemProperty(TeruTeruBozuBlock.NECKLACE, itemDefault, Map.of(
+			0, ItemModelUtils.plainModel(ModelLocationUtils.getModelLocation(block, "_necklace_blue")),
+			1, ItemModelUtils.plainModel(ModelLocationUtils.getModelLocation(block, "_necklace_indigo")),
+			2, ItemModelUtils.plainModel(ModelLocationUtils.getModelLocation(block, "_necklace_purple")),
+			3, ItemModelUtils.plainModel(ModelLocationUtils.getModelLocation(block, "_necklace_fuchsia")),
+			4, itemDefault
+		));
+		generator.itemModelOutput.accept(block.asItem(), itemUnbaked);
+		Identifier blue = PsithurismModelTemplates.TERU_TERU_BOZU.createWithSuffix(block, "_necklace_blue", new TextureMapping().put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(block, "_necklace_blue")), generator.modelOutput);
+		Identifier indigo = PsithurismModelTemplates.TERU_TERU_BOZU.createWithSuffix(block, "_necklace_indigo", new TextureMapping().put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(block, "_necklace_indigo")), generator.modelOutput);
+		Identifier purple = PsithurismModelTemplates.TERU_TERU_BOZU.createWithSuffix(block, "_necklace_purple", new TextureMapping().put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(block, "_necklace_purple")), generator.modelOutput);
+		Identifier fuchsia = PsithurismModelTemplates.TERU_TERU_BOZU.createWithSuffix(block, "_necklace_fuchsia", new TextureMapping().put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(block, "_necklace_fuchsia")), generator.modelOutput);
+		Identifier red = PsithurismModelTemplates.TERU_TERU_BOZU.createWithSuffix(block, "_necklace_red", new TextureMapping().put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(block, "_necklace_red")), generator.modelOutput);
+		generator.blockStateOutput.accept(
+			MultiVariantGenerator.dispatch(block)
+				.with(
+					PropertyDispatch.initial(TeruTeruBozuBlock.NECKLACE)
+						.select(0, plainVariant(blue))
+						.select(1, plainVariant(indigo))
+						.select(2, plainVariant(purple))
+						.select(3, plainVariant(fuchsia))
+						.select(4, plainVariant(red))
+				)
+				.with(ROTATION_HORIZONTAL_FACING)
+		);
 	}
 
 	public static void createStoneLantern(BlockModelGenerators generator, Block block) {

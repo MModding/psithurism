@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "psithurism:block/polished_ashino_stone_slab"
+    },
+    "type=double": {
+      "model": "psithurism:block/polished_ashino_stone"
+    },
+    "type=top": {
+      "model": "psithurism:block/polished_ashino_stone_slab_top"
+    }
+  }
+}

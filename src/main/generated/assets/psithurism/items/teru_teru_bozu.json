@@ -1,0 +1,48 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "block_state_property": "necklace",
+    "cases": [
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "psithurism:block/teru_teru_bozu_necklace_blue"
+        },
+        "when": "0"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "psithurism:block/teru_teru_bozu_necklace_indigo"
+        },
+        "when": "1"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "psithurism:block/teru_teru_bozu_necklace_purple"
+        },
+        "when": "2"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "psithurism:block/teru_teru_bozu_necklace_fuchsia"
+        },
+        "when": "3"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "psithurism:block/teru_teru_bozu_necklace_red"
+        },
+        "when": "4"
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "psithurism:block/teru_teru_bozu_necklace_red"
+    },
+    "property": "minecraft:block_state"
+  }
+}

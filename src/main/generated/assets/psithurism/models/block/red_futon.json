@@ -1,0 +1,7 @@
+{
+  "parent": "psithurism:block/template_futon",
+  "textures": {
+    "particle": "minecraft:block/red_wool",
+    "texture": "psithurism:block/red_futon"
+  }
+}

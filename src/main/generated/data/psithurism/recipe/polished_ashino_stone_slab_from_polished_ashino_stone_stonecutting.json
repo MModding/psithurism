@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "psithurism:polished_ashino_stone",
+  "result": {
+    "count": 2,
+    "id": "psithurism:polished_ashino_stone_slab"
+  }
+}

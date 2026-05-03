@@ -10,8 +10,8 @@ import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.data.worldgen.features.VegetationFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
-import net.minecraft.data.worldgen.placement.TreePlacements;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
@@ -19,9 +19,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.TreeConfigurati
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.treedecorators.BeehiveDecorator;
-import net.minecraft.world.level.levelgen.placement.CountPlacement;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraft.world.level.levelgen.placement.PlacementModifierType;
+import net.minecraft.world.level.levelgen.placement.*;
 
 import java.util.List;
 
@@ -38,13 +36,9 @@ public class PsithurismFeaturePacks {
 				configuration.foliagePlacer,
 				configuration.minimumSize
 			).build(),
-			pack -> pack.replicatePlacedFeature(
-				TreePlacements.CHERRY_CHECKED,
+			pack -> pack.appendPlacedFeature(
 				PsithurismPlacedFeatures.DARK_CHERRY_CHECKED,
-				modifiers -> modifiers.mutateTypeTo(
-					PlacementModifierType.BLOCK_PREDICATE_FILTER,
-					_ -> PlacementUtils.filteredByBlockSurvival(PsithurismWoodSets.DARK_CHERRY.getSapling())
-				)
+				PlacementUtils.filteredByBlockSurvival(PsithurismWoodSets.DARK_CHERRY.getSapling())
 			)
 		)
 		.replicateConfiguredFeature(
@@ -57,14 +51,15 @@ public class PsithurismFeaturePacks {
 				configuration.foliagePlacer,
 				configuration.minimumSize
 			).decorators(List.of(new BeehiveDecorator(0.05f))).build(),
-			pack -> pack.replicatePlacedFeature(
-				TreePlacements.CHERRY_BEES_005,
-				PsithurismPlacedFeatures.DARK_CHERRY_BEES_005,
-				modifiers -> modifiers.mutateTypeTo(
-					PlacementModifierType.BLOCK_PREDICATE_FILTER,
-					_ -> PlacementUtils.filteredByBlockSurvival(PsithurismWoodSets.DARK_CHERRY.getSapling())
+			pack -> pack
+				.appendPlacedFeature(
+					PsithurismPlacedFeatures.DARK_CHERRY_BEES_005,
+					PlacementUtils.filteredByBlockSurvival(PsithurismWoodSets.DARK_CHERRY.getSapling())
 				)
-			)
+				.appendPlacedFeature(
+					PsithurismPlacedFeatures.CHERRY_GROOVE_DARK_CHERRY,
+					VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 1), Blocks.CHERRY_SAPLING)
+				)
 		);
 
 	private static final FeaturePack<SimpleBlockConfiguration> FLOWER_DARK_CHERRY = FeaturePack.of(Feature.SIMPLE_BLOCK)
@@ -75,7 +70,9 @@ public class PsithurismFeaturePacks {
 			pack -> pack.replicatePlacedFeature(
 				VegetationPlacements.FLOWER_CHERRY,
 				PsithurismPlacedFeatures.FLOWER_DARK_CHERRY,
-				modifiers -> modifiers.mutateTypeTo(PlacementModifierType.COUNT, _ -> CountPlacement.of(12))
+				modifiers -> modifiers
+					.replace(PlacementModifierType.COUNT, CountPlacement.of(24))
+					.replace(PlacementModifierType.RANDOM_OFFSET, RandomOffsetPlacement.ofTriangle(4, 3))
 			)
 		);
 
