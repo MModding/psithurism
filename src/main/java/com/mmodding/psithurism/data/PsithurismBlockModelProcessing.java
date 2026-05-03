@@ -6,10 +6,7 @@ import com.mmodding.library.datagen.api.model.block.MModdingModelTemplates;
 import com.mmodding.library.datagen.api.model.block.MModdingTextureMappings;
 import com.mmodding.library.java.api.function.AutoMapper;
 import com.mmodding.psithurism.Psithurism;
-import com.mmodding.psithurism.block.LargeTatamiBlock;
-import com.mmodding.psithurism.block.MediumTatamiBlock;
-import com.mmodding.psithurism.block.RiceCrop;
-import com.mmodding.psithurism.block.TeruTeruBozuBlock;
+import com.mmodding.psithurism.block.*;
 import com.mmodding.psithurism.init.PsithurismBlocks;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
@@ -82,7 +79,7 @@ public class PsithurismBlockModelProcessing {
 		generator.registerSimpleFlatItemModel(block.asItem());
 		generator.blockStateOutput.accept(
 			MultiVariantGenerator.dispatch(block).with(
-				PropertyDispatch.initial(((RiceCrop) block).getAgeProperty(), BlockStateProperties.DOUBLE_BLOCK_HALF)
+				PropertyDispatch.initial(((RiceCropBlock) block).getAgeProperty(), BlockStateProperties.DOUBLE_BLOCK_HALF)
 					.generate((age, shape) -> {
 						String prefix = age == 1 ? "sprouted_" : "";
 						String suffix = switch (shape) {
@@ -90,6 +87,21 @@ public class PsithurismBlockModelProcessing {
 							case LOWER -> "bottom";
 						};
 						Identifier model = Psithurism.createId("block/" + prefix + "rice_" + suffix);
+						ModelTemplates.CROP.create(model, TextureMapping.crop(new Material(model)), generator.modelOutput);
+						return plainVariant(model);
+					})
+			)
+		);
+	}
+
+	public static void createSoyaCrop(BlockModelGenerators generator, Block block) {
+		generator.registerSimpleFlatItemModel(block.asItem());
+		generator.blockStateOutput.accept(
+			MultiVariantGenerator.dispatch(block).with(
+				PropertyDispatch.initial(((SoyaCropBlock) block).getAgeProperty())
+					.generate(age -> {
+						String prefix = age == 1 ? "sprouted_" : "";
+						Identifier model = Psithurism.createId("block/" + prefix + "soya");
 						ModelTemplates.CROP.create(model, TextureMapping.crop(new Material(model)), generator.modelOutput);
 						return plainVariant(model);
 					})

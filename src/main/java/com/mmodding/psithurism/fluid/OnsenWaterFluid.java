@@ -14,6 +14,11 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.InsideBlockEffectApplier;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -37,6 +42,13 @@ public class OnsenWaterFluid extends AdvancedFlowableFluid {
 
 	@Override
 	public void neighborCollision(Level level, BlockPos blockPos, Direction direction, BlockPos blockPos1) {}
+
+	@Override
+	protected void entityInside(Level level, BlockPos pos, Entity entity, InsideBlockEffectApplier effectApplier) {
+		if (entity instanceof LivingEntity livingEntity && livingEntity.tickCount % 60 == 0) {
+			livingEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 0, false, false));
+		}
+	}
 
 	@Override
 	public ParticleOptions getDrippingParticle() {

@@ -51,6 +51,7 @@ mmodding {
 	configureFabricModJson {
 		name = "Psithurism"
 		namespace = "psithurism"
+		description = "Bring Japanese culture into your home with new deco blocks, new food, traditional cosmetics and much more!"
 		group = "com.mmodding"
 		icon = "assets/psithurism/icon.png"
 		license = "Code: PolyForm-Shield-1.0.0\\nAssets: All Rights Reserved"

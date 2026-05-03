@@ -56,7 +56,7 @@ public class PsithurismItems {
 	public static final Item NORI_ALGAE = register("nori_algae", new Item.Properties());
 	public static final Item MAKI = register("maki", new Item.Properties().food(PsithurismFoods.MAKI, PsithurismConsumables.MAKI));
 	public static final Item YAKITORI = register("yakitori", new Item.Properties().food(PsithurismFoods.YAKITORI));
-	public static final Item SOYBEANS = register("soybeans", new Item.Properties().food(PsithurismFoods.SOYBEANS, PsithurismConsumables.SOYBEANS));
+	public static final Item SOYBEANS = register("soybeans", Items.createBlockItemWithCustomItemName(PsithurismBlocks.SOYA), new Item.Properties().food(PsithurismFoods.SOYBEANS, PsithurismConsumables.SOYBEANS));
 	public static final Item SOYA_GROWTHS = register("soya_growths", new Item.Properties().food(PsithurismFoods.SOYA_GROWTHS));
 	public static final Item TOFU = register("tofu", new Item.Properties().food(PsithurismFoods.TOFU));
 	public static final Item MISO_PASTE = register("miso_paste", new Item.Properties());

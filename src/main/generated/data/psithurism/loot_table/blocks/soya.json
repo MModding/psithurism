@@ -16,15 +16,15 @@
               "type": "minecraft:item",
               "conditions": [
                 {
-                  "block": "psithurism:rice",
+                  "block": "psithurism:soya",
                   "condition": "minecraft:block_state_property"
                 }
               ],
-              "name": "psithurism:rice"
+              "name": "psithurism:soya_growths"
             },
             {
               "type": "minecraft:item",
-              "name": "psithurism:rice_plant"
+              "name": "psithurism:soybeans"
             }
           ]
         }
@@ -35,7 +35,7 @@
       "bonus_rolls": 0.0,
       "conditions": [
         {
-          "block": "psithurism:rice",
+          "block": "psithurism:soya",
           "condition": "minecraft:block_state_property"
         }
       ],
@@ -53,7 +53,7 @@
               }
             }
           ],
-          "name": "psithurism:rice_plant"
+          "name": "psithurism:soybeans"
         }
       ],
       "rolls": 1.0

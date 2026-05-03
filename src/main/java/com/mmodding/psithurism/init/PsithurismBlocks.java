@@ -88,7 +88,8 @@ public class PsithurismBlocks {
 	public static final BlockRelatives BLACKSTONE_KAWARA_TILES = BlockRelatives.registerStone(Psithurism.createId("blackstone_kawara_tile"), true, AutoMapper.identity(), false, false);
 	public static final BlockRelatives ASHINO_KAWARA_TILES = BlockRelatives.registerStone(Psithurism.createId("ashino_kawara_tile"), true, AutoMapper.identity(), false, false);
 
-	public static final Block RICE = register("rice", RiceCrop::new, BlockBehaviour.Properties.of().noCollision().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY));
+	public static final Block RICE = register("rice", RiceCropBlock::new, BlockBehaviour.Properties.of().noCollision().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY));
+	public static final Block SOYA = register("soya", SoyaCropBlock::new, BlockBehaviour.Properties.of().noCollision().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY));
 
 	public static final Block IRON_MANHOLE = register("iron_manhole", properties -> new IronManholeBlock(BlockSetType.IRON, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_TRAPDOOR)).registerItem();
 	public static final Block COPPER_MANHOLE = register("copper_manhole", properties -> new WeatheringCopperTrapDoorBlock(BlockSetType.COPPER, WeatheringCopper.WeatherState.UNAFFECTED, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_TRAPDOOR)).registerItem();

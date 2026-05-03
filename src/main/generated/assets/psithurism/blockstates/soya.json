@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "psithurism:block/soya"
+    },
+    "age=1": {
+      "model": "psithurism:block/sprouted_soya"
+    }
+  }
+}

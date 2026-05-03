@@ -1,5 +1,6 @@
 package com.mmodding.psithurism;
 
+import com.mmodding.library.block.api.catalog.DoubleCropBlock;
 import com.mmodding.library.block.api.catalog.SimpleBedBlock;
 import com.mmodding.library.core.api.AdvancedContainer;
 import com.mmodding.library.datagen.api.ExtendedDataGeneratorEntrypoint;
@@ -11,6 +12,7 @@ import com.mmodding.library.datagen.api.provider.MModdingLanguageProvider;
 import com.mmodding.library.datagen.api.provider.MModdingRecipeProvider;
 import com.mmodding.library.datagen.api.recipe.RecipeGenerator;
 import com.mmodding.psithurism.block.*;
+import com.mmodding.psithurism.data.PsithurismBlockLootProcessing;
 import com.mmodding.psithurism.data.PsithurismBlockModelProcessing;
 import com.mmodding.psithurism.data.PsithurismRecipeProcessing;
 import com.mmodding.psithurism.data.PsithurismTexturedModels;
@@ -64,12 +66,15 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 			.chain(block -> block instanceof LiquidBlock, PsithurismBlockModelProcessing::createOnsenWater)
 			.chain(Set.of(PsithurismBlocks.ASHINO_STONE_PEDESTAL), PsithurismBlockModelProcessing::createAshinoStonePedestal)
 			.chain(Set.of(PsithurismBlocks.RICE), PsithurismBlockModelProcessing::createRiceCrop)
+			.chain(Set.of(PsithurismBlocks.SOYA), PsithurismBlockModelProcessing::createSoyaCrop)
 			.chain(Set.of(PsithurismBlocks.CHERRY_BONSAI), PsithurismBlockModelProcessing::createCherryBonsai)
 			.chain(Set.of(PsithurismBlocks.DARK_CHERRY_BONSAI), PsithurismBlockModelProcessing::createDarkCherryBonsai)
 			.chain(Set.of(PsithurismBlocks.TERU_TERU_BOZU), PsithurismBlockModelProcessing::createTeruTeruBozu)
 			.chain(Set.of(PsithurismBlocks.MANEKI_NEKO), DefaultBlockModelProcessing::createDefinedModelHorizontalVariants)
 			.chain(BlockModelGenerators::createTrivialCube);
 		manager.chain(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_LOOTS)
+			.chain(block -> block instanceof DoubleCropBlock, PsithurismBlockLootProcessing::createRiceLoot)
+			.chain(block -> block instanceof CropBlock, PsithurismBlockLootProcessing::createSoyaLoot)
 			.chain(block -> block instanceof BedBlock, (provider, block) -> provider.add(block, provider.createSinglePropConditionTable(block, BedBlock.PART, BedPart.HEAD)))
 			.chain(block -> !(block instanceof LiquidBlock) && !block.equals(PsithurismBlocks.TERU_TERU_BOZU), BlockLootSubProvider::dropSelf);
 		manager.chain(PsithurismBlocks.class, DefaultDataHandlers.ITEM_CONVERTIBLE_RECIPES)
