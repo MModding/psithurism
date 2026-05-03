@@ -1,7 +1,6 @@
 package com.mmodding.psithurism.data;
 
 import com.mmodding.library.block.api.catalog.SimpleBedBlock;
-import com.mmodding.library.datagen.api.model.block.BlockModelProcessor;
 import com.mmodding.library.datagen.api.model.block.DefaultBlockModelProcessing;
 import com.mmodding.library.datagen.api.model.block.MModdingModelTemplates;
 import com.mmodding.library.datagen.api.model.block.MModdingTextureMappings;
@@ -28,11 +27,10 @@ import net.minecraft.world.level.block.state.properties.BedPart;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 import java.util.Map;
-import java.util.function.Function;
 
 import static net.minecraft.client.data.models.BlockModelGenerators.*;
 
-public class PsithurismDataProcessors {
+public class PsithurismBlockModelProcessing {
 
 	public static void createPaperWall(BlockModelGenerators generator, Block block) {
 		AutoMapper<String> wallToWallBlock = paperWall -> paperWall + "_block";
@@ -41,11 +39,11 @@ public class PsithurismDataProcessors {
 	}
 
 	public static void createCherryBonsai(BlockModelGenerators generator, Block block) {
-		PsithurismDataProcessors.createBonsai(generator, block, PsithurismTexturedModels.CHERRY_BONSAI);
+		PsithurismBlockModelProcessing.createBonsai(generator, block, PsithurismTexturedModels.CHERRY_BONSAI);
 	}
 
 	public static void createDarkCherryBonsai(BlockModelGenerators generator, Block block) {
-		PsithurismDataProcessors.createBonsai(generator, block, PsithurismTexturedModels.DARK_CHERRY_BONSAI);
+		PsithurismBlockModelProcessing.createBonsai(generator, block, PsithurismTexturedModels.DARK_CHERRY_BONSAI);
 	}
 
 	public static void createBonsai(BlockModelGenerators generator, Block block, TexturedModel.Provider bonsaiProvider) {

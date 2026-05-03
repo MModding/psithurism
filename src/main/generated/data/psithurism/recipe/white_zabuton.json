@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "T": "psithurism:thread",
+    "W": "minecraft:white_wool"
+  },
+  "pattern": [
+    "TWT",
+    "TWT"
+  ],
+  "result": {
+    "count": 4,
+    "id": "psithurism:white_zabuton"
+  }
+}

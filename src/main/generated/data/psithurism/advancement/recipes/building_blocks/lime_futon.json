@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_lime_zabuton": {
+      "conditions": {
+        "items": [
+          {
+            "items": "psithurism:lime_zabuton"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "psithurism:lime_futon"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_white_wool": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:white_wool"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_lime_zabuton",
+      "has_white_wool"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "psithurism:lime_futon"
+    ]
+  }
+}

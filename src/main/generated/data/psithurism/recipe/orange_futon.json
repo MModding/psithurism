@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "W": "minecraft:white_wool",
+    "Z": "psithurism:orange_zabuton"
+  },
+  "pattern": [
+    "ZZW"
+  ],
+  "result": {
+    "count": 4,
+    "id": "psithurism:orange_futon"
+  }
+}

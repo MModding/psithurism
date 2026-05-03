@@ -11,7 +11,8 @@ import com.mmodding.library.datagen.api.provider.MModdingLanguageProvider;
 import com.mmodding.library.datagen.api.provider.MModdingRecipeProvider;
 import com.mmodding.library.datagen.api.recipe.RecipeGenerator;
 import com.mmodding.psithurism.block.*;
-import com.mmodding.psithurism.data.PsithurismDataProcessors;
+import com.mmodding.psithurism.data.PsithurismBlockModelProcessing;
+import com.mmodding.psithurism.data.PsithurismRecipeProcessing;
 import com.mmodding.psithurism.data.PsithurismTexturedModels;
 import com.mmodding.psithurism.init.PsithurismBlocks;
 import com.mmodding.psithurism.init.PsithurismFluids;
@@ -30,6 +31,7 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
@@ -44,32 +46,35 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 	public void setupManager(DataManager manager) {
 		manager.chain(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_MODELS)
 			.chain(block -> block instanceof FlowerBedBlock, BlockModelGenerators::createFlowerBed)
-			.chain(block -> block instanceof IronBarsBlock && block.builtInRegistryHolder().key().identifier().getPath().contains("wall"), PsithurismDataProcessors::createPaperWall)
-			.chain(block -> block instanceof IronBarsBlock, PsithurismDataProcessors::createDarkCherryGlassPane)
+			.chain(block -> block instanceof IronBarsBlock && block.builtInRegistryHolder().key().identifier().getPath().contains("wall"), PsithurismBlockModelProcessing::createPaperWall)
+			.chain(block -> block instanceof IronBarsBlock, PsithurismBlockModelProcessing::createDarkCherryGlassPane)
 			.chain(block -> block instanceof ChainBlock, DefaultBlockModelProcessing::createChain)
-			.chain(block -> block instanceof StoneLanternBlock, PsithurismDataProcessors::createStoneLantern)
+			.chain(block -> block instanceof StoneLanternBlock, PsithurismBlockModelProcessing::createStoneLantern)
 			.chain(block -> block.builtInRegistryHolder().key().identifier().getPath().contains("waxed"), DefaultBlockModelProcessing::createWaxedTrapdoor)
 			.chain(block -> block instanceof TrapDoorBlock, BlockModelGenerators::createTrapdoor)
 			.chain(block -> block instanceof PaperLanternBlock, DefaultBlockModelProcessing.createWithProvider(PsithurismTexturedModels.PAPER_LANTERN))
-			.chain(block -> block instanceof SimpleBedBlock, PsithurismDataProcessors::createFuton)
+			.chain(block -> block instanceof SimpleBedBlock, PsithurismBlockModelProcessing::createFuton)
 			.chain(block -> block instanceof SlabBlock, DefaultBlockModelProcessing::createStandaloneSlab)
-			.chain(Set.of(PsithurismBlocks.SMALL_TATAMI, PsithurismBlocks.SMALL_PLAITED_TATAMI), PsithurismDataProcessors::createSmallTatami)
-			.chain(block -> block instanceof CarpetBlock, PsithurismDataProcessors::createSmallTatamiMat)
-			.chain(block -> block instanceof MediumTatamiMatBlock, PsithurismDataProcessors::createMediumTatamiMat)
-			.chain(block -> block instanceof MediumTatamiBlock, PsithurismDataProcessors::createMediumTatami)
-			.chain(block -> block instanceof LargeTatamiMatBlock, PsithurismDataProcessors::createLargeTatamiMat)
-			.chain(block -> block instanceof LargeTatamiBlock, PsithurismDataProcessors::createLargeTatami)
-			.chain(block -> block instanceof LiquidBlock, PsithurismDataProcessors::createOnsenWater)
-			.chain(Set.of(PsithurismBlocks.ASHINO_STONE_PEDESTAL), PsithurismDataProcessors::createAshinoStonePedestal)
-			.chain(Set.of(PsithurismBlocks.RICE), PsithurismDataProcessors::createRiceCrop)
-			.chain(Set.of(PsithurismBlocks.CHERRY_BONSAI), PsithurismDataProcessors::createCherryBonsai)
-			.chain(Set.of(PsithurismBlocks.DARK_CHERRY_BONSAI), PsithurismDataProcessors::createDarkCherryBonsai)
-			.chain(Set.of(PsithurismBlocks.TERU_TERU_BOZU), PsithurismDataProcessors::createTeruTeruBozu)
+			.chain(Set.of(PsithurismBlocks.SMALL_TATAMI, PsithurismBlocks.SMALL_PLAITED_TATAMI), PsithurismBlockModelProcessing::createSmallTatami)
+			.chain(block -> block instanceof CarpetBlock, PsithurismBlockModelProcessing::createSmallTatamiMat)
+			.chain(block -> block instanceof MediumTatamiMatBlock, PsithurismBlockModelProcessing::createMediumTatamiMat)
+			.chain(block -> block instanceof MediumTatamiBlock, PsithurismBlockModelProcessing::createMediumTatami)
+			.chain(block -> block instanceof LargeTatamiMatBlock, PsithurismBlockModelProcessing::createLargeTatamiMat)
+			.chain(block -> block instanceof LargeTatamiBlock, PsithurismBlockModelProcessing::createLargeTatami)
+			.chain(block -> block instanceof LiquidBlock, PsithurismBlockModelProcessing::createOnsenWater)
+			.chain(Set.of(PsithurismBlocks.ASHINO_STONE_PEDESTAL), PsithurismBlockModelProcessing::createAshinoStonePedestal)
+			.chain(Set.of(PsithurismBlocks.RICE), PsithurismBlockModelProcessing::createRiceCrop)
+			.chain(Set.of(PsithurismBlocks.CHERRY_BONSAI), PsithurismBlockModelProcessing::createCherryBonsai)
+			.chain(Set.of(PsithurismBlocks.DARK_CHERRY_BONSAI), PsithurismBlockModelProcessing::createDarkCherryBonsai)
+			.chain(Set.of(PsithurismBlocks.TERU_TERU_BOZU), PsithurismBlockModelProcessing::createTeruTeruBozu)
 			.chain(Set.of(PsithurismBlocks.MANEKI_NEKO), DefaultBlockModelProcessing::createDefinedModelHorizontalVariants)
 			.chain(BlockModelGenerators::createTrivialCube);
 		manager.chain(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_LOOTS)
 			.chain(block -> block instanceof BedBlock, (provider, block) -> provider.add(block, provider.createSinglePropConditionTable(block, BedBlock.PART, BedPart.HEAD)))
 			.chain(block -> !(block instanceof LiquidBlock) && !block.equals(PsithurismBlocks.TERU_TERU_BOZU), BlockLootSubProvider::dropSelf);
+		manager.chain(PsithurismBlocks.class, DefaultDataHandlers.ITEM_CONVERTIBLE_RECIPES)
+			.chain(like -> like.asItem() instanceof BlockItem bi && bi.getBlock() instanceof SlabBlock, PsithurismRecipeProcessing::createZabuton)
+			.chain(like -> like.asItem() instanceof BlockItem bi && bi.getBlock() instanceof SimpleBedBlock, PsithurismRecipeProcessing::createFuton);
 		manager.task(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_TAGS, Set.of(PsithurismBlocks.RICE), (getter, block) -> getter.apply(BlockTags.MAINTAINS_FARMLAND).add(block));
 		manager.chain(PsithurismBlocks.class, DefaultDataHandlers.getTranslationHandler(Registries.BLOCK, Block.class))
 			.chain(Set.of(PsithurismBlocks.TERU_TERU_BOZU), _ -> "Teru Teru Bozū")
@@ -457,6 +462,60 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 					recipe -> recipe.pattern("SB", "BS")
 						.key('S', PsithurismBlocks.ASHINO_STONE.getMain())
 						.key('B', PsithurismBlocks.ASHINO_BRICKS.getMain())
+				);
+			generator.forItem(PsithurismBlocks.IRON_MANHOLE)
+				.shaped(
+					2, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("TT")
+						.key('T', Blocks.IRON_TRAPDOOR)
+				);
+			generator.forItem(PsithurismBlocks.COPPER_MANHOLE)
+				.shaped(
+					2, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("TT")
+						.key('T', Blocks.COPPER_TRAPDOOR)
+				);
+			generator.forItem(PsithurismBlocks.EXPOSED_COPPER_MANHOLE)
+				.shaped(
+					2, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("TT")
+						.key('T', Blocks.EXPOSED_COPPER_TRAPDOOR)
+				);
+			generator.forItem(PsithurismBlocks.WEATHERED_COPPER_MANHOLE)
+				.shaped(
+					2, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("TT")
+						.key('T', Blocks.WEATHERED_COPPER_TRAPDOOR)
+				);
+			generator.forItem(PsithurismBlocks.OXIDIZED_COPPER_MANHOLE)
+				.shaped(
+					2, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("TT")
+						.key('T', Blocks.OXIDIZED_COPPER_TRAPDOOR)
+				);
+			generator.forItem(PsithurismBlocks.WAXED_COPPER_MANHOLE)
+				.shaped(
+					2, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("TT")
+						.key('T', Blocks.WAXED_COPPER_TRAPDOOR)
+				);
+			generator.forItem(PsithurismBlocks.WAXED_EXPOSED_COPPER_MANHOLE)
+				.shaped(
+					2, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("TT")
+						.key('T', Blocks.WAXED_EXPOSED_COPPER_TRAPDOOR)
+				);
+			generator.forItem(PsithurismBlocks.WAXED_WEATHERED_COPPER_MANHOLE)
+				.shaped(
+					2, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("TT")
+						.key('T', Blocks.WAXED_WEATHERED_COPPER_TRAPDOOR)
+				);
+			generator.forItem(PsithurismBlocks.WAXED_OXIDIZED_COPPER_MANHOLE)
+				.shaped(
+					2, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("TT")
+						.key('T', Blocks.WAXED_OXIDIZED_COPPER_TRAPDOOR)
 				);
 			generator.forItem(PsithurismItems.MISO_PASTE)
 				.smoking(PsithurismItems.SOYBEANS, RecipeCategory.FOOD, 2, 20);
