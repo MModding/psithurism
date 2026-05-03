@@ -2,15 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "A": "minecraft:andesite",
-    "B": "minecraft:smooth_basalt"
+    "L": "psithurism:dark_cherry_laminate"
   },
   "pattern": [
-    "AB",
-    "BA"
+    "LL",
+    "LL"
   ],
   "result": {
     "count": 4,
-    "id": "psithurism:ashino_stone"
+    "id": "psithurism:dark_cherry_molding"
   }
 }

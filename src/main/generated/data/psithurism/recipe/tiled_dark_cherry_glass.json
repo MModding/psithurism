@@ -2,15 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "A": "minecraft:andesite",
-    "B": "minecraft:smooth_basalt"
+    "G": "psithurism:dark_cherry_glass"
   },
   "pattern": [
-    "AB",
-    "BA"
+    "GG",
+    "GG"
   ],
   "result": {
     "count": 4,
-    "id": "psithurism:ashino_stone"
+    "id": "psithurism:tiled_dark_cherry_glass"
   }
 }

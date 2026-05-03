@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "A": "psithurism:ashino_stone",
+    "Q": "minecraft:quartz",
+    "R": "minecraft:redstone",
+    "T": "minecraft:white_terracotta"
+  },
+  "pattern": [
+    "RTQ",
+    "TAT"
+  ],
+  "result": {
+    "id": "psithurism:maneki_neko"
+  }
+}

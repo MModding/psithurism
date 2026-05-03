@@ -2,14 +2,12 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": "psithurism:ashino_stone"
+    "M": "psithurism:medium_tatami"
   },
   "pattern": [
-    "##",
-    "##"
+    "MM"
   ],
   "result": {
-    "count": 4,
-    "id": "psithurism:ashino_bricks"
+    "id": "psithurism:large_tatami"
   }
 }

@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": "psithurism:ashino_stone"
+    "P": "psithurism:paper_wall_block"
   },
   "pattern": [
-    "##",
-    "##"
+    "PPP",
+    "PPP"
   ],
   "result": {
-    "count": 4,
-    "id": "psithurism:ashino_bricks"
+    "count": 16,
+    "id": "psithurism:paper_wall"
   }
 }

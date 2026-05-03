@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "psithurism:teru_teru_bozu"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_thread": {
+      "conditions": {
+        "items": [
+          {
+            "items": "psithurism:thread"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_white_petal_crown": {
+      "conditions": {
+        "items": [
+          {
+            "items": "psithurism:white_petal_crown"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_white_wool": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:white_wool"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_white_petal_crown",
+      "has_thread",
+      "has_white_wool"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "psithurism:teru_teru_bozu"
+    ]
+  }
+}

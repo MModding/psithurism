@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "B": "minecraft:polished_blackstone_bricks",
+    "S": "minecraft:blackstone"
+  },
+  "pattern": [
+    "SB",
+    "BS"
+  ],
+  "result": {
+    "count": 4,
+    "id": "psithurism:blackstone_kawara_tiles"
+  }
+}

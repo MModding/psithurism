@@ -2,15 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "A": "minecraft:andesite",
-    "B": "minecraft:smooth_basalt"
+    "B": "psithurism:ashino_bricks"
   },
   "pattern": [
-    "AB",
-    "BA"
+    "B",
+    "B"
   ],
   "result": {
     "count": 4,
-    "id": "psithurism:ashino_stone"
+    "id": "psithurism:ashino_stone_pedestal"
   }
 }

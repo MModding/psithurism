@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "psithurism:ashino_bricks",
+    "minecraft:vine"
+  ],
+  "result": {
+    "id": "psithurism:mossy_ashino_bricks"
+  }
+}

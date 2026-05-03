@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "R": "psithurism:rice_plant",
+    "T": "minecraft:string",
+    "W": "minecraft:white_wool"
+  },
+  "pattern": [
+    "TRT",
+    "RWR",
+    "TRT"
+  ],
+  "result": {
+    "count": 2,
+    "id": "psithurism:small_plaited_tatami"
+  }
+}

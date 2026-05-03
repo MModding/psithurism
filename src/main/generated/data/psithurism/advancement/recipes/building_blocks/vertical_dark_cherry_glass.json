@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_dark_cherry_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": "psithurism:dark_cherry_glass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "psithurism:vertical_dark_cherry_glass"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_dark_cherry_glass"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "psithurism:vertical_dark_cherry_glass"
+    ]
+  }
+}

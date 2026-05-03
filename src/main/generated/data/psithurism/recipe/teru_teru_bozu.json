@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "C": "psithurism:white_petal_crown",
+    "T": "psithurism:thread",
+    "W": "minecraft:white_wool"
+  },
+  "pattern": [
+    " C ",
+    " T ",
+    "TWT"
+  ],
+  "result": {
+    "id": "psithurism:teru_teru_bozu"
+  }
+}

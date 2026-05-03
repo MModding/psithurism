@@ -24,12 +24,14 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.data.BlockFamily;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.BedPart;
 
@@ -111,9 +113,284 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 
 		@Override
 		public void createRecipes(RecipeGenerator generator) {
-			generator.forItem(PsithurismBlocks.ASHINO_STONE.getMain())
+			generator.forItem(PsithurismBlocks.CHERRY_BONSAI)
 				.shaped(
 					RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("LL", "SS")
+						.key('L', Blocks.CHERRY_LEAVES)
+						.key('S', Blocks.CHERRY_SAPLING)
+				);
+			generator.forItem(PsithurismBlocks.DARK_CHERRY_BONSAI)
+				.shaped(
+					RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("LL", "SS")
+						.key('L', PsithurismWoodSets.DARK_CHERRY.getLeaves())
+						.key('S', PsithurismWoodSets.DARK_CHERRY.getSapling())
+				);
+			generator.forItem(PsithurismBlocks.GOLDEN_CHAIN)
+				.shaped(
+					RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("N", "I", "N")
+						.key('N', Items.GOLD_NUGGET)
+						.key('I', Items.GOLD_INGOT)
+				);
+			generator.forItem(PsithurismBlocks.DARK_CHERRY_LAMINATE)
+				.shaped(
+					2, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("SS", "SS")
+						.key('S', PsithurismWoodSets.DARK_CHERRY.getPlankRelatives().get(BlockFamily.Variant.SLAB))
+				);
+			generator.forItem(PsithurismBlocks.DARK_CHERRY_MOLDING)
+				.shaped(
+					4, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("LL", "LL")
+						.key('L', PsithurismBlocks.DARK_CHERRY_LAMINATE)
+				);
+			generator.forItem(PsithurismBlocks.LARGE_PAPER_WALL_BLOCK)
+				.shaped(
+					4, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("PPP", "PAP", "PPP")
+						.key('P', PsithurismWoodSets.DARK_CHERRY.getPlankRelatives().getMain())
+						.key('A', Items.PAPER)
+				);
+			generator.forItem(PsithurismBlocks.PAPER_WALL_BLOCK)
+				.shaped(
+					4, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("LL", "LL")
+						.key('L', PsithurismBlocks.LARGE_PAPER_WALL_BLOCK)
+				);
+			generator.forItem(PsithurismBlocks.HORIZONTAL_PAPER_WALL_BLOCK)
+				.shaped(
+					"_from_large", 3, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("PPP")
+						.key('P', PsithurismBlocks.LARGE_PAPER_WALL_BLOCK)
+				)
+				.shaped(
+					3, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("PPP")
+						.key('P', PsithurismBlocks.PAPER_WALL_BLOCK)
+				);
+			generator.forItem(PsithurismBlocks.VERTICAL_PAPER_WALL_BLOCK)
+				.shaped(
+					"_from_large", 3, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("P", "P", "P")
+						.key('P', PsithurismBlocks.LARGE_PAPER_WALL_BLOCK)
+				)
+				.shaped(
+					3, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("P", "P", "P")
+						.key('P', PsithurismBlocks.PAPER_WALL_BLOCK)
+				);
+			generator.forItem(PsithurismBlocks.LARGE_PAPER_WALL)
+				.shaped(
+					16, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("PPP", "PPP")
+						.key('P', PsithurismBlocks.LARGE_PAPER_WALL_BLOCK)
+				);
+			generator.forItem(PsithurismBlocks.PAPER_WALL)
+				.shaped(
+					16, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("PPP", "PPP")
+						.key('P', PsithurismBlocks.PAPER_WALL_BLOCK)
+				);
+			generator.forItem(PsithurismBlocks.HORIZONTAL_PAPER_WALL)
+				.shaped(
+					16, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("PPP", "PPP")
+						.key('P', PsithurismBlocks.HORIZONTAL_PAPER_WALL_BLOCK)
+				);
+			generator.forItem(PsithurismBlocks.VERTICAL_PAPER_WALL)
+				.shaped(
+					16, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("PPP", "PPP")
+						.key('P', PsithurismBlocks.VERTICAL_PAPER_WALL_BLOCK)
+				);
+			generator.forItem(PsithurismBlocks.DARK_CHERRY_GLASS)
+				.shaped(
+					4, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("PPP", "PGP", "PPP")
+						.key('P', PsithurismWoodSets.DARK_CHERRY.getPlankRelatives().getMain())
+						.key('G', Blocks.GLASS)
+				);
+			generator.forItem(PsithurismBlocks.TILED_DARK_CHERRY_GLASS)
+				.shaped(
+					4, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("GG", "GG")
+						.key('G', PsithurismBlocks.DARK_CHERRY_GLASS)
+				);
+			generator.forItem(PsithurismBlocks.HORIZONTAL_DARK_CHERRY_GLASS)
+				.shaped(
+					3, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("GGG")
+						.key('G', PsithurismBlocks.DARK_CHERRY_GLASS)
+				)
+				.shaped(
+					"_from_tiled", 3, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("GGG")
+						.key('G', PsithurismBlocks.TILED_DARK_CHERRY_GLASS)
+				);
+			generator.forItem(PsithurismBlocks.VERTICAL_DARK_CHERRY_GLASS)
+				.shaped(
+					3, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("G", "G", "G")
+						.key('G', PsithurismBlocks.DARK_CHERRY_GLASS)
+				)
+				.shaped(
+					"_from_tiled", 3, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("G", "G", "G")
+						.key('G', PsithurismBlocks.TILED_DARK_CHERRY_GLASS)
+				);
+			generator.forItem(PsithurismBlocks.DARK_CHERRY_GLASS_PANE)
+				.shaped(
+					16, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("GGG", "GGG")
+						.key('G', PsithurismBlocks.DARK_CHERRY_GLASS)
+				);
+			generator.forItem(PsithurismBlocks.TILED_DARK_CHERRY_GLASS_PANE)
+				.shaped(
+					16, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("GGG", "GGG")
+						.key('G', PsithurismBlocks.TILED_DARK_CHERRY_GLASS)
+				);
+			generator.forItem(PsithurismBlocks.HORIZONTAL_DARK_CHERRY_GLASS_PANE)
+				.shaped(
+					16, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("GGG", "GGG")
+						.key('G', PsithurismBlocks.HORIZONTAL_DARK_CHERRY_GLASS)
+				);
+			generator.forItem(PsithurismBlocks.VERTICAL_DARK_CHERRY_GLASS_PANE)
+				.shaped(
+					16, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("GGG", "GGG")
+						.key('G', PsithurismBlocks.VERTICAL_DARK_CHERRY_GLASS)
+				);
+			generator.forItem(PsithurismBlocks.SMALL_TATAMI)
+				.shaped(
+					2, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("TST", "SLS", "TST")
+						.key('T', Items.STRING)
+						.key('S', Items.STICK)
+						.key('L', Items.LEATHER)
+				);
+			generator.forItem(PsithurismBlocks.MEDIUM_TATAMI)
+				.shaped(
+					RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("SS")
+						.key('S', PsithurismBlocks.SMALL_TATAMI)
+				);
+			generator.forItem(PsithurismBlocks.LARGE_TATAMI)
+				.shaped(
+					RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("SS", "SS")
+						.key('S', PsithurismBlocks.SMALL_TATAMI)
+				)
+				.shaped(
+					"_from_medium", RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("MM")
+						.key('M', PsithurismBlocks.MEDIUM_TATAMI)
+				);
+			generator.forItem(PsithurismBlocks.SMALL_TATAMI_MAT)
+				.shaped(
+					RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("T", "T")
+						.key('T', PsithurismBlocks.SMALL_TATAMI)
+				);
+			generator.forItem(PsithurismBlocks.MEDIUM_TATAMI_MAT)
+				.shaped(
+					RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("T", "T")
+						.key('T', PsithurismBlocks.MEDIUM_TATAMI)
+				);
+			generator.forItem(PsithurismBlocks.LARGE_TATAMI_MAT)
+				.shaped(
+					RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("T", "T")
+						.key('T', PsithurismBlocks.LARGE_TATAMI)
+				);
+			generator.forItem(PsithurismBlocks.SMALL_PLAITED_TATAMI)
+				.shaped(
+					2, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("TRT", "RWR", "TRT")
+						.key('T', Items.STRING)
+						.key('R', PsithurismItems.RICE_PLANT)
+						.key('W', Blocks.WHITE_WOOL)
+				);
+			generator.forItem(PsithurismBlocks.MEDIUM_PLAITED_TATAMI)
+				.shaped(
+					RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("SS")
+						.key('S', PsithurismBlocks.SMALL_PLAITED_TATAMI)
+				);
+			generator.forItem(PsithurismBlocks.LARGE_PLAITED_TATAMI)
+				.shaped(
+					RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("SS", "SS")
+						.key('S', PsithurismBlocks.SMALL_PLAITED_TATAMI)
+				)
+				.shaped(
+					"_from_medium", RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("MM")
+						.key('M', PsithurismBlocks.MEDIUM_TATAMI)
+				);
+			generator.forItem(PsithurismBlocks.SMALL_PLAITED_TATAMI_MAT)
+				.shaped(
+					RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("T", "T")
+						.key('T', PsithurismBlocks.SMALL_PLAITED_TATAMI)
+				);
+			generator.forItem(PsithurismBlocks.MEDIUM_PLAITED_TATAMI_MAT)
+				.shaped(
+					RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("T", "T")
+						.key('T', PsithurismBlocks.MEDIUM_PLAITED_TATAMI)
+				);
+			generator.forItem(PsithurismBlocks.LARGE_PLAITED_TATAMI_MAT)
+				.shaped(
+					RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("T", "T")
+						.key('T', PsithurismBlocks.LARGE_PLAITED_TATAMI)
+				);
+			generator.forItem(PsithurismBlocks.STONE_LANTERN)
+				.shaped(
+					RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("SSS", "STS", "SSS")
+						.key('S', Blocks.STONE)
+						.key('T', Blocks.TORCH)
+				);
+			generator.forItem(PsithurismBlocks.NAMAKO_KABE)
+				.shaped(
+					RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("DA", "AD")
+						.key('D', Blocks.DIORITE)
+						.key('A', PsithurismBlocks.ASHINO_STONE.getMain())
+				);
+			generator.forItem(PsithurismBlocks.THREAD)
+				.shaped(
+					6, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("S", "F", "S")
+						.key('S', Items.STRING)
+						.key('F', Items.FEATHER)
+				);
+			generator.forItem(PsithurismBlocks.TERU_TERU_BOZU)
+				.shaped(
+					RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern(" C ", " T ", "TWT")
+						.key('C', PsithurismItems.WHITE_PETAL_CROWN)
+						.key('T', PsithurismBlocks.THREAD)
+						.key('W', Blocks.WHITE_WOOL)
+				);
+			generator.forItem(PsithurismBlocks.MANEKI_NEKO)
+				.shaped(
+					RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("RTQ", "TAT")
+						.key('R', Items.REDSTONE)
+						.key('T', Blocks.WHITE_TERRACOTTA)
+						.key('Q', Items.QUARTZ)
+						.key('A', PsithurismBlocks.ASHINO_STONE.getMain())
+				);
+			generator.forItem(PsithurismBlocks.ASHINO_STONE.getMain())
+				.shaped(
+					4, RecipeCategory.BUILDING_BLOCKS,
 					recipe -> recipe.pattern("AB", "BA")
 						.key('A', Blocks.ANDESITE)
 						.key('B', Blocks.SMOOTH_BASALT)
@@ -121,11 +398,66 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 				.cutting(Blocks.STONE, RecipeCategory.BUILDING_BLOCKS, 1);
 			generator.forItem(PsithurismBlocks.ASHINO_BRICKS.getMain())
 				.shaped(
-					RecipeCategory.BUILDING_BLOCKS,
+					4, RecipeCategory.BUILDING_BLOCKS,
 					recipe -> recipe.pattern("##", "##")
 						.key('#', PsithurismBlocks.ASHINO_STONE.getMain())
 				)
 				.cutting(PsithurismBlocks.ASHINO_STONE.getMain(), RecipeCategory.BUILDING_BLOCKS, 1);
+			generator.forItem(PsithurismBlocks.MOSSY_ASHINO_BRICKS.getMain())
+				.shapeless(
+					RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.with(PsithurismBlocks.ASHINO_BRICKS.getMain(), Blocks.VINE)
+				)
+				.shapeless(
+					"_with_moss", RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.with(PsithurismBlocks.ASHINO_BRICKS.getMain(), Blocks.MOSS_BLOCK)
+				);
+			generator.forItem(PsithurismBlocks.CHISELED_ASHINO_STONE_BRICKS)
+				.shaped(
+					RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("S", "S")
+						.key('S', PsithurismBlocks.ASHINO_STONE.get(BlockFamily.Variant.SLAB))
+				);
+			generator.forItem(PsithurismBlocks.POLISHED_ASHINO_STONE.getMain())
+				.shaped(
+					4, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("##", "##")
+						.key('#', PsithurismBlocks.ASHINO_BRICKS.getMain())
+				);
+			generator.forItem(PsithurismBlocks.ASHINO_STONE_PEDESTAL)
+				.shaped(
+					4, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("B", "B")
+						.key('B', PsithurismBlocks.ASHINO_BRICKS.getMain())
+				);
+			generator.forItem(PsithurismBlocks.STONE_KAWARA_TILES.getMain())
+				.shaped(
+					4, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("SB", "BS")
+						.key('S', Blocks.STONE)
+						.key('B', Blocks.STONE_BRICKS)
+				);
+			generator.forItem(PsithurismBlocks.DEEPSLATE_KAWARA_TILES.getMain())
+				.shaped(
+					4, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("SB", "BS")
+						.key('S', Blocks.DEEPSLATE)
+						.key('B', Blocks.DEEPSLATE_BRICKS)
+				);
+			generator.forItem(PsithurismBlocks.BLACKSTONE_KAWARA_TILES.getMain())
+				.shaped(
+					4, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("SB", "BS")
+						.key('S', Blocks.BLACKSTONE)
+						.key('B', Blocks.POLISHED_BLACKSTONE_BRICKS)
+				);
+			generator.forItem(PsithurismBlocks.ASHINO_KAWARA_TILES.getMain())
+				.shaped(
+					4, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("SB", "BS")
+						.key('S', PsithurismBlocks.ASHINO_STONE.getMain())
+						.key('B', PsithurismBlocks.ASHINO_BRICKS.getMain())
+				);
 			generator.forItem(PsithurismItems.MISO_PASTE)
 				.smoking(PsithurismItems.SOYBEANS, RecipeCategory.FOOD, 2, 20);
 		}

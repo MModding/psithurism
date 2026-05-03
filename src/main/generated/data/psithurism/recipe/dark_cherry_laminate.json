@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": "psithurism:ashino_stone"
+    "S": "psithurism:dark_cherry_slab"
   },
   "pattern": [
-    "##",
-    "##"
+    "SS",
+    "SS"
   ],
   "result": {
-    "count": 4,
-    "id": "psithurism:ashino_bricks"
+    "count": 2,
+    "id": "psithurism:dark_cherry_laminate"
   }
 }

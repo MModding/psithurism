@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "A": "minecraft:paper",
+    "P": "psithurism:dark_cherry_planks"
+  },
+  "pattern": [
+    "PPP",
+    "PAP",
+    "PPP"
+  ],
+  "result": {
+    "count": 4,
+    "id": "psithurism:large_paper_wall_block"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_small_plaited_tatami": {
+      "conditions": {
+        "items": [
+          {
+            "items": "psithurism:small_plaited_tatami"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "psithurism:small_plaited_tatami_mat"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_small_plaited_tatami"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "psithurism:small_plaited_tatami_mat"
+    ]
+  }
+}

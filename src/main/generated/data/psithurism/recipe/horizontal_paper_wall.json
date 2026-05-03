@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "P": "psithurism:horizontal_paper_wall_block"
+  },
+  "pattern": [
+    "PPP",
+    "PPP"
+  ],
+  "result": {
+    "count": 16,
+    "id": "psithurism:horizontal_paper_wall"
+  }
+}

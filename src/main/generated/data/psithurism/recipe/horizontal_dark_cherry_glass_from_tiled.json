@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "G": "psithurism:tiled_dark_cherry_glass"
+  },
+  "pattern": [
+    "GGG"
+  ],
+  "result": {
+    "count": 3,
+    "id": "psithurism:horizontal_dark_cherry_glass"
+  }
+}

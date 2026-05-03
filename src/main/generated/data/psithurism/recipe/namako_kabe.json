@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": "psithurism:ashino_stone"
+    "A": "psithurism:ashino_stone",
+    "D": "minecraft:diorite"
   },
   "pattern": [
-    "##",
-    "##"
+    "DA",
+    "AD"
   ],
   "result": {
-    "count": 4,
-    "id": "psithurism:ashino_bricks"
+    "id": "psithurism:namako_kabe"
   }
 }

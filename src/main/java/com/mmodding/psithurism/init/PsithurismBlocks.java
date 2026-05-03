@@ -35,8 +35,8 @@ public class PsithurismBlocks {
 
 	public static final Block PAPER_WALL_BLOCK = register("paper_wall_block", BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
 	public static final Block LARGE_PAPER_WALL_BLOCK = register("large_paper_wall_block", BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
-	public static final Block HORIZONTAL_PAPER_WALL_BLOCk = register("horizontal_paper_wall_block", BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
-	public static final Block VERTICAL_PAPER_WALL_BLOCk = register("vertical_paper_wall_block", BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
+	public static final Block HORIZONTAL_PAPER_WALL_BLOCK = register("horizontal_paper_wall_block", BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
+	public static final Block VERTICAL_PAPER_WALL_BLOCK = register("vertical_paper_wall_block", BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
 	public static final Block PAPER_WALL = register("paper_wall", IronBarsBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
 	public static final Block LARGE_PAPER_WALL = register("large_paper_wall", IronBarsBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
 	public static final Block HORIZONTAL_PAPER_WALL = register("horizontal_paper_wall", IronBarsBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
@@ -90,7 +90,7 @@ public class PsithurismBlocks {
 
 	public static final Block RICE = register("rice", RiceCrop::new, BlockBehaviour.Properties.of().noCollision().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY));
 
-	public static final Block IRON_MANHOLE = register("iron_manhole", properties -> new TrapDoorBlock(BlockSetType.IRON, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_TRAPDOOR)).registerItem();
+	public static final Block IRON_MANHOLE = register("iron_manhole", properties -> new IronManholeBlock(BlockSetType.IRON, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_TRAPDOOR)).registerItem();
 	public static final Block COPPER_MANHOLE = register("copper_manhole", properties -> new WeatheringCopperTrapDoorBlock(BlockSetType.COPPER, WeatheringCopper.WeatherState.UNAFFECTED, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_TRAPDOOR)).registerItem();
 	public static final Block EXPOSED_COPPER_MANHOLE = register("exposed_copper_manhole", properties -> new WeatheringCopperTrapDoorBlock(BlockSetType.COPPER, WeatheringCopper.WeatherState.EXPOSED, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.EXPOSED_COPPER_TRAPDOOR)).registerItem();
 	public static final Block WEATHERED_COPPER_MANHOLE = register("weathered_copper_manhole", properties -> new WeatheringCopperTrapDoorBlock(BlockSetType.COPPER, WeatheringCopper.WeatherState.WEATHERED, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.WEATHERED_COPPER_TRAPDOOR)).registerItem();

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_dark_cherry_slab": {
+      "conditions": {
+        "items": [
+          {
+            "items": "psithurism:dark_cherry_slab"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "psithurism:dark_cherry_laminate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_dark_cherry_slab"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "psithurism:dark_cherry_laminate"
+    ]
+  }
+}

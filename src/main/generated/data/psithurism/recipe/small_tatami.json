@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "L": "minecraft:leather",
+    "S": "minecraft:stick",
+    "T": "minecraft:string"
+  },
+  "pattern": [
+    "TST",
+    "SLS",
+    "TST"
+  ],
+  "result": {
+    "count": 2,
+    "id": "psithurism:small_tatami"
+  }
+}
