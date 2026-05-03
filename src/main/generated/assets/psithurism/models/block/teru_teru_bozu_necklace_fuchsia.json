@@ -1,7 +1,7 @@
 {
   "parent": "psithurism:block/template_teru_teru_bozu",
   "textures": {
-    "particle": "psithurism:block/teru_teru_bozu_necklace_fuchsia",
+    "particle": "minecraft:block/white_wool",
     "texture": "psithurism:block/teru_teru_bozu_necklace_fuchsia"
   }
 }

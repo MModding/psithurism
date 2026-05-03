@@ -8,6 +8,17 @@
     "#psithurism:stone_kawara_tiles",
     "#psithurism:deepslate_kawara_tiles",
     "#psithurism:blackstone_kawara_tiles",
-    "#psithurism:ashino_kawara_tiles"
+    "#psithurism:ashino_kawara_tiles",
+    "psithurism:stone_lantern",
+    "psithurism:chiseled_ashino_stone_bricks",
+    "psithurism:iron_manhole",
+    "psithurism:copper_manhole",
+    "psithurism:exposed_copper_manhole",
+    "psithurism:weathered_copper_manhole",
+    "psithurism:oxidized_copper_manhole",
+    "psithurism:waxed_copper_manhole",
+    "psithurism:waxed_exposed_copper_manhole",
+    "psithurism:waxed_weathered_copper_manhole",
+    "psithurism:waxed_oxidized_copper_manhole"
   ]
 }

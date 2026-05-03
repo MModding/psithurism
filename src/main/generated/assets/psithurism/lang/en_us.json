@@ -105,7 +105,9 @@
   "block.psithurism.purple_futon": "Purple Futon",
   "block.psithurism.purple_zabuton": "Purple Zabuton",
   "block.psithurism.red_futon": "Red Futon",
+  "block.psithurism.red_paper_lantern": "Red Paper Lantern",
   "block.psithurism.red_zabuton": "Red Zabuton",
+  "block.psithurism.regular_paper_lantern": "Regular Paper Lantern",
   "block.psithurism.rice": "Rice",
   "block.psithurism.small_plaited_tatami": "Small Plaited Tatami",
   "block.psithurism.small_plaited_tatami_mat": "Small Plaited Tatami Mat",
@@ -189,5 +191,7 @@
   "item.psithurism.winter_school_bag": "Winter School Bag",
   "item.psithurism.winter_uniform_boots": "Winter Uniform Boots",
   "item.psithurism.yakitori": "Yakitori",
-  "itemGroup.psithurism.tab": "Psithurism"
+  "itemGroup.psithurism.building_blocks": "Psithurism - Building Blocks",
+  "itemGroup.psithurism.cosmetics": "Psithurism - Cosmetics",
+  "itemGroup.psithurism.organic_products": "Psithurism - Organic Products"
 }

@@ -65,6 +65,9 @@ public class PsithurismBlocks {
 	public static final Block MEDIUM_PLAITED_TATAMI_MAT = register("medium_plaited_tatami_mat", MediumTatamiMatBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET).pushReaction(PushReaction.DESTROY)).registerItem();
 	public static final Block LARGE_PLAITED_TATAMI_MAT = register("large_plaited_tatami_mat", LargeTatamiMatBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET).pushReaction(PushReaction.DESTROY)).registerItem();
 
+	public static final Block REGULAR_PAPER_LANTERN = register("regular_paper_lantern", PaperLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).sound(SoundType.PACKED_MUD).lightLevel(_ -> 13)).registerItem();
+	public static final Block RED_PAPER_LANTERN = register("red_paper_lantern", PaperLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).sound(SoundType.PACKED_MUD).lightLevel(_ -> 13)).registerItem();
+
 	public static final Block STONE_LANTERN = register("stone_lantern", StoneLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).sound(SoundType.STONE).lightLevel(state -> state.getValue(BlockStateProperties.LIT) ? 15 : 0)).registerItem();
 	public static final Block NAMAKO_KABE = register("namako_kabe", BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
 	public static final Block THREAD = register("thread", ChainBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).noCollision()).registerItem();

@@ -12,6 +12,7 @@ public class PsithurismModelTemplates {
 	public static final ModelTemplate CHERRY_BONSAI = create("template_cherry_bonsai", TextureSlot.TEXTURE, TextureSlot.PARTICLE);
 	public static final ModelTemplate FUTON = create("template_futon", TextureSlot.TEXTURE, TextureSlot.PARTICLE);
 	public static final ModelTemplate TERU_TERU_BOZU = create("template_teru_teru_bozu", TextureSlot.TEXTURE, TextureSlot.PARTICLE);
+	public static final ModelTemplate PAPER_LANTERN = create("template_paper_lantern", TextureSlot.TEXTURE, TextureSlot.PARTICLE);
 
 	private static ModelTemplate create(final String id, final TextureSlot... slots) {
 		return new ModelTemplate(Optional.of(Psithurism.createId("block/" + id)), Optional.empty(), slots);

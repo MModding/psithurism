@@ -19,29 +19,30 @@ public class PsithurismItems {
 	public static final Item FAN_POTTERY_SHERD = register("fan_pottery_sherd", new Item.Properties().rarity(Rarity.UNCOMMON).decoratedPotPattern(PsithurismDecoratedPotPatterns.FAN));
 	public static final Item TORII_POTTERY_SHERD = register("torii_pottery_sherd", new Item.Properties().rarity(Rarity.UNCOMMON).decoratedPotPattern(PsithurismDecoratedPotPatterns.TORII));
 
-	public static final Item KITSUNE_MASK = register("kitsune_mask", MaskItem::new, new Item.Properties().stacksTo(1).equippable(EquipmentSlot.HEAD).component(PsithurismDataComponents.WORN_MASK, false).trinketSlots(List.of("head/face")));
 	public static final Item ONI_MASK = register("oni_mask", MaskItem::new, new Item.Properties().stacksTo(1).equippable(EquipmentSlot.HEAD).component(PsithurismDataComponents.WORN_MASK, false).trinketSlots(List.of("head/face")));
-	public static final Item FOX_EARS = register("fox_ears", new Item.Properties().stacksTo(1).equippable(EquipmentSlot.HEAD).trinketSlots(List.of("head/cap")));
-	public static final Item STRAW_HAT = register("straw_hat", new Item.Properties().stacksTo(1).equippable(EquipmentSlot.HEAD).trinketSlots(List.of("head/cap")));
+	public static final Item KITSUNE_MASK = register("kitsune_mask", MaskItem::new, new Item.Properties().stacksTo(1).equippable(EquipmentSlot.HEAD).component(PsithurismDataComponents.WORN_MASK, false).trinketSlots(List.of("head/face")));
 	public static final Item KITSUNE_TAIL = register("kitsune_tail", new Item.Properties().stacksTo(1).equippable(EquipmentSlot.LEGS).trinketSlots(List.of("legs/belt")));
-	public static final Item FOX_TAIL = register("fox_tail", new Item.Properties().stacksTo(1).equippable(EquipmentSlot.LEGS).trinketSlots(List.of("legs/belt")));
-
-	public static final Item PINK_PETAL_CROWN = registerEquippableItem("pink_petal_crown", EquipmentSlot.HEAD, new Item.Properties().stacksTo(1));
-	public static final Item WHITE_PETAL_CROWN = registerEquippableItem("white_petal_crown", EquipmentSlot.HEAD, new Item.Properties().stacksTo(1));
 
 	public static final Item WINTER_GAKURAN_SHIRT = registerEquippableItem("winter_gakuran_shirt", "winter_gakuran", EquipmentSlot.CHEST, new Item.Properties().stacksTo(1));
 	public static final Item WINTER_GAKURAN_PANTS = registerEquippableItem("winter_gakuran_pants", "winter_gakuran", EquipmentSlot.LEGS, new Item.Properties().stacksTo(1));
 	public static final Item WINTER_FUKU_DRESS = registerEquippableItem("winter_fuku_dress", "winter_fuku", EquipmentSlot.CHEST, new Item.Properties().stacksTo(1));
 	public static final Item WINTER_FUKU_SKIRT = registerEquippableItem("winter_fuku_skirt", "winter_fuku", EquipmentSlot.LEGS, new Item.Properties().stacksTo(1));
-	public static final Item WINTER_SCHOOL_BAG = register("winter_school_bag", new Item.Properties().stacksTo(1).equippable(EquipmentSlot.CHEST).trinketSlots(List.of("chest/back")));
 	public static final Item WINTER_UNIFORM_BOOTS = registerEquippableItem("winter_uniform_boots", "winter_fuku", EquipmentSlot.FEET, new Item.Properties().stacksTo(1));
+	public static final Item WINTER_SCHOOL_BAG = register("winter_school_bag", new Item.Properties().stacksTo(1).equippable(EquipmentSlot.CHEST).trinketSlots(List.of("chest/back")));
+
+	public static final Item STRAW_HAT = register("straw_hat", new Item.Properties().stacksTo(1).equippable(EquipmentSlot.HEAD).trinketSlots(List.of("head/cap")));
+	public static final Item FOX_EARS = register("fox_ears", new Item.Properties().stacksTo(1).equippable(EquipmentSlot.HEAD).trinketSlots(List.of("head/cap")));
+	public static final Item FOX_TAIL = register("fox_tail", new Item.Properties().stacksTo(1).equippable(EquipmentSlot.LEGS).trinketSlots(List.of("legs/belt")));
 
 	public static final Item SUMMER_GAKURAN_SHIRT = registerEquippableItem("summer_gakuran_shirt", "summer_gakuran", EquipmentSlot.CHEST, new Item.Properties().stacksTo(1));
 	public static final Item SUMMER_GAKURAN_PANTS = registerEquippableItem("summer_gakuran_pants", "summer_gakuran", EquipmentSlot.LEGS, new Item.Properties().stacksTo(1));
 	public static final Item SUMMER_FUKU_DRESS = registerEquippableItem("summer_fuku_dress", "summer_fuku", EquipmentSlot.CHEST, new Item.Properties().stacksTo(1));
 	public static final Item SUMMER_FUKU_SKIRT = registerEquippableItem("summer_fuku_skirt", "summer_fuku", EquipmentSlot.LEGS, new Item.Properties().stacksTo(1));
-	public static final Item SUMMER_SCHOOL_BAG = register("summer_school_bag", new Item.Properties().stacksTo(1).equippable(EquipmentSlot.CHEST).trinketSlots(List.of("chest/back")));
 	public static final Item SUMMER_UNIFORM_BOOTS = registerEquippableItem("summer_uniform_boots", "summer_fuku", EquipmentSlot.FEET, new Item.Properties().stacksTo(1));
+	public static final Item SUMMER_SCHOOL_BAG = register("summer_school_bag", new Item.Properties().stacksTo(1).equippable(EquipmentSlot.CHEST).trinketSlots(List.of("chest/back")));
+
+	public static final Item PINK_PETAL_CROWN = registerEquippableItem("pink_petal_crown", EquipmentSlot.HEAD, new Item.Properties().stacksTo(1));
+	public static final Item WHITE_PETAL_CROWN = registerEquippableItem("white_petal_crown", EquipmentSlot.HEAD, new Item.Properties().stacksTo(1));
 
 	public static final Item ONSEN_WATER_BUCKET = register("onsen_water_bucket", properties -> new BucketItem(PsithurismFluids.ONSEN_WATER, properties), new Item.Properties().stacksTo(1));
 	public static final Item KOI_SPAWN_EGG = Items.registerSpawnEgg(PsithurismEntityTypes.KOI);

@@ -12,6 +12,7 @@ import com.mmodding.library.datagen.api.provider.MModdingRecipeProvider;
 import com.mmodding.library.datagen.api.recipe.RecipeGenerator;
 import com.mmodding.psithurism.block.*;
 import com.mmodding.psithurism.data.PsithurismDataProcessors;
+import com.mmodding.psithurism.data.PsithurismTexturedModels;
 import com.mmodding.psithurism.init.PsithurismBlocks;
 import com.mmodding.psithurism.init.PsithurismFluids;
 import com.mmodding.psithurism.init.PsithurismItems;
@@ -48,6 +49,7 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 			.chain(block -> block instanceof StoneLanternBlock, PsithurismDataProcessors::createStoneLantern)
 			.chain(block -> block.builtInRegistryHolder().key().identifier().getPath().contains("waxed"), DefaultBlockModelProcessing::createWaxedTrapdoor)
 			.chain(block -> block instanceof TrapDoorBlock, BlockModelGenerators::createTrapdoor)
+			.chain(block -> block instanceof PaperLanternBlock, DefaultBlockModelProcessing.createWithProvider(PsithurismTexturedModels.PAPER_LANTERN))
 			.chain(block -> block instanceof SimpleBedBlock, PsithurismDataProcessors::createFuton)
 			.chain(block -> block instanceof SlabBlock, DefaultBlockModelProcessing::createStandaloneSlab)
 			.chain(Set.of(PsithurismBlocks.SMALL_TATAMI, PsithurismBlocks.SMALL_PLAITED_TATAMI), PsithurismDataProcessors::createSmallTatami)
@@ -56,7 +58,7 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 			.chain(block -> block instanceof MediumTatamiBlock, PsithurismDataProcessors::createMediumTatami)
 			.chain(block -> block instanceof LargeTatamiMatBlock, PsithurismDataProcessors::createLargeTatamiMat)
 			.chain(block -> block instanceof LargeTatamiBlock, PsithurismDataProcessors.createLargeTatami(ModelTemplates.CUBE_ALL, TextureMapping::cube))
-			.chain(block -> block instanceof LiquidBlock, BlockModelGenerators::createNonTemplateModelBlock)
+			.chain(block -> block instanceof LiquidBlock, PsithurismDataProcessors::createOnsenWater)
 			.chain(Set.of(PsithurismBlocks.ASHINO_STONE_PEDESTAL), PsithurismDataProcessors::createAshinoStonePedestal)
 			.chain(Set.of(PsithurismBlocks.RICE), PsithurismDataProcessors::createRiceCrop)
 			.chain(Set.of(PsithurismBlocks.CHERRY_BONSAI), PsithurismDataProcessors::createCherryBonsai)
@@ -96,7 +98,9 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 		public void generateTranslations(HolderLookup.Provider registryLookup, TranslationBuilder translations) {
 			translations.add("block.psithurism.teru_teru_bozu.insufficient_will_power", "Insufficient Will Power!");
 			translations.add("block.psithurism.teru_teru_bozu.nothing_to_do", "I have nothing to do!");
-			translations.add("itemGroup.psithurism.tab", "Psithurism");
+			translations.add("itemGroup.psithurism.building_blocks", "Psithurism - Building Blocks");
+			translations.add("itemGroup.psithurism.organic_products", "Psithurism - Organic Products");
+			translations.add("itemGroup.psithurism.cosmetics", "Psithurism - Cosmetics");
 		}
 	}
 
@@ -150,7 +154,18 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 				.forceAddTag(PsithurismBlocks.STONE_KAWARA_TILES.getBlockTagKey())
 				.forceAddTag(PsithurismBlocks.DEEPSLATE_KAWARA_TILES.getBlockTagKey())
 				.forceAddTag(PsithurismBlocks.BLACKSTONE_KAWARA_TILES.getBlockTagKey())
-				.forceAddTag(PsithurismBlocks.ASHINO_KAWARA_TILES.getBlockTagKey());
+				.forceAddTag(PsithurismBlocks.ASHINO_KAWARA_TILES.getBlockTagKey())
+				.add(PsithurismBlocks.STONE_LANTERN)
+				.add(PsithurismBlocks.CHISELED_ASHINO_STONE_BRICKS)
+				.add(PsithurismBlocks.IRON_MANHOLE)
+				.add(PsithurismBlocks.COPPER_MANHOLE)
+				.add(PsithurismBlocks.EXPOSED_COPPER_MANHOLE)
+				.add(PsithurismBlocks.WEATHERED_COPPER_MANHOLE)
+				.add(PsithurismBlocks.OXIDIZED_COPPER_MANHOLE)
+				.add(PsithurismBlocks.WAXED_COPPER_MANHOLE)
+				.add(PsithurismBlocks.WAXED_EXPOSED_COPPER_MANHOLE)
+				.add(PsithurismBlocks.WAXED_WEATHERED_COPPER_MANHOLE)
+				.add(PsithurismBlocks.WAXED_OXIDIZED_COPPER_MANHOLE);
 		}
 	}
 

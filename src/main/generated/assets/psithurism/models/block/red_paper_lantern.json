@@ -1,0 +1,7 @@
+{
+  "parent": "psithurism:block/template_paper_lantern",
+  "textures": {
+    "particle": "psithurism:block/red_paper_lantern",
+    "texture": "psithurism:block/red_paper_lantern"
+  }
+}
