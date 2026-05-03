@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_black_wool": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:black_wool"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_gold_nugget": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:gold_nugget"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "psithurism:winter_gakuran_shirt"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_thread": {
+      "conditions": {
+        "items": [
+          {
+            "items": "psithurism:thread"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_thread",
+      "has_black_wool",
+      "has_gold_nugget"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "psithurism:winter_gakuran_shirt"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "minecraft:black_wool",
+    "O": "minecraft:orange_wool",
+    "T": "psithurism:thread"
+  },
+  "pattern": [
+    "B B",
+    "OTO"
+  ],
+  "result": {
+    "id": "psithurism:fox_ears"
+  }
+}

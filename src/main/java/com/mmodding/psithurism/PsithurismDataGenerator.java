@@ -517,6 +517,138 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 					recipe -> recipe.pattern("TT")
 						.key('T', Blocks.WAXED_OXIDIZED_COPPER_TRAPDOOR)
 				);
+			generator.forItem(PsithurismItems.FOX_TAIL)
+				.shaped(
+					RecipeCategory.MISC,
+					recipe -> recipe.pattern("  T", "OOW")
+						.key('T', PsithurismBlocks.THREAD)
+						.key('O', Blocks.ORANGE_WOOL)
+						.key('W', Blocks.WHITE_WOOL)
+				);
+			generator.forItem(PsithurismItems.FOX_EARS)
+				.shaped(
+					RecipeCategory.MISC,
+					recipe -> recipe.pattern("B B", "OTO")
+						.key('B', Blocks.BLACK_WOOL)
+						.key('O', Blocks.ORANGE_WOOL)
+						.key('T', PsithurismBlocks.THREAD)
+				);
+			generator.forItem(PsithurismItems.KITSUNE_TAIL)
+				.shaped(
+					RecipeCategory.MISC,
+					recipe -> recipe.pattern("  T", "WWP")
+						.key('T', PsithurismBlocks.THREAD)
+						.key('W', Blocks.WHITE_WOOL)
+						.key('P', Blocks.PINK_WOOL)
+				);
+			generator.forItem(PsithurismItems.STRAW_HAT)
+				.shaped(
+					RecipeCategory.MISC,
+					recipe -> recipe.pattern("TWT").pattern("WWW").pattern("S S")
+						.key('T', PsithurismBlocks.THREAD)
+						.key('W', Blocks.WHEAT)
+						.key('S', Items.STRING)
+				);
+			generator.forItem(PsithurismItems.WHITE_PETAL_CROWN)
+				.shaped(
+					RecipeCategory.MISC,
+					recipe -> recipe.pattern("PPP", "P P", "PPP")
+						.key('P', PsithurismBlocks.WHITE_PETALS)
+				);
+			generator.forItem(PsithurismItems.SUMMER_GAKURAN_SHIRT)
+				.shaped(
+					RecipeCategory.MISC,
+					recipe -> recipe.pattern("T T", "WGW", "WWW")
+						.key('T', PsithurismBlocks.THREAD)
+						.key('W', Blocks.WHITE_WOOL)
+						.key('G', Items.GOLD_NUGGET)
+				);
+			generator.forItem(PsithurismItems.SUMMER_GAKURAN_PANTS)
+				.shaped(
+					RecipeCategory.MISC,
+					recipe -> recipe.pattern("WTW", "W W", "G G")
+						.key('W', Blocks.WHITE_WOOL)
+						.key('T', PsithurismBlocks.THREAD)
+						.key('G', Items.GOLD_NUGGET)
+				);
+			generator.forItem(PsithurismItems.WINTER_GAKURAN_SHIRT)
+				.shaped(
+					RecipeCategory.MISC,
+					recipe -> recipe.pattern("T T", "BGB", "BBB")
+						.key('T', PsithurismBlocks.THREAD)
+						.key('B', Blocks.BLACK_WOOL)
+						.key('G', Items.GOLD_NUGGET)
+				);
+			generator.forItem(PsithurismItems.WINTER_GAKURAN_PANTS)
+				.shaped(
+					RecipeCategory.MISC,
+					recipe -> recipe.pattern("BTB", "B B", "G G")
+						.key('B', Blocks.BLACK_WOOL)
+						.key('T', PsithurismBlocks.THREAD)
+						.key('G', Items.GOLD_NUGGET)
+				);
+			generator.forItem(PsithurismItems.SUMMER_FUKU_DRESS)
+				.shaped(
+					RecipeCategory.MISC,
+					recipe -> recipe.pattern("P P", "TMT", "WWW")
+						.key('P', Blocks.PURPLE_WOOL)
+						.key('T', PsithurismBlocks.THREAD)
+						.key('M', Blocks.MAGENTA_WOOL)
+						.key('W', Blocks.WHITE_WOOL)
+				);
+			generator.forItem(PsithurismItems.SUMMER_FUKU_SKIRT)
+				.shaped(
+					RecipeCategory.MISC,
+					recipe -> recipe.pattern("TPT", "PTP")
+						.key('T', PsithurismBlocks.THREAD)
+						.key('P', Blocks.PURPLE_WOOL)
+				);
+			generator.forItem(PsithurismItems.WINTER_FUKU_DRESS)
+				.shaped(
+					RecipeCategory.MISC,
+					recipe -> recipe.pattern("W W", "TWT", "BBB")
+						.key('W', Blocks.WHITE_WOOL)
+						.key('T', PsithurismBlocks.THREAD)
+						.key('B', Blocks.BLACK_WOOL)
+				);
+			generator.forItem(PsithurismItems.WINTER_FUKU_SKIRT)
+				.shaped(
+					RecipeCategory.MISC,
+					recipe -> recipe.pattern("TWT", "WTW")
+						.key('T', PsithurismBlocks.THREAD)
+						.key('W', Blocks.WHITE_WOOL)
+				);
+			generator.forItem(PsithurismItems.SUMMER_UNIFORM_BOOTS)
+				.shaped(
+					RecipeCategory.MISC,
+					recipe -> recipe.pattern("T T", "L L", "L L")
+						.key('T', PsithurismBlocks.THREAD)
+						.key('L', Items.LEATHER)
+				);
+			generator.forItem(PsithurismItems.WINTER_UNIFORM_BOOTS)
+				.shaped(
+					RecipeCategory.MISC,
+					recipe -> recipe.pattern("T T", "W W", "L L")
+						.key('T', PsithurismBlocks.THREAD)
+						.key('W', Blocks.WHITE_WOOL)
+						.key('L', Items.LEATHER)
+				);
+			generator.forItem(PsithurismItems.SUMMER_SCHOOL_BAG)
+				.shaped(
+					RecipeCategory.MISC,
+					recipe -> recipe.pattern("TWT", "W W", "WGW")
+						.key('T', PsithurismBlocks.THREAD)
+						.key('W', Blocks.WHITE_WOOL)
+						.key('G', Items.GOLD_NUGGET)
+				);
+			generator.forItem(PsithurismItems.WINTER_SCHOOL_BAG)
+				.shaped(
+					RecipeCategory.MISC,
+					recipe -> recipe.pattern("TBT", "B B", "BGB")
+						.key('T', PsithurismBlocks.THREAD)
+						.key('B', Blocks.BLUE_WOOL)
+						.key('G', Items.GOLD_NUGGET)
+				);
 			generator.forItem(PsithurismItems.MISO_PASTE)
 				.smoking(PsithurismItems.SOYBEANS, RecipeCategory.FOOD, 2, 20);
 		}

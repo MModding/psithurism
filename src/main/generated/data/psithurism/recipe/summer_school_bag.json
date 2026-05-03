@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": "minecraft:gold_nugget",
+    "T": "psithurism:thread",
+    "W": "minecraft:white_wool"
+  },
+  "pattern": [
+    "TWT",
+    "W W",
+    "WGW"
+  ],
+  "result": {
+    "id": "psithurism:summer_school_bag"
+  }
+}

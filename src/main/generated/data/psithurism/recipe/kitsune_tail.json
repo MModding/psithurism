@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": "minecraft:pink_wool",
+    "T": "psithurism:thread",
+    "W": "minecraft:white_wool"
+  },
+  "pattern": [
+    "  T",
+    "WWP"
+  ],
+  "result": {
+    "id": "psithurism:kitsune_tail"
+  }
+}

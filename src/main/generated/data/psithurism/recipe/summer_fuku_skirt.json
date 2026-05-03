@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": "minecraft:purple_wool",
+    "T": "psithurism:thread"
+  },
+  "pattern": [
+    "TPT",
+    "PTP"
+  ],
+  "result": {
+    "id": "psithurism:summer_fuku_skirt"
+  }
+}

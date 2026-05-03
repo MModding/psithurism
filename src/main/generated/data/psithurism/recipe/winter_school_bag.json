@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "minecraft:blue_wool",
+    "G": "minecraft:gold_nugget",
+    "T": "psithurism:thread"
+  },
+  "pattern": [
+    "TBT",
+    "B B",
+    "BGB"
+  ],
+  "result": {
+    "id": "psithurism:winter_school_bag"
+  }
+}

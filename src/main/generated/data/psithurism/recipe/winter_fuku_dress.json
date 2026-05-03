@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "minecraft:black_wool",
+    "T": "psithurism:thread",
+    "W": "minecraft:white_wool"
+  },
+  "pattern": [
+    "W W",
+    "TWT",
+    "BBB"
+  ],
+  "result": {
+    "id": "psithurism:winter_fuku_dress"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "O": "minecraft:orange_wool",
+    "T": "psithurism:thread",
+    "W": "minecraft:white_wool"
+  },
+  "pattern": [
+    "  T",
+    "OOW"
+  ],
+  "result": {
+    "id": "psithurism:fox_tail"
+  }
+}
