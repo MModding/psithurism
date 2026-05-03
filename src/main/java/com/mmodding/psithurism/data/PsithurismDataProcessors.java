@@ -193,31 +193,84 @@ public class PsithurismDataProcessors {
 		);
 	}
 
+	public static void createLargeTatami(BlockModelGenerators generator, Block block) {
+		generator.registerSimpleFlatItemModel(block.asItem());
+		String tatamiPath = block.builtInRegistryHolder().key().identifier().getPath().replace("_mat", "");
+		Material singleMaterial = new Material(Psithurism.createId("block/" + tatamiPath.replace("large_", "small_")));
+		Material leftSideMaterial = new Material(Psithurism.createId("block/" + tatamiPath.replace("large_", "medium_") + "_left_side"));
+		Material rightSideMaterial = new Material(Psithurism.createId("block/" + tatamiPath.replace("large_", "medium_") + "_right_side"));
+		Material topLeftMaterial = new Material(Psithurism.createId("block/" + tatamiPath + "_top_left_corner"));
+		Material bottomLeftMaterial = new Material(Psithurism.createId("block/" + tatamiPath + "_bottom_left_corner"));
+		Material topRightMaterial = new Material(Psithurism.createId("block/" + tatamiPath + "_top_right_corner"));
+		Material bottomRightMaterial = new Material(Psithurism.createId("block/" + tatamiPath + "_bottom_right_corner"));
+		Identifier topLeftCorner = MModdingModelTemplates.CUBE_NORTH_INVERTED.createWithSuffix(
+			block,
+			"_top_left_corner",
+			new TextureMapping()
+				.put(TextureSlot.NORTH, leftSideMaterial)
+				.put(TextureSlot.SOUTH, leftSideMaterial)
+				.put(TextureSlot.EAST, leftSideMaterial)
+				.put(TextureSlot.WEST, leftSideMaterial)
+				.put(TextureSlot.UP, topLeftMaterial)
+				.put(TextureSlot.DOWN, bottomLeftMaterial)
+				.put(TextureSlot.PARTICLE, singleMaterial),
+			generator.modelOutput
+		);
+		Identifier bottomLeftCorner = MModdingModelTemplates.CUBE_NORTH_INVERTED.createWithSuffix(
+			block,
+			"_bottom_left_corner",
+			new TextureMapping()
+				.put(TextureSlot.NORTH, leftSideMaterial)
+				.put(TextureSlot.SOUTH, leftSideMaterial)
+				.put(TextureSlot.EAST, rightSideMaterial)
+				.put(TextureSlot.WEST, rightSideMaterial)
+				.put(TextureSlot.UP, bottomLeftMaterial)
+				.put(TextureSlot.DOWN, topLeftMaterial)
+				.put(TextureSlot.PARTICLE, singleMaterial),
+			generator.modelOutput
+		);
+		Identifier topRightCorner = MModdingModelTemplates.CUBE_NORTH_INVERTED.createWithSuffix(
+			block,
+			"_top_right_corner",
+			new TextureMapping()
+				.put(TextureSlot.NORTH, rightSideMaterial)
+				.put(TextureSlot.SOUTH, rightSideMaterial)
+				.put(TextureSlot.EAST, rightSideMaterial)
+				.put(TextureSlot.WEST, rightSideMaterial)
+				.put(TextureSlot.UP, topRightMaterial)
+				.put(TextureSlot.DOWN, bottomRightMaterial)
+				.put(TextureSlot.PARTICLE, singleMaterial),
+			generator.modelOutput
+		);
+		Identifier bottomRightCorner = MModdingModelTemplates.CUBE_NORTH_INVERTED.createWithSuffix(
+			block,
+			"_bottom_right_corner",
+			new TextureMapping()
+				.put(TextureSlot.NORTH, rightSideMaterial)
+				.put(TextureSlot.SOUTH, rightSideMaterial)
+				.put(TextureSlot.EAST, leftSideMaterial)
+				.put(TextureSlot.WEST, leftSideMaterial)
+				.put(TextureSlot.UP, bottomRightMaterial)
+				.put(TextureSlot.DOWN, topRightMaterial)
+				.put(TextureSlot.PARTICLE, singleMaterial),
+			generator.modelOutput
+		);
+		generator.blockStateOutput.accept(
+			MultiVariantGenerator.dispatch(block)
+				.with(
+					PropertyDispatch.initial(LargeTatamiBlock.X, LargeTatamiBlock.Z)
+						.select(0, 0, plainVariant(topLeftCorner))
+						.select(0, 1, plainVariant(bottomLeftCorner))
+						.select(1, 0, plainVariant(topRightCorner))
+						.select(1, 1, plainVariant(bottomRightCorner))
+				)
+				.with(ROTATION_HORIZONTAL_FACING)
+		);
+	}
+
 	public static void createOnsenWater(BlockModelGenerators generator, Block block) {
 		Identifier model = ModelTemplates.PARTICLE_ONLY.create(block, TextureMapping.particle(block), generator.modelOutput);
 		generator.blockStateOutput.accept(MultiVariantGenerator.dispatch(block, plainVariant(model)));
-	}
-
-	public static BlockModelProcessor createLargeTatami(ModelTemplate template, Function<Material, TextureMapping> mapping) {
-		return (generator, block) -> {
-			generator.registerSimpleFlatItemModel(block.asItem());
-			Block tatami = BuiltInRegistries.BLOCK.getValueOrThrow(block.builtInRegistryHolder().key().mapIdentifier(id -> id.withPath(s -> s.replace("_mat", ""))));
-			Identifier topLeftCorner = template.createWithSuffix(block, "_top_left_corner", mapping.apply(TextureMapping.getBlockTexture(tatami, "_top_left_corner")), generator.modelOutput);
-			Identifier bottomLeftCorner = template.createWithSuffix(block, "_bottom_left_corner", mapping.apply(TextureMapping.getBlockTexture(tatami, "_bottom_left_corner")), generator.modelOutput);
-			Identifier topRightCorner = template.createWithSuffix(block, "_top_right_corner", mapping.apply(TextureMapping.getBlockTexture(tatami, "_top_right_corner")), generator.modelOutput);
-			Identifier bottomRightCorner = template.createWithSuffix(block, "_bottom_right_corner", mapping.apply(TextureMapping.getBlockTexture(tatami, "_bottom_right_corner")), generator.modelOutput);
-			generator.blockStateOutput.accept(
-				MultiVariantGenerator.dispatch(block)
-					.with(
-						PropertyDispatch.initial(LargeTatamiBlock.X, LargeTatamiBlock.Z)
-							.select(0, 0, plainVariant(topLeftCorner))
-							.select(0, 1, plainVariant(bottomLeftCorner))
-							.select(1, 0, plainVariant(topRightCorner))
-							.select(1, 1, plainVariant(bottomRightCorner))
-					)
-					.with(ROTATION_HORIZONTAL_FACING)
-			);
-		};
 	}
 
 	public static void createTeruTeruBozu(BlockModelGenerators generator, Block block) {

@@ -1,6 +1,12 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "mmodding:block/cube_north_inverted",
   "textures": {
-    "all": "psithurism:block/large_tatami_top_left_corner"
+    "down": "psithurism:block/large_tatami_bottom_left_corner",
+    "east": "psithurism:block/medium_tatami_left_side",
+    "north": "psithurism:block/medium_tatami_left_side",
+    "particle": "psithurism:block/small_tatami",
+    "south": "psithurism:block/medium_tatami_left_side",
+    "up": "psithurism:block/large_tatami_top_left_corner",
+    "west": "psithurism:block/medium_tatami_left_side"
   }
 }
