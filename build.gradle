@@ -76,7 +76,7 @@ mmodding {
 			it.minecraftVersion = "~" + libs.versions.minecraft.get()
 			it.fabricLoaderVersion = ">=" + libs.versions.fabric.loader.get()
 			it.fabricApiVersion = ">=" + libs.versions.fabric.api.get()
-			// it.mmoddingLibraryVersion = ">=" + libs.versions.mmodding.get() + "-"
+			it.mmoddingLibraryVersion = ">=" + libs.versions.mmodding.get() + "-"
 		}
 	}
 }
