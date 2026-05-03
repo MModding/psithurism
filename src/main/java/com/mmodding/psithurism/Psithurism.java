@@ -11,6 +11,8 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 public class Psithurism implements ExtendedModInitializer {
 
@@ -45,6 +47,10 @@ public class Psithurism implements ExtendedModInitializer {
 			else if (key.identifier().equals(Identifier.withDefaultNamespace("pots/trial_chambers/corridor"))) {
 				builder.pool(LootPool.lootPool().add(LootItem.lootTableItem(PsithurismItems.KITSUNE_MASK).setWeight(50)).build());
 				builder.pool(LootPool.lootPool().add(LootItem.lootTableItem(PsithurismItems.ONI_MASK).setWeight(50)).build());
+			}
+			else if (key.identifier().equals(Identifier.withDefaultNamespace("chests/abandoned_mineshaft"))) {
+				builder.pool(LootPool.lootPool().add(LootItem.lootTableItem(PsithurismItems.RICE_PLANT).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0f, 4.0f))).setWeight(10)).build());
+				builder.pool(LootPool.lootPool().add(LootItem.lootTableItem(PsithurismItems.SOYBEANS).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0f, 4.0f))).setWeight(10)).build());
 			}
 		});
 	}
