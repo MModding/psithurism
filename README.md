@@ -2,7 +2,7 @@
 
 # Psithurism
 
-[<img src="https://github.com/MModding/art/blob/main/mods/psithurism.png?raw=true" width="512" alt="Extravaganza! Logo">](https://modrinth.com/mod/extravaganza)
+[<img src="https://github.com/MModding/art/blob/main/mods/psithurism.png?raw=true" width="512" alt="Psithurism Logo">](https://modrinth.com/mod/psithurism)
 
 ## Supports
 
