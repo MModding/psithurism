@@ -61,8 +61,8 @@ mmodding {
 		addContributor("FirstMegaGame4 (Lead Developer, Project Manager)")
 		withContact {
 			it.homepage = "https://mmodding.com"
-			it.sources = "https://github.com/MModding/delicate-sip"
-			it.issues = "https://github.com/MModding/delicate-sip/issues"
+			it.sources = "https://github.com/MModding/psithurism"
+			it.issues = "https://github.com/MModding/psithurism/issues"
 		}
 		environment = EnvironmentTarget.ANY
 		withEntrypoints {

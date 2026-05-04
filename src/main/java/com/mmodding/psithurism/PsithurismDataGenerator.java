@@ -109,6 +109,7 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 		public void generateTranslations(HolderLookup.Provider registryLookup, TranslationBuilder translations) {
 			translations.add("block.psithurism.teru_teru_bozu.insufficient_will_power", "Insufficient Will Power!");
 			translations.add("block.psithurism.teru_teru_bozu.nothing_to_do", "I have nothing to do!");
+			translations.add("entity.psithurism.koi", "Koi");
 			translations.add("itemGroup.psithurism.building_blocks", "Psithurism - Building Blocks");
 			translations.add("itemGroup.psithurism.organic_products", "Psithurism - Organic Products");
 			translations.add("itemGroup.psithurism.cosmetics", "Psithurism - Cosmetics");
