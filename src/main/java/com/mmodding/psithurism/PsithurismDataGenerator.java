@@ -16,10 +16,7 @@ import com.mmodding.psithurism.data.PsithurismBlockLootProcessing;
 import com.mmodding.psithurism.data.PsithurismBlockModelProcessing;
 import com.mmodding.psithurism.data.PsithurismRecipeProcessing;
 import com.mmodding.psithurism.data.PsithurismTexturedModels;
-import com.mmodding.psithurism.init.PsithurismBlocks;
-import com.mmodding.psithurism.init.PsithurismFluids;
-import com.mmodding.psithurism.init.PsithurismItems;
-import com.mmodding.psithurism.init.PsithurismWoodSets;
+import com.mmodding.psithurism.init.*;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
@@ -31,6 +28,7 @@ import net.minecraft.data.BlockFamily;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.BlockItem;
@@ -82,7 +80,7 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 			.chain(like -> like.asItem() instanceof BlockItem bi && bi.getBlock() instanceof SimpleBedBlock, PsithurismRecipeProcessing::createFuton);
 		manager.task(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_TAGS, Set.of(PsithurismBlocks.RICE), (getter, block) -> getter.apply(BlockTags.MAINTAINS_FARMLAND).add(block));
 		manager.chain(PsithurismBlocks.class, DefaultDataHandlers.getTranslationHandler(Registries.BLOCK, Block.class))
-			.chain(Set.of(PsithurismBlocks.TERU_TERU_BOZU), _ -> "Teru Teru Bozū")
+			.chain(Set.of(PsithurismBlocks.TERU_TERU_BOZU), _ -> "Teru Teru Bōzu")
 			.chain(DefaultLangProcessors.CLASSIC);
 		manager.task(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_RELATIVES);
 		manager.task(PsithurismWoodSets.class, DefaultDataHandlers.WOOD_SETS);
@@ -97,6 +95,7 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 		pack.addProvider(PsithurismRecipes::new);
 		pack.addProvider(PsithurismBlockTags::new);
 		pack.addProvider(PsithurismFluidTags::new);
+		pack.addProvider(PsithurismEntityTypeTags::new);
 	}
 
 	private static class PsithurismLanguageProvider extends MModdingLanguageProvider {
@@ -827,6 +826,25 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 			this.valueLookupBuilder(FluidTags.WATER)
 				.add(PsithurismFluids.FLOWING_ONSEN_WATER)
 				.add(PsithurismFluids.ONSEN_WATER);
+		}
+	}
+
+	private static class PsithurismEntityTypeTags extends FabricTagsProvider.EntityTypeTagsProvider {
+
+		public PsithurismEntityTypeTags(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> future) {
+			super(output, future);
+		}
+
+		@Override
+		protected void addTags(HolderLookup.Provider registries) {
+			this.valueLookupBuilder(EntityTypeTags.CAN_BREATHE_UNDER_WATER)
+				.add(PsithurismEntityTypes.KOI);
+			this.valueLookupBuilder(EntityTypeTags.AQUATIC)
+				.add(PsithurismEntityTypes.KOI);
+			this.valueLookupBuilder(EntityTypeTags.NOT_SCARY_FOR_PUFFERFISH)
+				.add(PsithurismEntityTypes.KOI);
+			this.valueLookupBuilder(EntityTypeTags.CANNOT_BE_PUSHED_ONTO_BOATS)
+				.add(PsithurismEntityTypes.KOI);
 		}
 	}
 }
