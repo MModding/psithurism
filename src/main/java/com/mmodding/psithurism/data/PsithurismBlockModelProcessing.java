@@ -68,8 +68,8 @@ public class PsithurismBlockModelProcessing {
 			MultiVariantGenerator.dispatch(block)
 				.with(
 					PropertyDispatch.initial(SimpleBedBlock.PART)
-						.select(BedPart.HEAD, plainVariant(model))
-						.select(BedPart.FOOT, plainVariant(empty))
+						.select(BedPart.HEAD, plainVariant(empty))
+						.select(BedPart.FOOT, plainVariant(model))
 				)
 				.with(ROTATION_HORIZONTAL_FACING)
 		);
