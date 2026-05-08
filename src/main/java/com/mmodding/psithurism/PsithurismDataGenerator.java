@@ -20,6 +20,7 @@ import com.mmodding.psithurism.init.*;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.core.HolderLookup;
@@ -812,6 +813,8 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 				.add(PsithurismBlocks.WAXED_EXPOSED_COPPER_MANHOLE)
 				.add(PsithurismBlocks.WAXED_WEATHERED_COPPER_MANHOLE)
 				.add(PsithurismBlocks.WAXED_OXIDIZED_COPPER_MANHOLE);
+			this.valueLookupBuilder(ConventionalBlockTags.CHAINS)
+				.add(PsithurismBlocks.GOLDEN_CHAIN);
 		}
 	}
 
