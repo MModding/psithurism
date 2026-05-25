@@ -72,7 +72,7 @@ public class PsithurismBlocks {
 	public static final Block NAMAKO_KABE = register("namako_kabe", BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
 	public static final Block THREAD = register("thread", ChainBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).noCollision()).registerItem();
 	public static final Block TERU_TERU_BOZU = register("teru_teru_bozu", TeruTeruBozuBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).noCollision()).registerItem();
-	public static final Block MANEKI_NEKO = register("maneki_neko", ManekiNekoBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
+	public static final Block MANEKI_NEKO = register("maneki_neko", ManekiNekoBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).noOcclusion()).registerItem();
 
 	public static final BlockRelatives ASHINO_STONE = BlockRelatives.registerStone(Psithurism.createId("ashino_stone"), AutoMapper.identity(), false, false);
 	public static final BlockRelatives POLISHED_ASHINO_STONE = BlockRelatives.registerStone(Psithurism.createId("polished_ashino_stone"), AutoMapper.identity(), false, false);
