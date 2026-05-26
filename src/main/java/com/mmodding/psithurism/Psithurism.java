@@ -5,10 +5,11 @@ import com.mmodding.psithurism.init.*;
 import com.mmodding.library.core.api.AdvancedContainer;
 import com.mmodding.library.core.api.ExtendedModInitializer;
 import com.mmodding.library.core.api.management.ElementsManager;
-import com.mmodding.psithurism.resource.PsithurismFeaturePacks;
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
-import net.minecraft.core.registries.Registries;
+import net.minecraft.core.Registry;
 import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
@@ -29,8 +30,6 @@ public class Psithurism implements ExtendedModInitializer {
 		manager.content(PsithurismItems::register);
 		manager.content(PsithurismItemCreativeTabs::register);
 		manager.content(PsithurismPlacedFeatures::register);
-		manager.resource(Registries.CONFIGURED_FEATURE, PsithurismFeaturePacks::registerConfigs);
-		manager.resource(Registries.PLACED_FEATURE, PsithurismFeaturePacks::registerPlacements);
 	}
 
 	@Override
@@ -38,17 +37,17 @@ public class Psithurism implements ExtendedModInitializer {
 		mod.logger().info("Minecraft, Japan. 💐");
 
 		LootTableEvents.MODIFY.register((key, builder, source, holder) -> {
-			if (key.identifier().equals(Identifier.withDefaultNamespace("archaeology/trail_ruins_common"))) {
+			if (key.equals(BuiltInLootTables.TRAIL_RUINS_ARCHAEOLOGY_COMMON)) {
 				builder.pool(LootPool.lootPool().add(LootItem.lootTableItem(PsithurismItems.FAN_POTTERY_SHERD).setWeight(2)).build());
 			}
-			else if (key.identifier().equals(Identifier.withDefaultNamespace("archaeology/trail_ruins_rare"))) {
+			else if (key.equals(BuiltInLootTables.TRAIL_RUINS_ARCHAEOLOGY_RARE)) {
 				builder.pool(LootPool.lootPool().add(LootItem.lootTableItem(PsithurismItems.TORII_POTTERY_SHERD)).build());
 			}
-			else if (key.identifier().equals(Identifier.withDefaultNamespace("pots/trial_chambers/corridor"))) {
+			else if (key.equals(BuiltInLootTables.TRIAL_CHAMBERS_CORRIDOR_POT)) {
 				builder.pool(LootPool.lootPool().add(LootItem.lootTableItem(PsithurismItems.KITSUNE_MASK).setWeight(50)).build());
 				builder.pool(LootPool.lootPool().add(LootItem.lootTableItem(PsithurismItems.ONI_MASK).setWeight(50)).build());
 			}
-			else if (key.identifier().equals(Identifier.withDefaultNamespace("chests/abandoned_mineshaft"))) {
+			else if (key.equals(BuiltInLootTables.ABANDONED_MINESHAFT)) {
 				builder.pool(LootPool.lootPool().add(LootItem.lootTableItem(PsithurismItems.RICE_PLANT).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0f, 4.0f))).setWeight(10)).build());
 				builder.pool(LootPool.lootPool().add(LootItem.lootTableItem(PsithurismItems.SOYBEANS).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0f, 4.0f))).setWeight(10)).build());
 			}
@@ -61,6 +60,10 @@ public class Psithurism implements ExtendedModInitializer {
 
 	public static Identifier createId(String path) {
 		return Identifier.fromNamespaceAndPath(Psithurism.namespace(), path);
+	}
+
+	public static <T> ResourceKey<T> createKey(ResourceKey<? extends Registry<T>> registry, String path) {
+		return ResourceKey.create(registry, createId(path));
 	}
 
 	public static String namespace() {

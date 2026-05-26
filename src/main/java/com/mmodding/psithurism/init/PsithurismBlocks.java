@@ -33,14 +33,14 @@ public class PsithurismBlocks {
 	public static final Block DARK_CHERRY_LAMINATE = register("dark_cherry_laminate", BlockBehaviour.Properties.ofFullCopy(PsithurismWoodSets.DARK_CHERRY.getWood())).registerItem();
 	public static final Block DARK_CHERRY_MOLDING = register("dark_cherry_molding", BlockBehaviour.Properties.ofFullCopy(PsithurismWoodSets.DARK_CHERRY.getWood())).registerItem();
 
-	public static final Block PAPER_WALL_BLOCK = register("paper_wall_block", BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
-	public static final Block LARGE_PAPER_WALL_BLOCK = register("large_paper_wall_block", BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
-	public static final Block HORIZONTAL_PAPER_WALL_BLOCK = register("horizontal_paper_wall_block", BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
-	public static final Block VERTICAL_PAPER_WALL_BLOCK = register("vertical_paper_wall_block", BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
-	public static final Block PAPER_WALL = register("paper_wall", IronBarsBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
-	public static final Block LARGE_PAPER_WALL = register("large_paper_wall", IronBarsBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
-	public static final Block HORIZONTAL_PAPER_WALL = register("horizontal_paper_wall", IronBarsBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
-	public static final Block VERTICAL_PAPER_WALL = register("vertical_paper_wall", IronBarsBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
+	public static final Block PAPER_WALL_BLOCK = register("paper_wall_block", BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white())).registerItem();
+	public static final Block LARGE_PAPER_WALL_BLOCK = register("large_paper_wall_block", BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white())).registerItem();
+	public static final Block HORIZONTAL_PAPER_WALL_BLOCK = register("horizontal_paper_wall_block", BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white())).registerItem();
+	public static final Block VERTICAL_PAPER_WALL_BLOCK = register("vertical_paper_wall_block", BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white())).registerItem();
+	public static final Block PAPER_WALL = register("paper_wall", IronBarsBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white())).registerItem();
+	public static final Block LARGE_PAPER_WALL = register("large_paper_wall", IronBarsBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white())).registerItem();
+	public static final Block HORIZONTAL_PAPER_WALL = register("horizontal_paper_wall", IronBarsBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white())).registerItem();
+	public static final Block VERTICAL_PAPER_WALL = register("vertical_paper_wall", IronBarsBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white())).registerItem();
 
 	public static final Block DARK_CHERRY_GLASS = register("dark_cherry_glass", TransparentBlock::new, BlockBehaviour.Properties.ofFullCopy(PsithurismWoodSets.DARK_CHERRY.getWood()).noOcclusion()).registerItem();
 	public static final Block HORIZONTAL_DARK_CHERRY_GLASS = register("horizontal_dark_cherry_glass", TransparentBlock::new, BlockBehaviour.Properties.ofFullCopy(PsithurismWoodSets.DARK_CHERRY.getWood()).noOcclusion()).registerItem();
@@ -51,28 +51,28 @@ public class PsithurismBlocks {
 	public static final Block VERTICAL_DARK_CHERRY_GLASS_PANE = register("vertical_dark_cherry_glass_pane", IronBarsBlock::new, BlockBehaviour.Properties.ofFullCopy(PsithurismWoodSets.DARK_CHERRY.getWood()).noOcclusion()).registerItem();
 	public static final Block TILED_DARK_CHERRY_GLASS_PANE = register("tiled_dark_cherry_glass_pane", IronBarsBlock::new, BlockBehaviour.Properties.ofFullCopy(PsithurismWoodSets.DARK_CHERRY.getWood()).noOcclusion()).registerItem();
 
-	public static final Block SMALL_TATAMI = register("small_tatami", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET).pushReaction(PushReaction.BLOCK)).registerItem();
-	public static final Block MEDIUM_TATAMI = register("medium_tatami", MediumTatamiBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET).pushReaction(PushReaction.BLOCK)).registerItem();
-	public static final Block LARGE_TATAMI = register("large_tatami", LargeTatamiBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET).pushReaction(PushReaction.BLOCK)).registerItem();
-	public static final Block SMALL_TATAMI_MAT = register("small_tatami_mat", HorizontalFacingCarpetBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET).pushReaction(PushReaction.DESTROY)).registerItem();
-	public static final Block MEDIUM_TATAMI_MAT = register("medium_tatami_mat", MediumTatamiMatBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET).pushReaction(PushReaction.DESTROY)).registerItem();
-	public static final Block LARGE_TATAMI_MAT = register("large_tatami_mat", LargeTatamiMatBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET).pushReaction(PushReaction.DESTROY)).registerItem();
+	public static final Block SMALL_TATAMI = register("small_tatami", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.BLOCK)).registerItem();
+	public static final Block MEDIUM_TATAMI = register("medium_tatami", MediumTatamiBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.BLOCK)).registerItem();
+	public static final Block LARGE_TATAMI = register("large_tatami", LargeTatamiBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.BLOCK)).registerItem();
+	public static final Block SMALL_TATAMI_MAT = register("small_tatami_mat", HorizontalFacingCarpetBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.DESTROY)).registerItem();
+	public static final Block MEDIUM_TATAMI_MAT = register("medium_tatami_mat", MediumTatamiMatBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.DESTROY)).registerItem();
+	public static final Block LARGE_TATAMI_MAT = register("large_tatami_mat", LargeTatamiMatBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.DESTROY)).registerItem();
 
-	public static final Block SMALL_PLAITED_TATAMI = register("small_plaited_tatami", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET).pushReaction(PushReaction.BLOCK)).registerItem();
-	public static final Block MEDIUM_PLAITED_TATAMI = register("medium_plaited_tatami", MediumTatamiBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET).pushReaction(PushReaction.BLOCK)).registerItem();
-	public static final Block LARGE_PLAITED_TATAMI = register("large_plaited_tatami", LargeTatamiBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET).pushReaction(PushReaction.BLOCK)).registerItem();
-	public static final Block SMALL_PLAITED_TATAMI_MAT = register("small_plaited_tatami_mat", HorizontalFacingCarpetBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET).pushReaction(PushReaction.DESTROY)).registerItem();
-	public static final Block MEDIUM_PLAITED_TATAMI_MAT = register("medium_plaited_tatami_mat", MediumTatamiMatBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET).pushReaction(PushReaction.DESTROY)).registerItem();
-	public static final Block LARGE_PLAITED_TATAMI_MAT = register("large_plaited_tatami_mat", LargeTatamiMatBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET).pushReaction(PushReaction.DESTROY)).registerItem();
+	public static final Block SMALL_PLAITED_TATAMI = register("small_plaited_tatami", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.BLOCK)).registerItem();
+	public static final Block MEDIUM_PLAITED_TATAMI = register("medium_plaited_tatami", MediumTatamiBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.BLOCK)).registerItem();
+	public static final Block LARGE_PLAITED_TATAMI = register("large_plaited_tatami", LargeTatamiBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.BLOCK)).registerItem();
+	public static final Block SMALL_PLAITED_TATAMI_MAT = register("small_plaited_tatami_mat", HorizontalFacingCarpetBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.DESTROY)).registerItem();
+	public static final Block MEDIUM_PLAITED_TATAMI_MAT = register("medium_plaited_tatami_mat", MediumTatamiMatBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.DESTROY)).registerItem();
+	public static final Block LARGE_PLAITED_TATAMI_MAT = register("large_plaited_tatami_mat", LargeTatamiMatBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.DESTROY)).registerItem();
 
 	public static final Block REGULAR_PAPER_LANTERN = register("regular_paper_lantern", PaperLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).sound(SoundType.PACKED_MUD).lightLevel(_ -> 13)).registerItem();
 	public static final Block RED_PAPER_LANTERN = register("red_paper_lantern", PaperLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).sound(SoundType.PACKED_MUD).lightLevel(_ -> 13)).registerItem();
 
 	public static final Block STONE_LANTERN = register("stone_lantern", StoneLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).sound(SoundType.STONE).lightLevel(state -> state.getValue(BlockStateProperties.LIT) ? 15 : 0)).registerItem();
-	public static final Block NAMAKO_KABE = register("namako_kabe", BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)).registerItem();
-	public static final Block THREAD = register("thread", ChainBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).noCollision()).registerItem();
-	public static final Block TERU_TERU_BOZU = register("teru_teru_bozu", TeruTeruBozuBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).noCollision()).registerItem();
-	public static final Block MANEKI_NEKO = register("maneki_neko", ManekiNekoBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL).noOcclusion()).registerItem();
+	public static final Block NAMAKO_KABE = register("namako_kabe", BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white())).registerItem();
+	public static final Block THREAD = register("thread", ChainBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white()).noCollision()).registerItem();
+	public static final Block TERU_TERU_BOZU = register("teru_teru_bozu", TeruTeruBozuBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white()).noCollision()).registerItem();
+	public static final Block MANEKI_NEKO = register("maneki_neko", ManekiNekoBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white()).noOcclusion()).registerItem();
 
 	public static final BlockRelatives ASHINO_STONE = BlockRelatives.registerStone(Psithurism.createId("ashino_stone"), AutoMapper.identity(), false, false);
 	public static final BlockRelatives POLISHED_ASHINO_STONE = BlockRelatives.registerStone(Psithurism.createId("polished_ashino_stone"), AutoMapper.identity(), false, false);
@@ -92,17 +92,17 @@ public class PsithurismBlocks {
 	public static final Block SOYA = register("soya", SoyaCropBlock::new, BlockBehaviour.Properties.of().noCollision().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY));
 
 	public static final Block IRON_MANHOLE = register("iron_manhole", properties -> new IronManholeBlock(BlockSetType.IRON, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_TRAPDOOR)).registerItem();
-	public static final Block COPPER_MANHOLE = register("copper_manhole", properties -> new WeatheringCopperTrapDoorBlock(BlockSetType.COPPER, WeatheringCopper.WeatherState.UNAFFECTED, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_TRAPDOOR)).registerItem();
-	public static final Block EXPOSED_COPPER_MANHOLE = register("exposed_copper_manhole", properties -> new WeatheringCopperTrapDoorBlock(BlockSetType.COPPER, WeatheringCopper.WeatherState.EXPOSED, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.EXPOSED_COPPER_TRAPDOOR)).registerItem();
-	public static final Block WEATHERED_COPPER_MANHOLE = register("weathered_copper_manhole", properties -> new WeatheringCopperTrapDoorBlock(BlockSetType.COPPER, WeatheringCopper.WeatherState.WEATHERED, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.WEATHERED_COPPER_TRAPDOOR)).registerItem();
-	public static final Block OXIDIZED_COPPER_MANHOLE = register("oxidized_copper_manhole", properties -> new WeatheringCopperTrapDoorBlock(BlockSetType.COPPER, WeatheringCopper.WeatherState.OXIDIZED, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.OXIDIZED_COPPER_TRAPDOOR)).registerItem();
-	public static final Block WAXED_COPPER_MANHOLE = register("waxed_copper_manhole", properties -> new TrapDoorBlock(BlockSetType.COPPER, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.WAXED_COPPER_TRAPDOOR)).registerItem();
-	public static final Block WAXED_EXPOSED_COPPER_MANHOLE = register("waxed_exposed_copper_manhole", properties -> new TrapDoorBlock(BlockSetType.COPPER, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.WAXED_EXPOSED_COPPER_TRAPDOOR)).registerItem();
-	public static final Block WAXED_WEATHERED_COPPER_MANHOLE = register("waxed_weathered_copper_manhole", properties -> new TrapDoorBlock(BlockSetType.COPPER, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.WAXED_WEATHERED_COPPER_TRAPDOOR)).registerItem();
-	public static final Block WAXED_OXIDIZED_COPPER_MANHOLE = register("waxed_oxidized_copper_manhole", properties -> new TrapDoorBlock(BlockSetType.COPPER, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.WAXED_OXIDIZED_COPPER_TRAPDOOR)).registerItem();
+	public static final Block COPPER_MANHOLE = register("copper_manhole", properties -> new WeatheringCopperTrapDoorBlock(BlockSetType.COPPER, WeatheringCopper.WeatherState.UNAFFECTED, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_TRAPDOOR.weathering().unaffected())).registerItem();
+	public static final Block EXPOSED_COPPER_MANHOLE = register("exposed_copper_manhole", properties -> new WeatheringCopperTrapDoorBlock(BlockSetType.COPPER, WeatheringCopper.WeatherState.EXPOSED, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_TRAPDOOR.weathering().exposed())).registerItem();
+	public static final Block WEATHERED_COPPER_MANHOLE = register("weathered_copper_manhole", properties -> new WeatheringCopperTrapDoorBlock(BlockSetType.COPPER, WeatheringCopper.WeatherState.WEATHERED, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_TRAPDOOR.weathering().weathered())).registerItem();
+	public static final Block OXIDIZED_COPPER_MANHOLE = register("oxidized_copper_manhole", properties -> new WeatheringCopperTrapDoorBlock(BlockSetType.COPPER, WeatheringCopper.WeatherState.OXIDIZED, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_TRAPDOOR.weathering().oxidized())).registerItem();
+	public static final Block WAXED_COPPER_MANHOLE = register("waxed_copper_manhole", properties -> new TrapDoorBlock(BlockSetType.COPPER, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_TRAPDOOR.waxed().unaffected())).registerItem();
+	public static final Block WAXED_EXPOSED_COPPER_MANHOLE = register("waxed_exposed_copper_manhole", properties -> new TrapDoorBlock(BlockSetType.COPPER, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_TRAPDOOR.waxed().exposed())).registerItem();
+	public static final Block WAXED_WEATHERED_COPPER_MANHOLE = register("waxed_weathered_copper_manhole", properties -> new TrapDoorBlock(BlockSetType.COPPER, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_TRAPDOOR.waxed().weathered())).registerItem();
+	public static final Block WAXED_OXIDIZED_COPPER_MANHOLE = register("waxed_oxidized_copper_manhole", properties -> new TrapDoorBlock(BlockSetType.COPPER, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_TRAPDOOR.waxed().oxidized())).registerItem();
 
-	public static final BlockHeap FUTON = BlockHeap.register(FutonBlock::new, constructor -> constructor + "_futon", BlockHeapUtil.mapForColors(() -> BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)), Psithurism.namespace(), BlockHeapUtil.COLORS).registerBlockItems();
-	public static final BlockHeap ZABUTONS = BlockHeap.register(SlabBlock::new, constructor -> constructor + "_zabuton", BlockHeapUtil.mapForColors(() -> BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)), Psithurism.namespace(), BlockHeapUtil.COLORS).registerBlockItems();
+	public static final BlockHeap FUTON = BlockHeap.register(FutonBlock::new, constructor -> constructor + "_futon", BlockHeapUtil.mapForColors(() -> BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white())), Psithurism.namespace(), BlockHeapUtil.COLORS).registerBlockItems();
+	public static final BlockHeap ZABUTONS = BlockHeap.register(SlabBlock::new, constructor -> constructor + "_zabuton", BlockHeapUtil.mapForColors(() -> BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white())), Psithurism.namespace(), BlockHeapUtil.COLORS).registerBlockItems();
 
 	private static Block register(String path, BlockBehaviour.Properties properties) {
 		return register(path, Block::new, properties);
@@ -113,9 +113,9 @@ public class PsithurismBlocks {
 	}
 
 	public static void register(AdvancedContainer mod) {
-		OxidizableBlocksRegistry.registerWeatheringCopperBlocks(new WeatheringCopperBlocks(
-			COPPER_MANHOLE, EXPOSED_COPPER_MANHOLE, WEATHERED_COPPER_MANHOLE, OXIDIZED_COPPER_MANHOLE,
-			WAXED_COPPER_MANHOLE, WAXED_EXPOSED_COPPER_MANHOLE, WAXED_WEATHERED_COPPER_MANHOLE, WAXED_OXIDIZED_COPPER_MANHOLE
+		OxidizableBlocksRegistry.registerWeatheringCopperBlocks(new WeatheringCopperCollection<>(
+			new WeatheringCopperCollection.ByState<>(COPPER_MANHOLE, EXPOSED_COPPER_MANHOLE, WEATHERED_COPPER_MANHOLE, OXIDIZED_COPPER_MANHOLE),
+			new WeatheringCopperCollection.ByState<>(WAXED_COPPER_MANHOLE, WAXED_EXPOSED_COPPER_MANHOLE, WAXED_WEATHERED_COPPER_MANHOLE, WAXED_OXIDIZED_COPPER_MANHOLE)
 		));
 	}
 }

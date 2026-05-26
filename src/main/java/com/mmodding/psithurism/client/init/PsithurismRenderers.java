@@ -1,5 +1,6 @@
 package com.mmodding.psithurism.client.init;
 
+import com.mmodding.library.core.api.AdvancedContainer;
 import com.mmodding.library.rendering.api.cosmetic.renderer.CosmeticRendererRegistry;
 import com.mmodding.library.rendering.api.cosmetic.renderer.HeadAnchor;
 import com.mmodding.psithurism.client.renderer.KoiRenderer;
@@ -11,7 +12,7 @@ import net.minecraft.client.renderer.entity.EntityRenderers;
 
 public class PsithurismRenderers {
 
-	public static void register() {
+	public static void register(AdvancedContainer mod) {
 		CosmeticRendererRegistry.registerCapRenderer(PsithurismCosmetics.KITSUNE_MASK, HeadAnchor.HEAD_CENTER, PsithurismItems.KITSUNE_MASK);
 		CosmeticRendererRegistry.registerCapRenderer(PsithurismCosmetics.ONI_MASK, HeadAnchor.HEAD_CENTER, PsithurismItems.ONI_MASK);
 		CosmeticRendererRegistry.registerCapRenderer(PsithurismCosmetics.FOX_EARS, HeadAnchor.HEAD_CENTER, PsithurismItems.FOX_EARS);

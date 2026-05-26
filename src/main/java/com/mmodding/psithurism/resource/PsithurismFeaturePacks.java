@@ -8,6 +8,7 @@ import com.mmodding.psithurism.init.PsithurismBlocks;
 import com.mmodding.psithurism.init.PsithurismConfiguredFeatures;
 import com.mmodding.psithurism.init.PsithurismPlacedFeatures;
 import com.mmodding.psithurism.init.PsithurismWoodSets;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.features.TreeFeatures;
@@ -41,7 +42,9 @@ public class PsithurismFeaturePacks {
 				configuration.trunkPlacer,
 				BlockStateProvider.simple(PsithurismWoodSets.DARK_CHERRY.getLeaves()),
 				configuration.foliagePlacer,
-				configuration.minimumSize
+				configuration.rootPlacer,
+				configuration.minimumSize,
+				configuration.belowTrunkProvider
 			).build(),
 			pack -> pack.appendPlacedFeature(
 				PsithurismPlacedFeatures.DARK_CHERRY_CHECKED,
@@ -56,7 +59,9 @@ public class PsithurismFeaturePacks {
 				configuration.trunkPlacer,
 				BlockStateProvider.simple(PsithurismWoodSets.DARK_CHERRY.getLeaves()),
 				configuration.foliagePlacer,
-				configuration.minimumSize
+				configuration.rootPlacer,
+				configuration.minimumSize,
+				configuration.belowTrunkProvider
 			).decorators(List.of(new BeehiveDecorator(0.05f))).build(),
 			pack -> pack
 				.appendPlacedFeature(
@@ -86,8 +91,8 @@ public class PsithurismFeaturePacks {
 	private static final FeaturePack<AdvancedLiquidVegetationPatchConfiguration> ONSEN_WATER_LAKE = FeaturePack.of(MModdingFeatures.ADVANCED_LIQUID_VEGETATION_PATCH)
 		.appendConfiguredFeature(
 			PsithurismConfiguredFeatures.ONSEN_WATER_LAKE,
-			new AdvancedLiquidVegetationPatchConfiguration(
-				BlockTags.BASE_STONE_OVERWORLD,
+			looker -> new AdvancedLiquidVegetationPatchConfiguration(
+				looker.lookup(Registries.BLOCK).getOrThrow(BlockTags.BASE_STONE_OVERWORLD),
 				BlockStateProvider.simple(PsithurismBlocks.ASHINO_STONE.getMain()),
 				BlockStateProvider.simple(PsithurismBlocks.ONSEN_WATER),
 				PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(

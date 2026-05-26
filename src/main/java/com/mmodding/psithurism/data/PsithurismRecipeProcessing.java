@@ -32,7 +32,7 @@ public class PsithurismRecipeProcessing {
 			4, RecipeCategory.BUILDING_BLOCKS,
 			recipe -> recipe.pattern("ZZW")
 				.key('Z', zabuton)
-				.key('W', Blocks.WHITE_WOOL)
+				.key('W', Blocks.WOOL.white())
 		);
 	}
 }

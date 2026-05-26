@@ -1,5 +1,6 @@
 package com.mmodding.psithurism.client.init;
 
+import com.mmodding.library.core.api.AdvancedContainer;
 import com.mmodding.psithurism.Psithurism;
 import net.fabricmc.fabric.api.client.rendering.v1.ModelLayerRegistry;
 import net.minecraft.client.model.animal.fish.SalmonModel;
@@ -37,7 +38,7 @@ public class PsithurismModelLayers {
 		return new ModelLayerLocation(Psithurism.createId(path), "worn");
 	}
 
-	public static void register() {
+	public static void register(AdvancedContainer mod) {
 		ModelLayerRegistry.registerModelLayer(KITSUNE_MASK, PsithurismModels::createKitsune);
 		ModelLayerRegistry.registerModelLayer(WORN_KITSUNE_MASK, PsithurismModels::createWornKitsune);
 		ModelLayerRegistry.registerModelLayer(ONI_MASK, PsithurismModels::createOni);

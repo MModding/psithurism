@@ -16,8 +16,8 @@ import java.util.function.Function;
 
 public class PsithurismItems {
 
-	public static final Item FAN_POTTERY_SHERD = register("fan_pottery_sherd", new Item.Properties().rarity(Rarity.UNCOMMON).decoratedPotPattern(PsithurismDecoratedPotPatterns.FAN));
-	public static final Item TORII_POTTERY_SHERD = register("torii_pottery_sherd", new Item.Properties().rarity(Rarity.UNCOMMON).decoratedPotPattern(PsithurismDecoratedPotPatterns.TORII));
+	public static final Item FAN_POTTERY_SHERD = register("fan_pottery_sherd", new Item.Properties().rarity(Rarity.UNCOMMON));
+	public static final Item TORII_POTTERY_SHERD = register("torii_pottery_sherd", new Item.Properties().rarity(Rarity.UNCOMMON));
 
 	public static final Item ONI_MASK = register("oni_mask", MaskItem::new, new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(1).equippable(EquipmentSlot.HEAD).component(PsithurismDataComponents.WORN_MASK, false).trinketSlots(List.of("head/face")));
 	public static final Item KITSUNE_MASK = register("kitsune_mask", MaskItem::new, new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(1).equippable(EquipmentSlot.HEAD).component(PsithurismDataComponents.WORN_MASK, false).trinketSlots(List.of("head/face")));
@@ -45,7 +45,7 @@ public class PsithurismItems {
 	public static final Item WHITE_PETAL_CROWN = registerEquippableItem("white_petal_crown", EquipmentSlot.HEAD, new Item.Properties().stacksTo(1));
 
 	public static final Item ONSEN_WATER_BUCKET = register("onsen_water_bucket", properties -> new BucketItem(PsithurismFluids.ONSEN_WATER, properties), new Item.Properties().stacksTo(1));
-	public static final Item KOI_SPAWN_EGG = Items.registerSpawnEgg(PsithurismEntityTypes.KOI);
+	public static final Item KOI_SPAWN_EGG = Items.registerSpawnEgg(Psithurism.createKey(Registries.ITEM, "koi_spawn_egg"), PsithurismEntityTypes.KOI);
 	public static final Item KOI_WATER_BUCKET = register("koi_water_bucket", properties -> new MobBucketItem(PsithurismEntityTypes.KOI, PsithurismFluids.ONSEN_WATER, SoundEvents.BUCKET_EMPTY_FISH, properties), new Item.Properties().stacksTo(1));
 
 	public static final Item RICE_PLANT = register("rice_plant", Items.createBlockItemWithCustomItemName(PsithurismBlocks.RICE), new Item.Properties());

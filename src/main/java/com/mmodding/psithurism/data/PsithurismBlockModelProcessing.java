@@ -293,11 +293,11 @@ public class PsithurismBlockModelProcessing {
 			4, itemDefault
 		));
 		generator.itemModelOutput.accept(block.asItem(), itemUnbaked);
-		Identifier blue = PsithurismModelTemplates.TERU_TERU_BOZU.createWithSuffix(block, "_necklace_blue", new TextureMapping().put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(block, "_necklace_blue")).put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(Blocks.WHITE_WOOL)), generator.modelOutput);
-		Identifier indigo = PsithurismModelTemplates.TERU_TERU_BOZU.createWithSuffix(block, "_necklace_indigo", new TextureMapping().put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(block, "_necklace_indigo")).put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(Blocks.WHITE_WOOL)), generator.modelOutput);
-		Identifier purple = PsithurismModelTemplates.TERU_TERU_BOZU.createWithSuffix(block, "_necklace_purple", new TextureMapping().put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(block, "_necklace_purple")).put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(Blocks.WHITE_WOOL)), generator.modelOutput);
-		Identifier fuchsia = PsithurismModelTemplates.TERU_TERU_BOZU.createWithSuffix(block, "_necklace_fuchsia", new TextureMapping().put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(block, "_necklace_fuchsia")).put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(Blocks.WHITE_WOOL)), generator.modelOutput);
-		Identifier red = PsithurismModelTemplates.TERU_TERU_BOZU.createWithSuffix(block, "_necklace_red", new TextureMapping().put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(block, "_necklace_red")).put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(Blocks.WHITE_WOOL)), generator.modelOutput);
+		Identifier blue = PsithurismModelTemplates.TERU_TERU_BOZU.createWithSuffix(block, "_necklace_blue", new TextureMapping().put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(block, "_necklace_blue")).put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(Blocks.WOOL.white())), generator.modelOutput);
+		Identifier indigo = PsithurismModelTemplates.TERU_TERU_BOZU.createWithSuffix(block, "_necklace_indigo", new TextureMapping().put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(block, "_necklace_indigo")).put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(Blocks.WOOL.white())), generator.modelOutput);
+		Identifier purple = PsithurismModelTemplates.TERU_TERU_BOZU.createWithSuffix(block, "_necklace_purple", new TextureMapping().put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(block, "_necklace_purple")).put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(Blocks.WOOL.white())), generator.modelOutput);
+		Identifier fuchsia = PsithurismModelTemplates.TERU_TERU_BOZU.createWithSuffix(block, "_necklace_fuchsia", new TextureMapping().put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(block, "_necklace_fuchsia")).put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(Blocks.WOOL.white())), generator.modelOutput);
+		Identifier red = PsithurismModelTemplates.TERU_TERU_BOZU.createWithSuffix(block, "_necklace_red", new TextureMapping().put(TextureSlot.TEXTURE, TextureMapping.getBlockTexture(block, "_necklace_red")).put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(Blocks.WOOL.white())), generator.modelOutput);
 		generator.blockStateOutput.accept(
 			MultiVariantGenerator.dispatch(block)
 				.with(

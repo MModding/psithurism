@@ -8,6 +8,7 @@ import com.mmodding.library.datagen.api.lang.DefaultLangProcessors;
 import com.mmodding.library.datagen.api.management.DataManager;
 import com.mmodding.library.datagen.api.management.DefaultDataHandlers;
 import com.mmodding.library.datagen.api.model.block.DefaultBlockModelProcessing;
+import com.mmodding.library.datagen.api.provider.BuiltinRegistryTagsProvider;
 import com.mmodding.library.datagen.api.provider.MModdingLanguageProvider;
 import com.mmodding.library.datagen.api.provider.MModdingRecipeProvider;
 import com.mmodding.library.datagen.api.recipe.RecipeGenerator;
@@ -17,9 +18,9 @@ import com.mmodding.psithurism.data.PsithurismBlockModelProcessing;
 import com.mmodding.psithurism.data.PsithurismRecipeProcessing;
 import com.mmodding.psithurism.data.PsithurismTexturedModels;
 import com.mmodding.psithurism.init.*;
+import com.mmodding.psithurism.resource.PsithurismFeaturePacks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
@@ -45,6 +46,8 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 
 	@Override
 	public void setupManager(DataManager manager) {
+		manager.resource(Registries.CONFIGURED_FEATURE, PsithurismFeaturePacks::registerConfigs);
+		manager.resource(Registries.PLACED_FEATURE, PsithurismFeaturePacks::registerPlacements);
 		manager.chain(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_MODELS)
 			.chain(block -> block instanceof FlowerBedBlock, BlockModelGenerators::createFlowerBed)
 			.chain(block -> block instanceof IronBarsBlock && block.builtInRegistryHolder().key().identifier().getPath().contains("wall"), PsithurismBlockModelProcessing::createPaperWall)
@@ -324,7 +327,7 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 					recipe -> recipe.pattern("TRT", "RWR", "TRT")
 						.key('T', Items.STRING)
 						.key('R', PsithurismItems.RICE_PLANT)
-						.key('W', Blocks.WHITE_WOOL)
+						.key('W', Blocks.WOOL.white())
 				);
 			generator.forItem(PsithurismBlocks.MEDIUM_PLAITED_TATAMI)
 				.shaped(
@@ -388,14 +391,14 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 					recipe -> recipe.pattern(" C ", " T ", "TWT")
 						.key('C', PsithurismItems.WHITE_PETAL_CROWN)
 						.key('T', PsithurismBlocks.THREAD)
-						.key('W', Blocks.WHITE_WOOL)
+						.key('W', Blocks.WOOL.white())
 				);
 			generator.forItem(PsithurismBlocks.MANEKI_NEKO)
 				.shaped(
 					RecipeCategory.BUILDING_BLOCKS,
 					recipe -> recipe.pattern("RTQ", "TAT")
 						.key('R', Items.REDSTONE)
-						.key('T', Blocks.WHITE_TERRACOTTA)
+						.key('T', Blocks.DYED_TERRACOTTA.white())
 						.key('Q', Items.QUARTZ)
 						.key('A', PsithurismBlocks.ASHINO_STONE.getMain())
 				);
@@ -479,64 +482,64 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 				.shaped(
 					2, RecipeCategory.BUILDING_BLOCKS,
 					recipe -> recipe.pattern("TT")
-						.key('T', Blocks.COPPER_TRAPDOOR)
+						.key('T', Blocks.COPPER_TRAPDOOR.weathering().unaffected())
 				);
 			generator.forItem(PsithurismBlocks.EXPOSED_COPPER_MANHOLE)
 				.shaped(
 					2, RecipeCategory.BUILDING_BLOCKS,
 					recipe -> recipe.pattern("TT")
-						.key('T', Blocks.EXPOSED_COPPER_TRAPDOOR)
+						.key('T', Blocks.COPPER_TRAPDOOR.weathering().exposed())
 				);
 			generator.forItem(PsithurismBlocks.WEATHERED_COPPER_MANHOLE)
 				.shaped(
 					2, RecipeCategory.BUILDING_BLOCKS,
 					recipe -> recipe.pattern("TT")
-						.key('T', Blocks.WEATHERED_COPPER_TRAPDOOR)
+						.key('T', Blocks.COPPER_TRAPDOOR.weathering().weathered())
 				);
 			generator.forItem(PsithurismBlocks.OXIDIZED_COPPER_MANHOLE)
 				.shaped(
 					2, RecipeCategory.BUILDING_BLOCKS,
 					recipe -> recipe.pattern("TT")
-						.key('T', Blocks.OXIDIZED_COPPER_TRAPDOOR)
+						.key('T', Blocks.COPPER_TRAPDOOR.weathering().oxidized())
 				);
 			generator.forItem(PsithurismBlocks.WAXED_COPPER_MANHOLE)
 				.shaped(
 					2, RecipeCategory.BUILDING_BLOCKS,
 					recipe -> recipe.pattern("TT")
-						.key('T', Blocks.WAXED_COPPER_TRAPDOOR)
+						.key('T', Blocks.COPPER_TRAPDOOR.waxed().unaffected())
 				);
 			generator.forItem(PsithurismBlocks.WAXED_EXPOSED_COPPER_MANHOLE)
 				.shaped(
 					2, RecipeCategory.BUILDING_BLOCKS,
 					recipe -> recipe.pattern("TT")
-						.key('T', Blocks.WAXED_EXPOSED_COPPER_TRAPDOOR)
+						.key('T', Blocks.COPPER_TRAPDOOR.waxed().exposed())
 				);
 			generator.forItem(PsithurismBlocks.WAXED_WEATHERED_COPPER_MANHOLE)
 				.shaped(
 					2, RecipeCategory.BUILDING_BLOCKS,
 					recipe -> recipe.pattern("TT")
-						.key('T', Blocks.WAXED_WEATHERED_COPPER_TRAPDOOR)
+						.key('T', Blocks.COPPER_TRAPDOOR.waxed().weathered())
 				);
 			generator.forItem(PsithurismBlocks.WAXED_OXIDIZED_COPPER_MANHOLE)
 				.shaped(
 					2, RecipeCategory.BUILDING_BLOCKS,
 					recipe -> recipe.pattern("TT")
-						.key('T', Blocks.WAXED_OXIDIZED_COPPER_TRAPDOOR)
+						.key('T', Blocks.COPPER_TRAPDOOR.waxed().oxidized())
 				);
 			generator.forItem(PsithurismItems.FOX_TAIL)
 				.shaped(
 					RecipeCategory.MISC,
 					recipe -> recipe.pattern("  T", "OOW")
 						.key('T', PsithurismBlocks.THREAD)
-						.key('O', Blocks.ORANGE_WOOL)
-						.key('W', Blocks.WHITE_WOOL)
+						.key('O', Blocks.WOOL.orange())
+						.key('W', Blocks.WOOL.white())
 				);
 			generator.forItem(PsithurismItems.FOX_EARS)
 				.shaped(
 					RecipeCategory.MISC,
 					recipe -> recipe.pattern("B B", "OTO")
-						.key('B', Blocks.BLACK_WOOL)
-						.key('O', Blocks.ORANGE_WOOL)
+						.key('B', Blocks.WOOL.black())
+						.key('O', Blocks.WOOL.orange())
 						.key('T', PsithurismBlocks.THREAD)
 				);
 			generator.forItem(PsithurismItems.KITSUNE_TAIL)
@@ -544,8 +547,8 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 					RecipeCategory.MISC,
 					recipe -> recipe.pattern("  T", "WWP")
 						.key('T', PsithurismBlocks.THREAD)
-						.key('W', Blocks.WHITE_WOOL)
-						.key('P', Blocks.PINK_WOOL)
+						.key('W', Blocks.WOOL.white())
+						.key('P', Blocks.WOOL.pink())
 				);
 			generator.forItem(PsithurismItems.STRAW_HAT)
 				.shaped(
@@ -566,14 +569,14 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 					RecipeCategory.MISC,
 					recipe -> recipe.pattern("T T", "WGW", "WWW")
 						.key('T', PsithurismBlocks.THREAD)
-						.key('W', Blocks.WHITE_WOOL)
+						.key('W', Blocks.WOOL.white())
 						.key('G', Items.GOLD_NUGGET)
 				);
 			generator.forItem(PsithurismItems.SUMMER_GAKURAN_PANTS)
 				.shaped(
 					RecipeCategory.MISC,
 					recipe -> recipe.pattern("WTW", "W W", "G G")
-						.key('W', Blocks.WHITE_WOOL)
+						.key('W', Blocks.WOOL.white())
 						.key('T', PsithurismBlocks.THREAD)
 						.key('G', Items.GOLD_NUGGET)
 				);
@@ -582,14 +585,14 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 					RecipeCategory.MISC,
 					recipe -> recipe.pattern("T T", "BGB", "BBB")
 						.key('T', PsithurismBlocks.THREAD)
-						.key('B', Blocks.BLACK_WOOL)
+						.key('B', Blocks.WOOL.black())
 						.key('G', Items.GOLD_NUGGET)
 				);
 			generator.forItem(PsithurismItems.WINTER_GAKURAN_PANTS)
 				.shaped(
 					RecipeCategory.MISC,
 					recipe -> recipe.pattern("BTB", "B B", "G G")
-						.key('B', Blocks.BLACK_WOOL)
+						.key('B', Blocks.WOOL.black())
 						.key('T', PsithurismBlocks.THREAD)
 						.key('G', Items.GOLD_NUGGET)
 				);
@@ -597,32 +600,32 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 				.shaped(
 					RecipeCategory.MISC,
 					recipe -> recipe.pattern("P P", "TMT", "WWW")
-						.key('P', Blocks.PURPLE_WOOL)
+						.key('P', Blocks.WOOL.purple())
 						.key('T', PsithurismBlocks.THREAD)
-						.key('M', Blocks.MAGENTA_WOOL)
-						.key('W', Blocks.WHITE_WOOL)
+						.key('M', Blocks.WOOL.magenta())
+						.key('W', Blocks.WOOL.white())
 				);
 			generator.forItem(PsithurismItems.SUMMER_FUKU_SKIRT)
 				.shaped(
 					RecipeCategory.MISC,
 					recipe -> recipe.pattern("TPT", "PTP")
 						.key('T', PsithurismBlocks.THREAD)
-						.key('P', Blocks.PURPLE_WOOL)
+						.key('P', Blocks.WOOL.purple())
 				);
 			generator.forItem(PsithurismItems.WINTER_FUKU_DRESS)
 				.shaped(
 					RecipeCategory.MISC,
 					recipe -> recipe.pattern("W W", "TWT", "BBB")
-						.key('W', Blocks.WHITE_WOOL)
+						.key('W', Blocks.WOOL.white())
 						.key('T', PsithurismBlocks.THREAD)
-						.key('B', Blocks.BLACK_WOOL)
+						.key('B', Blocks.WOOL.black())
 				);
 			generator.forItem(PsithurismItems.WINTER_FUKU_SKIRT)
 				.shaped(
 					RecipeCategory.MISC,
 					recipe -> recipe.pattern("TWT", "WTW")
 						.key('T', PsithurismBlocks.THREAD)
-						.key('W', Blocks.WHITE_WOOL)
+						.key('W', Blocks.WOOL.white())
 				);
 			generator.forItem(PsithurismItems.SUMMER_UNIFORM_BOOTS)
 				.shaped(
@@ -636,7 +639,7 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 					RecipeCategory.MISC,
 					recipe -> recipe.pattern("T T", "W W", "L L")
 						.key('T', PsithurismBlocks.THREAD)
-						.key('W', Blocks.WHITE_WOOL)
+						.key('W', Blocks.WOOL.white())
 						.key('L', Items.LEATHER)
 				);
 			generator.forItem(PsithurismItems.SUMMER_SCHOOL_BAG)
@@ -644,7 +647,7 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 					RecipeCategory.MISC,
 					recipe -> recipe.pattern("TWT", "W W", "WGW")
 						.key('T', PsithurismBlocks.THREAD)
-						.key('W', Blocks.WHITE_WOOL)
+						.key('W', Blocks.WOOL.white())
 						.key('G', Items.GOLD_NUGGET)
 				);
 			generator.forItem(PsithurismItems.WINTER_SCHOOL_BAG)
@@ -652,7 +655,7 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 					RecipeCategory.MISC,
 					recipe -> recipe.pattern("TBT", "B B", "BGB")
 						.key('T', PsithurismBlocks.THREAD)
-						.key('B', Blocks.BLUE_WOOL)
+						.key('B', Blocks.WOOL.blue())
 						.key('G', Items.GOLD_NUGGET)
 				);
 			generator.forItem(PsithurismItems.RICE_FLOUR)
@@ -784,7 +787,7 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 		}
 	}
 
-	private static class PsithurismBlockTags extends FabricTagsProvider.BlockTagsProvider {
+	private static class PsithurismBlockTags extends BuiltinRegistryTagsProvider.BlockTagsProvider {
 
 		public PsithurismBlockTags(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> future) {
 			super(output, future);
@@ -792,16 +795,16 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 
 		@Override
 		protected void addTags(HolderLookup.Provider registries) {
-			this.valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
-				.forceAddTag(PsithurismBlocks.ASHINO_STONE.getBlockTagKey())
-				.forceAddTag(PsithurismBlocks.POLISHED_ASHINO_STONE.getBlockTagKey())
-				.forceAddTag(PsithurismBlocks.ASHINO_BRICKS.getBlockTagKey())
-				.forceAddTag(PsithurismBlocks.MOSSY_ASHINO_BRICKS.getBlockTagKey())
-				.forceAddTag(PsithurismBlocks.CRACKED_ASHINO_STONE_BRICKS.getBlockTagKey())
-				.forceAddTag(PsithurismBlocks.STONE_KAWARA_TILES.getBlockTagKey())
-				.forceAddTag(PsithurismBlocks.DEEPSLATE_KAWARA_TILES.getBlockTagKey())
-				.forceAddTag(PsithurismBlocks.BLACKSTONE_KAWARA_TILES.getBlockTagKey())
-				.forceAddTag(PsithurismBlocks.ASHINO_KAWARA_TILES.getBlockTagKey())
+			this.valueBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
+				.addTag(PsithurismBlocks.ASHINO_STONE.getBlockTagKey())
+				.addTag(PsithurismBlocks.POLISHED_ASHINO_STONE.getBlockTagKey())
+				.addTag(PsithurismBlocks.ASHINO_BRICKS.getBlockTagKey())
+				.addTag(PsithurismBlocks.MOSSY_ASHINO_BRICKS.getBlockTagKey())
+				.addTag(PsithurismBlocks.CRACKED_ASHINO_STONE_BRICKS.getBlockTagKey())
+				.addTag(PsithurismBlocks.STONE_KAWARA_TILES.getBlockTagKey())
+				.addTag(PsithurismBlocks.DEEPSLATE_KAWARA_TILES.getBlockTagKey())
+				.addTag(PsithurismBlocks.BLACKSTONE_KAWARA_TILES.getBlockTagKey())
+				.addTag(PsithurismBlocks.ASHINO_KAWARA_TILES.getBlockTagKey())
 				.add(PsithurismBlocks.STONE_LANTERN)
 				.add(PsithurismBlocks.CHISELED_ASHINO_STONE_BRICKS)
 				.add(PsithurismBlocks.IRON_MANHOLE)
@@ -813,12 +816,12 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 				.add(PsithurismBlocks.WAXED_EXPOSED_COPPER_MANHOLE)
 				.add(PsithurismBlocks.WAXED_WEATHERED_COPPER_MANHOLE)
 				.add(PsithurismBlocks.WAXED_OXIDIZED_COPPER_MANHOLE);
-			this.valueLookupBuilder(ConventionalBlockTags.CHAINS)
+			this.valueBuilder(ConventionalBlockTags.CHAINS)
 				.add(PsithurismBlocks.GOLDEN_CHAIN);
 		}
 	}
 
-	private static class PsithurismFluidTags extends FabricTagsProvider.FluidTagsProvider {
+	private static class PsithurismFluidTags extends BuiltinRegistryTagsProvider.FluidTagsProvider {
 
 		public PsithurismFluidTags(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> future) {
 			super(output, future);
@@ -826,13 +829,13 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 
 		@Override
 		protected void addTags(HolderLookup.Provider registries) {
-			this.valueLookupBuilder(FluidTags.WATER)
+			this.valueBuilder(FluidTags.WATER)
 				.add(PsithurismFluids.FLOWING_ONSEN_WATER)
 				.add(PsithurismFluids.ONSEN_WATER);
 		}
 	}
 
-	private static class PsithurismEntityTypeTags extends FabricTagsProvider.EntityTypeTagsProvider {
+	private static class PsithurismEntityTypeTags extends BuiltinRegistryTagsProvider.EntityTypeTagsProvider {
 
 		public PsithurismEntityTypeTags(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> future) {
 			super(output, future);
@@ -840,14 +843,10 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 
 		@Override
 		protected void addTags(HolderLookup.Provider registries) {
-			this.valueLookupBuilder(EntityTypeTags.CAN_BREATHE_UNDER_WATER)
-				.add(PsithurismEntityTypes.KOI);
-			this.valueLookupBuilder(EntityTypeTags.AQUATIC)
-				.add(PsithurismEntityTypes.KOI);
-			this.valueLookupBuilder(EntityTypeTags.NOT_SCARY_FOR_PUFFERFISH)
-				.add(PsithurismEntityTypes.KOI);
-			this.valueLookupBuilder(EntityTypeTags.CANNOT_BE_PUSHED_ONTO_BOATS)
-				.add(PsithurismEntityTypes.KOI);
+			this.valueBuilder(EntityTypeTags.CAN_BREATHE_UNDER_WATER).add(PsithurismEntityTypes.KOI);
+			this.valueBuilder(EntityTypeTags.AQUATIC).add(PsithurismEntityTypes.KOI);
+			this.valueBuilder(EntityTypeTags.NOT_SCARY_FOR_PUFFERFISH).add(PsithurismEntityTypes.KOI);
+			this.valueBuilder(EntityTypeTags.CANNOT_BE_PUSHED_ONTO_BOATS).add(PsithurismEntityTypes.KOI);
 		}
 	}
 }
