@@ -2,7 +2,7 @@
 
 # Psithurism
 
-[<img src="https://github.com/MModding/art/blob/main/mods/psithurism.png?raw=true" width="512" alt="Psithurism Logo">](https://modrinth.com/mod/psithurism)
+[<img src="https://github.com/MModding/art/blob/main/mods/psithurism/logo.png?raw=true" width="512" alt="Psithurism Logo">](https://modrinth.com/mod/psithurism)
 
 ## Supports
 
