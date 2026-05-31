@@ -4,10 +4,10 @@ import com.mmodding.library.core.api.AdvancedContainer;
 import com.mmodding.library.core.api.client.ExtendedClientModInitializer;
 import com.mmodding.library.core.api.management.ElementsManager;
 import com.mmodding.library.java.api.color.Color;
-import com.mmodding.library.rendering.api.sprite.TextureAliases;
+import com.mmodding.library.resource.api.client.sprite.TextureAliases;
 import com.mmodding.psithurism.Psithurism;
-import com.mmodding.psithurism.client.cosmetic.particle.OnsenSmokeParticle;
-import com.mmodding.psithurism.client.init.PsithurismModelLayers;
+import com.mmodding.psithurism.client.particle.OnsenSmokeParticle;
+import com.mmodding.psithurism.client.init.PsithurismModelReferences;
 import com.mmodding.psithurism.client.init.PsithurismRenderers;
 import com.mmodding.psithurism.init.*;
 import net.fabricmc.api.EnvType;
@@ -28,7 +28,7 @@ public class PsithurismClient implements ExtendedClientModInitializer {
 
 	@Override
 	public void setupManager(ElementsManager manager) {
-		manager.content(PsithurismModelLayers::register);
+		manager.content(PsithurismModelReferences::register);
 		manager.content(PsithurismRenderers::register);
 	}
 

@@ -73,10 +73,10 @@ mmodding {
 		addMixin("psithurism.mixins.json")
 		withDependencies {
 			it.javaVersion = ">=" + libs.versions.java.get()
-			it.minecraftVersion = "~" + libs.versions.minecraft.get()
+			it.minecraftVersion = "*"
 			it.fabricLoaderVersion = ">=" + libs.versions.fabric.loader.get()
 			it.fabricApiVersion = ">=" + libs.versions.fabric.api.get()
-			it.mmoddingLibraryVersion = ">=" + libs.versions.mmodding.get() + "-"
+			// it.mmoddingLibraryVersion = ">=" + libs.versions.mmodding.get() + "-"
 		}
 	}
 }

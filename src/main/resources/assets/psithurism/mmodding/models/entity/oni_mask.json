@@ -1,0 +1,110 @@
+{
+	"parts": {
+		"bone": {
+			"pose": {
+				"rotation": [-2.92343, 0.7854, 3.14159],
+				"offset": [4.17228, 19, -4.58649]
+			},
+			"cubes": [
+				{
+					"texture_offset": [0, 18],
+					"anchor": [-4.17228, -5.92889, 1.23581],
+					"size": [8, 2, 1]
+				},
+				{
+					"texture_offset": [0, 0],
+					"anchor": [-4.17228, -6.92889, 0.23581],
+					"size": [8, 8, 1]
+				}
+			],
+			"children": {
+				"rotated_cube_0": {
+					"pose": {
+						"rotation": [0, 0.7854, 0],
+						"offset": [-1, 0, 2]
+					},
+					"cubes": [
+						{
+							"texture_offset": [24, 2],
+							"anchor": [2.54086, -1.92889, 1.45914],
+							"size": [0, 3, 3]
+						}
+					]
+				},
+				"rotated_cube_1": {
+					"pose": {
+						"rotation": [0, -0.7854, 0],
+						"offset": [-3.58649, 0, -2.24194]
+					},
+					"cubes": [
+						{
+							"texture_offset": [8, 21],
+							"anchor": [3.45914, -1.92889, 1.45914],
+							"size": [0, 3, 3]
+						},
+						{
+							"texture_offset": [18, 2],
+							"anchor": [3.45914, -9.92889, 1.45914],
+							"size": [0, 4, 3]
+						}
+					]
+				},
+				"rotated_cube_2": {
+					"pose": {
+						"rotation": [0.61087, 0, 0],
+						"offset": [-1.17228, 1.53988, -1.29739]
+					},
+					"cubes": [
+						{
+							"texture_offset": [0, 21],
+							"anchor": [0, -3.02677, 3.21183],
+							"size": [2, 2, 2]
+						}
+					]
+				},
+				"rotated_cube_3": {
+					"pose": {
+						"rotation": [0, 0.7854, 0],
+						"offset": [-0.17228, 0, 0]
+					},
+					"cubes": [
+						{
+							"texture_offset": [18, 18],
+							"anchor": [0.54086, -9.92889, 2.04563],
+							"size": [0, 4, 3]
+						}
+					]
+				}
+			}
+		},
+		"leftovers": {
+			"pose": {
+				"rotation": [0, 0, 0],
+				"offset": [0, 24, 0]
+			},
+			"cubes": [
+				{
+					"texture_offset": [18, 0],
+					"anchor": [-4, -8, -4.01],
+					"size": [8, 1, 0]
+				},
+				{
+					"texture_offset": [18, 1],
+					"anchor": [-4, -8, 4.01],
+					"size": [8, 1, 0]
+				},
+				{
+					"texture_offset": [0, 9],
+					"anchor": [4.01, -8, -4],
+					"size": [0, 1, 8]
+				},
+				{
+					"texture_offset": [16, 9],
+					"anchor": [-4.01, -8, -4],
+					"size": [0, 1, 8]
+				}
+			]
+		}
+	},
+	"texture_size": [64, 64]
+}

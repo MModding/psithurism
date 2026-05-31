@@ -1,0 +1,122 @@
+{
+	"parts": {
+		"body": {
+			"pose": {
+				"rotation": [0, 0, 0],
+				"offset": [0, 15, 0]
+			},
+			"cubes": [
+				{
+					"texture_offset": [0, 0],
+					"anchor": [-4, -4, 2],
+					"size": [8, 9, 4]
+				},
+				{
+					"texture_offset": [0, 14],
+					"anchor": [-4.2, -4, 2],
+					"size": [0, 1, 4]
+				},
+				{
+					"texture_offset": [0, 14],
+					"anchor": [4.2, -4, 2],
+					"size": [0, 1, 4]
+				},
+				{
+					"texture_offset": [0, 13],
+					"anchor": [-4, -4, 6.2],
+					"size": [8, 1, 0]
+				},
+				{
+					"texture_offset": [0, 14],
+					"anchor": [4.2, 2, 2],
+					"size": [0, 1, 4]
+				},
+				{
+					"texture_offset": [0, 14],
+					"anchor": [-4.2, 2, 2],
+					"size": [0, 1, 4]
+				},
+				{
+					"texture_offset": [0, 13],
+					"anchor": [-4, 2, 6.2],
+					"size": [8, 1, 0]
+				},
+				{
+					"texture_offset": [0, 14],
+					"anchor": [-4.01, -1, -2],
+					"size": [0, 1, 4]
+				}
+			],
+			"children": {
+				"rotated_cube_0": {
+					"pose": {
+						"rotation": [0, 0, 1.5708],
+						"offset": [0, -1, 4]
+					},
+					"cubes": [
+						{
+							"texture_offset": [8, 15],
+							"anchor": [-4, -4, -1.99],
+							"size": [1, 1, 0]
+						},
+						{
+							"texture_offset": [8, 14],
+							"anchor": [-4, -4, -6.01],
+							"size": [5, 1, 0]
+						}
+					]
+				},
+				"rotated_cube_1": {
+					"pose": {
+						"rotation": [0, 0, 1.5708],
+						"offset": [-7, -1, 4]
+					},
+					"cubes": [
+						{
+							"texture_offset": [8, 15],
+							"anchor": [-4, -4, -1.99],
+							"size": [1, 1, 0]
+						},
+						{
+							"texture_offset": [8, 14],
+							"anchor": [-4, -4, -6.01],
+							"size": [5, 1, 0]
+						},
+						{
+							"texture_offset": [0, 14],
+							"anchor": [-4.01, -4, -6],
+							"size": [0, 1, 4]
+						}
+					]
+				},
+				"rotated_cube_2": {
+					"pose": {
+						"rotation": [0, 0, -3.14159],
+						"offset": [0, -4, 0]
+					},
+					"cubes": [
+						{
+							"texture_offset": [0, 14],
+							"anchor": [-4.01, -4, -2],
+							"size": [0, 1, 4]
+						}
+					]
+				},
+				"rotated_cube_3": {
+					"pose": {
+						"rotation": [0, 0, 1.5708],
+						"offset": [-1, -1, 0]
+					},
+					"cubes": [
+						{
+							"texture_offset": [0, 14],
+							"anchor": [-4.01, -5, -2],
+							"size": [0, 1, 4]
+						}
+					]
+				}
+			}
+		}
+	},
+	"texture_size": [32, 32]
+}

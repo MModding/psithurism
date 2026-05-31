@@ -1,7 +1,7 @@
 package com.mmodding.psithurism.client.renderer;
 
 import com.mmodding.psithurism.Psithurism;
-import com.mmodding.psithurism.client.init.PsithurismModelLayers;
+import com.mmodding.psithurism.client.init.PsithurismModelReferences;
 import com.mmodding.psithurism.entity.Koi;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
@@ -29,10 +29,10 @@ public class KoiRenderer extends MobRenderer<Koi, SalmonRenderState, SalmonModel
 	private final SalmonModel smallKoiModel;
 
 	public KoiRenderer(final EntityRendererProvider.Context context) {
-		super(context, new SalmonModel(context.bakeLayer(PsithurismModelLayers.KOI)), 0.4f);
-		this.koiModel = new SalmonModel(context.bakeLayer(PsithurismModelLayers.KOI));
-		this.largeKoiModel = new SalmonModel(context.bakeLayer(PsithurismModelLayers.KOI_LARGE));
-		this.smallKoiModel = new SalmonModel(context.bakeLayer(PsithurismModelLayers.KOI_SMALL));
+		super(context, new SalmonModel(context.bakeLayer(PsithurismModelReferences.KOI)), 0.4f);
+		this.koiModel = new SalmonModel(context.bakeLayer(PsithurismModelReferences.KOI));
+		this.largeKoiModel = new SalmonModel(context.bakeLayer(PsithurismModelReferences.KOI_LARGE));
+		this.smallKoiModel = new SalmonModel(context.bakeLayer(PsithurismModelReferences.KOI_SMALL));
 	}
 
 	public void extractRenderState(final Koi entity, final SalmonRenderState state, final float partialTicks) {

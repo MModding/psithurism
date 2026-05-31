@@ -1,0 +1,110 @@
+{
+	"parts": {
+		"bone": {
+			"pose": {
+				"rotation": [3.14159, 0, 3.14159],
+				"offset": [0, 19, -4]
+			},
+			"cubes": [
+				{
+					"texture_offset": [0, 18],
+					"anchor": [-4, -4, 1],
+					"size": [8, 2, 1]
+				},
+				{
+					"texture_offset": [0, 0],
+					"anchor": [-4, -5, 0],
+					"size": [8, 8, 1]
+				}
+			],
+			"children": {
+				"rotated_cube_0": {
+					"pose": {
+						"rotation": [0, 0.7854, 0],
+						"offset": [-0.82772, 0, 2.41351]
+					},
+					"cubes": [
+						{
+							"texture_offset": [24, 2],
+							"anchor": [3, 0, 1],
+							"size": [0, 3, 3]
+						}
+					]
+				},
+				"rotated_cube_1": {
+					"pose": {
+						"rotation": [0, -0.7854, 0],
+						"offset": [-3.41421, 0, -1.82843]
+					},
+					"cubes": [
+						{
+							"texture_offset": [8, 21],
+							"anchor": [3, 0, 1],
+							"size": [0, 3, 3]
+						},
+						{
+							"texture_offset": [18, 2],
+							"anchor": [3, -8, 1],
+							"size": [0, 4, 3]
+						}
+					]
+				},
+				"rotated_cube_2": {
+					"pose": {
+						"rotation": [0.61087, 0, 0],
+						"offset": [-1, 1.53988, -0.88388]
+					},
+					"cubes": [
+						{
+							"texture_offset": [0, 21],
+							"anchor": [0, -1.81915, 1.57358],
+							"size": [2, 2, 2]
+						}
+					]
+				},
+				"rotated_cube_3": {
+					"pose": {
+						"rotation": [0, 0.7854, 0],
+						"offset": [0, 0, 0.41351]
+					},
+					"cubes": [
+						{
+							"texture_offset": [18, 18],
+							"anchor": [1, -8, 1.58649],
+							"size": [0, 4, 3]
+						}
+					]
+				}
+			}
+		},
+		"leftovers": {
+			"pose": {
+				"rotation": [0, 0, 0],
+				"offset": [0, 24, 0]
+			},
+			"cubes": [
+				{
+					"texture_offset": [18, 0],
+					"anchor": [-4, -6, -4.01],
+					"size": [8, 1, 0]
+				},
+				{
+					"texture_offset": [18, 1],
+					"anchor": [-4, -8, 4.01],
+					"size": [8, 1, 0]
+				},
+				{
+					"texture_offset": [0, 9],
+					"anchor": [4.01, -8, -4],
+					"size": [0, 1, 8]
+				},
+				{
+					"texture_offset": [16, 9],
+					"anchor": [-4.01, -8, -4],
+					"size": [0, 1, 8]
+				}
+			]
+		}
+	},
+	"texture_size": [64, 64]
+}

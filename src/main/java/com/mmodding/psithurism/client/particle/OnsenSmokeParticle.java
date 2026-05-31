@@ -1,4 +1,4 @@
-package com.mmodding.psithurism.client.cosmetic.particle;
+package com.mmodding.psithurism.client.particle;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
