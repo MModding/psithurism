@@ -2,6 +2,13 @@
 
 # Psithurism
 
+[![Modrinth](https://img.shields.io/modrinth/dt/psithurism?style=for-the-badge&logo=modrinth
+)](https://www.modrinth.com/mod/psithurism/versions)
+[![CurseForge](https://img.shields.io/curseforge/dt/1533119?style=for-the-badge&logo=curseforge&color=orange
+)](https://www.curseforge.com/minecraft/mc-mods/psithurism)
+
+![Java CI with Gradle](https://github.com/MModding/psithurism/actions/workflows/build.yml/badge.svg?branch=main)
+
 [<img src="https://github.com/MModding/art/blob/main/mods/psithurism/logo.png?raw=true" width="512" alt="Psithurism Logo">](https://modrinth.com/mod/psithurism)
 
 ## Supports
