@@ -1,9 +1,9 @@
 package com.mmodding.psithurism.resource;
 
 import com.mmodding.library.core.api.AdvancedContainer;
-import com.mmodding.library.worldgen.api.feature.FeaturePack;
-import com.mmodding.library.worldgen.api.feature.MModdingFeatures;
-import com.mmodding.library.worldgen.api.feature.catalog.configurations.AdvancedLiquidVegetationPatchConfiguration;
+import com.mmodding.library.levelgen.api.feature.FeaturePack;
+import com.mmodding.library.levelgen.api.feature.MModdingFeatures;
+import com.mmodding.library.levelgen.api.feature.catalog.configurations.AdvancedLiquidVegetationPatchConfiguration;
 import com.mmodding.psithurism.init.PsithurismBlocks;
 import com.mmodding.psithurism.init.PsithurismConfiguredFeatures;
 import com.mmodding.psithurism.init.PsithurismPlacedFeatures;
@@ -19,7 +19,6 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
-import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
