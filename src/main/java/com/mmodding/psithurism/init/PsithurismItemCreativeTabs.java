@@ -34,7 +34,9 @@ public class PsithurismItemCreativeTabs {
 		PsithurismItems.SUMMER_FUKU_DRESS,
 		PsithurismItems.SUMMER_FUKU_SKIRT,
 		PsithurismItems.SUMMER_SCHOOL_BAG,
-		PsithurismItems.SUMMER_UNIFORM_BOOTS
+		PsithurismItems.SUMMER_UNIFORM_BOOTS,
+		PsithurismItems.MUSIC_DISC_TALES_OF_YORE,
+		PsithurismItems.MUSIC_DISC_REST
 	).contains(item);
 
 	private static final BiPredicate<ResourceKey<Item>, Item> ORGANICS_PREDICATE = (_, item) -> Set.of(
