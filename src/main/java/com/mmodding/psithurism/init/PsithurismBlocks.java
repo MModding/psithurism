@@ -11,6 +11,7 @@ import com.mmodding.library.java.api.function.AutoMapper;
 import com.mmodding.psithurism.Psithurism;
 import com.mmodding.psithurism.block.*;
 import net.fabricmc.fabric.api.registry.OxidizableBlocksRegistry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.*;
@@ -117,5 +118,8 @@ public class PsithurismBlocks {
 			new WeatheringCopperCollection.ByState<>(COPPER_MANHOLE, EXPOSED_COPPER_MANHOLE, WEATHERED_COPPER_MANHOLE, OXIDIZED_COPPER_MANHOLE),
 			new WeatheringCopperCollection.ByState<>(WAXED_COPPER_MANHOLE, WAXED_EXPOSED_COPPER_MANHOLE, WAXED_WEATHERED_COPPER_MANHOLE, WAXED_OXIDIZED_COPPER_MANHOLE)
 		));
+
+		// Until I make some modded Data Fixer thing or that it appears from FAPI or Vanilla
+		BuiltInRegistries.BLOCK.addAlias(Psithurism.createId("dark_cherry_hangign_sign_wall"), Psithurism.createId("dark_cherry_hanging_sign_wall"));
 	}
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_sign_rot_0",
+  "textures": {
+    "all": "psithurism:block/dark_cherry_sign",
+    "particle": "psithurism:block/dark_cherry_planks"
+  }
+}

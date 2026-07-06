@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "M": "minecraft:magenta_wool",
     "P": "minecraft:purple_wool",

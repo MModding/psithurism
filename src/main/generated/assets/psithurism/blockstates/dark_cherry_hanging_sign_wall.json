@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "psithurism:block/dark_cherry_hanging_sign_wall",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "psithurism:block/dark_cherry_hanging_sign_wall",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "psithurism:block/dark_cherry_hanging_sign_wall"
+    },
+    "facing=west": {
+      "model": "psithurism:block/dark_cherry_hanging_sign_wall",
+      "y": 90
+    }
+  }
+}

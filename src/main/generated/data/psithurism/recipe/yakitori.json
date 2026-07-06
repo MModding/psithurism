@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "B": "minecraft:cooked_beef",
     "M": "minecraft:milk_bucket",

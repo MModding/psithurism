@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "M": "minecraft:brown_mushroom",
     "P": "psithurism:miso_paste"

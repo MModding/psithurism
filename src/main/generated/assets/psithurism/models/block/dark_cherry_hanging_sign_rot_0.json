@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_hanging_sign_rot_0",
+  "textures": {
+    "all": "psithurism:block/dark_cherry_hanging_sign",
+    "particle": "psithurism:block/stripped_dark_cherry_log"
+  }
+}

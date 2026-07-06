@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "P": "minecraft:pink_wool",
     "T": "psithurism:thread",

@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "A": "psithurism:nori_algae",
     "B": "minecraft:bowl",
