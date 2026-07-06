@@ -72,8 +72,8 @@ public class PsithurismItems {
 	public static final Item CUP = register("cup", new Item.Properties());
 	public static final Item MATCHA_CUP = register("matcha_cup", new Item.Properties().food(PsithurismFoods.MATCHA_CUP, PsithurismConsumables.MATCHA_CUP).usingConvertsTo(CUP));
 
-	public static final Item MUSIC_DISC_TALES_OF_YORE = register("music_disc_tales_of_yore", new Item.Properties().stacksTo(1).jukeboxPlayable(PsithurismJukeboxSounds.TALES_OF_YORE));
-	public static final Item MUSIC_DISC_REST = register("music_disc_rest", new Item.Properties().stacksTo(1).jukeboxPlayable(PsithurismJukeboxSounds.REST));
+	public static final Item MUSIC_DISC_TALES_OF_YORE = register("music_disc_tales_of_yore", new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON).jukeboxPlayable(PsithurismJukeboxSounds.TALES_OF_YORE));
+	public static final Item MUSIC_DISC_REST = register("music_disc_rest", new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON).jukeboxPlayable(PsithurismJukeboxSounds.REST));
 
 	private static Item registerEquippableItem(String path, EquipmentSlot slot, Item.Properties properties) {
 		return registerEquippableItem(path, path, slot, properties);
