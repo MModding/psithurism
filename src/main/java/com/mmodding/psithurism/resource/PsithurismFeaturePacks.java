@@ -113,13 +113,13 @@ public class PsithurismFeaturePacks {
 			)
 		);
 
-	public static void registerConfigs(AdvancedContainer mod, BootstrapContext<ConfiguredFeature<?, ?>> context) {
+	public static void configureFeatures(AdvancedContainer mod, BootstrapContext<ConfiguredFeature<?, ?>> context) {
 		DARK_CHERRY.registerConfigs(context);
 		FLOWER_DARK_CHERRY.registerConfigs(context);
 		ONSEN_WATER_LAKE.registerConfigs(context);
 	}
 
-	public static void registerPlacements(AdvancedContainer mod, BootstrapContext<PlacedFeature> context) {
+	public static void configurePlacements(AdvancedContainer mod, BootstrapContext<PlacedFeature> context) {
 		DARK_CHERRY.registerPlacements(context);
 		FLOWER_DARK_CHERRY.registerPlacements(context);
 		ONSEN_WATER_LAKE.registerPlacements(context);

@@ -12,6 +12,7 @@ import com.mmodding.library.datagen.api.provider.BuiltinRegistryTagsProvider;
 import com.mmodding.library.datagen.api.provider.MModdingLanguageProvider;
 import com.mmodding.library.datagen.api.provider.MModdingRecipeProvider;
 import com.mmodding.library.datagen.api.recipe.RecipeGenerator;
+import com.mmodding.library.datagen.api.tag.ValueTagProcessor;
 import com.mmodding.psithurism.block.*;
 import com.mmodding.psithurism.data.PsithurismBlockLootProcessing;
 import com.mmodding.psithurism.data.PsithurismBlockModelProcessing;
@@ -19,6 +20,7 @@ import com.mmodding.psithurism.data.PsithurismRecipeProcessing;
 import com.mmodding.psithurism.data.PsithurismTexturedModels;
 import com.mmodding.psithurism.init.*;
 import com.mmodding.psithurism.resource.PsithurismFeaturePacks;
+import com.mmodding.psithurism.resource.PsithurismJukeboxSoundResources;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
@@ -46,8 +48,9 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 
 	@Override
 	public void setupManager(DataManager manager) {
-		manager.resource(Registries.CONFIGURED_FEATURE, PsithurismFeaturePacks::registerConfigs);
-		manager.resource(Registries.PLACED_FEATURE, PsithurismFeaturePacks::registerPlacements);
+		manager.resource(Registries.CONFIGURED_FEATURE, PsithurismFeaturePacks::configureFeatures);
+		manager.resource(Registries.PLACED_FEATURE, PsithurismFeaturePacks::configurePlacements);
+		manager.resource(Registries.JUKEBOX_SONG, PsithurismJukeboxSoundResources::configure);
 		manager.chain(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_MODELS)
 			.chain(block -> block instanceof FlowerBedBlock, BlockModelGenerators::createFlowerBed)
 			.chain(block -> block instanceof IronBarsBlock && block.builtInRegistryHolder().key().identifier().getPath().contains("wall"), PsithurismBlockModelProcessing::createPaperWall)
@@ -89,9 +92,10 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 		manager.task(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_RELATIVES);
 		manager.task(PsithurismWoodSets.class, DefaultDataHandlers.WOOD_SETS);
 		manager.task(PsithurismItems.class, DefaultDataHandlers.ITEM_MODELS, item -> !item.equals(PsithurismItems.RICE_PLANT), (generator, item) -> generator.generateFlatItem(item, ModelTemplates.FLAT_ITEM));
-		manager.task(PsithurismItems.class, DefaultDataHandlers.ITEM_TAGS, Set.of(PsithurismItems.FAN_POTTERY_SHERD, PsithurismItems.TORII_POTTERY_SHERD), (getter, item) -> getter.apply(ItemTags.DECORATED_POT_SHERDS).add(item));
+		manager.task(PsithurismItems.class, DefaultDataHandlers.ITEM_TAGS, Set.of(PsithurismItems.FAN_POTTERY_SHERD, PsithurismItems.TORII_POTTERY_SHERD, PsithurismItems.YIN_YANG_POTTERY_SHERD), ValueTagProcessor.forTag(ItemTags.DECORATED_POT_SHERDS));
 		manager.chain(PsithurismItems.class, DefaultDataHandlers.getTranslationHandler(Registries.ITEM, Item.class))
-			.chain(Set.of(PsithurismItems.KOI_WATER_BUCKET), DefaultLangProcessors.MOB_BUCKET)
+			.chain(Set.of(PsithurismItems.KOI_BUCKET), DefaultLangProcessors.MOB_BUCKET)
+			.chain(Set.of(PsithurismItems.MUSIC_DISC_TALES_OF_YORE, PsithurismItems.MUSIC_DISC_REST), _ -> "Music Disc")
 			.chain(DefaultLangProcessors.CLASSIC);
 	}
 
@@ -115,6 +119,8 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 			translations.add("block.psithurism.teru_teru_bozu.insufficient_will_power", "Insufficient Will Power!");
 			translations.add("block.psithurism.teru_teru_bozu.nothing_to_do", "I have nothing to do!");
 			translations.add("entity.psithurism.koi", "Koi");
+			translations.add("item.psithurism.music_disc_tales_of_yore.desc", "Aethyus - Tales of Yore");
+			translations.add("item.psithurism.music_disc_rest.desc", "Aethyus - Rest...");
 			translations.add("itemGroup.psithurism.building_blocks", "Psithurism - Building Blocks");
 			translations.add("itemGroup.psithurism.organic_products", "Psithurism - Organic Products");
 			translations.add("itemGroup.psithurism.cosmetics", "Psithurism - Cosmetics");

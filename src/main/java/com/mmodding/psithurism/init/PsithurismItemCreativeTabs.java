@@ -39,7 +39,7 @@ public class PsithurismItemCreativeTabs {
 
 	private static final BiPredicate<ResourceKey<Item>, Item> ORGANICS_PREDICATE = (_, item) -> Set.of(
 		PsithurismItems.KOI_SPAWN_EGG,
-		PsithurismItems.KOI_WATER_BUCKET,
+		PsithurismItems.KOI_BUCKET,
 		PsithurismItems.RICE_PLANT,
 		PsithurismItems.RICE,
 		PsithurismItems.RICE_FLOUR,

@@ -19,15 +19,16 @@ public class Psithurism implements ExtendedModInitializer {
 
 	@Override
 	public void setupManager(ElementsManager manager) {
-		manager.content(PsithurismDecoratedPotPatterns::register);
 		manager.content(PsithurismDataComponents::register);
 		manager.content(PsithurismParticleTypes::register);
+		manager.content(PsithurismSoundEvents::register);
 		manager.content(PsithurismEntityTypes::register);
 		manager.content(PsithurismWoodSets::register);
 		manager.content(PsithurismFluids::register);
 		manager.content(PsithurismBlocks::register);
 		manager.content(PsithurismBlockEntityTypes::register);
 		manager.content(PsithurismItems::register);
+		manager.content(PsithurismDecoratedPotPatterns::register);
 		manager.content(PsithurismItemCreativeTabs::register);
 		manager.content(PsithurismPlacedFeatures::register);
 	}
@@ -42,6 +43,7 @@ public class Psithurism implements ExtendedModInitializer {
 			}
 			else if (key.equals(BuiltInLootTables.TRAIL_RUINS_ARCHAEOLOGY_RARE)) {
 				builder.pool(LootPool.lootPool().add(LootItem.lootTableItem(PsithurismItems.TORII_POTTERY_SHERD)).build());
+				builder.pool(LootPool.lootPool().add(LootItem.lootTableItem(PsithurismItems.YIN_YANG_POTTERY_SHERD)).build());
 			}
 			else if (key.equals(BuiltInLootTables.TRIAL_CHAMBERS_CORRIDOR_POT)) {
 				builder.pool(LootPool.lootPool().add(LootItem.lootTableItem(PsithurismItems.KITSUNE_MASK).setWeight(50)).build());

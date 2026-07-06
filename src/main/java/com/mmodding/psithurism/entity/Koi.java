@@ -20,7 +20,7 @@ public class Koi extends Salmon {
 
 	@Override
 	public ItemStack getBucketItemStack() {
-		return PsithurismItems.KOI_WATER_BUCKET.getDefaultInstance();
+		return PsithurismItems.KOI_BUCKET.getDefaultInstance();
 	}
 
 	public static boolean checkKoiSpawnRules(EntityType<? extends WaterAnimal> type, LevelAccessor level, EntitySpawnReason reason, BlockPos pos, RandomSource random) {

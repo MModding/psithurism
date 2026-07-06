@@ -4,6 +4,7 @@ import com.mmodding.library.core.api.AdvancedContainer;
 import com.mmodding.psithurism.Psithurism;
 import com.mmodding.psithurism.item.MaskItem;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
@@ -18,6 +19,7 @@ public class PsithurismItems {
 
 	public static final Item FAN_POTTERY_SHERD = register("fan_pottery_sherd", new Item.Properties().rarity(Rarity.UNCOMMON));
 	public static final Item TORII_POTTERY_SHERD = register("torii_pottery_sherd", new Item.Properties().rarity(Rarity.UNCOMMON));
+	public static final Item YIN_YANG_POTTERY_SHERD = register("yin_yang_pottery_sherd", new Item.Properties().rarity(Rarity.UNCOMMON));
 
 	public static final Item ONI_MASK = register("oni_mask", MaskItem::new, new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(1).equippable(EquipmentSlot.HEAD).component(PsithurismDataComponents.WORN_MASK, false).trinketSlots(List.of("head/face")));
 	public static final Item KITSUNE_MASK = register("kitsune_mask", MaskItem::new, new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(1).equippable(EquipmentSlot.HEAD).component(PsithurismDataComponents.WORN_MASK, false).trinketSlots(List.of("head/face")));
@@ -46,7 +48,7 @@ public class PsithurismItems {
 
 	public static final Item ONSEN_WATER_BUCKET = register("onsen_water_bucket", properties -> new BucketItem(PsithurismFluids.ONSEN_WATER, properties), new Item.Properties().stacksTo(1));
 	public static final Item KOI_SPAWN_EGG = Items.registerSpawnEgg(Psithurism.createKey(Registries.ITEM, "koi_spawn_egg"), PsithurismEntityTypes.KOI);
-	public static final Item KOI_WATER_BUCKET = register("koi_water_bucket", properties -> new MobBucketItem(PsithurismEntityTypes.KOI, PsithurismFluids.ONSEN_WATER, SoundEvents.BUCKET_EMPTY_FISH, properties), new Item.Properties().stacksTo(1));
+	public static final Item KOI_BUCKET = register("koi_bucket", properties -> new MobBucketItem(PsithurismEntityTypes.KOI, PsithurismFluids.ONSEN_WATER, SoundEvents.BUCKET_EMPTY_FISH, properties), new Item.Properties().stacksTo(1));
 
 	public static final Item RICE_PLANT = register("rice_plant", Items.createBlockItemWithCustomItemName(PsithurismBlocks.RICE), new Item.Properties());
 	public static final Item RICE = register("rice", new Item.Properties().food(PsithurismFoods.RICE, PsithurismConsumables.RICE));
@@ -70,6 +72,9 @@ public class PsithurismItems {
 	public static final Item CUP = register("cup", new Item.Properties());
 	public static final Item MATCHA_CUP = register("matcha_cup", new Item.Properties().food(PsithurismFoods.MATCHA_CUP, PsithurismConsumables.MATCHA_CUP).usingConvertsTo(CUP));
 
+	public static final Item MUSIC_DISC_TALES_OF_YORE = register("music_disc_tales_of_yore", new Item.Properties().stacksTo(1).jukeboxPlayable(PsithurismJukeboxSounds.TALES_OF_YORE));
+	public static final Item MUSIC_DISC_REST = register("music_disc_rest", new Item.Properties().stacksTo(1).jukeboxPlayable(PsithurismJukeboxSounds.REST));
+
 	private static Item registerEquippableItem(String path, EquipmentSlot slot, Item.Properties properties) {
 		return registerEquippableItem(path, path, slot, properties);
 	}
@@ -92,5 +97,7 @@ public class PsithurismItems {
 		return Items.registerItem(key, factory, properties);
 	}
 
-	public static void register(AdvancedContainer mod) {}
+	public static void register(AdvancedContainer mod) {
+		BuiltInRegistries.ITEM.addAlias(Psithurism.createId("koi_water_bucket"), Psithurism.createId("koi_bucket"));
+	}
 }

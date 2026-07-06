@@ -2,6 +2,7 @@ package com.mmodding.psithurism.init;
 
 import com.mmodding.library.core.api.AdvancedContainer;
 import com.mmodding.psithurism.Psithurism;
+import net.fabricmc.fabric.api.registry.DecoratedPotPatternRegistry;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -12,6 +13,7 @@ public class PsithurismDecoratedPotPatterns {
 
 	public static final ResourceKey<DecoratedPotPattern> FAN = register("fan");
 	public static final ResourceKey<DecoratedPotPattern> TORII = register("torii");
+	public static final ResourceKey<DecoratedPotPattern> YIN_YANG = register("yin_yang");
 
 	public static ResourceKey<DecoratedPotPattern> register(String path) {
 		ResourceKey<DecoratedPotPattern> key = ResourceKey.create(Registries.DECORATED_POT_PATTERN, Psithurism.createId(path));
@@ -19,5 +21,9 @@ public class PsithurismDecoratedPotPatterns {
 		return key;
 	}
 
-	public static void register(AdvancedContainer mod) {}
+	public static void register(AdvancedContainer mod) {
+		DecoratedPotPatternRegistry.registerPattern(BuiltInRegistries.ITEM.getResourceKey(PsithurismItems.FAN_POTTERY_SHERD).orElseThrow(), FAN);
+		DecoratedPotPatternRegistry.registerPattern(BuiltInRegistries.ITEM.getResourceKey(PsithurismItems.TORII_POTTERY_SHERD).orElseThrow(), TORII);
+		DecoratedPotPatternRegistry.registerPattern(BuiltInRegistries.ITEM.getResourceKey(PsithurismItems.YIN_YANG_POTTERY_SHERD).orElseThrow(), YIN_YANG);
+	}
 }

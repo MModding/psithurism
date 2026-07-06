@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "psithurism:item/koi_water_bucket"
+    "layer0": "psithurism:item/koi_bucket"
   }
 }

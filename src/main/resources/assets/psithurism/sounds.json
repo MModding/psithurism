@@ -1,0 +1,10 @@
+{
+  "music.tales_of_yore": {
+    "subtitle": "item.psithurism.music_disc_tales_of_yore.desc",
+    "sounds": [ "psithurism:tales_of_yore" ]
+  },
+  "music.rest": {
+    "subtitle": "item.psithurism.rest.desc",
+    "sounds": [ "psithurism:rest" ]
+  }
+}
