@@ -26,4 +26,9 @@ public class Koi extends Salmon {
 	public static boolean checkKoiSpawnRules(EntityType<? extends WaterAnimal> type, LevelAccessor level, EntitySpawnReason reason, BlockPos pos, RandomSource random) {
 		return level.getBlockState(pos).is(PsithurismBlocks.ONSEN_WATER);
 	}
+
+	@Override
+	public boolean canBePickedUpWithBucket(ItemStack itemStack) {
+		return itemStack.is(PsithurismItems.ONSEN_WATER_BUCKET);
+	}
 }

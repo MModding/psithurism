@@ -90,7 +90,9 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 		manager.task(PsithurismWoodSets.class, DefaultDataHandlers.WOOD_SETS);
 		manager.task(PsithurismItems.class, DefaultDataHandlers.ITEM_MODELS, item -> !item.equals(PsithurismItems.RICE_PLANT), (generator, item) -> generator.generateFlatItem(item, ModelTemplates.FLAT_ITEM));
 		manager.task(PsithurismItems.class, DefaultDataHandlers.ITEM_TAGS, Set.of(PsithurismItems.FAN_POTTERY_SHERD, PsithurismItems.TORII_POTTERY_SHERD), (getter, item) -> getter.apply(ItemTags.DECORATED_POT_SHERDS).add(item));
-		manager.task(PsithurismItems.class, DefaultDataHandlers.getTranslationHandler(Registries.ITEM, Item.class), DefaultLangProcessors.CLASSIC);
+		manager.chain(PsithurismItems.class, DefaultDataHandlers.getTranslationHandler(Registries.ITEM, Item.class))
+			.chain(Set.of(PsithurismItems.KOI_WATER_BUCKET), DefaultLangProcessors.MOB_BUCKET)
+			.chain(DefaultLangProcessors.CLASSIC);
 	}
 
 	@Override
@@ -796,15 +798,15 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 		@Override
 		protected void addTags(HolderLookup.Provider registries) {
 			this.valueBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
-				.addTag(PsithurismBlocks.ASHINO_STONE.getBlockTagKey())
-				.addTag(PsithurismBlocks.POLISHED_ASHINO_STONE.getBlockTagKey())
-				.addTag(PsithurismBlocks.ASHINO_BRICKS.getBlockTagKey())
-				.addTag(PsithurismBlocks.MOSSY_ASHINO_BRICKS.getBlockTagKey())
-				.addTag(PsithurismBlocks.CRACKED_ASHINO_STONE_BRICKS.getBlockTagKey())
-				.addTag(PsithurismBlocks.STONE_KAWARA_TILES.getBlockTagKey())
-				.addTag(PsithurismBlocks.DEEPSLATE_KAWARA_TILES.getBlockTagKey())
-				.addTag(PsithurismBlocks.BLACKSTONE_KAWARA_TILES.getBlockTagKey())
-				.addTag(PsithurismBlocks.ASHINO_KAWARA_TILES.getBlockTagKey())
+				.forceAddTag(PsithurismBlocks.ASHINO_STONE.getBlockTagKey())
+				.forceAddTag(PsithurismBlocks.POLISHED_ASHINO_STONE.getBlockTagKey())
+				.forceAddTag(PsithurismBlocks.ASHINO_BRICKS.getBlockTagKey())
+				.forceAddTag(PsithurismBlocks.MOSSY_ASHINO_BRICKS.getBlockTagKey())
+				.forceAddTag(PsithurismBlocks.CRACKED_ASHINO_STONE_BRICKS.getBlockTagKey())
+				.forceAddTag(PsithurismBlocks.STONE_KAWARA_TILES.getBlockTagKey())
+				.forceAddTag(PsithurismBlocks.DEEPSLATE_KAWARA_TILES.getBlockTagKey())
+				.forceAddTag(PsithurismBlocks.BLACKSTONE_KAWARA_TILES.getBlockTagKey())
+				.forceAddTag(PsithurismBlocks.ASHINO_KAWARA_TILES.getBlockTagKey())
 				.add(PsithurismBlocks.STONE_LANTERN)
 				.add(PsithurismBlocks.CHISELED_ASHINO_STONE_BRICKS)
 				.add(PsithurismBlocks.IRON_MANHOLE)
