@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "psithurism:regular_paper_lantern",
+    "minecraft:red_dye"
+  ],
+  "result": {
+    "id": "psithurism:red_paper_lantern"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "C": "minecraft:red_dye",
+    "O": "minecraft:torch",
+    "P": "minecraft:paper",
+    "T": "psithurism:thread"
+  },
+  "pattern": [
+    "TPT",
+    "POP",
+    "TCT"
+  ],
+  "result": {
+    "id": "psithurism:red_paper_lantern"
+  }
+}

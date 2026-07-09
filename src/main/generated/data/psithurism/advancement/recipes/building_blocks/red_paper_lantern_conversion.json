@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_red_dye": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:red_dye"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_regular_paper_lantern": {
+      "conditions": {
+        "items": [
+          {
+            "items": "psithurism:regular_paper_lantern"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "psithurism:red_paper_lantern_conversion"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_regular_paper_lantern",
+      "has_red_dye"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "psithurism:red_paper_lantern_conversion"
+    ]
+  }
+}

@@ -393,6 +393,26 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 						.key('S', Items.STRING)
 						.key('F', Items.FEATHER)
 				);
+			generator.forItem(PsithurismBlocks.REGULAR_PAPER_LANTERN)
+				.shaped(
+					RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("TPT", "POP", "TCT")
+						.key('T', PsithurismBlocks.THREAD)
+						.key('P', Items.PAPER)
+						.key('O', Items.TORCH)
+						.key('C', Items.DYE.white())
+				);
+			generator.forItem(PsithurismBlocks.RED_PAPER_LANTERN)
+				.shaped(
+					RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("TPT", "POP", "TCT")
+						.key('T', PsithurismBlocks.THREAD)
+						.key('P', Items.PAPER)
+						.key('O', Items.TORCH)
+						.key('C', Items.DYE.red())
+				);
+			generator.forItem(PsithurismBlocks.REGULAR_PAPER_LANTERN).shapeless("_conversion", RecipeCategory.BUILDING_BLOCKS, recipe -> recipe.with(PsithurismBlocks.RED_PAPER_LANTERN, Items.DYE.white()));
+			generator.forItem(PsithurismBlocks.RED_PAPER_LANTERN).shapeless("_conversion", RecipeCategory.BUILDING_BLOCKS, recipe -> recipe.with(PsithurismBlocks.REGULAR_PAPER_LANTERN, Items.DYE.red()));
 			generator.forItem(PsithurismBlocks.TERU_TERU_BOZU)
 				.shaped(
 					RecipeCategory.BUILDING_BLOCKS,
