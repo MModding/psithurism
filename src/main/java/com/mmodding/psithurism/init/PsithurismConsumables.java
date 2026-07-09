@@ -15,13 +15,13 @@ public class PsithurismConsumables {
 	public static final Consumable FUGU = Consumables.defaultFood().consumeSeconds(1.0f).build();
 	public static final Consumable MOCHI = Consumables.defaultFood().consumeSeconds(1.2f).build();
 	public static final Consumable CHOCOLATE_MOCHI = Consumables.defaultFood().consumeSeconds(1.2f).onConsume(new ApplyStatusEffectsConsumeEffect(
-		new MobEffectInstance(MobEffects.HASTE, 100))
+		new MobEffectInstance(MobEffects.HASTE, 200))
 	).build();
 	public static final Consumable HONEY_MOCHI = Consumables.defaultFood().consumeSeconds(1.2f).onConsume(new ApplyStatusEffectsConsumeEffect(
-		new MobEffectInstance(MobEffects.GLOWING, 100)
+		new MobEffectInstance(MobEffects.GLOWING, 200)
 	)).build();
 	public static final Consumable SWEET_BERRY_MOCHI = Consumables.defaultFood().consumeSeconds(1.2f).onConsume(new ApplyStatusEffectsConsumeEffect(
-		new MobEffectInstance(MobEffects.JUMP_BOOST, 100)
+		new MobEffectInstance(MobEffects.JUMP_BOOST, 200)
 	)).consumeSeconds(1.2f).build();
 	public static final Consumable MATCHA_CUP = Consumables.defaultDrink().onConsume(new ClearAllStatusEffectsConsumeEffect()).onConsume(new ApplyStatusEffectsConsumeEffect(
 		new MobEffectInstance(MobEffects.LUCK, 400)
