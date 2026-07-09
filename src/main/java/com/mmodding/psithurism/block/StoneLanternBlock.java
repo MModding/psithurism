@@ -2,6 +2,7 @@ package com.mmodding.psithurism.block;
 
 import com.mmodding.library.block.api.catalog.SimpleHorizontalFacingBlock;
 import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
@@ -33,6 +34,7 @@ public class StoneLanternBlock extends SimpleHorizontalFacingBlock {
 	@Override
 	protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
 		if (!level.isClientSide()) {
+			player.playSound(SoundEvents.LEVER_CLICK);
 			level.setBlock(pos, state.setValue(BlockStateProperties.LIT, !state.getValue(BlockStateProperties.LIT)), 3);
 		}
 		return InteractionResult.SUCCESS;
