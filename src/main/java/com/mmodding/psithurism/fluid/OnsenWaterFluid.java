@@ -18,6 +18,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.InsideBlockEffectApplier;
+import net.minecraft.world.entity.InsideBlockEffectType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
@@ -45,6 +46,8 @@ public class OnsenWaterFluid extends AdvancedFlowableFluid {
 
 	@Override
 	protected void entityInside(Level level, BlockPos pos, Entity entity, InsideBlockEffectApplier effectApplier) {
+		effectApplier.apply(InsideBlockEffectType.EXTINGUISH);
+
 		if (entity instanceof LivingEntity livingEntity && livingEntity.tickCount % 60 == 0) {
 			livingEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 0, false, false));
 		}
