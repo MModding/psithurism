@@ -4,20 +4,19 @@ import com.mmodding.library.resource.api.client.cosmetic.Cosmetic;
 import com.mmodding.library.resource.api.client.model.EntityModelFactory;
 import com.mmodding.psithurism.Psithurism;
 import com.mmodding.psithurism.init.PsithurismDataComponents;
-import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.Map;
 
-public record MaskCosmetic(String name, EntityModel<HumanoidRenderState> normal, EntityModel<HumanoidRenderState> worn) implements Cosmetic {
+public record MaskCosmetic(String name, Identifier normal, Identifier worn) implements Cosmetic {
 
 	@Override
 	public Map<String, EntityModelFactory<HumanoidRenderState>> getModelFactories() {
 		return Map.of(
-			"normal", _ -> this.normal,
-			"worn", _ -> this.worn
+			"normal", context -> context.getDataDrivenModel(this.normal),
+			"worn", context -> context.getDataDrivenModel(this.worn)
 		);
 	}
 
