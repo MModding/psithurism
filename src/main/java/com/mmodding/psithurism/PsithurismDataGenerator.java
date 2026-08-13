@@ -80,6 +80,7 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 		manager.chain(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_LOOTS)
 			.chain(block -> block instanceof DoubleCropBlock, PsithurismBlockLootProcessing::createRiceLoot)
 			.chain(block -> block instanceof CropBlock, PsithurismBlockLootProcessing::createSoyaLoot)
+			.chain(block -> block instanceof FlowerBedBlock, (provider, block) -> provider.add(block, provider.createSegmentedBlockDrops(block)))
 			.chain(block -> block instanceof BedBlock, (provider, block) -> provider.add(block, provider.createSinglePropConditionTable(block, BedBlock.PART, BedPart.HEAD)))
 			.chain(block -> !(block instanceof LiquidBlock) && !block.equals(PsithurismBlocks.TERU_TERU_BOZU), BlockLootSubProvider::dropSelf);
 		manager.chain(PsithurismBlocks.class, DefaultDataHandlers.ITEM_CONVERTIBLE_RECIPES)
@@ -833,6 +834,7 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 				.forceAddTag(PsithurismBlocks.DEEPSLATE_KAWARA_TILES.getBlockTagKey())
 				.forceAddTag(PsithurismBlocks.BLACKSTONE_KAWARA_TILES.getBlockTagKey())
 				.forceAddTag(PsithurismBlocks.ASHINO_KAWARA_TILES.getBlockTagKey())
+				.add(PsithurismBlocks.GOLDEN_CHAIN)
 				.add(PsithurismBlocks.STONE_LANTERN)
 				.add(PsithurismBlocks.CHISELED_ASHINO_STONE_BRICKS)
 				.add(PsithurismBlocks.IRON_MANHOLE)
