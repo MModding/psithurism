@@ -7,6 +7,7 @@
 [![CurseForge](https://img.shields.io/curseforge/dt/1533119?style=for-the-badge&logo=curseforge&color=orange
 )](https://www.curseforge.com/minecraft/mc-mods/psithurism)
 
+[![MModding Maven](https://maven.mmodding.com/api/badge/latest/releases/com/mmodding/psithurism?name=MModding%20Maven)](https://maven.mmodding.com/#/releases/com/mmodding/psithurism)
 ![Java CI with Gradle](https://github.com/MModding/psithurism/actions/workflows/build.yml/badge.svg?branch=main)
 
 [<img src="https://github.com/MModding/art/blob/main/mods/psithurism/logo.png?raw=true" width="512" alt="Psithurism Logo">](https://modrinth.com/mod/psithurism)
