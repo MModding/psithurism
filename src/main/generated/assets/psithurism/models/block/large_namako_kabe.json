@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "psithurism:block/large_namako_kabe"
+  }
+}

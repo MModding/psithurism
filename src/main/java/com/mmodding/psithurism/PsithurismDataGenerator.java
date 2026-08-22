@@ -387,6 +387,12 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 						.key('D', Blocks.DIORITE)
 						.key('A', PsithurismBlocks.ASHINO_STONE.getMain())
 				);
+			generator.forItem(PsithurismBlocks.LARGE_NAMAKO_KABE)
+				.shaped(
+					4, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("NN", "NN")
+						.key('N', PsithurismBlocks.NAMAKO_KABE)
+				);
 			generator.forItem(PsithurismBlocks.THREAD)
 				.shaped(
 					6, RecipeCategory.BUILDING_BLOCKS,

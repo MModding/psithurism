@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_namako_kabe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "psithurism:namako_kabe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "psithurism:large_namako_kabe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_namako_kabe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "psithurism:large_namako_kabe"
+    ]
+  }
+}
