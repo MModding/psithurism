@@ -93,7 +93,7 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 		manager.task(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_RELATIVES);
 		manager.task(PsithurismWoodSets.class, DefaultDataHandlers.WOOD_SETS);
 		manager.task(PsithurismItems.class, DefaultDataHandlers.ITEM_MODELS, item -> !item.equals(PsithurismItems.RICE_PLANT), (generator, item) -> generator.generateFlatItem(item, ModelTemplates.FLAT_ITEM));
-		manager.task(PsithurismItems.class, DefaultDataHandlers.ITEM_TAGS, Set.of(PsithurismItems.FAN_POTTERY_SHERD, PsithurismItems.TORII_POTTERY_SHERD, PsithurismItems.YIN_YANG_POTTERY_SHERD), ValueTagProcessor.forTag(ItemTags.DECORATED_POT_SHERDS));
+		manager.task(PsithurismItems.class, DefaultDataHandlers.ITEM_TAGS, Set.of(PsithurismItems.FAN_POTTERY_SHERD, PsithurismItems.TORII_POTTERY_SHERD, PsithurismItems.YIN_YANG_POTTERY_SHERD, PsithurismItems.KITSUNE_SHERD), ValueTagProcessor.forTag(ItemTags.DECORATED_POT_SHERDS));
 		manager.chain(PsithurismItems.class, DefaultDataHandlers.getTranslationHandler(Registries.ITEM, Item.class))
 			.chain(Set.of(PsithurismItems.KOI_BUCKET), DefaultLangProcessors.MOB_BUCKET)
 			.chain(Set.of(PsithurismItems.MUSIC_DISC_TALES_OF_YORE, PsithurismItems.MUSIC_DISC_REST), _ -> "Music Disc")

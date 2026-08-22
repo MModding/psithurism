@@ -20,6 +20,7 @@ public class PsithurismItems {
 	public static final Item FAN_POTTERY_SHERD = register("fan_pottery_sherd", new Item.Properties().rarity(Rarity.UNCOMMON));
 	public static final Item TORII_POTTERY_SHERD = register("torii_pottery_sherd", new Item.Properties().rarity(Rarity.UNCOMMON));
 	public static final Item YIN_YANG_POTTERY_SHERD = register("yin_yang_pottery_sherd", new Item.Properties().rarity(Rarity.UNCOMMON));
+	public static final Item KITSUNE_SHERD = register("kitsune_sherd", new Item.Properties());
 
 	public static final Item ONI_MASK = register("oni_mask", MaskItem::new, new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(1).equippable(EquipmentSlot.HEAD).component(PsithurismDataComponents.WORN_MASK, false).trinketSlots(List.of("head/face")));
 	public static final Item KITSUNE_MASK = register("kitsune_mask", MaskItem::new, new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(1).equippable(EquipmentSlot.HEAD).component(PsithurismDataComponents.WORN_MASK, false).trinketSlots(List.of("head/face")));
