@@ -26,6 +26,6 @@ public class PsithurismDecoratedPotPatterns {
 		DecoratedPotPatternRegistry.registerPattern(BuiltInRegistries.ITEM.getResourceKey(PsithurismItems.FAN_POTTERY_SHERD).orElseThrow(), FAN);
 		DecoratedPotPatternRegistry.registerPattern(BuiltInRegistries.ITEM.getResourceKey(PsithurismItems.TORII_POTTERY_SHERD).orElseThrow(), TORII);
 		DecoratedPotPatternRegistry.registerPattern(BuiltInRegistries.ITEM.getResourceKey(PsithurismItems.YIN_YANG_POTTERY_SHERD).orElseThrow(), YIN_YANG);
-		DecoratedPotPatternRegistry.registerPattern(BuiltInRegistries.ITEM.getResourceKey(PsithurismItems.KITSUNE_SHERD).orElseThrow(), KITSUNE);
+		DecoratedPotPatternRegistry.registerPattern(BuiltInRegistries.ITEM.getResourceKey(PsithurismItems.KITSUNE_POTTERY_SHERD).orElseThrow(), KITSUNE);
 	}
 }

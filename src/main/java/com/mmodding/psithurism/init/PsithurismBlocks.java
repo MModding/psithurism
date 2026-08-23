@@ -106,6 +106,8 @@ public class PsithurismBlocks {
 	public static final BlockHeap FUTON = BlockHeap.register(FutonBlock::new, constructor -> constructor + "_futon", BlockHeapUtil.mapForColors(() -> BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white())), Psithurism.namespace(), BlockHeapUtil.COLORS).registerBlockItems();
 	public static final BlockHeap ZABUTONS = BlockHeap.register(SlabBlock::new, constructor -> constructor + "_zabuton", BlockHeapUtil.mapForColors(() -> BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white())), Psithurism.namespace(), BlockHeapUtil.COLORS).registerBlockItems();
 
+	public static final Block BIRDBATH = register("birdbath", BirdbathBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)).registerItem();
+
 	private static Block register(String path, BlockBehaviour.Properties properties) {
 		return register(path, Block::new, properties);
 	}

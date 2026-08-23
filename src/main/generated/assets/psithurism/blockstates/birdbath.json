@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "water_filled=false": {
+      "model": "psithurism:block/birdbath"
+    },
+    "water_filled=true": {
+      "model": "psithurism:block/filled_birdbath"
+    }
+  }
+}

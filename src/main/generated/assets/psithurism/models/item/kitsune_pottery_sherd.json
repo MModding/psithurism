@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "psithurism:item/kitsune_sherd"
+    "layer0": "psithurism:item/kitsune_pottery_sherd"
   }
 }

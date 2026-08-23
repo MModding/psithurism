@@ -37,6 +37,7 @@ public class PsithurismClient implements ExtendedClientModInitializer {
 		TextureAliases.create(Psithurism.createId("block/dark_cherry_log"), Identifier.withDefaultNamespace("block/cherry_log"));
 		TextureAliases.create(Psithurism.createId("block/white_petals_stem"), Identifier.withDefaultNamespace("block/pink_petals_stem"));
 		BlockColorRegistry.register(List.of(BlockTintSources.constant(-1), BlockTintSources.grass()), PsithurismBlocks.WHITE_PETALS);
+		BlockColorRegistry.register(List.of(BlockTintSources.water()), PsithurismBlocks.BIRDBATH);
 		ParticleProviderRegistry.getInstance().register(PsithurismParticleTypes.DARK_CHERRY_LEAVES, FallingLeavesParticle.CherryProvider::new);
 		ParticleProviderRegistry.getInstance().register(PsithurismParticleTypes.ONSEN_STEAM, OnsenSmokeParticle.Provider::new);
 		FluidRenderingRegistry.register(

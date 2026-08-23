@@ -9,6 +9,7 @@ import com.mmodding.psithurism.Psithurism;
 import com.mmodding.psithurism.block.*;
 import com.mmodding.psithurism.init.PsithurismBlocks;
 import net.minecraft.client.data.models.BlockModelGenerators;
+import net.minecraft.client.data.models.MultiVariant;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.*;
@@ -336,6 +337,20 @@ public class PsithurismBlockModelProcessing {
 						.select(true, plainVariant(lit))
 				)
 				.with(ROTATION_HORIZONTAL_FACING)
+		);
+	}
+
+	public static void createBirdBath(BlockModelGenerators generator, Block block) {
+		generator.registerSimpleFlatItemModel(block.asItem());
+		MultiVariant empty = plainVariant(Psithurism.createId("block/birdbath"));
+		MultiVariant filled = plainVariant(Psithurism.createId("block/filled_birdbath"));
+		generator.blockStateOutput.accept(
+			MultiVariantGenerator.dispatch(block)
+				.with(
+					PropertyDispatch.initial(BirdbathBlock.WATER_FILLED)
+						.select(false, empty)
+						.select(true, filled)
+				)
 		);
 	}
 }
