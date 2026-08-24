@@ -3,6 +3,8 @@ package com.mmodding.psithurism.block;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
@@ -51,7 +53,9 @@ public class BirdbathBlock extends Block implements BucketPickup {
 	protected InteractionResult useItemOn(ItemStack itemStack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
 		if (level.mayInteract(player, pos) && player.mayUseItemAt(pos.relative(hitResult.getDirection()), hitResult.getDirection(), itemStack) && !state.getValue(WATER_FILLED) && itemStack.is(ConventionalItemTags.WATER_BUCKETS) && itemStack.getItem() instanceof BucketItem bucketItem) {
 			level.setBlock(pos, state.setValue(WATER_FILLED, true), 11);
+			level.playSound(null, pos, SoundEvents.BUCKET_EMPTY, SoundSource.BLOCKS);
 			ItemStack emptyResult = ItemUtils.createFilledResult(itemStack, player, bucketItem.getEmptySuccessItem(itemStack, player));
+			player.setItemInHand(hand, emptyResult);
 			return InteractionResult.SUCCESS.heldItemTransformedTo(emptyResult);
 		}
 		else {
