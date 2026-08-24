@@ -353,4 +353,9 @@ public class PsithurismBlockModelProcessing {
 				)
 		);
 	}
+
+	public static void createNokiXXXXGawara(BlockModelGenerators generator, Block block) {
+		generator.registerSimpleFlatItemModel(block.asItem());
+		generator.createHorizontallyRotatedBlock(block, PsithurismTexturedModels.NOKIXXXXGAWARA);
+	}
 }

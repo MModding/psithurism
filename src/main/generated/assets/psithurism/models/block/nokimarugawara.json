@@ -1,0 +1,7 @@
+{
+  "parent": "psithurism:block/template_nokixxxxgawara",
+  "textures": {
+    "particle": "psithurism:block/nokimarugawara",
+    "texture": "psithurism:block/nokimarugawara"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "psithurism:block/nokimarugawara",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "psithurism:block/nokimarugawara"
+    },
+    "facing=south": {
+      "model": "psithurism:block/nokimarugawara",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "psithurism:block/nokimarugawara",
+      "y": 270
+    }
+  }
+}

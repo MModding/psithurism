@@ -11,4 +11,5 @@ public class PsithurismTexturedModels {
 	public static final TexturedModel.Provider CHERRY_BONSAI = TexturedModel.createDefault(block -> MModdingTextureMappings.specificParticle(block, Blocks.CHERRY_LEAVES), PsithurismModelTemplates.CHERRY_BONSAI);
 	public static final TexturedModel.Provider DARK_CHERRY_BONSAI = TexturedModel.createDefault(block -> MModdingTextureMappings.specificParticle(block, PsithurismWoodSets.DARK_CHERRY.getLeaves()), PsithurismModelTemplates.CHERRY_BONSAI);
 	public static final TexturedModel.Provider PAPER_LANTERN = TexturedModel.createDefault(TextureMapping::defaultTexture, PsithurismModelTemplates.PAPER_LANTERN);
+	public static final TexturedModel.Provider NOKIXXXXGAWARA = TexturedModel.createDefault(TextureMapping::defaultTexture, PsithurismModelTemplates.NOKIXXXXGAWARA);
 }

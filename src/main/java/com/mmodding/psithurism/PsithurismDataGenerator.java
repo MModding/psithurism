@@ -75,6 +75,7 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 			.chain(Set.of(PsithurismBlocks.CHERRY_BONSAI), PsithurismBlockModelProcessing::createCherryBonsai)
 			.chain(Set.of(PsithurismBlocks.DARK_CHERRY_BONSAI), PsithurismBlockModelProcessing::createDarkCherryBonsai)
 			.chain(Set.of(PsithurismBlocks.TERU_TERU_BOZU), PsithurismBlockModelProcessing::createTeruTeruBozu)
+			.chain(Set.of(PsithurismBlocks.NOKIMARUGAWARA, PsithurismBlocks.NOKIHIRAGAWARA), PsithurismBlockModelProcessing::createNokiXXXXGawara)
 			.chain(Set.of(PsithurismBlocks.MANEKI_NEKO), DefaultBlockModelProcessing::createDefinedModelHorizontalVariants)
 			.chain(Set.of(PsithurismBlocks.BIRDBATH), PsithurismBlockModelProcessing::createBirdBath)
 			.chain(BlockModelGenerators::createTrivialCube);
