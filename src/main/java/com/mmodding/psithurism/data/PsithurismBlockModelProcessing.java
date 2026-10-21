@@ -23,6 +23,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.properties.BedPart;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 
 import java.util.Map;
 
@@ -337,6 +338,26 @@ public class PsithurismBlockModelProcessing {
 						.select(true, plainVariant(lit))
 				)
 				.with(ROTATION_HORIZONTAL_FACING)
+		);
+	}
+
+	public static void createFloorLamp(BlockModelGenerators generator, Block block) {
+		generator.registerSimpleFlatItemModel(block.asItem());
+
+		MultiVariant topNormal = plainVariant(PsithurismModelTemplates.FLOOR_LAMP_TOP.createWithSuffix(block, "_top", TextureMapping.defaultTexture(block), generator.modelOutput));
+		MultiVariant topLit = plainVariant(PsithurismModelTemplates.FLOOR_LAMP_TOP.createWithSuffix(block, "_top_lit", TextureMapping.defaultTexture(TextureMapping.getBlockTexture(block, "_lit")), generator.modelOutput));
+		MultiVariant bottomNormal = plainVariant(PsithurismModelTemplates.FLOOR_LAMP_BOTTOM.createWithSuffix(block, "_bottom", TextureMapping.defaultTexture(block), generator.modelOutput));
+		MultiVariant bottomLit = plainVariant(PsithurismModelTemplates.FLOOR_LAMP_BOTTOM.createWithSuffix(block, "_bottom_lit", TextureMapping.defaultTexture(TextureMapping.getBlockTexture(block, "_lit")), generator.modelOutput));
+
+		generator.blockStateOutput.accept(
+			MultiVariantGenerator.dispatch(block)
+				.with(
+					PropertyDispatch.initial(BlockStateProperties.DOUBLE_BLOCK_HALF, BlockStateProperties.LIT)
+						.select(DoubleBlockHalf.UPPER, false, topNormal)
+						.select(DoubleBlockHalf.UPPER, true, topLit)
+						.select(DoubleBlockHalf.LOWER, false, bottomNormal)
+						.select(DoubleBlockHalf.LOWER, true, bottomLit)
+				)
 		);
 	}
 

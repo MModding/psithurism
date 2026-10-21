@@ -34,6 +34,8 @@ public class PsithurismBlocks {
 	public static final Block DARK_CHERRY_LAMINATE = register("dark_cherry_laminate", BlockBehaviour.Properties.ofFullCopy(PsithurismWoodSets.DARK_CHERRY.getWood())).registerItem();
 	public static final Block DARK_CHERRY_MOLDING = register("dark_cherry_molding", BlockBehaviour.Properties.ofFullCopy(PsithurismWoodSets.DARK_CHERRY.getWood())).registerItem();
 
+	public static final Block FLOOR_LAMP = register("floor_lamp", FloorLampBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_WOOD)).registerItem();
+
 	public static final Block PAPER_WALL_BLOCK = register("paper_wall_block", BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white())).registerItem();
 	public static final Block LARGE_PAPER_WALL_BLOCK = register("large_paper_wall_block", BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white())).registerItem();
 	public static final Block HORIZONTAL_PAPER_WALL_BLOCK = register("horizontal_paper_wall_block", BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white())).registerItem();

@@ -14,6 +14,8 @@ public class PsithurismModelTemplates {
 	public static final ModelTemplate NOKIXXXXGAWARA = create("template_nokixxxxgawara", TextureSlot.TEXTURE, TextureSlot.PARTICLE);
 	public static final ModelTemplate TERU_TERU_BOZU = create("template_teru_teru_bozu", TextureSlot.TEXTURE, TextureSlot.PARTICLE);
 	public static final ModelTemplate PAPER_LANTERN = create("template_paper_lantern", TextureSlot.TEXTURE, TextureSlot.PARTICLE);
+	public static final ModelTemplate FLOOR_LAMP_TOP = create("template_floor_lamp_top", TextureSlot.TEXTURE, TextureSlot.PARTICLE);
+	public static final ModelTemplate FLOOR_LAMP_BOTTOM = create("template_floor_lamp_bottom", TextureSlot.TEXTURE, TextureSlot.PARTICLE);
 
 	private static ModelTemplate create(final String id, final TextureSlot... slots) {
 		return new ModelTemplate(Optional.of(Psithurism.createId("block/" + id)), Optional.empty(), slots);

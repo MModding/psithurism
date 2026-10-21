@@ -1,0 +1,91 @@
+package com.mmodding.psithurism.block;
+
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jspecify.annotations.Nullable;
+
+import java.util.Map;
+
+public class FloorLampBlock extends Block {
+
+	public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
+	public static final BooleanProperty LIT = BlockStateProperties.LIT;
+
+	private static final Map<DoubleBlockHalf, VoxelShape> SHAPES = Map.of(
+		DoubleBlockHalf.UPPER, Shapes.or(
+			Block.column(14.0, 13.0, 16.0),
+			Block.column(13.0, 0.0, 13.0)
+		),
+		DoubleBlockHalf.LOWER, Shapes.or(
+			Block.column(13.0, 7.0, 16.0),
+			Block.column(14.0, 4.0, 7.0),
+			Shapes.or(
+				Block.box(3.0, 0.0, 3.0, 6.0, 4.0, 6.0),
+				Block.box(3.0, 0.0, 10.0, 6.0, 4.0, 13.0),
+				Block.box(10.0, 0.0, 3.0, 13.0, 4.0, 6.0),
+				Block.box(10.0, 0.0, 10.0, 13.0, 4.0, 13.0)
+			)
+		)
+	);
+
+	public FloorLampBlock(Properties properties) {
+		super(properties);
+		this.registerDefaultState(this.defaultBlockState().setValue(HALF, DoubleBlockHalf.LOWER).setValue(LIT, false));
+	}
+
+	@Override
+	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+		builder.add(HALF);
+		builder.add(LIT);
+	}
+
+	@Override
+	protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+		return SHAPES.get(state.getValue(HALF));
+	}
+
+	public void setPlacedBy(final Level level, final BlockPos pos, final BlockState state, final @Nullable LivingEntity by, final ItemStack itemStack) {
+		level.setBlockAndUpdate(pos.above(), state.setValue(HALF, DoubleBlockHalf.UPPER));
+	}
+
+	public @Nullable BlockState getStateForPlacement(final BlockPlaceContext context) {
+		BlockPos pos = context.getClickedPos();
+		Level level = context.getLevel();
+		return pos.getY() < level.getMaxY() && level.getBlockState(pos.above()).canBeReplaced(context) ? super.getStateForPlacement(context) : null;
+	}
+
+	// behavior from door block
+	@Override
+	public BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
+		if (!level.isClientSide() && (player.preventsBlockDrops() || !player.hasCorrectToolForDrops(state))) {
+			DoubleBlockHalf part = state.getValue(HALF);
+			if (part == DoubleBlockHalf.UPPER) {
+				BlockPos bottomPos = pos.below();
+				BlockState bottomState = level.getBlockState(bottomPos);
+				if (bottomState.is(state.getBlock()) && bottomState.getValue(HALF) == DoubleBlockHalf.LOWER) {
+					BlockState blockState = bottomState.getFluidState().is(Fluids.WATER) ? Blocks.WATER.defaultBlockState() : Blocks.AIR.defaultBlockState();
+					level.setBlock(bottomPos, blockState, 35);
+					level.levelEvent(player, 2001, bottomPos, Block.getId(bottomState));
+				}
+			}
+		}
+		return super.playerWillDestroy(level, pos, state, player);
+	}
+}
