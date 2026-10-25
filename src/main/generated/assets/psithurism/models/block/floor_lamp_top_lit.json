@@ -1,7 +1,7 @@
 {
   "parent": "psithurism:block/template_floor_lamp_top",
   "textures": {
-    "particle": "psithurism:block/floor_lamp_lit",
-    "texture": "psithurism:block/floor_lamp_lit"
+    "particle": "psithurism:block/floor_lamp_top_lit",
+    "texture": "psithurism:block/floor_lamp_top_lit"
   }
 }

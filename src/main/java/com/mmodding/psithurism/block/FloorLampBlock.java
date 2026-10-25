@@ -1,12 +1,18 @@
 package com.mmodding.psithurism.block;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -16,6 +22,7 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -30,12 +37,12 @@ public class FloorLampBlock extends Block {
 
 	private static final Map<DoubleBlockHalf, VoxelShape> SHAPES = Map.of(
 		DoubleBlockHalf.UPPER, Shapes.or(
-			Block.column(14.0, 13.0, 16.0),
-			Block.column(13.0, 0.0, 13.0)
+			Block.column(12.0, 13.0, 16.0),
+			Block.column(10.0, 0.0, 13.0)
 		),
 		DoubleBlockHalf.LOWER, Shapes.or(
-			Block.column(13.0, 7.0, 16.0),
-			Block.column(14.0, 4.0, 7.0),
+			Block.column(10.0, 7.0, 16.0),
+			Block.column(12.0, 4.0, 7.0),
 			Shapes.or(
 				Block.box(3.0, 0.0, 3.0, 6.0, 4.0, 6.0),
 				Block.box(3.0, 0.0, 10.0, 6.0, 4.0, 13.0),
@@ -61,7 +68,18 @@ public class FloorLampBlock extends Block {
 		return SHAPES.get(state.getValue(HALF));
 	}
 
-	public void setPlacedBy(final Level level, final BlockPos pos, final BlockState state, final @Nullable LivingEntity by, final ItemStack itemStack) {
+	@Override
+	protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
+		if (!level.isClientSide()) {
+			player.playSound(SoundEvents.LEVER_CLICK);
+			BlockPos origin = state.getValue(HALF) == DoubleBlockHalf.LOWER ? pos : pos.below();
+			level.setBlock(origin, state.setValue(BlockStateProperties.LIT, !state.getValue(BlockStateProperties.LIT)), 3);
+			level.setBlock(origin.above(), state.setValue(BlockStateProperties.LIT, !state.getValue(BlockStateProperties.LIT)), 3);
+		}
+		return InteractionResult.SUCCESS;
+	}
+
+	public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity by, ItemStack itemStack) {
 		level.setBlockAndUpdate(pos.above(), state.setValue(HALF, DoubleBlockHalf.UPPER));
 	}
 
@@ -87,5 +105,21 @@ public class FloorLampBlock extends Block {
 			}
 		}
 		return super.playerWillDestroy(level, pos, state, player);
+	}
+
+	protected BlockState updateShape(BlockState state, LevelReader level, ScheduledTickAccess ticks, BlockPos pos, Direction directionToNeighbour, BlockPos neighbourPos, BlockState neighbourState, RandomSource random) {
+		DoubleBlockHalf half = state.getValue(HALF);
+		if (directionToNeighbour.getAxis() == Direction.Axis.Y && half == DoubleBlockHalf.LOWER == (directionToNeighbour == Direction.UP)) {
+			return neighbourState.getBlock() instanceof FloorLampBlock && neighbourState.getValue(HALF) != half ? neighbourState.setValue(HALF, half) : Blocks.AIR.defaultBlockState();
+		}
+		else {
+			return half == DoubleBlockHalf.LOWER && directionToNeighbour == Direction.DOWN && !state.canSurvive(level, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, level, ticks, pos, directionToNeighbour, neighbourPos, neighbourState, random);
+		}
+	}
+
+	public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+		BlockPos below = pos.below();
+		BlockState belowState = level.getBlockState(below);
+		return state.getValue(HALF) == DoubleBlockHalf.LOWER ? belowState.isFaceSturdy(level, below, Direction.UP) : belowState.is(this);
 	}
 }
