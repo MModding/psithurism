@@ -34,7 +34,12 @@ public class PsithurismBlocks {
 	public static final Block DARK_CHERRY_LAMINATE = register("dark_cherry_laminate", BlockBehaviour.Properties.ofFullCopy(PsithurismWoodSets.DARK_CHERRY.getWood())).registerItem();
 	public static final Block DARK_CHERRY_MOLDING = register("dark_cherry_molding", BlockBehaviour.Properties.ofFullCopy(PsithurismWoodSets.DARK_CHERRY.getWood())).registerItem();
 
-	public static final Block FLOOR_LAMP = register("floor_lamp", FloorLampBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_WOOD)).registerItem();
+	public static final Block SLIDING_DOOR = register("sliding_door", SlidingDoorBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_DOOR)).registerItem();
+	public static final Block ORNATE_SLIDING_DOOR = register("ornate_sliding_door", SlidingDoorBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_DOOR)).registerItem();
+
+	public static final Block FLOOR_LAMP = register("floor_lamp", FloorLampBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_WOOD).lightLevel(state -> state.getValue(FloorLampBlock.LIT) ? 15 : 0)).registerItem();
+
+	public static final Block NAWA_NOREN = register("nawa_noren", NorenBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white()).noCollision()).registerItem();
 
 	public static final Block PAPER_WALL_BLOCK = register("paper_wall_block", BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white())).registerItem();
 	public static final Block LARGE_PAPER_WALL_BLOCK = register("large_paper_wall_block", BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white())).registerItem();
@@ -110,6 +115,7 @@ public class PsithurismBlocks {
 
 	public static final BlockHeap FUTON = BlockHeap.register(FutonBlock::new, constructor -> constructor + "_futon", BlockHeapUtil.mapForColors(() -> BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white())), Psithurism.namespace(), BlockHeapUtil.COLORS).registerBlockItems();
 	public static final BlockHeap ZABUTONS = BlockHeap.register(SlabBlock::new, constructor -> constructor + "_zabuton", BlockHeapUtil.mapForColors(() -> BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white())), Psithurism.namespace(), BlockHeapUtil.COLORS).registerBlockItems();
+	public static final BlockHeap NOREN = BlockHeap.register(NorenBlock::new, constructor -> constructor + "_noren", BlockHeapUtil.mapForColors(() -> BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white()).noOcclusion()), Psithurism.namespace(), BlockHeapUtil.COLORS).registerBlockItems();
 
 	public static final Block BIRDBATH = register("birdbath", BirdbathBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)).registerItem();
 

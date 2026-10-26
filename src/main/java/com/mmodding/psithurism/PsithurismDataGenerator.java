@@ -69,6 +69,9 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 			.chain(block -> block instanceof LargeTatamiMatBlock, PsithurismBlockModelProcessing::createLargeTatamiMat)
 			.chain(block -> block instanceof LargeTatamiBlock, PsithurismBlockModelProcessing::createLargeTatami)
 			.chain(block -> block instanceof LiquidBlock, PsithurismBlockModelProcessing::createOnsenWater)
+			.chain(block -> block instanceof SlidingDoorBlock, PsithurismBlockModelProcessing::createSlidingDoor)
+			.chain(Set.of(PsithurismBlocks.NAWA_NOREN), PsithurismBlockModelProcessing::createNawaNoren)
+			.chain(block -> block instanceof NorenBlock, PsithurismBlockModelProcessing::createColoredNoren)
 			.chain(Set.of(PsithurismBlocks.ASHINO_STONE_PEDESTAL), PsithurismBlockModelProcessing::createAshinoStonePedestal)
 			.chain(Set.of(PsithurismBlocks.RICE), PsithurismBlockModelProcessing::createRiceCrop)
 			.chain(Set.of(PsithurismBlocks.SOYA), PsithurismBlockModelProcessing::createSoyaCrop)
@@ -85,10 +88,12 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 			.chain(block -> block instanceof CropBlock, PsithurismBlockLootProcessing::createSoyaLoot)
 			.chain(block -> block instanceof FlowerBedBlock, (provider, block) -> provider.add(block, provider.createSegmentedBlockDrops(block)))
 			.chain(block -> block instanceof BedBlock, (provider, block) -> provider.add(block, provider.createSinglePropConditionTable(block, BedBlock.PART, BedPart.HEAD)))
+			.chain(block -> block instanceof SlidingDoorBlock || block instanceof FloorLampBlock, (provider, block) -> provider.add(block, provider.createDoorTable(block)))
 			.chain(block -> !(block instanceof LiquidBlock) && !block.equals(PsithurismBlocks.TERU_TERU_BOZU), BlockLootSubProvider::dropSelf);
 		manager.chain(PsithurismBlocks.class, DefaultDataHandlers.ITEM_CONVERTIBLE_RECIPES)
 			.chain(like -> like.asItem() instanceof BlockItem bi && bi.getBlock() instanceof SlabBlock, PsithurismRecipeProcessing::createZabuton)
-			.chain(like -> like.asItem() instanceof BlockItem bi && bi.getBlock() instanceof SimpleBedBlock, PsithurismRecipeProcessing::createFuton);
+			.chain(like -> like.asItem() instanceof BlockItem bi && bi.getBlock() instanceof SimpleBedBlock, PsithurismRecipeProcessing::createFuton)
+			.chain(like -> like.asItem() instanceof BlockItem bi && bi.getBlock() != PsithurismBlocks.NAWA_NOREN && bi.getBlock() instanceof NorenBlock, PsithurismRecipeProcessing::createNoren);
 		manager.task(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_TAGS, Set.of(PsithurismBlocks.RICE), (getter, block) -> getter.apply(BlockTags.MAINTAINS_FARMLAND).add(block));
 		manager.chain(PsithurismBlocks.class, DefaultDataHandlers.getTranslationHandler(Registries.BLOCK, Block.class))
 			.chain(Set.of(PsithurismBlocks.TERU_TERU_BOZU), _ -> "Teru Teru Bōzu")

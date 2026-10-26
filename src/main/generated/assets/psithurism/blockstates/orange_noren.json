@@ -1,0 +1,49 @@
+{
+  "variants": {
+    "facing=east,y=0": {
+      "model": "psithurism:block/orange_noren_bottom",
+      "y": 90
+    },
+    "facing=east,y=1": {
+      "model": "psithurism:block/orange_noren_middle",
+      "y": 90
+    },
+    "facing=east,y=2": {
+      "model": "psithurism:block/orange_noren_top",
+      "y": 90
+    },
+    "facing=north,y=0": {
+      "model": "psithurism:block/orange_noren_bottom"
+    },
+    "facing=north,y=1": {
+      "model": "psithurism:block/orange_noren_middle"
+    },
+    "facing=north,y=2": {
+      "model": "psithurism:block/orange_noren_top"
+    },
+    "facing=south,y=0": {
+      "model": "psithurism:block/orange_noren_bottom",
+      "y": 180
+    },
+    "facing=south,y=1": {
+      "model": "psithurism:block/orange_noren_middle",
+      "y": 180
+    },
+    "facing=south,y=2": {
+      "model": "psithurism:block/orange_noren_top",
+      "y": 180
+    },
+    "facing=west,y=0": {
+      "model": "psithurism:block/orange_noren_bottom",
+      "y": 270
+    },
+    "facing=west,y=1": {
+      "model": "psithurism:block/orange_noren_middle",
+      "y": 270
+    },
+    "facing=west,y=2": {
+      "model": "psithurism:block/orange_noren_top",
+      "y": 270
+    }
+  }
+}

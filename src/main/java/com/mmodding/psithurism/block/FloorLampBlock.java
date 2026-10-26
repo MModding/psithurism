@@ -73,8 +73,10 @@ public class FloorLampBlock extends Block {
 		if (!level.isClientSide()) {
 			player.playSound(SoundEvents.LEVER_CLICK);
 			BlockPos origin = state.getValue(HALF) == DoubleBlockHalf.LOWER ? pos : pos.below();
-			level.setBlock(origin, state.setValue(BlockStateProperties.LIT, !state.getValue(BlockStateProperties.LIT)), 3);
-			level.setBlock(origin.above(), state.setValue(BlockStateProperties.LIT, !state.getValue(BlockStateProperties.LIT)), 3);
+			BlockState lowerState = level.getBlockState(origin);
+			BlockState upperState = level.getBlockState(origin.above());
+			level.setBlock(origin, lowerState.setValue(BlockStateProperties.LIT, !lowerState.getValue(BlockStateProperties.LIT)), 3);
+			level.setBlock(origin.above(), upperState.setValue(BlockStateProperties.LIT, !upperState.getValue(BlockStateProperties.LIT)), 3);
 		}
 		return InteractionResult.SUCCESS;
 	}

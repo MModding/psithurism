@@ -341,13 +341,19 @@ public class PsithurismBlockModelProcessing {
 		);
 	}
 
+	public static void createSlidingDoor(BlockModelGenerators generator, Block block) {
+		generator.registerSimpleFlatItemModel(block.asItem());
+	}
+
 	public static void createFloorLamp(BlockModelGenerators generator, Block block) {
 		generator.registerSimpleFlatItemModel(block.asItem());
 
-		MultiVariant topNormal = plainVariant(PsithurismModelTemplates.FLOOR_LAMP_TOP.createWithSuffix(block, "_top", TextureMapping.defaultTexture(block), generator.modelOutput));
-		MultiVariant topLit = plainVariant(PsithurismModelTemplates.FLOOR_LAMP_TOP.createWithSuffix(block, "_top_lit", TextureMapping.defaultTexture(TextureMapping.getBlockTexture(block, "_lit")), generator.modelOutput));
-		MultiVariant bottomNormal = plainVariant(PsithurismModelTemplates.FLOOR_LAMP_BOTTOM.createWithSuffix(block, "_bottom", TextureMapping.defaultTexture(block), generator.modelOutput));
-		MultiVariant bottomLit = plainVariant(PsithurismModelTemplates.FLOOR_LAMP_BOTTOM.createWithSuffix(block, "_bottom_lit", TextureMapping.defaultTexture(TextureMapping.getBlockTexture(block, "_lit")), generator.modelOutput));
+		AutoMapper<TextureMapping> particleMapper = mapping -> mapping.put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(Blocks.DARK_OAK_PLANKS));
+
+		MultiVariant topNormal = plainVariant(PsithurismModelTemplates.FLOOR_LAMP_TOP.createWithSuffix(block, "_top", particleMapper.map(TextureMapping.defaultTexture(TextureMapping.getBlockTexture(block, "_top"))), generator.modelOutput));
+		MultiVariant topLit = plainVariant(PsithurismModelTemplates.FLOOR_LAMP_TOP.createWithSuffix(block, "_top_lit", particleMapper.map(TextureMapping.defaultTexture(TextureMapping.getBlockTexture(block, "_top_lit"))), generator.modelOutput));
+		MultiVariant bottomNormal = plainVariant(PsithurismModelTemplates.FLOOR_LAMP_BOTTOM.createWithSuffix(block, "_bottom", particleMapper.map(TextureMapping.defaultTexture(TextureMapping.getBlockTexture(block, "_bottom"))), generator.modelOutput));
+		MultiVariant bottomLit = plainVariant(PsithurismModelTemplates.FLOOR_LAMP_BOTTOM.createWithSuffix(block, "_bottom_lit", particleMapper.map(TextureMapping.defaultTexture(TextureMapping.getBlockTexture(block, "_bottom_lit"))), generator.modelOutput));
 
 		generator.blockStateOutput.accept(
 			MultiVariantGenerator.dispatch(block)
@@ -358,6 +364,39 @@ public class PsithurismBlockModelProcessing {
 						.select(DoubleBlockHalf.LOWER, false, bottomNormal)
 						.select(DoubleBlockHalf.LOWER, true, bottomLit)
 				)
+		);
+	}
+
+	public static void createNawaNoren(BlockModelGenerators generator, Block block) {
+		generator.registerSimpleFlatItemModel(block.asItem());
+		generator.blockStateOutput.accept(
+			MultiVariantGenerator.dispatch(block)
+				.with(
+					PropertyDispatch.initial(NorenBlock.Y)
+						.select(0, plainVariant(ModelLocationUtils.getModelLocation(block, "_bottom")))
+						.select(1, plainVariant(ModelLocationUtils.getModelLocation(block, "_middle")))
+						.select(2, plainVariant(ModelLocationUtils.getModelLocation(block, "_top")))
+				)
+				.with(ROTATION_HORIZONTAL_FACING)
+		);
+	}
+
+	public static void createColoredNoren(BlockModelGenerators generator, Block block) {
+		generator.registerSimpleFlatItemModel(block.asItem());
+
+		MultiVariant top = plainVariant(PsithurismModelTemplates.NOREN_TOP.createWithSuffix(block, "_top", TextureMapping.defaultTexture(block), generator.modelOutput));
+		MultiVariant middle = plainVariant(PsithurismModelTemplates.NOREN_MIDDLE.createWithSuffix(block, "_middle", TextureMapping.defaultTexture(block), generator.modelOutput));
+		MultiVariant bottom = plainVariant(PsithurismModelTemplates.NOREN_BOTTOM.createWithSuffix(block, "_bottom", TextureMapping.defaultTexture(block), generator.modelOutput));
+
+		generator.blockStateOutput.accept(
+			MultiVariantGenerator.dispatch(block)
+				.with(
+					PropertyDispatch.initial(NorenBlock.Y)
+						.select(0, bottom)
+						.select(1, middle)
+						.select(2, top)
+				)
+				.with(ROTATION_HORIZONTAL_FACING)
 		);
 	}
 

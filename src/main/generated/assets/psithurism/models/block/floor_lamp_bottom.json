@@ -1,7 +1,7 @@
 {
   "parent": "psithurism:block/template_floor_lamp_bottom",
   "textures": {
-    "particle": "psithurism:block/floor_lamp_bottom",
+    "particle": "minecraft:block/dark_oak_planks",
     "texture": "psithurism:block/floor_lamp_bottom"
   }
 }

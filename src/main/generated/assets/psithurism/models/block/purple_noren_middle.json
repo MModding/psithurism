@@ -1,0 +1,7 @@
+{
+  "parent": "psithurism:block/template_noren_middle",
+  "textures": {
+    "particle": "psithurism:block/purple_noren",
+    "texture": "psithurism:block/purple_noren"
+  }
+}

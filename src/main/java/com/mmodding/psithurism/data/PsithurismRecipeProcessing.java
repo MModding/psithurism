@@ -35,4 +35,7 @@ public class PsithurismRecipeProcessing {
 				.key('W', Blocks.WOOL.white())
 		);
 	}
+
+	public static void createNoren(RecipeHelper helper, ItemLike like) {
+	}
 }
