@@ -15,8 +15,7 @@ import java.util.Map;
 
 public class SlidingDoorBlock extends DoorBlock {
 
-	private static final Map<Direction, VoxelShape> CLOSED_SHAPES = Shapes.rotateHorizontal(Block.boxZ(16.0, 7.0, 10.0));
-	// private static final Map<Direction, VoxelShape> OPEN_SHAPES = Shapes.rotateHorizontal(Block.box(14.0, 0.0, 10.0, 30.0, 16.0, 13.0));
+	private static final Map<Direction, VoxelShape> SHAPES = Shapes.rotateHorizontal(Block.boxZ(16.0, 7.0, 9.0));
 
 	public SlidingDoorBlock(Properties properties) {
 		super(BlockSetType.CHERRY, properties);
@@ -25,12 +24,12 @@ public class SlidingDoorBlock extends DoorBlock {
 	@Override
 	protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
 		Direction direction = state.getValue(FACING);
-		return state.getValue(OPEN) ? Shapes.empty() : CLOSED_SHAPES.get(direction);
+		return SHAPES.get(direction);
 	}
 
 	@Override
-	protected VoxelShape getInteractionShape(BlockState state, BlockGetter level, BlockPos pos) {
+	protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
 		Direction direction = state.getValue(FACING);
-		return CLOSED_SHAPES.get(direction);
+		return state.getValue(OPEN) ? Shapes.empty() : SHAPES.get(direction);
 	}
 }

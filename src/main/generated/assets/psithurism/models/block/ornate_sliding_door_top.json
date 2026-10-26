@@ -1,0 +1,7 @@
+{
+  "parent": "psithurism:block/template_sliding_door_top",
+  "textures": {
+    "particle": "psithurism:block/ornate_sliding_door_top",
+    "texture": "psithurism:block/ornate_sliding_door_top"
+  }
+}

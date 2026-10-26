@@ -343,6 +343,23 @@ public class PsithurismBlockModelProcessing {
 
 	public static void createSlidingDoor(BlockModelGenerators generator, Block block) {
 		generator.registerSimpleFlatItemModel(block.asItem());
+
+		MultiVariant bottom = plainVariant(PsithurismModelTemplates.SLIDING_DOOR_BOTTOM.createWithSuffix(block, "_bottom", TextureMapping.defaultTexture(TextureMapping.getBlockTexture(block, "_bottom")), generator.modelOutput));
+		MultiVariant top = plainVariant(PsithurismModelTemplates.SLIDING_DOOR_TOP.createWithSuffix(block, "_top", TextureMapping.defaultTexture(TextureMapping.getBlockTexture(block, "_top")), generator.modelOutput));
+		MultiVariant bottomOpen = plainVariant(PsithurismModelTemplates.SLIDING_DOOR_BOTTOM_OPEN.createWithSuffix(block, "_bottom_open", TextureMapping.defaultTexture(TextureMapping.getBlockTexture(block, "_bottom")), generator.modelOutput));
+		MultiVariant topOpen = plainVariant(PsithurismModelTemplates.SLIDING_DOOR_TOP_OPEN.createWithSuffix(block, "_top_open", TextureMapping.defaultTexture(TextureMapping.getBlockTexture(block, "_top")), generator.modelOutput));
+
+		generator.blockStateOutput.accept(
+			MultiVariantGenerator.dispatch(block)
+				.with(
+					PropertyDispatch.initial(BlockStateProperties.DOUBLE_BLOCK_HALF, BlockStateProperties.OPEN)
+						.select(DoubleBlockHalf.LOWER, false, bottom)
+						.select(DoubleBlockHalf.UPPER, false, top)
+						.select(DoubleBlockHalf.LOWER, true, bottomOpen)
+						.select(DoubleBlockHalf.UPPER, true, topOpen)
+				)
+				.with(ROTATION_HORIZONTAL_FACING)
+		);
 	}
 
 	public static void createFloorLamp(BlockModelGenerators generator, Block block) {

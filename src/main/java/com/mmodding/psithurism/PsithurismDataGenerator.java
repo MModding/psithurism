@@ -94,7 +94,9 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 			.chain(like -> like.asItem() instanceof BlockItem bi && bi.getBlock() instanceof SlabBlock, PsithurismRecipeProcessing::createZabuton)
 			.chain(like -> like.asItem() instanceof BlockItem bi && bi.getBlock() instanceof SimpleBedBlock, PsithurismRecipeProcessing::createFuton)
 			.chain(like -> like.asItem() instanceof BlockItem bi && bi.getBlock() != PsithurismBlocks.NAWA_NOREN && bi.getBlock() instanceof NorenBlock, PsithurismRecipeProcessing::createNoren);
-		manager.task(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_TAGS, Set.of(PsithurismBlocks.RICE), (getter, block) -> getter.apply(BlockTags.MAINTAINS_FARMLAND).add(block));
+		manager.chain(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_TAGS)
+			.chain(block -> block instanceof SlidingDoorBlock, (getter, block) -> getter.apply(BlockTags.WALLS).add(block))
+			.chain(Set.of(PsithurismBlocks.RICE), (getter, block) -> getter.apply(BlockTags.MAINTAINS_FARMLAND).add(block));
 		manager.chain(PsithurismBlocks.class, DefaultDataHandlers.getTranslationHandler(Registries.BLOCK, Block.class))
 			.chain(Set.of(PsithurismBlocks.TERU_TERU_BOZU), _ -> "Teru Teru Bōzu")
 			.chain(DefaultLangProcessors.CLASSIC);
