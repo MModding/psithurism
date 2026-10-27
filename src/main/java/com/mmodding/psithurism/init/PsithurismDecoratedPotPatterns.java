@@ -16,6 +16,11 @@ public class PsithurismDecoratedPotPatterns {
 	public static final ResourceKey<DecoratedPotPattern> YIN_YANG = register("yin_yang");
 	public static final ResourceKey<DecoratedPotPattern> KITSUNE = register("kitsune");
 
+	public static final ResourceKey<DecoratedPotPattern> SPRING = register("spring");
+	public static final ResourceKey<DecoratedPotPattern> SUMMER = register("summer");
+	public static final ResourceKey<DecoratedPotPattern> AUTUMN = register("autumn");
+	public static final ResourceKey<DecoratedPotPattern> WINTER = register("winter");
+
 	public static ResourceKey<DecoratedPotPattern> register(String path) {
 		ResourceKey<DecoratedPotPattern> key = ResourceKey.create(Registries.DECORATED_POT_PATTERN, Psithurism.createId(path));
 		Registry.register(BuiltInRegistries.DECORATED_POT_PATTERN, key, new DecoratedPotPattern(Psithurism.createId(path + "_pottery_pattern")));
@@ -27,5 +32,10 @@ public class PsithurismDecoratedPotPatterns {
 		DecoratedPotPatternRegistry.registerPattern(BuiltInRegistries.ITEM.getResourceKey(PsithurismItems.TORII_POTTERY_SHERD).orElseThrow(), TORII);
 		DecoratedPotPatternRegistry.registerPattern(BuiltInRegistries.ITEM.getResourceKey(PsithurismItems.YIN_YANG_POTTERY_SHERD).orElseThrow(), YIN_YANG);
 		DecoratedPotPatternRegistry.registerPattern(BuiltInRegistries.ITEM.getResourceKey(PsithurismItems.KITSUNE_POTTERY_SHERD).orElseThrow(), KITSUNE);
+
+		DecoratedPotPatternRegistry.registerPattern(BuiltInRegistries.ITEM.getResourceKey(PsithurismItems.SPRING_POTTERY_SHERD).orElseThrow(), SPRING);
+		DecoratedPotPatternRegistry.registerPattern(BuiltInRegistries.ITEM.getResourceKey(PsithurismItems.SUMMER_POTTERY_SHERD).orElseThrow(), SUMMER);
+		DecoratedPotPatternRegistry.registerPattern(BuiltInRegistries.ITEM.getResourceKey(PsithurismItems.AUTUMN_POTTERY_SHERD).orElseThrow(), AUTUMN);
+		DecoratedPotPatternRegistry.registerPattern(BuiltInRegistries.ITEM.getResourceKey(PsithurismItems.WINTER_POTTERY_SHERD).orElseThrow(), WINTER);
 	}
 }

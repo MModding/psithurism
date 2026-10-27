@@ -22,6 +22,11 @@ public class PsithurismItems {
 	public static final Item YIN_YANG_POTTERY_SHERD = register("yin_yang_pottery_sherd", new Item.Properties().rarity(Rarity.UNCOMMON));
 	public static final Item KITSUNE_POTTERY_SHERD = register("kitsune_pottery_sherd", new Item.Properties().rarity(Rarity.UNCOMMON));
 
+	public static final Item SPRING_POTTERY_SHERD = register("spring_pottery_sherd", new Item.Properties().rarity(Rarity.UNCOMMON));
+	public static final Item SUMMER_POTTERY_SHERD = register("summer_pottery_sherd", new Item.Properties().rarity(Rarity.UNCOMMON));
+	public static final Item AUTUMN_POTTERY_SHERD = register("autumn_pottery_sherd", new Item.Properties().rarity(Rarity.UNCOMMON));
+	public static final Item WINTER_POTTERY_SHERD = register("winter_pottery_sherd", new Item.Properties().rarity(Rarity.UNCOMMON));
+
 	public static final Item ONI_MASK = register("oni_mask", MaskItem::new, new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(1).equippable(EquipmentSlot.HEAD).component(PsithurismDataComponents.WORN_MASK, false).trinketSlots(List.of("head/face")));
 	public static final Item KITSUNE_MASK = register("kitsune_mask", MaskItem::new, new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(1).equippable(EquipmentSlot.HEAD).component(PsithurismDataComponents.WORN_MASK, false).trinketSlots(List.of("head/face")));
 	public static final Item KITSUNE_TAIL = register("kitsune_tail", new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(1).equippable(EquipmentSlot.LEGS).trinketSlots(List.of("legs/belt")));

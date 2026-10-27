@@ -79,8 +79,14 @@ public class PsithurismBlocks {
 	public static final Block STONE_LANTERN = register("stone_lantern", StoneLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).sound(SoundType.STONE).lightLevel(state -> state.getValue(BlockStateProperties.LIT) ? 15 : 0)).registerItem();
 	public static final Block NAMAKO_KABE = register("namako_kabe", BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white())).registerItem();
 	public static final Block LARGE_NAMAKO_KABE = register("large_namako_kabe", BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white())).registerItem();
+
 	public static final Block NOKIMARUGAWARA = register("nokimarugawara", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()).registerItem();
 	public static final Block NOKIHIRAGAWARA = register("nokihiragawara", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()).registerItem();
+
+	public static final Block BIG_NOKIMARUGAWARA_FACE = register("big_nokimarugawara_face", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noCollision()).registerItem();
+	public static final Block BIG_NOKIMARUGAWARA_BORDER = register("big_nokimarugawara_border", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noCollision()).registerItem();
+	public static final Block BIG_NOKIHIRAGAWARA_FACE = register("big_nokihiragawara_face", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noCollision()).registerItem();
+	public static final Block BIG_NOKIHIRAGAWARA_BORDER = register("big_nokihiragawara_border", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noCollision()).registerItem();
 
 	public static final Block THREAD = register("thread", ChainBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white()).noCollision()).registerItem();
 	public static final Block TERU_TERU_BOZU = register("teru_teru_bozu", TeruTeruBozuBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white()).noCollision()).registerItem();

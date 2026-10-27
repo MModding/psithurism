@@ -435,4 +435,14 @@ public class PsithurismBlockModelProcessing {
 		generator.registerSimpleFlatItemModel(block.asItem());
 		generator.createHorizontallyRotatedBlock(block, PsithurismTexturedModels.NOKIXXXXGAWARA);
 	}
+
+	public static void createBigNokiXXXXGawaraFace(BlockModelGenerators generator, Block block) {
+		generator.registerSimpleFlatItemModel(block.asItem());
+		generator.createHorizontallyRotatedBlock(block, PsithurismTexturedModels.BIG_NOKIXXXXGAWARA_FACE);
+	}
+
+	public static void createBigNokiXXXXGawaraBorder(BlockModelGenerators generator, Block block) {
+		generator.registerSimpleFlatItemModel(block.asItem());
+		generator.createHorizontallyRotatedBlock(block, PsithurismTexturedModels.BIG_NOKIXXXXGAWARA_BORDER);
+	}
 }
