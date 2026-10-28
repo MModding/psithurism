@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "N": "psithurism:nokihiragawara"
+  },
+  "pattern": [
+    "NNN",
+    "NNN"
+  ],
+  "result": {
+    "count": 2,
+    "id": "psithurism:large_nokihiragawara_border"
+  }
+}

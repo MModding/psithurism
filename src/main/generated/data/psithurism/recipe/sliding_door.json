@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "L": "psithurism:dark_cherry_laminate"
+  },
+  "pattern": [
+    "LL",
+    "LL",
+    "LL"
+  ],
+  "result": {
+    "count": 3,
+    "id": "psithurism:sliding_door"
+  }
+}

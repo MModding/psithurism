@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "M": "psithurism:dark_cherry_molding",
+    "R": "minecraft:redstone_lamp"
+  },
+  "pattern": [
+    "MMM",
+    "MRM",
+    "MMM"
+  ],
+  "result": {
+    "id": "psithurism:floor_lamp"
+  }
+}

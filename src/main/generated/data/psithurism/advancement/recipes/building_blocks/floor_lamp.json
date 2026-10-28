@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_dark_cherry_molding": {
+      "conditions": {
+        "items": [
+          {
+            "items": "psithurism:dark_cherry_molding"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_redstone_lamp": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:redstone_lamp"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "psithurism:floor_lamp"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_dark_cherry_molding",
+      "has_redstone_lamp"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "psithurism:floor_lamp"
+    ]
+  }
+}

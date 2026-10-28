@@ -8,6 +8,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -37,5 +38,14 @@ public class PsithurismRecipeProcessing {
 	}
 
 	public static void createNoren(RecipeHelper helper, ItemLike like) {
+		String color = like.asItem().builtInRegistryHolder().key().identifier().getPath().replace("_noren", "");
+		Block wool = BuiltInRegistries.BLOCK.getValueOrThrow(ResourceKey.create(Registries.BLOCK, Identifier.withDefaultNamespace(color + "_wool")));
+		helper.shaped(
+			3, RecipeCategory.BUILDING_BLOCKS,
+			recipe -> recipe.pattern("SS", "WW", "TT")
+				.key('S', Items.STICK)
+				.key('W', wool)
+				.key('T', PsithurismBlocks.THREAD)
+		);
 	}
 }

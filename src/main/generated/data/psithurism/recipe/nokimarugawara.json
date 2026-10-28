@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": "minecraft:diorite",
+    "P": "minecraft:polished_diorite",
+    "S": "psithurism:ashino_stone"
+  },
+  "pattern": [
+    "DPD",
+    "SSS"
+  ],
+  "result": {
+    "count": 6,
+    "id": "psithurism:nokimarugawara"
+  }
+}

@@ -826,6 +826,87 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 						.key('C', PsithurismItems.CUP)
 						.key('K', Items.KELP)
 				);
+			generator.forItem(PsithurismBlocks.SLIDING_DOOR)
+				.shaped(
+					3, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("LL", "LL", "LL")
+						.key('L', PsithurismBlocks.DARK_CHERRY_LAMINATE)
+				);
+			generator.forItem(PsithurismBlocks.ORNATE_SLIDING_DOOR)
+				.shapeless(
+					RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.with(PsithurismBlocks.SLIDING_DOOR, Blocks.CHERRY_SAPLING)
+				)
+				.shapeless(
+					"_with_leaves", RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.with(PsithurismBlocks.SLIDING_DOOR, Blocks.CHERRY_LEAVES)
+				)
+				.shapeless(
+					"_with_petals", RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.with(PsithurismBlocks.SLIDING_DOOR, Blocks.PINK_PETALS)
+				);
+			generator.forItem(PsithurismBlocks.FLOOR_LAMP)
+				.shaped(
+					RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("MMM", "MRM", "MMM")
+						.key('M', PsithurismBlocks.DARK_CHERRY_MOLDING)
+						.key('R', Blocks.REDSTONE_LAMP)
+				);
+			generator.forItem(PsithurismBlocks.NAWA_NOREN)
+				.shaped(
+					3, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("SS", "TT", "TT")
+						.key('S', Items.STICK)
+						.key('T', PsithurismBlocks.THREAD)
+				);
+			generator.forItem(PsithurismBlocks.BIRDBATH)
+				.shaped(
+					RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("S S", "SSS")
+						.key('S', PsithurismBlocks.CHISELED_ASHINO_STONE_BRICKS)
+				);
+			generator.forItem(PsithurismBlocks.NOKIMARUGAWARA)
+				.shaped(
+					6, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("DPD", "SSS")
+						.key('D', Blocks.DIORITE)
+						.key('P', Blocks.POLISHED_DIORITE)
+						.key('S', PsithurismBlocks.ASHINO_STONE.getMain())
+				);
+			generator.forItem(PsithurismBlocks.NOKIHIRAGAWARA)
+				.shaped(
+					6, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("APA", "SSS")
+						.key('A', Blocks.ANDESITE)
+						.key('P', Blocks.POLISHED_ANDESITE)
+						.key('S', PsithurismBlocks.ASHINO_STONE.getMain())
+				);
+			generator.forItem(PsithurismBlocks.LARGE_NOKIMARUGAWARA_MEDALLION)
+				.shaped(
+					2, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("NDN", "NDN")
+						.key('N', PsithurismBlocks.NOKIMARUGAWARA)
+						.key('D', Blocks.DIORITE)
+				);
+			generator.forItem(PsithurismBlocks.LARGE_NOKIMARUGAWARA_BORDER)
+				.shaped(
+					2, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("NNN", "NNN")
+						.key('N', PsithurismBlocks.NOKIMARUGAWARA)
+				);
+			generator.forItem(PsithurismBlocks.LARGE_NOKIHIRAGAWARA_MEDALLION)
+				.shaped(
+					2, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("NAN", "NAN")
+						.key('N', PsithurismBlocks.NOKIHIRAGAWARA)
+						.key('A', Blocks.ANDESITE)
+				);
+			generator.forItem(PsithurismBlocks.LARGE_NOKIHIRAGAWARA_BORDER)
+				.shaped(
+					2, RecipeCategory.BUILDING_BLOCKS,
+					recipe -> recipe.pattern("NNN", "NNN")
+						.key('N', PsithurismBlocks.NOKIHIRAGAWARA)
+				);
 		}
 
 		@Override

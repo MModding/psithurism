@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "S": "minecraft:stick",
+    "T": "psithurism:thread",
+    "W": "minecraft:white_wool"
+  },
+  "pattern": [
+    "SS",
+    "WW",
+    "TT"
+  ],
+  "result": {
+    "count": 3,
+    "id": "psithurism:white_noren"
+  }
+}

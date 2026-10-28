@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "S": "psithurism:chiseled_ashino_stone_bricks"
+  },
+  "pattern": [
+    "S S",
+    "SSS"
+  ],
+  "result": {
+    "id": "psithurism:birdbath"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_nokihiragawara": {
+      "conditions": {
+        "items": [
+          {
+            "items": "psithurism:nokihiragawara"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "psithurism:large_nokihiragawara_border"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_nokihiragawara"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "psithurism:large_nokihiragawara_border"
+    ]
+  }
+}

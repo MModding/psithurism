@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "psithurism:sliding_door",
+    "minecraft:cherry_sapling"
+  ],
+  "result": {
+    "id": "psithurism:ornate_sliding_door"
+  }
+}
