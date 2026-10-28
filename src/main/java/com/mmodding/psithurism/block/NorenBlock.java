@@ -1,10 +1,12 @@
 package com.mmodding.psithurism.block;
 
 import com.mmodding.library.block.api.catalog.sized.FacingSizedBlock;
+import com.mmodding.library.java.api.container.Unit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
@@ -75,6 +77,23 @@ public class NorenBlock extends FacingSizedBlock {
 	@Override
 	protected int getWidth() {
 		return 1;
+	}
+
+	// shifting the placement check for it to be considered from the top
+	@Override
+	public @Nullable BlockState getStateForPlacement(BlockPlaceContext ctx) {
+		BlockState candidate = this.getCandidateForPlacement(ctx);
+		Unit.Mutable<Boolean> noBlockCollisions = Unit.mutable(true);
+		this.forEach(
+			ctx.getLevel(), ctx.getClickedPos().below(this.getHeight() - 1), candidate,
+			(_, state, _) -> noBlockCollisions.mutateValue(noBlockCollisions.value() && state.canBeReplaced())
+		);
+		if (noBlockCollisions.value()) {
+			return candidate;
+		}
+		else {
+			return null;
+		}
 	}
 
 	// shifting the placement check for it to be considered from the top
