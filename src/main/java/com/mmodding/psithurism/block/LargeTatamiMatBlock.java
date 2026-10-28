@@ -3,15 +3,24 @@ package com.mmodding.psithurism.block;
 import com.mmodding.library.java.api.container.Unit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+
+import java.util.Collections;
+import java.util.List;
 
 public class LargeTatamiMatBlock extends LargeTatamiBlock {
 
@@ -40,5 +49,17 @@ public class LargeTatamiMatBlock extends LargeTatamiBlock {
 			}
 		});
 		return canSurvive.value();
+	}
+
+	@Override
+	protected List<ItemStack> getDrops(BlockState state, LootParams.Builder params) {
+		if (this.drops.isEmpty()) {
+			return Collections.emptyList();
+		}
+
+		LootParams lootParams = params.withParameter(LootContextParams.BLOCK_STATE, state).create(LootContextParamSets.BLOCK);
+		ServerLevel level = lootParams.getLevel();
+		LootTable table = level.getServer().reloadableRegistries().getLootTable(this.drops.get());
+		return table.getRandomItems(lootParams);
 	}
 }
