@@ -12,6 +12,7 @@ import com.mmodding.library.datagen.api.provider.BuiltinRegistryTagsProvider;
 import com.mmodding.library.datagen.api.provider.MModdingLanguageProvider;
 import com.mmodding.library.datagen.api.provider.MModdingRecipeProvider;
 import com.mmodding.library.datagen.api.recipe.RecipeGenerator;
+import com.mmodding.library.datagen.api.tag.ValueTagAppender;
 import com.mmodding.library.datagen.api.tag.ValueTagProcessor;
 import com.mmodding.psithurism.block.*;
 import com.mmodding.psithurism.data.PsithurismBlockLootProcessing;
@@ -98,6 +99,7 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 			.chain(like -> like.asItem() instanceof BlockItem bi && bi.getBlock() != PsithurismBlocks.NAWA_NOREN && bi.getBlock() instanceof NorenBlock, PsithurismRecipeProcessing::createNoren);
 		manager.chain(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_TAGS)
 			.chain(block -> block instanceof SlidingDoorBlock, (getter, block) -> getter.apply(BlockTags.WALLS).add(block))
+			.chain(block -> block instanceof SlabBlock, (getter, block) -> getter.apply(BlockTags.SHEARS_MAJOR_BREAKING_SPEED).add(block))
 			.chain(Set.of(PsithurismBlocks.RICE), (getter, block) -> getter.apply(BlockTags.MAINTAINS_FARMLAND).add(block));
 		manager.chain(PsithurismBlocks.class, DefaultDataHandlers.getTranslationHandler(Registries.BLOCK, Block.class))
 			.chain(Set.of(PsithurismBlocks.TERU_TERU_BOZU), _ -> "Teru Teru Bōzu")
@@ -944,7 +946,22 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 				.add(PsithurismBlocks.WAXED_COPPER_MANHOLE)
 				.add(PsithurismBlocks.WAXED_EXPOSED_COPPER_MANHOLE)
 				.add(PsithurismBlocks.WAXED_WEATHERED_COPPER_MANHOLE)
-				.add(PsithurismBlocks.WAXED_OXIDIZED_COPPER_MANHOLE);
+				.add(PsithurismBlocks.WAXED_OXIDIZED_COPPER_MANHOLE)
+				.add(PsithurismBlocks.NOKIMARUGAWARA)
+				.add(PsithurismBlocks.NOKIHIRAGAWARA)
+				.add(PsithurismBlocks.LARGE_NOKIMARUGAWARA_MEDALLION)
+				.add(PsithurismBlocks.LARGE_NOKIMARUGAWARA_BORDER)
+				.add(PsithurismBlocks.LARGE_NOKIHIRAGAWARA_MEDALLION)
+				.add(PsithurismBlocks.LARGE_NOKIHIRAGAWARA_BORDER)
+				.add(PsithurismBlocks.BIRDBATH);
+			ValueTagAppender<Block> mineableWithAxe = this.valueBuilder(BlockTags.MINEABLE_WITH_AXE)
+				.add(PsithurismBlocks.DARK_CHERRY_LAMINATE)
+				.add(PsithurismBlocks.DARK_CHERRY_MOLDING)
+				.add(PsithurismBlocks.SLIDING_DOOR)
+				.add(PsithurismBlocks.ORNATE_SLIDING_DOOR)
+				.add(PsithurismBlocks.FLOOR_LAMP)
+				.add(PsithurismBlocks.NAWA_NOREN);
+			PsithurismBlocks.NOREN.forEach(mineableWithAxe::add);
 			this.valueBuilder(ConventionalBlockTags.CHAINS)
 				.add(PsithurismBlocks.GOLDEN_CHAIN);
 		}
