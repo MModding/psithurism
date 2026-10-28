@@ -1,7 +1,0 @@
-{
-  "parent": "psithurism:block/template_big_nokixxxxgawara_face",
-  "textures": {
-    "particle": "psithurism:block/big_nokimarugawara_face",
-    "texture": "psithurism:block/big_nokimarugawara_face"
-  }
-}

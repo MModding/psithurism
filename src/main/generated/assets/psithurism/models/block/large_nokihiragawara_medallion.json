@@ -1,0 +1,7 @@
+{
+  "parent": "psithurism:block/template_large_nokixxxxgawara_medallion",
+  "textures": {
+    "particle": "psithurism:block/large_nokihiragawara_medallion",
+    "texture": "psithurism:block/large_nokihiragawara_medallion"
+  }
+}

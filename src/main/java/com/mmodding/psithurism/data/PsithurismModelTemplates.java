@@ -12,8 +12,8 @@ public class PsithurismModelTemplates {
 	public static final ModelTemplate CHERRY_BONSAI = create("template_cherry_bonsai", TextureSlot.TEXTURE, TextureSlot.PARTICLE);
 	public static final ModelTemplate FUTON = create("template_futon", TextureSlot.TEXTURE, TextureSlot.PARTICLE);
 	public static final ModelTemplate NOKIXXXXGAWARA = create("template_nokixxxxgawara", TextureSlot.TEXTURE, TextureSlot.PARTICLE);
-	public static final ModelTemplate BIG_NOKIXXXXGAWARA_FACE = create("template_big_nokixxxxgawara_face", TextureSlot.TEXTURE, TextureSlot.PARTICLE);
-	public static final ModelTemplate BIG_NOKIXXXXGAWARA_BORDER = create("template_big_nokixxxxgawara_border", TextureSlot.TEXTURE, TextureSlot.PARTICLE);
+	public static final ModelTemplate LARGE_NOKIXXXXGAWARA_MEDALLION = create("template_large_nokixxxxgawara_medallion", TextureSlot.TEXTURE, TextureSlot.PARTICLE);
+	public static final ModelTemplate LARGE_NOKIXXXXGAWARA_BORDER = create("template_large_nokixxxxgawara_border", TextureSlot.TEXTURE, TextureSlot.PARTICLE);
 	public static final ModelTemplate TERU_TERU_BOZU = create("template_teru_teru_bozu", TextureSlot.TEXTURE, TextureSlot.PARTICLE);
 	public static final ModelTemplate PAPER_LANTERN = create("template_paper_lantern", TextureSlot.TEXTURE, TextureSlot.PARTICLE);
 	public static final ModelTemplate SLIDING_DOOR_BOTTOM = create("template_sliding_door_bottom", TextureSlot.TEXTURE, TextureSlot.PARTICLE);

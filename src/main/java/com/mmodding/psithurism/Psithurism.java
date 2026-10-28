@@ -40,10 +40,15 @@ public class Psithurism implements ExtendedModInitializer {
 		LootTableEvents.MODIFY.register((key, builder, source, holder) -> {
 			if (key.equals(BuiltInLootTables.TRAIL_RUINS_ARCHAEOLOGY_COMMON)) {
 				builder.pool(LootPool.lootPool().add(LootItem.lootTableItem(PsithurismItems.FAN_POTTERY_SHERD).setWeight(2)).build());
+				builder.pool(LootPool.lootPool().add(LootItem.lootTableItem(PsithurismItems.KITSUNE_POTTERY_SHERD).setWeight(2)).build());
+				builder.pool(LootPool.lootPool().add(LootItem.lootTableItem(PsithurismItems.SPRING_POTTERY_SHERD).setWeight(2)).build());
+				builder.pool(LootPool.lootPool().add(LootItem.lootTableItem(PsithurismItems.SUMMER_POTTERY_SHERD).setWeight(2)).build());
 			}
 			else if (key.equals(BuiltInLootTables.TRAIL_RUINS_ARCHAEOLOGY_RARE)) {
 				builder.pool(LootPool.lootPool().add(LootItem.lootTableItem(PsithurismItems.TORII_POTTERY_SHERD)).build());
 				builder.pool(LootPool.lootPool().add(LootItem.lootTableItem(PsithurismItems.YIN_YANG_POTTERY_SHERD)).build());
+				builder.pool(LootPool.lootPool().add(LootItem.lootTableItem(PsithurismItems.AUTUMN_POTTERY_SHERD)).build());
+				builder.pool(LootPool.lootPool().add(LootItem.lootTableItem(PsithurismItems.WINTER_POTTERY_SHERD)).build());
 			}
 			else if (key.equals(BuiltInLootTables.TRIAL_CHAMBERS_CORRIDOR_POT)) {
 				builder.pool(LootPool.lootPool().add(LootItem.lootTableItem(PsithurismItems.KITSUNE_MASK).setWeight(50)).build());

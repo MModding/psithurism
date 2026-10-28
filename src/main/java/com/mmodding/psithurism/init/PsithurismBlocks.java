@@ -83,10 +83,10 @@ public class PsithurismBlocks {
 	public static final Block NOKIMARUGAWARA = register("nokimarugawara", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()).registerItem();
 	public static final Block NOKIHIRAGAWARA = register("nokihiragawara", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noOcclusion()).registerItem();
 
-	public static final Block BIG_NOKIMARUGAWARA_FACE = register("big_nokimarugawara_face", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noCollision()).registerItem();
-	public static final Block BIG_NOKIMARUGAWARA_BORDER = register("big_nokimarugawara_border", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noCollision()).registerItem();
-	public static final Block BIG_NOKIHIRAGAWARA_FACE = register("big_nokihiragawara_face", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noCollision()).registerItem();
-	public static final Block BIG_NOKIHIRAGAWARA_BORDER = register("big_nokihiragawara_border", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noCollision()).registerItem();
+	public static final Block LARGE_NOKIMARUGAWARA_MEDALLION = register("large_nokimarugawara_medallion", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noCollision()).registerItem();
+	public static final Block LARGE_NOKIMARUGAWARA_BORDER = register("large_nokimarugawara_border", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noCollision()).registerItem();
+	public static final Block LARGE_NOKIHIRAGAWARA_MEDALLION = register("large_nokihiragawara_medallion", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noCollision()).registerItem();
+	public static final Block LARGE_NOKIHIRAGAWARA_BORDER = register("large_nokihiragawara_border", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).noCollision()).registerItem();
 
 	public static final Block THREAD = register("thread", ChainBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white()).noCollision()).registerItem();
 	public static final Block TERU_TERU_BOZU = register("teru_teru_bozu", TeruTeruBozuBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.WOOL.white()).noCollision()).registerItem();

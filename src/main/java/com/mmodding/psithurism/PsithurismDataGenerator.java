@@ -80,8 +80,8 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 			.chain(Set.of(PsithurismBlocks.TERU_TERU_BOZU), PsithurismBlockModelProcessing::createTeruTeruBozu)
 			.chain(Set.of(PsithurismBlocks.FLOOR_LAMP), PsithurismBlockModelProcessing::createFloorLamp)
 			.chain(Set.of(PsithurismBlocks.NOKIMARUGAWARA, PsithurismBlocks.NOKIHIRAGAWARA), PsithurismBlockModelProcessing::createNokiXXXXGawara)
-			.chain(Set.of(PsithurismBlocks.BIG_NOKIMARUGAWARA_FACE, PsithurismBlocks.BIG_NOKIHIRAGAWARA_FACE), PsithurismBlockModelProcessing::createBigNokiXXXXGawaraFace)
-			.chain(Set.of(PsithurismBlocks.BIG_NOKIMARUGAWARA_BORDER, PsithurismBlocks.BIG_NOKIHIRAGAWARA_BORDER), PsithurismBlockModelProcessing::createBigNokiXXXXGawaraBorder)
+			.chain(Set.of(PsithurismBlocks.LARGE_NOKIMARUGAWARA_MEDALLION, PsithurismBlocks.LARGE_NOKIHIRAGAWARA_MEDALLION), PsithurismBlockModelProcessing::createLargeNokiXXXXGawaraMedallion)
+			.chain(Set.of(PsithurismBlocks.LARGE_NOKIMARUGAWARA_BORDER, PsithurismBlocks.LARGE_NOKIHIRAGAWARA_BORDER), PsithurismBlockModelProcessing::createLargeNokiXXXXGawaraBorder)
 			.chain(Set.of(PsithurismBlocks.MANEKI_NEKO), DefaultBlockModelProcessing::createDefinedModelHorizontalVariants)
 			.chain(Set.of(PsithurismBlocks.BIRDBATH), PsithurismBlockModelProcessing::createBirdBath)
 			.chain(BlockModelGenerators::createTrivialCube);
@@ -105,7 +105,7 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 		manager.task(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_RELATIVES);
 		manager.task(PsithurismWoodSets.class, DefaultDataHandlers.WOOD_SETS);
 		manager.task(PsithurismItems.class, DefaultDataHandlers.ITEM_MODELS, item -> !item.equals(PsithurismItems.RICE_PLANT), (generator, item) -> generator.generateFlatItem(item, ModelTemplates.FLAT_ITEM));
-		manager.task(PsithurismItems.class, DefaultDataHandlers.ITEM_TAGS, Set.of(PsithurismItems.FAN_POTTERY_SHERD, PsithurismItems.TORII_POTTERY_SHERD, PsithurismItems.YIN_YANG_POTTERY_SHERD, PsithurismItems.KITSUNE_POTTERY_SHERD), ValueTagProcessor.forTag(ItemTags.DECORATED_POT_SHERDS));
+		manager.task(PsithurismItems.class, DefaultDataHandlers.ITEM_TAGS, Set.of(PsithurismItems.FAN_POTTERY_SHERD, PsithurismItems.TORII_POTTERY_SHERD, PsithurismItems.YIN_YANG_POTTERY_SHERD, PsithurismItems.KITSUNE_POTTERY_SHERD, PsithurismItems.SPRING_POTTERY_SHERD, PsithurismItems.SUMMER_POTTERY_SHERD, PsithurismItems.AUTUMN_POTTERY_SHERD, PsithurismItems.WINTER_POTTERY_SHERD), ValueTagProcessor.forTag(ItemTags.DECORATED_POT_SHERDS));
 		manager.chain(PsithurismItems.class, DefaultDataHandlers.getTranslationHandler(Registries.ITEM, Item.class))
 			.chain(Set.of(PsithurismItems.KOI_BUCKET), DefaultLangProcessors.MOB_BUCKET)
 			.chain(Set.of(PsithurismItems.MUSIC_DISC_TALES_OF_YORE, PsithurismItems.MUSIC_DISC_REST), _ -> "Music Disc")

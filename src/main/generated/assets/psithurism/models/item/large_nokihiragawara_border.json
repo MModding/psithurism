@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "psithurism:item/big_nokihiragawara_face"
+    "layer0": "psithurism:item/large_nokihiragawara_border"
   }
 }

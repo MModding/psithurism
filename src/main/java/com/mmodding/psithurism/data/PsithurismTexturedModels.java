@@ -12,6 +12,6 @@ public class PsithurismTexturedModels {
 	public static final TexturedModel.Provider DARK_CHERRY_BONSAI = TexturedModel.createDefault(block -> MModdingTextureMappings.specificParticle(block, PsithurismWoodSets.DARK_CHERRY.getLeaves()), PsithurismModelTemplates.CHERRY_BONSAI);
 	public static final TexturedModel.Provider PAPER_LANTERN = TexturedModel.createDefault(TextureMapping::defaultTexture, PsithurismModelTemplates.PAPER_LANTERN);
 	public static final TexturedModel.Provider NOKIXXXXGAWARA = TexturedModel.createDefault(TextureMapping::defaultTexture, PsithurismModelTemplates.NOKIXXXXGAWARA);
-	public static final TexturedModel.Provider BIG_NOKIXXXXGAWARA_FACE = TexturedModel.createDefault(TextureMapping::defaultTexture, PsithurismModelTemplates.BIG_NOKIXXXXGAWARA_FACE);
-	public static final TexturedModel.Provider BIG_NOKIXXXXGAWARA_BORDER = TexturedModel.createDefault(TextureMapping::defaultTexture, PsithurismModelTemplates.BIG_NOKIXXXXGAWARA_BORDER);
+	public static final TexturedModel.Provider LARGE_NOKIXXXXGAWARA_MEDALLION = TexturedModel.createDefault(TextureMapping::defaultTexture, PsithurismModelTemplates.LARGE_NOKIXXXXGAWARA_MEDALLION);
+	public static final TexturedModel.Provider LARGE_NOKIXXXXGAWARA_BORDER = TexturedModel.createDefault(TextureMapping::defaultTexture, PsithurismModelTemplates.LARGE_NOKIXXXXGAWARA_BORDER);
 }

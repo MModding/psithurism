@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "psithurism:block/large_nokimarugawara_medallion",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "psithurism:block/large_nokimarugawara_medallion"
+    },
+    "facing=south": {
+      "model": "psithurism:block/large_nokimarugawara_medallion",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "psithurism:block/large_nokimarugawara_medallion",
+      "y": 270
+    }
+  }
+}

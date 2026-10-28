@@ -436,13 +436,13 @@ public class PsithurismBlockModelProcessing {
 		generator.createHorizontallyRotatedBlock(block, PsithurismTexturedModels.NOKIXXXXGAWARA);
 	}
 
-	public static void createBigNokiXXXXGawaraFace(BlockModelGenerators generator, Block block) {
+	public static void createLargeNokiXXXXGawaraMedallion(BlockModelGenerators generator, Block block) {
 		generator.registerSimpleFlatItemModel(block.asItem());
-		generator.createHorizontallyRotatedBlock(block, PsithurismTexturedModels.BIG_NOKIXXXXGAWARA_FACE);
+		generator.createHorizontallyRotatedBlock(block, PsithurismTexturedModels.LARGE_NOKIXXXXGAWARA_MEDALLION);
 	}
 
-	public static void createBigNokiXXXXGawaraBorder(BlockModelGenerators generator, Block block) {
+	public static void createLargeNokiXXXXGawaraBorder(BlockModelGenerators generator, Block block) {
 		generator.registerSimpleFlatItemModel(block.asItem());
-		generator.createHorizontallyRotatedBlock(block, PsithurismTexturedModels.BIG_NOKIXXXXGAWARA_BORDER);
+		generator.createHorizontallyRotatedBlock(block, PsithurismTexturedModels.LARGE_NOKIXXXXGAWARA_BORDER);
 	}
 }
