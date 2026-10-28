@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:cup"
+        "recipes": "psithurism:cup"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

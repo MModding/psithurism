@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:orange_zabuton"
+        "recipes": "psithurism:orange_zabuton"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

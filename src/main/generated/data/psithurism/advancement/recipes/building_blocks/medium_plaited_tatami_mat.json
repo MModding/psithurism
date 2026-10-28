@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:medium_plaited_tatami_mat"
+        "recipes": "psithurism:medium_plaited_tatami_mat"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

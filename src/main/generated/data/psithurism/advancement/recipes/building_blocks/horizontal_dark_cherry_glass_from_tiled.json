@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:horizontal_dark_cherry_glass_from_tiled"
+        "recipes": "psithurism:horizontal_dark_cherry_glass_from_tiled"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

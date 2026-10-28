@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:winter_gakuran_pants"
+        "recipes": "psithurism:winter_gakuran_pants"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

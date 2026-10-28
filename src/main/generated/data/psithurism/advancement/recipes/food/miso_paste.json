@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:miso_paste"
+        "recipes": "psithurism:miso_paste"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:small_plaited_tatami"
+        "recipes": "psithurism:small_plaited_tatami"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

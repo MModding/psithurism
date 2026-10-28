@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:tofu"
+        "recipes": "psithurism:tofu"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

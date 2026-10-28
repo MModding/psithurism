@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:exposed_copper_manhole"
+        "recipes": "psithurism:exposed_copper_manhole"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

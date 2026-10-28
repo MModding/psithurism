@@ -1,0 +1,11 @@
+// 26.3	-999999999-01-01T00:00:00	Psithurism/Wood Set Automated Block Relatives Block Loot Tables
+96b95f397cb2e98bb0c1c6b2d66ba882ba3341df data/psithurism/loot_table/blocks/dark_cherry_button.json
+75d188ddef21e949ab286ada23a46a3826ff8e05 data/psithurism/loot_table/blocks/dark_cherry_door.json
+2bc063c4a5626d173666cf0f141828b715f176b1 data/psithurism/loot_table/blocks/dark_cherry_fence.json
+9a34ae717a5fa8c2a607a03cf029a10020542589 data/psithurism/loot_table/blocks/dark_cherry_fence_gate.json
+15c3b66359de3b31d8b12f392b2be6e32c9e0d14 data/psithurism/loot_table/blocks/dark_cherry_planks.json
+46f5b595e2aafc91ae696c2b61e132d8c3cf39a1 data/psithurism/loot_table/blocks/dark_cherry_pressure_plate.json
+091f5b028285ffbe12da9f807922c92518c72a0a data/psithurism/loot_table/blocks/dark_cherry_sign.json
+084061d301ec4214823b0fa29472b691121ecce4 data/psithurism/loot_table/blocks/dark_cherry_slab.json
+b7593b0d2c23c72c4e24c5bf0ea04befcfaadc64 data/psithurism/loot_table/blocks/dark_cherry_stairs.json
+3ed2c927cd5991627691053963220a9e3b7689e7 data/psithurism/loot_table/blocks/dark_cherry_trapdoor.json

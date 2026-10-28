@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:mossy_ashino_bricks_with_moss"
+        "recipes": "psithurism:mossy_ashino_bricks_with_moss"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

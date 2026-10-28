@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:rice_flour"
+        "recipes": "psithurism:rice_flour"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:ashino_kawara_tiles"
+        "recipes": "psithurism:ashino_kawara_tiles"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

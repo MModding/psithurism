@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:tiled_dark_cherry_glass"
+        "recipes": "psithurism:tiled_dark_cherry_glass"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

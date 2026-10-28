@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:large_nokihiragawara_border"
+        "recipes": "psithurism:large_nokihiragawara_border"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

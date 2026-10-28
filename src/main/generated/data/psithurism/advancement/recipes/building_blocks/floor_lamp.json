@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:floor_lamp"
+        "recipes": "psithurism:floor_lamp"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

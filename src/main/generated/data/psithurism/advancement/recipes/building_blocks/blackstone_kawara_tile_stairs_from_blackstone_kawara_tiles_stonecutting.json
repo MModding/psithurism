@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:blackstone_kawara_tile_stairs_from_blackstone_kawara_tiles_stonecutting"
+        "recipes": "psithurism:blackstone_kawara_tile_stairs_from_blackstone_kawara_tiles_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:paper_wall"
+        "recipes": "psithurism:paper_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

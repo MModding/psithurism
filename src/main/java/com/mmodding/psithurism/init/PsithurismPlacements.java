@@ -10,7 +10,7 @@ import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
-public class PsithurismPlacedFeatures {
+public class PsithurismPlacements {
 
 	public static final ResourceKey<PlacedFeature> DARK_CHERRY_CHECKED = create("dark_cherry_checked");
 	public static final ResourceKey<PlacedFeature> DARK_CHERRY_BEES_005 = create("dark_cherry_bees_005");

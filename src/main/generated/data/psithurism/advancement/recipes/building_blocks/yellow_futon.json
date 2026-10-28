@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:yellow_futon"
+        "recipes": "psithurism:yellow_futon"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

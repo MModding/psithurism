@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:dark_cherry_fence"
+        "recipes": "psithurism:dark_cherry_fence"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:rice_bowl"
+        "recipes": "psithurism:rice_bowl"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

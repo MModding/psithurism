@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:blue_noren"
+        "recipes": "psithurism:blue_noren"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

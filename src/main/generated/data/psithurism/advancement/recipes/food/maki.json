@@ -33,7 +33,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:maki"
+        "recipes": "psithurism:maki"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:large_nokimarugawara_medallion"
+        "recipes": "psithurism:large_nokimarugawara_medallion"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

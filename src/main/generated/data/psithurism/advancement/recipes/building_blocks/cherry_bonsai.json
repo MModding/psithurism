@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:cherry_bonsai"
+        "recipes": "psithurism:cherry_bonsai"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

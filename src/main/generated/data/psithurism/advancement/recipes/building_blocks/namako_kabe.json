@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:namako_kabe"
+        "recipes": "psithurism:namako_kabe"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

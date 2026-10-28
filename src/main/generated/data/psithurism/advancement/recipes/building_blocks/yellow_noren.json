@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:yellow_noren"
+        "recipes": "psithurism:yellow_noren"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

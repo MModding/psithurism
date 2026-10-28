@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:purple_futon"
+        "recipes": "psithurism:purple_futon"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

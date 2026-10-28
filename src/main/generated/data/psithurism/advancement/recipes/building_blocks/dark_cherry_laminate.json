@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:dark_cherry_laminate"
+        "recipes": "psithurism:dark_cherry_laminate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

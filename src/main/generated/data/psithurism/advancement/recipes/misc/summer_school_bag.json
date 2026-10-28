@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:summer_school_bag"
+        "recipes": "psithurism:summer_school_bag"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

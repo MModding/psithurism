@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:winter_fuku_dress"
+        "recipes": "psithurism:winter_fuku_dress"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:winter_fuku_skirt"
+        "recipes": "psithurism:winter_fuku_skirt"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

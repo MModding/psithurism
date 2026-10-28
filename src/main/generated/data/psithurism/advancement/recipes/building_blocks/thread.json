@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:thread"
+        "recipes": "psithurism:thread"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

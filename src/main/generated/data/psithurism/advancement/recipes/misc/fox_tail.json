@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:fox_tail"
+        "recipes": "psithurism:fox_tail"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

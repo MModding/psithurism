@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:cracked_ashino_stone_brick_wall_from_cracked_ashino_stone_bricks_stonecutting"
+        "recipes": "psithurism:cracked_ashino_stone_brick_wall_from_cracked_ashino_stone_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

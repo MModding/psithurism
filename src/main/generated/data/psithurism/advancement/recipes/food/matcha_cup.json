@@ -43,7 +43,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:matcha_cup"
+        "recipes": "psithurism:matcha_cup"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

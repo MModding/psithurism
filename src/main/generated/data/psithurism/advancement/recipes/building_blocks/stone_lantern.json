@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:stone_lantern"
+        "recipes": "psithurism:stone_lantern"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

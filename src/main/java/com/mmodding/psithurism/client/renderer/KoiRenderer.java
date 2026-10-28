@@ -48,7 +48,7 @@ public class KoiRenderer extends MobRenderer<Koi, SalmonRenderState, SalmonModel
 	protected @Nullable RenderType getRenderType(SalmonRenderState state, boolean isBodyVisible, boolean forceTransparent, boolean appearGlowing) {
 		Identifier texture = this.getTextureLocation(state);
 		if (forceTransparent) {
-			return RenderTypes.entityTranslucentCullItemTarget(texture);
+			return RenderTypes.entityTranslucentCull(texture);
 		} else if (isBodyVisible) {
 			return RenderTypes.entityTranslucent(texture); // I'm defining translucency here because I don't want to copy SalmonModel for a single change
 		} else {
@@ -72,11 +72,11 @@ public class KoiRenderer extends MobRenderer<Koi, SalmonRenderState, SalmonModel
 		}
 
 		float bodyZRot = amplitudeMultiplier * 4.3f * Mth.sin(angleMultiplier * 0.6f * state.ageInTicks);
-		poseStack.mulPose(Axis.YP.rotationDegrees(bodyZRot));
+		poseStack.rotateDegrees(Axis.YP, bodyZRot);
 
 		if (!state.isInWater) {
 			poseStack.translate(0.2f, 0.1f, 0.0f);
-			poseStack.mulPose(Axis.ZP.rotationDegrees(90.0f));
+			poseStack.rotateDegrees(Axis.ZP, 90.0f);
 		}
 	}
 

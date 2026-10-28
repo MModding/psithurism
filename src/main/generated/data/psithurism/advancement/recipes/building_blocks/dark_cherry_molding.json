@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:dark_cherry_molding"
+        "recipes": "psithurism:dark_cherry_molding"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

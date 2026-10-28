@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:large_paper_wall_block"
+        "recipes": "psithurism:large_paper_wall_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

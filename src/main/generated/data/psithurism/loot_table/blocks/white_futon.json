@@ -2,27 +2,23 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ],
+      "condition": {
+        "type": "minecraft:survives_explosion"
+      },
       "entries": [
         {
           "type": "minecraft:item",
-          "conditions": [
-            {
-              "block": "psithurism:white_futon",
-              "condition": "minecraft:block_state_property",
-              "properties": {
-                "part": "head"
-              }
+          "condition": {
+            "type": "minecraft:match_block",
+            "blocks": "psithurism:white_futon",
+            "state": {
+              "part": "head"
             }
-          ],
+          },
           "name": "psithurism:white_futon"
         }
       ],
-      "rolls": 1.0
+      "rolls": 1
     }
   ]
 }

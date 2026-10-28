@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:stripped_dark_cherry_wood"
+        "recipes": "psithurism:stripped_dark_cherry_wood"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

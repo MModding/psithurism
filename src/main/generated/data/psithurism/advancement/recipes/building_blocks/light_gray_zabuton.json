@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:light_gray_zabuton"
+        "recipes": "psithurism:light_gray_zabuton"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

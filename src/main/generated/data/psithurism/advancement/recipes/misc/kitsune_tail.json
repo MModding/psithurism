@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:kitsune_tail"
+        "recipes": "psithurism:kitsune_tail"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

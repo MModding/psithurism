@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:yellow_zabuton"
+        "recipes": "psithurism:yellow_zabuton"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

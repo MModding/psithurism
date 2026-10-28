@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:golden_chain"
+        "recipes": "psithurism:golden_chain"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -13,7 +13,7 @@ import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
-import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 public class Psithurism implements ExtendedModInitializer {
 
@@ -28,9 +28,8 @@ public class Psithurism implements ExtendedModInitializer {
 		manager.content(PsithurismBlocks::register);
 		manager.content(PsithurismBlockEntityTypes::register);
 		manager.content(PsithurismItems::register);
-		manager.content(PsithurismDecoratedPotPatterns::register);
 		manager.content(PsithurismItemCreativeTabs::register);
-		manager.content(PsithurismPlacedFeatures::register);
+		manager.content(PsithurismPlacements::register);
 	}
 
 	@Override
@@ -55,8 +54,8 @@ public class Psithurism implements ExtendedModInitializer {
 				builder.pool(LootPool.lootPool().add(LootItem.lootTableItem(PsithurismItems.ONI_MASK).setWeight(50)).build());
 			}
 			else if (key.equals(BuiltInLootTables.ABANDONED_MINESHAFT)) {
-				builder.pool(LootPool.lootPool().add(LootItem.lootTableItem(PsithurismItems.RICE_PLANT).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0f, 4.0f))).setWeight(10)).build());
-				builder.pool(LootPool.lootPool().add(LootItem.lootTableItem(PsithurismItems.SOYBEANS).apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0f, 4.0f))).setWeight(10)).build());
+				builder.pool(LootPool.lootPool().add(LootItem.lootTableItem(PsithurismItems.RICE_PLANT).apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 4))).setWeight(10)).build());
+				builder.pool(LootPool.lootPool().add(LootItem.lootTableItem(PsithurismItems.SOYBEANS).apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 4))).setWeight(10)).build());
 			}
 		});
 	}

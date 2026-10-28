@@ -20,8 +20,10 @@ import com.mmodding.psithurism.data.PsithurismBlockModelProcessing;
 import com.mmodding.psithurism.data.PsithurismRecipeProcessing;
 import com.mmodding.psithurism.data.PsithurismTexturedModels;
 import com.mmodding.psithurism.init.*;
-import com.mmodding.psithurism.resource.PsithurismFeaturePacks;
+import com.mmodding.psithurism.resource.PsithurismDecoratedPotPatternResources;
+import com.mmodding.psithurism.resource.PsithurismFeatureResources;
 import com.mmodding.psithurism.resource.PsithurismJukeboxSoundResources;
+import com.mmodding.psithurism.resource.PsithurismPlacementResources;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
@@ -49,8 +51,9 @@ public class PsithurismDataGenerator implements ExtendedDataGeneratorEntrypoint 
 
 	@Override
 	public void setupManager(DataManager manager) {
-		manager.resource(Registries.CONFIGURED_FEATURE, PsithurismFeaturePacks::configureFeatures);
-		manager.resource(Registries.PLACED_FEATURE, PsithurismFeaturePacks::configurePlacements);
+		manager.resource(Registries.FEATURE, PsithurismFeatureResources::configure);
+		manager.resource(Registries.PLACED_FEATURE, PsithurismPlacementResources::configure);
+		manager.resource(Registries.DECORATED_POT_PATTERN, PsithurismDecoratedPotPatternResources::configure);
 		manager.resource(Registries.JUKEBOX_SONG, PsithurismJukeboxSoundResources::configure);
 		manager.chain(PsithurismBlocks.class, DefaultDataHandlers.BLOCK_MODELS)
 			.chain(block -> block instanceof FlowerBedBlock, BlockModelGenerators::createFlowerBed)

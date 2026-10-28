@@ -33,7 +33,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:small_tatami"
+        "recipes": "psithurism:small_tatami"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

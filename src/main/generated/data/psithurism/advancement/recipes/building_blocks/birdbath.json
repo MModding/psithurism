@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:birdbath"
+        "recipes": "psithurism:birdbath"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

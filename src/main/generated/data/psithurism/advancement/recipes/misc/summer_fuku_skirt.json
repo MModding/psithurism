@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:summer_fuku_skirt"
+        "recipes": "psithurism:summer_fuku_skirt"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

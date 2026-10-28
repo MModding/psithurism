@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:waxed_copper_manhole"
+        "recipes": "psithurism:waxed_copper_manhole"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

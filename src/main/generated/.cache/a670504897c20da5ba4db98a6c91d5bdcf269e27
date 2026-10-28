@@ -1,0 +1,4 @@
+// 26.3	-999999999-01-01T00:00:00	Psithurism/Automated ResourceKey[minecraft:root / minecraft:block] Tags for minecraft:block
+30fe1c82836e9ecf3afe6eb5f9614ee27f34a971 data/minecraft/tags/block/maintains_farmland.json
+4c63f34e93cdb405a652677563c85f3f47b6992f data/minecraft/tags/block/shears_major_breaking_speed.json
+36dee163d094f4b7f0b5b81bebddf851d93cddb1 data/minecraft/tags/block/walls.json

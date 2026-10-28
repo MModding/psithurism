@@ -1,0 +1,13 @@
+// 26.3	-999999999-01-01T00:00:00	Psithurism/Automated Block Relatives Tags for minecraft:block
+9a23e1c45fad73ded5b5e6001f5d5e11255533be data/minecraft/tags/block/slabs.json
+6701284f277194c0f3da0b2e34bfc6b2864ee1dd data/minecraft/tags/block/stairs.json
+7e3ec6599c3a4541b1e07cdec03119d76ca545b4 data/minecraft/tags/block/walls.json
+ee864b0de3d8476f2d8ed485649452a3fe2e4cae data/psithurism/tags/block/ashino_bricks.json
+362bd2e612ac718b9997c996aca0ce64d5af8f7e data/psithurism/tags/block/ashino_kawara_tiles.json
+70e99dabe4324bf9df5e353211bc6d0ad7ca3e5a data/psithurism/tags/block/ashino_stone.json
+498988599e75680c08f0a1066af4536dfbfa5e94 data/psithurism/tags/block/blackstone_kawara_tiles.json
+60c6c073f35fe62ff6509f44db873de9b8c9b383 data/psithurism/tags/block/cracked_ashino_stone_bricks.json
+f43f3c8bf06da8b5f17ab7e3e3483d73ab391e08 data/psithurism/tags/block/deepslate_kawara_tiles.json
+d2d8347174c74063bfc385d050d4cf4c0552b307 data/psithurism/tags/block/mossy_ashino_bricks.json
+cb24048d67b626c7ee6757f04c0682d8c52e9877 data/psithurism/tags/block/polished_ashino_stone.json
+0c3fa727f15c3713d288713bf1370886a9deb0e6 data/psithurism/tags/block/stone_kawara_tiles.json

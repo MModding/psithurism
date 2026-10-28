@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:cyan_zabuton"
+        "recipes": "psithurism:cyan_zabuton"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

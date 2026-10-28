@@ -5,12 +5,7 @@
       "type": "minecraft:block_predicate_filter",
       "predicate": {
         "type": "minecraft:would_survive",
-        "state": {
-          "Name": "psithurism:dark_cherry_sapling",
-          "Properties": {
-            "stage": "0"
-          }
-        }
+        "state": "psithurism:dark_cherry_sapling"
       }
     }
   ]

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:regular_paper_lantern"
+        "recipes": "psithurism:regular_paper_lantern"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

@@ -33,7 +33,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:nokihiragawara"
+        "recipes": "psithurism:nokihiragawara"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

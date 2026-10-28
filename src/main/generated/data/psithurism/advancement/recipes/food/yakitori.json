@@ -33,7 +33,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:yakitori"
+        "recipes": "psithurism:yakitori"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

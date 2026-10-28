@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:nori_algae"
+        "recipes": "psithurism:nori_algae"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

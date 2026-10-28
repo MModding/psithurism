@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:ashino_bricks"
+        "recipes": "psithurism:ashino_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

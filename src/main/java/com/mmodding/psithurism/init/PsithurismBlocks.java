@@ -24,7 +24,7 @@ public class PsithurismBlocks {
 
 	public static final Block ONSEN_WATER = register("onsen_water", properties -> new LiquidBlock(PsithurismFluids.FLOWING_ONSEN_WATER, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER));
 
-	public static final Block WHITE_PETALS = register("white_petals", FlowerBedBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.PINK_PETALS)).registerItem();
+	public static final Block WHITE_PETALS = register("white_petals", p -> new FlowerBedBlock(p, 3), BlockBehaviour.Properties.ofFullCopy(Blocks.PINK_PETALS)).registerItem();
 
 	public static final Block CHERRY_BONSAI = register("cherry_bonsai", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_WOOD).noOcclusion()).registerItem();
 	public static final Block DARK_CHERRY_BONSAI = register("dark_cherry_bonsai", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(PsithurismWoodSets.DARK_CHERRY.getWood()).noOcclusion()).registerItem();
@@ -59,19 +59,19 @@ public class PsithurismBlocks {
 	public static final Block VERTICAL_DARK_CHERRY_GLASS_PANE = register("vertical_dark_cherry_glass_pane", IronBarsBlock::new, BlockBehaviour.Properties.ofFullCopy(PsithurismWoodSets.DARK_CHERRY.getWood()).noOcclusion()).registerItem();
 	public static final Block TILED_DARK_CHERRY_GLASS_PANE = register("tiled_dark_cherry_glass_pane", IronBarsBlock::new, BlockBehaviour.Properties.ofFullCopy(PsithurismWoodSets.DARK_CHERRY.getWood()).noOcclusion()).registerItem();
 
-	public static final Block SMALL_TATAMI = register("small_tatami", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.BLOCK)).registerItem();
-	public static final Block MEDIUM_TATAMI = register("medium_tatami", MediumTatamiBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.BLOCK)).registerItem();
-	public static final Block LARGE_TATAMI = register("large_tatami", LargeTatamiBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.BLOCK)).registerItem();
-	public static final Block SMALL_TATAMI_MAT = register("small_tatami_mat", HorizontalFacingCarpetBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.DESTROY)).registerItem();
-	public static final Block MEDIUM_TATAMI_MAT = register("medium_tatami_mat", MediumTatamiMatBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.DESTROY)).registerItem();
-	public static final Block LARGE_TATAMI_MAT = register("large_tatami_mat", LargeTatamiMatBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.DESTROY)).registerItem();
+	public static final Block SMALL_TATAMI = register("small_tatami", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.IMMOVEABLE)).registerItem();
+	public static final Block MEDIUM_TATAMI = register("medium_tatami", MediumTatamiBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.IMMOVEABLE)).registerItem();
+	public static final Block LARGE_TATAMI = register("large_tatami", LargeTatamiBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.IMMOVEABLE)).registerItem();
+	public static final Block SMALL_TATAMI_MAT = register("small_tatami_mat", HorizontalFacingCarpetBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.POPPED)).registerItem();
+	public static final Block MEDIUM_TATAMI_MAT = register("medium_tatami_mat", MediumTatamiMatBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.POPPED)).registerItem();
+	public static final Block LARGE_TATAMI_MAT = register("large_tatami_mat", LargeTatamiMatBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.POPPED)).registerItem();
 
-	public static final Block SMALL_PLAITED_TATAMI = register("small_plaited_tatami", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.BLOCK)).registerItem();
-	public static final Block MEDIUM_PLAITED_TATAMI = register("medium_plaited_tatami", MediumTatamiBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.BLOCK)).registerItem();
-	public static final Block LARGE_PLAITED_TATAMI = register("large_plaited_tatami", LargeTatamiBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.BLOCK)).registerItem();
-	public static final Block SMALL_PLAITED_TATAMI_MAT = register("small_plaited_tatami_mat", HorizontalFacingCarpetBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.DESTROY)).registerItem();
-	public static final Block MEDIUM_PLAITED_TATAMI_MAT = register("medium_plaited_tatami_mat", MediumTatamiMatBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.DESTROY)).registerItem();
-	public static final Block LARGE_PLAITED_TATAMI_MAT = register("large_plaited_tatami_mat", LargeTatamiMatBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.DESTROY)).registerItem();
+	public static final Block SMALL_PLAITED_TATAMI = register("small_plaited_tatami", SimpleHorizontalFacingBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.IMMOVEABLE)).registerItem();
+	public static final Block MEDIUM_PLAITED_TATAMI = register("medium_plaited_tatami", MediumTatamiBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.IMMOVEABLE)).registerItem();
+	public static final Block LARGE_PLAITED_TATAMI = register("large_plaited_tatami", LargeTatamiBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.IMMOVEABLE)).registerItem();
+	public static final Block SMALL_PLAITED_TATAMI_MAT = register("small_plaited_tatami_mat", HorizontalFacingCarpetBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.POPPED)).registerItem();
+	public static final Block MEDIUM_PLAITED_TATAMI_MAT = register("medium_plaited_tatami_mat", MediumTatamiMatBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.POPPED)).registerItem();
+	public static final Block LARGE_PLAITED_TATAMI_MAT = register("large_plaited_tatami_mat", LargeTatamiMatBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CARPET.white()).pushReaction(PushReaction.POPPED)).registerItem();
 
 	public static final Block REGULAR_PAPER_LANTERN = register("regular_paper_lantern", PaperLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).sound(SoundType.PACKED_MUD).lightLevel(_ -> 13)).registerItem();
 	public static final Block RED_PAPER_LANTERN = register("red_paper_lantern", PaperLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN).sound(SoundType.PACKED_MUD).lightLevel(_ -> 13)).registerItem();
@@ -106,8 +106,8 @@ public class PsithurismBlocks {
 	public static final BlockRelatives BLACKSTONE_KAWARA_TILES = BlockRelatives.registerStone(Psithurism.createId("blackstone_kawara_tile"), true, AutoMapper.identity(), false, false);
 	public static final BlockRelatives ASHINO_KAWARA_TILES = BlockRelatives.registerStone(Psithurism.createId("ashino_kawara_tile"), true, AutoMapper.identity(), false, false);
 
-	public static final Block RICE = register("rice", RiceCropBlock::new, BlockBehaviour.Properties.of().noCollision().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY));
-	public static final Block SOYA = register("soya", SoyaCropBlock::new, BlockBehaviour.Properties.of().noCollision().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY));
+	public static final Block RICE = register("rice", RiceCropBlock::new, BlockBehaviour.Properties.of().noCollision().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.POPPED));
+	public static final Block SOYA = register("soya", SoyaCropBlock::new, BlockBehaviour.Properties.of().noCollision().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.POPPED));
 
 	public static final Block IRON_MANHOLE = register("iron_manhole", properties -> new IronManholeBlock(BlockSetType.IRON, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_TRAPDOOR)).registerItem();
 	public static final Block COPPER_MANHOLE = register("copper_manhole", properties -> new WeatheringCopperTrapDoorBlock(BlockSetType.COPPER, WeatheringCopper.WeatherState.UNAFFECTED, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_TRAPDOOR.weathering().unaffected())).registerItem();

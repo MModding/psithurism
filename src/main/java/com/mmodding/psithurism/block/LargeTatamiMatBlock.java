@@ -44,7 +44,7 @@ public class LargeTatamiMatBlock extends LargeTatamiBlock {
 	public boolean canSurvive(final BlockState state, final LevelReader level, final BlockPos pos) {
 		Unit.Mutable<Boolean> canSurvive = Unit.mutable(false);
 		this.forEach(level, pos, state, (blockPos, _, _) -> {
-			if (!level.isEmptyBlock(new BlockPos(blockPos).below())) {
+			if (!level.isEmptyBlock(new BlockPos(blockPos.getX(), blockPos.getY(), blockPos.getZ()).below())) {
 				canSurvive.mutateValue(true);
 			}
 		});

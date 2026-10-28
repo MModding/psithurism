@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:nigiri_from_right"
+        "recipes": "psithurism:nigiri_from_right"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

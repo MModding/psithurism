@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:deepslate_kawara_tiles"
+        "recipes": "psithurism:deepslate_kawara_tiles"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

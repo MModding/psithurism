@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:honey_mochi"
+        "recipes": "psithurism:honey_mochi"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

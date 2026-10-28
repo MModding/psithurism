@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:chocolate_mochi"
+        "recipes": "psithurism:chocolate_mochi"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

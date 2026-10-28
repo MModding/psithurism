@@ -1,0 +1,10 @@
+// 26.3	-999999999-01-01T00:00:00	Psithurism/Automated Wood Set Block Loot Tables
+4271346198c76cb00db05c816f2c4f821f669f32 data/psithurism/loot_table/blocks/dark_cherry_hanging_sign.json
+6bcddf95d92b039030479a1b429f2b5742b9e1f6 data/psithurism/loot_table/blocks/dark_cherry_leaves.json
+b11fe45b401291f12d0a614ce93c34515c0e73d5 data/psithurism/loot_table/blocks/dark_cherry_log.json
+6cd323dce118816203882f45f0de65080100aaa8 data/psithurism/loot_table/blocks/dark_cherry_sapling.json
+f90533ab975e1c7f17a86f75d9fa4122184c9fbe data/psithurism/loot_table/blocks/dark_cherry_shelf.json
+b8e2f6cb2e75fe9c159d1620c8c6dbde0c0f256e data/psithurism/loot_table/blocks/dark_cherry_wood.json
+f62e9a131b0aa43a8db6557fdf24f98310f20850 data/psithurism/loot_table/blocks/potted_dark_cherry_sapling.json
+79846c7699852613466b9b3c6c847b34d60e1b9c data/psithurism/loot_table/blocks/stripped_dark_cherry_log.json
+d4cf570dfe22bae6dd672c98356be52b965c323d data/psithurism/loot_table/blocks/stripped_dark_cherry_wood.json

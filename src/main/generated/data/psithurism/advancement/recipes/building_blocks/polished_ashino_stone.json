@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:polished_ashino_stone"
+        "recipes": "psithurism:polished_ashino_stone"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

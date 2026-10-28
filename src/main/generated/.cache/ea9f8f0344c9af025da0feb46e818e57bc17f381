@@ -1,0 +1,18 @@
+// 26.3	-999999999-01-01T00:00:00	Psithurism/Automated Wood Set Tags for minecraft:item
+51b136c340b7ac6c844a5690310397d56e4d8d34 data/minecraft/tags/item/boats.json
+ec63cc02334096c753728aba52958e3c8f1c7495 data/minecraft/tags/item/chest_boats.json
+87fc39213d29c1dcad05ba271ce3b7d2ed5e7caf data/minecraft/tags/item/fence_gates.json
+06d13cda87d5afc305fa08450006e2bfbf82e751 data/minecraft/tags/item/hanging_signs.json
+54ff54b4656e02f68919fffaed6fbd4ce3c41e57 data/minecraft/tags/item/leaves.json
+d01ead9ca8ffd7d647844df30bb8fae4e6a23365 data/minecraft/tags/item/planks.json
+b89d3887b75541c7163aaf64bf7fbf8b1e3d0913 data/minecraft/tags/item/saplings.json
+96fba0f8755ddcf0e7d804c26524ead8903ed92a data/minecraft/tags/item/signs.json
+3e630c3366b6ec1808e25e78406106e998bf252f data/minecraft/tags/item/wooden_buttons.json
+381289c4755a461cf29043e3a6b3e40071d9b61b data/minecraft/tags/item/wooden_doors.json
+53473b544825315202c436aa9d945fb474b2e282 data/minecraft/tags/item/wooden_fences.json
+c3af1acf679383ede598239f6e2c520b1eee9fd5 data/minecraft/tags/item/wooden_pressure_plates.json
+57f4b053c27803eeb193b9df1514456a99364b30 data/minecraft/tags/item/wooden_shelves.json
+6eaf7a7a488e2c1095bf137649191d3ca57495cd data/minecraft/tags/item/wooden_slabs.json
+130d36e520544b52b61dea498b3dab96af1fc79f data/minecraft/tags/item/wooden_stairs.json
+bbf95d39106bf7bc916f885ba82087cc1e1dd07f data/minecraft/tags/item/wooden_trapdoors.json
+d83a067238f3a133bd53c546cf1c0b79e500c6b2 data/psithurism/tags/item/dark_cherry_logs.json

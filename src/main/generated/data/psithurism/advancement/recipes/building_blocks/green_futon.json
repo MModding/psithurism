@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:green_futon"
+        "recipes": "psithurism:green_futon"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

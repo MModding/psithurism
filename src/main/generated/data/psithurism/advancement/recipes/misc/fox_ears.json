@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:fox_ears"
+        "recipes": "psithurism:fox_ears"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

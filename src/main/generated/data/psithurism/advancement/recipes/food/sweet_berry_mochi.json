@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:sweet_berry_mochi"
+        "recipes": "psithurism:sweet_berry_mochi"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

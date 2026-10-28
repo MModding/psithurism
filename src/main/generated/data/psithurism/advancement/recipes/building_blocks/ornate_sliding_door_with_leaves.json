@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:ornate_sliding_door_with_leaves"
+        "recipes": "psithurism:ornate_sliding_door_with_leaves"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

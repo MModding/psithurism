@@ -3,7 +3,6 @@ package com.mmodding.psithurism.block;
 import com.mmodding.library.block.api.catalog.LootingPropertiesEntityBlock;
 import com.mmodding.psithurism.block.entity.TeruTeruBozuBlockEntity;
 import com.mmodding.psithurism.init.PsithurismBlockEntityTypes;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -13,7 +12,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Mirror;
 import net.minecraft.world.level.block.Rotation;
@@ -37,16 +35,9 @@ public class TeruTeruBozuBlock extends LootingPropertiesEntityBlock {
 
 	private static final VoxelShape SHAPE = Block.column(14.0, 0.0, 16.0);
 
-	public static final MapCodec<TeruTeruBozuBlock> CODEC = simpleCodec(TeruTeruBozuBlock::new);
-
 	public TeruTeruBozuBlock(Properties properties) {
 		super(properties);
 		this.registerDefaultState(this.defaultBlockState().setValue(NECKLACE, 4));
-	}
-
-	@Override
-	protected MapCodec<? extends BaseEntityBlock> codec() {
-		return CODEC;
 	}
 
 	@Override

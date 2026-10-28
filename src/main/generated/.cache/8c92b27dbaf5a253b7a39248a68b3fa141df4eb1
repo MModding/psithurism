@@ -1,0 +1,5 @@
+// 26.3	-999999999-01-01T00:00:00	Psithurism/Tags for minecraft:entity_type
+0706e854b5ddf9f4f5d615442d889abc54c259e5 data/minecraft/tags/entity_type/aquatic.json
+0706e854b5ddf9f4f5d615442d889abc54c259e5 data/minecraft/tags/entity_type/can_breathe_under_water.json
+0706e854b5ddf9f4f5d615442d889abc54c259e5 data/minecraft/tags/entity_type/cannot_be_pushed_onto_boats.json
+0706e854b5ddf9f4f5d615442d889abc54c259e5 data/minecraft/tags/entity_type/not_scary_for_pufferfish.json

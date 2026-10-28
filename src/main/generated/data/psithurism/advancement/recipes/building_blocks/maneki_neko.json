@@ -33,7 +33,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:maneki_neko"
+        "recipes": "psithurism:maneki_neko"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

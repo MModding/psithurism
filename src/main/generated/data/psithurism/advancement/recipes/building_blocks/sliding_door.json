@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:sliding_door"
+        "recipes": "psithurism:sliding_door"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

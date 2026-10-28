@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:ashino_stone_pedestal"
+        "recipes": "psithurism:ashino_stone_pedestal"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

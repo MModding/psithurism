@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "psithurism:stone_kawara_tile_slab"
+        "recipes": "psithurism:stone_kawara_tile_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
