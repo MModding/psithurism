@@ -26,6 +26,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 
 import java.util.Map;
+import java.util.Objects;
 
 import static net.minecraft.client.data.models.BlockModelGenerators.*;
 
@@ -138,7 +139,7 @@ public class PsithurismBlockModelProcessing {
 		generator.blockStateOutput.accept(
 			MultiVariantGenerator.dispatch(block)
 				.with(
-					PropertyDispatch.initial(MediumTatamiBlock.X)
+					PropertyDispatch.initial(Objects.requireNonNull(MediumTatamiBlock.MANAGER.getXProperty()))
 						.select(0, plainVariant(leftSide))
 						.select(1, plainVariant(rightSide))
 				)
@@ -165,7 +166,7 @@ public class PsithurismBlockModelProcessing {
 		generator.blockStateOutput.accept(
 			MultiVariantGenerator.dispatch(block)
 				.with(
-					PropertyDispatch.initial(MediumTatamiBlock.X)
+					PropertyDispatch.initial(Objects.requireNonNull(MediumTatamiBlock.MANAGER.getXProperty()))
 						.select(0, plainVariant(leftSide))
 						.select(1, plainVariant(rightSide))
 				)
@@ -195,7 +196,7 @@ public class PsithurismBlockModelProcessing {
 		generator.blockStateOutput.accept(
 			MultiVariantGenerator.dispatch(block)
 				.with(
-					PropertyDispatch.initial(LargeTatamiBlock.X, LargeTatamiBlock.Z)
+					PropertyDispatch.initial(Objects.requireNonNull(LargeTatamiBlock.MANAGER.getXProperty()), Objects.requireNonNull(LargeTatamiBlock.MANAGER.getZProperty()))
 						.select(0, 0, plainVariant(topLeftCorner))
 						.select(0, 1, plainVariant(bottomLeftCorner))
 						.select(1, 0, plainVariant(topRightCorner))
@@ -270,7 +271,7 @@ public class PsithurismBlockModelProcessing {
 		generator.blockStateOutput.accept(
 			MultiVariantGenerator.dispatch(block)
 				.with(
-					PropertyDispatch.initial(LargeTatamiBlock.X, LargeTatamiBlock.Z)
+					PropertyDispatch.initial(Objects.requireNonNull(LargeTatamiBlock.MANAGER.getXProperty()), Objects.requireNonNull(LargeTatamiBlock.MANAGER.getZProperty()))
 						.select(0, 0, plainVariant(topLeftCorner))
 						.select(0, 1, plainVariant(bottomLeftCorner))
 						.select(1, 0, plainVariant(topRightCorner))
@@ -389,7 +390,7 @@ public class PsithurismBlockModelProcessing {
 		generator.blockStateOutput.accept(
 			MultiVariantGenerator.dispatch(block)
 				.with(
-					PropertyDispatch.initial(NorenBlock.Y)
+					PropertyDispatch.initial(Objects.requireNonNull(NorenBlock.MANAGER.getYProperty()))
 						.select(0, plainVariant(ModelLocationUtils.getModelLocation(block, "_bottom")))
 						.select(1, plainVariant(ModelLocationUtils.getModelLocation(block, "_middle")))
 						.select(2, plainVariant(ModelLocationUtils.getModelLocation(block, "_top")))
@@ -408,7 +409,7 @@ public class PsithurismBlockModelProcessing {
 		generator.blockStateOutput.accept(
 			MultiVariantGenerator.dispatch(block)
 				.with(
-					PropertyDispatch.initial(NorenBlock.Y)
+					PropertyDispatch.initial(Objects.requireNonNull(NorenBlock.MANAGER.getYProperty()))
 						.select(0, bottom)
 						.select(1, middle)
 						.select(2, top)
